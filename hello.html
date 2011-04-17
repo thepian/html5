@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="author" content="Flux User" >
+		<meta name="description" content="My Website" >
+		<meta name="keywords" content="Flux, Mac" >
+		<title>Results</title>
+		<link href="http://media.pagespec.dev.local/css/screen.css" rel="stylesheet" media="screen" type="text/css" >
+<link href="../demo/css/results.css" rel="stylesheet" media="screen" type="text/css" >
+
+<style>
+
+</style>
+
+</head>
+<body style="" >
+<nav style="width:15%; height:100%; position:absolute; right:0px; " ></nav>
+
+<header style="margin-right:15%; " >
+	<figure class="var1 clearfix">
+	<div class="logo1">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo2">
+		<em>PageSpec</em>
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo3">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo4">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo5">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo6">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo7">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo8">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo9">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo10">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo11">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+	</figure>
+	
+	<figure class="var2 clearfix">
+	<div class="logo1">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo2">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo3">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo4">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo5">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo6">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo7">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo8">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo9">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo10">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+
+	<div class="logo11">
+		<h1><span class="P">P</span>age<span class="S">S</span>pec</h1>
+	</div>
+	</figure>
+	
+	<figure></figure></header>
+
+<article style="margin-right:15%; padding-right:0px; " >The actual results are
+
+
+<dl>
+<dt>Account URL</dt>
+<dd>Not crucial. Projects can exist that are not tied to an account.</dd>
+
+<dt>Page</dt>
+<dd>Users own page at arbitrary other domain, <br> 
+http://some.domain.mine / ... </dd>
+
+<dt>Project</dt>
+<dd>Users can maintain multiple projects and versions of those, <br> 
+http://www.pagespec.com / {user} / {project-name} / <br>
+http://www.pagespec.com / {user} / {project-name} / {project-id} <br>
+
+Public information
+vs
+Status and control
+vs 
+Admin
+</dd>
+
+<dt>PageSpec running status</dt>
+<dd>
+http://www.pagespec.com / projects / {project-id} / status
+</dd>
+
+<dt>PageSpec URL</dt>
+<dd>
+http://api.pagespec.com / {project-id} / pagespec.js<br>
+http://api.pagespec.com / {project-id} / pagetasks.js<br>
+http://api.pagespec.com / {project-id} / translated.js<br> </dd>
+
+</dl>
+
+<h2>Loading pagespec.js</h2>
+<p>
+Lists a PageTask queue. The queue is checked against the page cookie / local store, amending where needed.
+
+Specifies a polling interval for fetching new tasks, and starts an interval that checks the pagespec server.
+Checking the server can be done by reloading the script, incrementing a search cachebuster parameter.
+
+Puts an id on the script tag 'pagespec_script'. Adds attribute 'polling' containing the polling interval timer id.
+</p>
+<p>
+
+Checks the page for embedded tasks (only when page is loaded), adding them to the queue.
+
+For script tags that need translation, a dynamic script tag 'translated.js' is added encoding the source text to translate.
+
+If anything is in the queue a new script tag is added for loading pagetasks.js
+</p>
+
+<h2>Loading pagetasks.js</h2>
+<p>
+runs the outstanding tasks with the appropriate apis loaded in scope.
+</p>
+
+<h2>Loading translated.js</h2>
+<p>
+Takes the source script as a search parameter, returning the translated version in a scope or string that
+is either sent to an event handler or worker.
+</p>
+</article>
+	
+</body></html>

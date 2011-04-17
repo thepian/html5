@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'CodaHeavy';
+    
+ 	src: url('Coda-Heavy-webfont.eot');
+ 	src: local('☺'), url('fonts/Coda-Heavy-webfont.woff') format('woff'), 
+ 	    url('fonts/Coda-Heavy-webfont.ttf') format('truetype'), 
+ 	    url('fonts/Coda-Heavy-webfont.svg#webfontIQs8hLrS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Scriptina-AlternatesRegular';
+    src: url('fonts/scriptina_alt-webfont.eot');
+ 	src: local('☺'), url('fonts/scriptina_alt-webfont.woff') format('woff'), 
+ 	    url('fonts/scriptina_alt-webfont.ttf') format('truetype'), 
+ 	    url('fonts/scriptina_alt-webfont.svg#webfontIQs8hLrS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ScriptinaRegular';
+    src: url('fonts/scriptina-webfont.eot');
+ 	src: local('☺'), url('fonts/scriptina-webfont.woff') format('woff'), 
+ 	    url('fonts/scriptina-webfont.ttf') format('truetype'), 
+ 	    url('fonts/scriptina-webfont.svg#webfontIQs8hLrS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body.paper {
+    background-color: #646C5D;
+    background-position: -500px -100px;
+}
+body { 
+    position:relative;
+    margin: 0; padding: 0;
+    font-family: Georgia ,'Droid Serif', serif; 
+}
+
+h2,h3 {
+    font-family: 'Century Gothic', Geneva, Helvetica, Arial, sans-serif;
+}
+
+.punchline {
+    font-family: 'CodaHeavy';
+    font-size: 50px;
+    color: rgb(120,120,120);
+    width: 910px;
+    line-height:1.1;
+    opacity: .7;
+    padding: 2.5em 1em 1.5em;
+}
+
+.freshname {
+    z-index: -1;
+    position: absolute;
+    font-family: 'ScriptinaRegular';
+    font-size: 170px;
+    color: #FF54AA;
+    line-height:.25;
+    margin:0;
+    opacity: .6;
+}
+
+.freshname2 {
+    margin:1em;
+}
+
+figure.pencil {
+    position:absolute;
+    left: 360px;
+    top: 0;
+    width: 172px;
+    height: 172px;
+    background-image: url(pencil-drawing.png);
+}
+
+.pink {
+    background-color: #FF54AA;
+}
+
+.army {
+    background-color: #646C5D;
+}
+
+.blue {
+    background-color: #166B99;
+}
+
+.orange {
+    background-color: #FF9942;
+}
+
+.paper-color {
+    background-color: /*#FFF2B9*/ #BDBA99;
+}
+
+.light-coal {
+    background-color: 41423C;
+}
+
+.lilac {
+    color: #8787c1;
+}
+
+section {
+    left: 8em;
+    position:relative;
+    padding: 0 6px 6px 6px;
+    width: 900px;
+    background: #BDBA99;
+}
+
+section summary {
+    position: absolute;
+    left:-5em;
+    width: 5em;
+    padding: 0 4px 0 4px;
+}
+
+section h3 { 
+    border-top: 3px solid #646C5D;
+    color: #FF54AA; 
+}
+
+
+footer { 
+    margin-top:1em;
+    height:30px;
+    background-image: url('bg_footer_swirl.png');
+}
+
+.topbar {
+    height:200px;
+    background-image: url('Objective.png');
+    background-repeat: no-repeat;
+}
+
+a.linkedin,
+a.twitter,
+a.google,
+a.github,
+a.facebook {
+    display:inline-block;
+    height: 128px;
+    width:128px;
+}
+
+a.linkedin {
+    background-image: url(linkedin-logo-square2-webtreatsetc.jpg);
+}
+a.twitter {
+    background-image: url(twitter-webtreatsetc.jpg);
+}
+a.google {
+    background-image: url(google-logo.png);
+}
+a.github {
+    background-image: url(github.jpg);
+}
+a.facebook {
+    background-image: url(facebook-logo-webtreatsetc.jpg);
+}

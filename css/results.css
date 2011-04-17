@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Old+Standard+TT);
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.mystyle {
+}
+
+body {
+    /*
+	background-image:url(../images/blue%2dbleed.jpg);
+	*/
+	background-repeat-x:no-repeat;
+	background-repeat-y:no-repeat;
+	background-repeat:no-repeat;
+	background-attachment:initial;
+	background-position:initial initial;
+	background-position-x:initial;
+	background-position-y:initial;
+	background-origin:initial;
+	background-clip:initial;
+	font-family:'Trebuchet MS', 'Helvetica Neue', 'Arial Narrow', sans-serif;
+	font-size:62.5%;
+}
+
+header {
+	font-size:1.4em;
+}
+
+article {
+	font-size:1.1em;
+	line-height:1.4em;
+}
+
+article h2 {
+	font-size:1.2em;
+	line-height:2em;
+}
+
+article p {
+	margin-bottom:0.5em;
+}
+
+article dt {
+	width:12em;
+	position:absolute;
+	font-weight:bold;
+	color:#333333;
+}
+
+article dd {
+	margin-left:12em;
+	margin-bottom:0.5em;
+}
+
+header div { 
+    display: block;
+    position:relative;
+    float:left;
+    width:6em;
+    height:6em;
+    margin:.5em;
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+}
+header div h1 { 
+    position:absolute;
+    top:0; left:0;
+    margin-top:.4em;
+    line-height: 1.8em;
+    width:15em;
+    white-space:nowrap;
+    /*
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+	*/
+}
+
+header figure {
+    display:block;
+    height:18em;
+}
+
+header figure.var1 div {
+    background: #333; color: #ddd;
+    border-top:1px solid #333;
+    border-bottom:1px solid #333;
+}
+header figure.var1 div h1 {
+    color: #ddd;
+    border-top:1px solid #333;
+    border-bottom:1px solid #333;
+}
+
+header figure.var2 div h1 {
+    background: white; color: #333;
+    border-left:1px solid #333;
+    border-right:1px solid #333;
+}
+
+header figure.var2 span.S,
+header figure.var2 span.P { color:red; }
+
+div.logo1 h1 {
+    font-family: Optima;
+    font-size: 2.4em;
+    letter-spacing:3px;
+}
+div.logo2 h1 {
+    font-family: Georgia;
+    font-size: 2.4em;
+    letter-spacing:3px;
+}
+
+figure.var1 div.logo2 em {
+    display:block;
+    font-family: "Snell Roundhand";
+    font-size: 5em;
+    letter-spacing:-2px;
+    color:#444;
+
+    position:absolute;
+    top:0; left:0;
+}
+figure.var2 div.logo2 h1 {
+    text-stroke: 1px #888;
+}
+
+div.logo3 h1 {
+    font-family: "Handwriting - Dakota";
+    font-size: 2.4em;
+    letter-spacing:3px;
+}
+div.logo4 h1 {
+    font-family: "Chalkduster";
+    font-size: 2.4em;
+    letter-spacing:-2px;
+    -webkit-text-outline:1px solid black;
+}
+div.logo5 h1 {
+    font-family: "Didot";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo6 h1 {
+    font-family: "Hoefler Text";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo7 h1 {
+    font-family: "Mona Lisa Solid ITC TT";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo8 h1 {
+    font-family: "Papyrus";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo9 h1 {
+    font-family: "Snell Roundhand";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo10 h1 {
+    font-family: "Stone Sans ITC TT";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+div.logo11 h1 {
+    font-family: "Zapfino";
+    font-size: 2.3em;
+    letter-spacing:-2px;
+}
+
+figure.watermark {
+    display:block;
+    font-family: "Snell Roundhand";
+    font-size: 60em;
+    letter-spacing:-2px;
+    color:#ccc;
+
+    position:absolute;
+    top:50%; left:-20%;
+    
+}
+

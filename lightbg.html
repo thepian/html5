@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="author" content="Flux User" >
+		<meta name="description" content="My Website" >
+		<meta name="keywords" content="Flux, Mac" >
+		<title>Nav bar</title>
+		<link href="http://media.pagespec.dev.local/css/screen.css" rel="stylesheet" media="screen" type="text/css" >
+<link href="../demo/css/results.css" rel="stylesheet" media="screen" type="text/css" >
+
+<style>
+body { 
+	position:absolute;
+	top:0; bottom:0;
+	width:100%;; overflow:hidden;
+	background: rgb(193,215,211);
+	background-image: url(http://media.pagespec.dev.local/images/biggrid.png);
+	background-position: 400px 300px;
+	background-repeat: no-repeat;
+	font-family: Contra;
+}
+h1,h2,h3 {
+/*	font-family:Chalkduster; */
+}
+nav {
+}
+nav.pagespec {
+	position:absolute;
+	width:0em;
+	height:0em;
+	background-color:transparent;
+	color:#eee;
+	background-color:#444;
+}
+
+nav.pagespec.tl {
+	top:0;
+	left:0;
+}
+
+nav.pagespec.br {
+	bottom:0;
+	right:0;
+}
+
+nav.pagespec div {
+	position:absolute;
+	background-color: black;
+	-webkit-box-shadow: 0 0 10px rgb(0,0,0);
+	-moz-box-shadow: 0 0 10px rgb(0,0,0);
+	box-shadow: 0 0 10px rgb(0,0,0);
+	cursor:default;
+	opacity: .8;
+	background-image: 
+	-webkit-gradient(linear, 0% 0%, 0% 100%, from(#666666), to(#666666), color-stop(.6,#333))
+	/*-moz-linear-gradient(0% 100% 90deg,#666666, #666666, #333333 100%)*/;
+}
+
+nav.pagespec.tl div {
+	top:5em;
+	left:-5em;
+	height:3.9em;
+	width:17em;
+	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	padding:0 3.25em;
+	text-align: left;
+	font-size:1.2em;
+	
+}
+
+nav.pagespec.br div {
+	bottom:5em;
+	right:-5em;
+	height:3.9em;
+	width:20em;
+	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	padding:0 1.75em;
+	text-align: left;
+	font-size:1.2em;
+}
+
+
+nav.pagespec a {
+	text-decoration: none;
+	color:#08f;
+}
+nav.pagespec a:hover {
+	text-shadow: -2px 0px 3px rgba(200,200,200,.8);
+}
+
+header {
+	display:block;
+	margin:1em;
+	width:50%;
+	color: black;
+}
+header h1 { font-size: 4em; line-height:1.2em;}
+header h2 { font-size: 2.5em; line-height:1.2em;}
+header h3 { font-size:1.5em; line-height:1.2em;}
+body > hr {
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	height:3px;
+	margin: 3px 1em;
+}
+article {
+	display:block;
+	margin:1em;
+	width:50%;
+	color:white;
+}
+article h1 { font-size: 4em; line-height:1.2em;}
+article h2 { font-size: 2.5em; line-height:1.2em;}
+article h3 { font-size:1.5em; line-height:1.2em;}
+
+footer { 
+	position:absolute;
+	bottom:0; height:13em;
+	width:100%;
+	background:white;
+	font-size:1.4em;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 10%, from(#FFFFFF), to(#FFFFFF), color-stop(0,#e8e8e8));
+}
+footer section {
+	margin: 1em;
+}
+footer ul {
+	margin:1em;
+	float:left;
+}
+</style>
+
+</head>
+<body >
+
+<header >
+	<h2>PageSpec</h2>
+	<nav class="menu">
+		<a href="#">First</a>
+		<a href="#">Second</a>
+		<a href="#">Third</a>
+	</nav>
+	
+	
+<img type="image/svg+xml" src="http://media.pagespec.dev.local/images/originals/p.svg">	
+	
+	
+</header>
+<article>
+	<h2>
+	If we can catch problems with interactive websites quicker
+	</h2>
+	<h1>
+	Then we can get a richer, more interactive, more engaging <strong>Web</strong>
+	</h1>
+</article>
+<footer>
+	<section>
+		<ul>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+		</ul>
+	</section>
+</footer>	
+
+<nav class="pagespec br">
+	<div>
+		PageSpec
+		<a href="" title="Local Queue">4 of 10 passed, 1 failed, next run in 10 mins</a>
+		<a href="" title="Full Schedule">4 browsers scheduled</a>
+		<a href="">Past History</a>
+	</div>	
+</nav>
+	
+</body></html>

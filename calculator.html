@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>FX Trading</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no minimum-scale=1.0, maximum-scale=1.0" />
+
+    <!-- If page is saved to desktop, it can be opened with an overlapping status bar and without chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon-precomposed" href="images/icon_calendar.png" >
+    <!--
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="images/yellow72.png"/>
+    -->
+
+
+	<link href="http://media.pagespec.dev.local/css/screen.css" rel="stylesheet" media="screen" type="text/css" >
+	<link href="../demo/css/results.css" rel="stylesheet" media="screen" type="text/css" >
+
+    <link href="css/reset.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="css/structural.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="css/ipad.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="css/FxTile.css" rel="stylesheet" media="screen" type="text/css" >
+
+
+</head>
+
+<body class="maintr loading">
+	
+	<aside id="splash">
+		<div style="position:absolute; margin:-15px 0 0 -50px;top:50%;left:50%; width:100px;text-align:center;">
+		Splash and Login area
+		</div>
+		
+		<form template="form:login" controller="FxTilesController" class="login clearfix"></form>
+	</aside>
+	
+    <aside id="left">
+
+    </aside>
+
+    <aside id="bottom">
+
+    </aside>
+
+	<article id="main" ontouchmove="touchMove(event);">
+		<header>
+		</header>
+		<footer></footer>
+
+		<form template="form:main" controller="FxTilesController" class="clearfix"></form>
+
+	</article>
+
+    <div id="corner"></div>
+
+
+	<template name="form:login">
+		<dl>
+			<dt>User</dt>
+			<dd><input type="text" value="" data-name="user"></dd>
+			<dt>Password</dt>
+			<dd><input type="password" value="" data-name="password"></dd>
+			
+			<dt></dt>
+			<dd>		<button command="complete">Login</button>
+			<button command="cancel">Cancel</button>
+			</dd>
+		</dl>
+	</template>	
+
+	<template name="form:aside">
+		
+        <section class="box">
+
+        </section>
+        <section class="box">
+			News Feed
+        </section>
+        <section class="box">
+			Blotter
+        </section>
+		
+	</template>
+	
+	<template name="form:main">
+		
+        <section class="box">
+	
+	    </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+        <section class="box">
+
+        </section>
+
+	</template>
+	
+	<script src="http://media.pagespec.dev.local/js/jquery.js" type="text/javascript"></script>
+	<script src="http://media.pagespec.dev.local/js/pagecore.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		//TODO factory callback for handlers
+		var MAPS = {
+			// "amount-text": {
+			// 	
+			// },
+			"buysell-text": {}
+		};
+		MAPS["buysell-text"][true] = "BUY";
+		MAPS["buysell-text"][false] = "SELL";
+
+
+		var LOOKUPS = {
+			"account-list": [
+				{ key: "1", formatted: "Action 1" },
+				{ key: "2", formatted: "Action 2" }
+			]
+		};
+
+		function maker() {
+			return {
+				instance: {},
+				handlers: {
+					preset: function(context,name,instance,state) {
+						return function(values,sStage) {
+							switch(name) {
+								case "horz": 
+									this.set(context,name,10);
+									return;
+								case "horz-min": 
+									this.set(context,name,5);
+									return;
+								case "horz-max": 
+									this.set(context,name,50);
+									return;
+							}
+							this.set(context,name,values[0] === undefined? null : values[0]);
+						};
+					},
+					toggle: function(context,name,instance,state) {
+						return function(value) {
+							state.set(context,name,!value,"editdone");
+						};
+					},
+					lookup: function(context,name) {
+						return function(stage) {
+							var LOOKUP = LOOKUPS[name];
+							return LOOKUP || [];
+						};
+					},
+					mapping: function(context,name) {
+						return function(value) {
+							var MAP = MAPS[name];
+							if (MAP) return MAP[value] || "unknown";
+
+							return "value "+value;
+						};
+					}
+				}
+			}
+		};
+
+		HTMLSnippet.enhanceElements($("form"),"template",$("template"),"name",maker);
+	</script>
+
+
+	</body>
+</html>
