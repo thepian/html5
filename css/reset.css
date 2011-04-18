@@ -104,3 +104,16 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+.landscape-only { display: none; }
+.portrait-only { display: none; }
+
+/* orientation only CSS classes*/
+@media only screen and (max-device-width: 1024px) and (orientation:portrait),
+ only screen and (max-device-width: 480px) and (orientation:portrait)  { 
+    .portrait-only { display: inherit; }
+}
+@media only screen and (max-device-width: 1024px) and (orientation:landscape),
+ only screen and (max-device-width: 480px) and (orientation:landscape)  { 
+    .landscape-only { display: inherit; }
+}

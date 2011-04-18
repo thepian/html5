@@ -1,6 +1,7 @@
 ---
 layout: master
 ---
+"Fluid Theme Demo":/demo/fluid/
 "Two-thirds demo":/demo/twothirds/
 
 "Fifty-fifty demo":/demo/5050/
