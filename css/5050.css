@@ -1,0 +1,41 @@
+article.leftside {
+    position:absolute;
+    width:50%;
+    min-height:500px;
+    text-align:right;
+    padding-top:10px;
+}
+article.leftside .sections {
+    display:inline-block;
+    width:350px;
+    max-width:90%;
+    text-align:left;
+    margin-right:20px;
+}
+
+aside.rightside {
+    position:relative;
+    margin-left: 50%;
+    width:50%;
+    max-width:90%;
+    min-height:500px;
+    padding-top:10px;
+}
+aside.rightside .sections {
+    left:0;
+    width:350px;
+    margin-left:20px;
+}
+
+footer {
+    position:absolute;
+    left:50%;
+    margin-top:10px;
+    margin-left:-370px;
+    width:740px;
+    text-align: center;
+}
+footer .copyright img {
+    vertical-align: -4px;
+}
+

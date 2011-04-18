@@ -1,0 +1,18 @@
+article.leftside {
+    background-color: #ccc;
+}
+
+aside.rightside {
+    background-color: #4183C4;
+}
+
+footer {
+    color: #ccc;
+}
+footer .copyright {
+    font-size: 10px;
+    line-height:1.6;
+}
+footer .copyright a {
+    color: white;
+}
