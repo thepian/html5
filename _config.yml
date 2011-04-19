@@ -5,6 +5,7 @@ description: The Personal Information Assistant.
 email: henrik@thepia.com
 analytics_id: UA-22749258-1
     
+exclude: ['_design', 'README.textile', 'Rakefile']
 destination: _site
 lsi: false
 pygments: true
@@ -15,3 +16,4 @@ maruku:
   use_divs: false
   png_dir: images/latex
   png_url: /images/latex
+safe: false
