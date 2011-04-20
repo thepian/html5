@@ -6,9 +6,10 @@ This is the Jekyll source for the HTML5 website.
 Git Pages may be used for html5.thepian.org and html5.thepia.com
 
 run locally:
-* `sudo macport install ruby rb-rubygems`
-* `sudo gem install jekyll RedCloth`
-* `sudo port install py26-pygments`
+* `sudo port install ruby rb-rubygems`
+* `sudo gem install jekyll RedCloth less`
+* `sudo port install py26-pygments nodejs`
+* `sudo npm install less`
 * `jekyll --server --auto`
 
 Copyright (c) 2011 Henrik Vendelbo. Rights all reserved.

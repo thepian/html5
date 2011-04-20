@@ -5,3 +5,7 @@ layout: master
 "Two-thirds demo":/demo/twothirds/
 
 "Fifty-fifty demo":/demo/5050/
+
+"Slablet demo":/demo/slablet/
+
+"Flawless demo":/demo/flawless/
