@@ -17,3 +17,4 @@ maruku:
   png_dir: images/latex
   png_url: /images/latex
 safe: false
+lessc: lessc

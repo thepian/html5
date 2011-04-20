@@ -1,0 +1,31 @@
+/* This file is part of Centage!. */
+/* Copyright (C) 2010 Jussi Jokinen <jussijokinen@iki.fi>. */
+/* Licenced under MIT licence */
+
+
+/* THE FOLLOWING ARE CALCULATED VARIABLES FOR YOUR PLEASURE */
+/* -------------------------------------------------------- */
+/* gutterless column width */
+@col1:100% / @grid;
+
+/* column width when gutters are used */
+@col1_gut:(100% - @gut * (@grid - 1)) / @grid;
+
+/* column + gutter */
+@col1_plus_gut:@col1_gut + @gut;
+
+/* the true leading = line height - font size */
+@leading:@line - @fontpxem; 
+
+/* body font size in percentages */
+@bodyfont:100% * (@fontpx/16);
+
+/* line height in ems */ 
+@line:@linepx/@fontpx * 1em; 
+
+@fontpxem:@fontpx * 1em; /*this is needed for calculations*/
+@linepxem:@linepx * 1em; /*this is needed for calculations*/
+
+@import '../reset.css';
+@import 'core.css';
+@import 'grid.css';
