@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'Lobster13Regular';
+	src: url('/fonts/Lobster_1.3-webfont.eot');
+	src: local('‚ò∫'), url('/fonts/Lobster_1.3-webfont.woff') format('woff'), url('/fonts/Lobster_1.3-webfont.ttf') format('truetype'), url('/fonts/Lobster_1.3-webfont.svg#webfontHqICmWr8') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+ 
+@font-face {
+	font-family: 'CaviarDreamsRegular';
+	src: url('/fonts/CaviarDreams-webfont.eot');
+	src: local('‚ò∫'), url('/fonts/CaviarDreams-webfont.woff') format('woff'), url('/fonts/CaviarDreams-webfont.ttf') format('truetype'), url('/fonts/CaviarDreams-webfont.svg#webfontdHSnsI35') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.fullwidth > header {padding-top:25px; border-bottom:1px solid #ccc; padding-bottom:20px;}
+div.fullwidth > header .logo {font-size:3.52em;}
+div.fullwidth > header nav ul li {float:left; margin-top:12px; }
+div.fullwidth > header nav ul li a {display:block; padding:5px 15px; border-right:1px solid #eee; font-size:1.52em; font-family:Georgia, "Times New Roman", Times, serif; text-decoration:none;}
+div.fullwidth > header nav ul li a:hover {background-color:#eee; border-right:1px solid #ccc; text-shadow:-1px -1px 0px #fff;}
+div.fullwidth > header nav ul li.last a {border-right:none;}
+
+body {
+    background-color: #4183C4;
+}
+.inlined {
+    display: inline-block;
+}
+
+.fullwidth {
+    position:relative;
+    background-color:white;
+}
+
+header h1 {
+	height: 30px;
+}
+
+nav {
+	font-family: 'CaviarDreamsRegular', Helvetica, sans-serif;
+	text-align: right;
+	font-size: 17px;
+	margin-top: 40px;
+	color: #494949;
+}
+
+footer {
+    color: #ccc;
+}
+footer .copyright {
+    font-size: 10px;
+    line-height:1.6;
+}
+footer .copyright a {
+    color: white;
+}
+footer .copyright img {
+    vertical-align: -4px;
+}
+
+/* ** ** Header Styles ** ** */
+section h2 a, section h3 a, section h4 a, section h5 a,
+section h2, section h3, section h4, section h5 {
+    color: #4183C4;
+}
+
+a { color: #226666;}
+header a {	color:#525252; text-decoration:none; }
+
+.posts { margin: 0;}
+.posts li { list-style: none; margin-left: 0; padding-left:55px; text-indent:0;}
+.posts li { margin-top:3em; }
+
+.postdate {
+    position:absolute;
+    left:0px;
+    width:41px;
+    height:41px;
+    background-image: url("../images/calendar24.gif");
+}
+
+.postmonth {
+    display:block;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color:white;
+}
+.postday {
+    display:block;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+}
+
+.posts h4 {
+    font-family: 'CaviarDreamsRegular', Helvetica, sans-serif;
+	
+}
+
+.posts h4,
+.posts p { 
+font-family:Georgia, "Times New Roman", Times, serif;
+    }
