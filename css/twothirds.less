@@ -46,6 +46,15 @@
  */
 @setup_font_size: 13;
 
+@page_background_color: transparent;
+@page_footer_color: #ccc;
+@nav_background_color: transparent;
+@article_background_color: #ccc;
+@aside1_background_color: #4183C4;
+@aside2_background_color: #4183C4;
+@horz_side_gap: 20px;
+
+
 /* ================ SPLIT UP YOUR CODE ================
  * It is highly recommended to split up your various parts
  * of custom styles for your website to improve maintainance 
@@ -55,3 +64,11 @@
 @import "twothirds-base.less"; /* the base layout applied to all screen sizes */
 @import "twothirds-medium.less"; /* the changes applied to medium screen sizes */
 @import "twothirds-small.less"; /* changes applied to small screen sizes */
+
+footer .copyright {
+    font-size: 10px;
+    line-height:1.6;
+}
+footer .copyright a {
+    color: white;
+}
