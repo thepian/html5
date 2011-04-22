@@ -1,13 +1,21 @@
 /* Here we define the standard styles that are applied all screens  */
 
-body > header {
-    position: relative;
-    width:67%;
-    text-align:right;
+body {
+    background-color: @page_background_color;
 }
-body > header h1 {
-    display:inline-block;
+body > header {
+    height: @header_height;
+    background-color: @page_header_background_color;
+}
+body > header .leftside {
+    width:67%;
     position: relative;
+    height: @header_height;
+}
+
+body > header h1 {
+    position: absolute;
+    right: 0px;
     width:530px;
     max-width:90%;
     text-align:left;
@@ -15,10 +23,7 @@ body > header h1 {
     overflow: hidden;
 }
 
-
-nav#main-menu {
-	/* the navigation spans all 8 columns */
-	.grid_span(8);	
+nav.main-menu {
 	/* compose a horizontal navigation */
 	.nav_horizontal();
 	/* these are the colors for the states - normal, hover, active */
@@ -31,6 +36,13 @@ nav#main-menu {
 	.nav_padding(0.5em 1em);
 	/* define gaps left, right of each nav item */
 	.nav_gap(0, 0.3em);
+
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width:530px;
+    /*  remove the explicit width to make the navigation right aligned */
+    text-align:right;
 }
 
 article.main {
