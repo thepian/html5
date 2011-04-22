@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>Slablet</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet/less" type="text/css" href="/css/slablet/master.less" media="screen" title="flawless_css"/>
+<!--[if IE]>
+  <script src="/js/html5.js" />
+<![endif]-->
+<!-- All JavaScript at the bottom, except for Modernizr. -->
+<script src="/js/modernizr-1.7.min.js"></script>
+
+<script type="text/javascript">
+	var FLAWLESS_DIRECTORY = "/css/flawless/"; // path to the flawless folder
+	var FLAWLESS_MENU = true; // set this to false to deactivate flawless ui (best for profiling with F9)
+	var FLAWLESS_WATCH = true; // enable watch mode -> changes to files update in browser
+	var FLAWLESS_WATCH_INTERVAL = 3000; // fetch files every 3 seconds
+	var FLAWLESS_FRAMEWORK_CACHING = true; // cache framework files, performance! -> reload for changes
+	var FLAWLESS_CUSTOM_CACHING = false; // cache custom files @imported in style_dev -> bad for watch mode
+</script>
+<script type="text/javascript" src="/css/flawless/core/development/init.js"></script>
+
+
+<!--[if !IE]><!-->
+<script src="/js/iscroll.js"></script>
+<!--<![endif]-->
+
+<!-- JavaScript -->
+
+<!-- Grab Google CDN's jQuery. fall back to local if neccessary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="/js/jquery-1.4.2.min.js"><\/script>')</script>
+
+
+<script src="/js/slablet-master.js"></script>
+</head>
+<body>
+<div id="main" class="abs">
+{{ content }}
+</div>
+</body>
+</html>

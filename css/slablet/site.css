@@ -14,7 +14,7 @@ body {
 	/*
 		Pre-load #nav_arrow image.
 	*/
-	background: #000 url(../images/ui/nav_arrow.png) no-repeat -99999px -99999px;
+	background: #000 url(images/ui/nav_arrow.png) no-repeat -99999px -99999px;
 	color: #000;
 	cursor: default;
 }
@@ -93,7 +93,7 @@ table.data td {
 }
 
 table.data thead th {
-	background: #eee url(../images/ui/data_th.png) repeat-x;
+	background: #eee url(images/ui/data_th.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #eee));
 	background: -moz-linear-gradient(top center, #fff 0%, #eee 100%);
 	border-bottom: 1px solid #ddd;
@@ -123,7 +123,7 @@ table.horiz tr td:first-child {
 ----------------------------------------------------------------------------------------------------*/
 
 .button {
-	background: #666 url(../images/ui/button_light.png) repeat-x;
+	background: #666 url(images/ui/button_light.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(1, #666));
 	background: -moz-linear-gradient(top center, #ccc 0%, #666 100%);
 	-moz-border-radius: 5px;
@@ -145,7 +145,7 @@ table.horiz tr td:first-child {
 
 .button:active,
 .button_active {
-	background: #333 url(../images/ui/button_light_active.png) repeat-x;
+	background: #333 url(images/ui/button_light_active.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999), color-stop(1, #333));
 	background: -moz-linear-gradient(top center, #999 0%, #333 100%);
 }
@@ -162,7 +162,7 @@ table.horiz tr td:first-child {
 ----------------------------------------------------------------------------------------------------*/
 
 .chrome_light {
-	background: #bbb url(../images/ui/chrome_light.png) repeat-x;
+	background: #bbb url(images/ui/chrome_light.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #bbb));
 	background: -moz-linear-gradient(top center, #fff 0%, #bbb 100%);
 	color: #777;
@@ -170,13 +170,13 @@ table.horiz tr td:first-child {
 }
 
 .chrome_dark {
-	background: #333 url(../images/ui/chrome_dark.png) repeat-x;
+	background: #333 url(images/ui/chrome_dark.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(1, #333));
 	background: -moz-linear-gradient(top center, #666 0%, #333 100%);
 }
 
 .chrome_dark .button {
-	background: #222 url(../images/ui/button_dark.png) repeat-x;
+	background: #222 url(images/ui/button_dark.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #999), color-stop(1, #222));
 	background: -moz-linear-gradient(top center, #999 0%, #222 100%);
 	border-color: #000 #333 #666;
@@ -184,7 +184,7 @@ table.horiz tr td:first-child {
 
 .chrome_dark .button:active,
 .chrome_dark .button_active {
-	background: #000 url(../images/ui/button_dark_active.png) repeat-x;
+	background: #000 url(images/ui/button_dark_active.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666), color-stop(1, #000));
 	background: -moz-linear-gradient(top center, #666 0%, #000 100%);
 }
@@ -308,7 +308,7 @@ table.horiz tr td:first-child {
 }
 
 #sidebar_menu .active > a {
-	background: #035de7 url(../images/ui/menu_active_a.png) repeat-x;
+	background: #035de7 url(images/ui/menu_active_a.png) repeat-x;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #058cf7), color-stop(1, #035de7));
 	background: -moz-linear-gradient(top center, #058cf7 0%, #035de7 100%);
 	color: #fff;
@@ -319,7 +319,7 @@ table.horiz tr td:first-child {
 }
 
 #sidebar_menu .expanded > a {
-	background: #eee url(../images/ui/menu_expanded.png) repeat-x left bottom;
+	background: #eee url(images/ui/menu_expanded.png) repeat-x left bottom;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(1, #fff));
 	background: -moz-linear-gradient(top center, #eee 0%, #fff 100%);
 	color: #ccc;
@@ -336,12 +336,12 @@ table.horiz tr td:first-child {
 }
 
 #sidebar_menu_home .abs {
-	background: url(../images/ui/menu_home.png) no-repeat;
+	background: url(images/ui/menu_home.png) no-repeat;
 	top: 12px;
 }
 
 #sidebar_menu .toggle_arrow {
-	background: url(../images/ui/toggle_arrow.png) no-repeat;
+	background: url(images/ui/toggle_arrow.png) no-repeat;
 	top: 13px;
 }
 
@@ -392,7 +392,7 @@ table.horiz tr td:first-child {
 
 html .is_portrait #sidebar > #nav_arrow {
 	position: absolute !important;
-	background: url(../images/ui/nav_arrow.png) no-repeat;
+	background: url(images/ui/nav_arrow.png) no-repeat;
 	display: block;
 	top: -6px;
 	left: 33px;

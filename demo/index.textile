@@ -9,3 +9,11 @@ layout: master
 "Slablet demo":/demo/slablet/
 
 "Flawless demo":/demo/flawless/
+
+h1.	Slablet - Tablet UI
+
+Code repository at <a href="http://github.com/fellowshiptech/slablet">GitHub</a>
+
+** "Template - Light chrome":/demo/light
+** "Template - Dark chrome":/demo/dark
+** "Template - Mixed chrome":/demo/mixed
