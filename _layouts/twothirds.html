@@ -12,7 +12,7 @@
   initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
   maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
   -->
-  <meta name="viewport" content="width=960, user-scalable=yes" />
+  <meta name="viewport" content="width=1024, user-scalable=yes" />
 
   <title>{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}</title>
   <meta name="description" content="{{ site.description }}">
@@ -78,5 +78,6 @@ function css_browser_selector(u){var ua = u.toLowerCase(),is=function(t){return 
   <script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
   <script type="text/javascript" src="/js/jScrollPane-1.2.3.min.js"></script>
 
+	<script>console.log(document.body.offsetWidth);</script>
 </body>
 </html>
