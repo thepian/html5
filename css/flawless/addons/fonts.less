@@ -1,0 +1,14 @@
+/**
+ * @name: 'LobsterRegular'
+ * @url : '/fonts/Lobster_1.3-webfont'
+ * @hash: 'webfontHqICmWr8'
+ */
+.font-face(@family,@url,@hash) {
+    @font-face {
+    	font-family: @family;
+    	src: %('url(%s.eot)',@url);
+    	src: local('‚ò∫'), %("url(%s.woff)",@url) format('woff'), %("url(%s.ttf)",@url) format('truetype'), %("url(%s.svg#%s)",@url,@hash) format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+    }
+}
