@@ -12,7 +12,7 @@
   initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
   maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
   -->
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+  <meta name="viewport" content="width=1024, user-scalable=yes" />
 
   <title>{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}</title>
   <meta name="description" content="{{ site.description }}">
@@ -29,16 +29,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="">
 
-  <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen" title="html5doctor.com Reset Stylesheet" />
-  
-  <!-- in the CSS3 stylesheet you will find examples of some great new features CSS has to offer -->
-  <link rel="stylesheet" type="text/css" href="/css/css3.css" media="screen" />
-  
-  <!-- general stylesheet contains some default styles, you do not need this, but it helps you keep a uniform style -->
-  <link rel="stylesheet" type="text/css" href="/css/general.css" media="screen" />
-  
-  <!-- grid's will help you keep your website appealing to your users, view 52framework.com website for documentation -->
-  <link rel="stylesheet" type="text/css" href="/css/grid.css" media="screen" />
+  <link rel="stylesheet/less" type="text/css" href="/css/twothirds.less" media="screen" title="flawless_css"/>
+  <link rel="stylesheet" type="text/css" href="/css/style/twothirds.css" media="screen" />
+
   
   <link rel="stylesheet" type="text/css" media="screen, projection" charset="utf-8" href="/css/twitter.css" />
 
@@ -50,6 +43,18 @@
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.fancybox.css" media="screen" />
   <link href="/stylesheets/jquery.tweet.css" media="all" rel="stylesheet" type="text/css"/> 
+
+  <script type="text/javascript">
+		var FLAWLESS_DIRECTORY = "/css/flawless/"; // path to the flawless folder
+  	var FLAWLESS_MENU = true; // set this to false to deactivate flawless ui (best for profiling with F9)
+  	var FLAWLESS_WATCH = true; // enable watch mode -> changes to files update in browser
+		var FLAWLESS_WATCH_INTERVAL = 3000; // fetch files every 3 seconds
+		var FLAWLESS_FRAMEWORK_CACHING = true; // cache framework files, performance! -> reload for changes
+		var FLAWLESS_CUSTOM_CACHING = false; // cache custom files @imported in style_dev -> bad for watch mode
+  </script>
+  <script type="text/javascript" src="/css/flawless/core/development/init.js"></script>
+  
+
   <!-- link href="http://feeds.feedburner.com/essentialjs" type="application/atom+xml" rel="alternate" -->	
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml" />
 
@@ -63,6 +68,8 @@
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if gt IE 9]>  <body>             <![endif]-->
 <!--[if !IE]><!--> <body>         <!--<![endif]-->
+
+	{{ content }}
 
 	<div class="fullwidth">
 		
@@ -140,63 +147,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
 
-
   <script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
   <script type="text/javascript" src="/js/jScrollPane-1.2.3.min.js"></script>
-  <script type="text/javascript" src="/js/tweettick.js"></script>
-
-  <script type="text/javascript" src="/javascripts/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="/javascripts/jquery.fancybox-1.2.1.pack.js"></script>
-  <script type="text/javascript" src="/js/retweet.js"></script>
-  <script type="text/javascript" src="/js/jquery.tweet.js"></script> 
-  <script type="text/javascript">
-  
-      RetweetJS.bitly_user = 'essentialjs'
-      RetweetJS.bitly_key = 'R_f919bcaad3547ab486bb6ee72a917c6f'
-
-      $(document).ready(function() {
-          $("a.lightbox").fancybox({
-              'hideOnContentClick': true,
-              'imageScale': true,
-              'overlayOpacity': .9,
-              'showOverlay': false,
-		        'zoomOpacity': true,
-		        'zoomSpeedIn': 500,
-		        'zoomSpeedOut': 500
-          });
-          
-          $(".tweet").tweet({
-            join_text: "auto",
-            username: "thepian",
-            avatar_size: 0,
-            count: 1,
-            auto_join_text_default: "on twitter,", 
-            auto_join_text_ed: "",
-            auto_join_text_ing: "",
-            auto_join_text_reply: "",
-            auto_join_text_url: "",
-            loading_text: "loading tweets..."
-          });
-      });
-
-
-
-
-  </script>
-
-
-    <script type="text/javascript">
-    (function() {
-      var links = document.getElementsByTagName('a');
-      var query = '?';
-      for(var i = 0; i < links.length; i++) {
-      if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-      }
-      }
-      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/essentialjs/get_num_replies.js' + query + '"></' + 'script>');
-    })();
-    </script>
-
 </body>
 </html>
