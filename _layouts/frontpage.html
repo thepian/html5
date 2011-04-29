@@ -6,8 +6,8 @@ guesswho: itsme
 	{{ content }}
 
   <ul class="posts">
-    {% for post in site.posts %}
-      <li>
+    {% for post in site.posts limit: 1 %}
+    <li>
 		<figure class="postdate">
 			<!-- 
 			<span class="postweekday">{{ post.date | date: "%w" }}</span>
@@ -20,6 +20,14 @@ guesswho: itsme
 			</h4>
 
 		{{ post.content }}
+	</li>
+    {% endfor %}
+
+	<li><h2>More...</h2></li>
+	
+    {% for post in site.posts limit: 15 %}
+    <li>
+		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 	</li>
     {% endfor %}
   </ul>
