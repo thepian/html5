@@ -1,7 +1,7 @@
 The Test site for HTML5
 ==================
 
-This is the Jekyll source for the HTML5 website.
+This is the Jekyll source for the HTML5 Tests website.
 
 Git Pages may be used for html5.thepian.org and html5.thepia.com
 
