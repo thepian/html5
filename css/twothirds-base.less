@@ -1,26 +1,37 @@
 /* Here we define the standard styles that are applied all screens  */
 
+
+/* Base layout SuperVGA and up */
+.divide_width_twothirds(2048px,1024px);
+
+
+/* Core division of the page */
 body {
     background-color: @page_background_color;
 }
+
+nav.page-menu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 5px 8px;
+}
+
 body > header {
     height: @header_height;
     background-color: @page_header_background_color;
-}
-body > header .leftside {
-    width:67%;
-    position: relative;
-    height: @header_height;
-}
 
-body > header h1 {
-    position: absolute;
-    right: 0px;
-    width:530px;
-    max-width:90%;
-    text-align:left;
-    margin-right:20px;
-    overflow: hidden;
+    .leftside {
+        height: @header_height;
+        position: relative;
+    }
+
+    h1 {
+        position: absolute;
+        right: 0px;
+        text-align:left;
+        overflow: hidden;
+    }
 }
 
 nav.main-menu {
@@ -40,69 +51,61 @@ nav.main-menu {
     position: absolute;
     right: 0px;
     bottom: 0px;
-    width:530px;
     /*  remove the explicit width to make the navigation right aligned */
     text-align:right;
 }
 
 article.main {
-    position:absolute;
+    position:relative;
     left:0;
-    width:67%;
-    min-height:500px;
     text-align:right;
+    min-height:@article_aside1_height + @article_aside2_height;
     padding-top:10px; /* vert gap */
     
     /* themed */
     background-color: @article_background_color;
+
+    .sections {
+        display:inline-block; /* rightmost using text-align */
+        position: relative;
+        text-align:left;
+    }
+    
+    .asides {
+        background-color: @asides_background_color;
+        position:absolute;
+        top:0;
+        right:0;
+        height:100%;
+        
+        aside {
+            margin-top:10px;
+            left:0;
+            border:1px solid black;
+        }    
+        aside.sidebar-1 {
+        	background-color: @aside1_background_color; /* add background color */
+        }
+
+        aside.sidebar-2 {
+        	background-color: @aside2_background_color; /* add background color */
+        }
+    }
 }
-article.main .sections {
-    display:inline-block;
-    width:530px;
-    max-width:90%;
-    text-align:left;
-    margin-right:20px; /* horz gap */
-}
 
-
-
-aside.sidebar-1 {
-    position:relative;
-    margin-left: 67%;
-    width:33%;
-    min-height:500px;
-    padding-top:10px;
-	background-color: @aside1_background_color; /* add background color */
-}
-
-aside.sidebar-2 {
-    position:relative;
-    margin-left: 67%;
-    width:33%;
-    min-height:500px;
-    padding-top:10px;
-	background-color: @aside2_background_color; /* add background color */
-}
-
-
-aside.sidebar-1 .sections,
-aside.sidebar-2 .sections {
-    left:0;
-    width:270px;
-    max-width:90%;
-    margin-left:20px;
-}
 
 footer {
+    margin-top: 20px;
     position:absolute;
-    left:50%;
-    margin-top:10px;
-    margin-left:-370px;
-    width:740px;
     text-align: center;
     overflow: hidden;
 }
 footer .copyright img {
+    margin-top:10px;
     vertical-align: -4px;
 }
+	
+
+
+
 

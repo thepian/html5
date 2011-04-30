@@ -2,6 +2,7 @@
 layout: twothirds
 title: Two Thirds sizes
 author: Henrik Vendelbo
+date: 2010-01-01
 category:
  - sizes
 ---
@@ -22,16 +23,38 @@ category:
         </ul>
 	</nav>
 	</div>
+	
+	<nav class="page-menu">
+		<a href="javascript:void(0);">Login</a>
+		<a href="javascript:void(0);">Help</a>
+	</nav>
 </header>
 
 <article class="main">
 	<div class="sections">
 		
-	<h3>Layout principle</h3>
-	<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
-	
+	<section>
+		<h3>Layout principle</h3>
+		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
+
+		<dl>
+			<dt>Main</dt>
+			<dd>The main-menu is part of the header and is positioned in the lower right corner of the left side.
+				The main article is the big content area holding article sections in the left side of the page.</dd>
+
+			<dt>Side Menu</dt>
+			<dd>The Side menu is part of the header and is positioned in the lower right corner of the right side.</dd>
+
+			<dt>Page Menu</dt>
+			<dd>The Page menu is part of the header and is positioned in the upper right corner of the page header.</dd>
+		</dl>
+
+	</section>
+
+	<section>
 		<h3 class="portrait-only">Portrait</h3>
 		<h3 class="landscape-only">Landscape</h3>
+	</section>
 		
 	<section>
 		
@@ -57,14 +80,28 @@ category:
 	<section class="post">
 	        <h1>
 	            <a href='{{page.url}}'>{{page.title}}</a></h1>
-	            <div class="date">
-	                {{page.date | date_to_string}}
+	
+				<ul class="posts">
+				<li>
+					<time class="postdate">
+						<!-- 
+						<span class="postweekday">{{ page.date | date: "%w" }}</span>
+						-->
+						<span class="postmonth">{{ page.date | date: "%b" }}</span>
+						<span class="postday">{{ page.date | date: "%d" }}</span>
+					</time>
+		
 	                {% for category in page.categories %}
 	                <span class="category">{{category}}</span>
 	                {% endfor %}
 
 	                <a class="retweet" href="{{site.url}}{{page.url}}">{{page.title}}</a>
-	            </div>
+					<p>Ipsum whatever whereever</p>
+				</li>
+					
+				<li></li>	
+				</ul>
+				
 	        {{ content }}
 
 	        <div id="disqus_thread"></div>
@@ -74,26 +111,37 @@ category:
 	</section>
 	
 	</div>
-</article>
+	
+	<div class="asides">
+		<aside class="sidebar-1">
+			width division
+			- 20px left padding
+			- 270px article area
+			- 28px padding of free space right edge of tablet or small browser
 
-<aside class="sidebar-1">
-	<div class="sections">
-	width division
-	- 20px left padding
-	- 270px article area
-	- 28px padding of free space right edge of tablet or small browser
-	
-	iPad width portrait
-	- 15px left padding
-	- 208px article area
-	- 28px padding of free space right edge of tablet or small browser
-	
-	iPad width landscape
-	- 20px left padding
-	- 290px article area
-	- 28px padding of free space right edge of tablet or small browser
+			iPad width portrait
+			- 15px left padding
+			- 208px article area
+			- 28px padding of free space right edge of tablet or small browser
+
+			iPad width landscape
+			- 20px left padding
+			- 290px article area
+			- 28px padding of free space right edge of tablet or small browser
+		</aside>
+		<aside>
+			sfsdfd
+			sdfsdf
+			sdf
+			dsfs
+			sdf
+			sdfsdfsdf
+			sdfsdfsd
+			sdfsdfsd
+			
+		</aside>
 	</div>
-</aside>
+</article>
 
 <footer>
 	<nav class="elsewhere"></nav>
