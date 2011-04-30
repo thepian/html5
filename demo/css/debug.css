@@ -1,0 +1,77 @@
+
+.media-profile:after {
+    color:#888;
+     content: "Generic Layout";
+}
+
+@media only screen and (orientation:portrait){
+	/* portrait mode */
+    .media-profile:after {
+        color:#888;
+         content: "Portrait";
+    }
+}
+
+@media only screen and (orientation:landscape){
+    .media-profile:after {
+        color:#888;
+         content: "Landscape";
+    }
+}
+
+@media all and (device-width: 320px) and (max-width: 320px) {
+    .media-profile:after {
+        color:#888;
+        content: "iPhone Portrait";
+    }
+}
+
+@media all and (device-width: 320px) and (min-width:321px) and (max-width: 480px) {
+    .media-profile:after {
+        color:#888;
+        content: "iPhone Landscape";
+    }
+}
+
+/* ipad portrait*/
+@media all and (min-width: 321px) and (max-width: 1024px) and (max-height:1000px) and (orientation:portrait) {
+    .media-profile:after {
+         color:red;
+         content: "iPad Portrait";
+    }
+}
+
+/* ipad landscape */
+@media all and (min-width: 481px) and (max-width: 1024px) and (max-height:699px) and (orientation:landscape) {
+    .media-profile:after {
+         color:red;
+         content: "iPad Landscape";
+    }
+}
+
+/* ipad portrait full screen */
+@media all and (max-device-width: 1024px) and (min-height:1001px) and (orientation:portrait) {
+    .media-profile:after {
+         color:red;
+         content: "iPad Portrait Full Screen";
+    }
+}
+
+/* ipad landscape full screen */
+@media all and (max-device-width: 1024px) and (min-height: 700px) and (max-height: 900px) and (orientation:landscape) {
+
+    .media-profile:after {
+         color:red;
+         content: "iPad Landscape Full Screen";
+    }
+
+
+}
+
+/* modern desktop */
+@media all and (min-device-width: 1025px) {
+    .media-profile:after {
+         color:red;
+         content: "Desktop";
+    }
+}

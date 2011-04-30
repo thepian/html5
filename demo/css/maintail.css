@@ -1,0 +1,222 @@
+/* #main is right/below #left or #top */
+
+body.maintail {
+    position:absolute;
+    left:-277px;
+    top:-257px;
+}
+
+.maintail article#main {
+    display:block;
+    position:relative;
+    overflow:hidden;
+    top:257px; left:277px;
+    width:747px;
+    height:747px;
+    background: rgb(193,215,211);
+}
+.maintail aside#top {
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    top:0; left:277px;
+    width:747px; height:249px;
+    background: black;
+    color:white;
+}
+.maintail aside#left {
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    top:257px; left:0px;
+    width:249px; height:747px;
+    background: black;
+    color:white;
+}
+
+
+.maintail section.box {
+    display:block;
+    float:left;
+    border:1px solid white;
+    margin:2px;
+    width:224px;
+    height:224px;
+}
+
+@media only screen and (orientation:portrait){
+	/* portrait mode */
+
+    body.maintail {
+        position:absolute;
+        left:-277px;
+        top:0px;
+    }
+    .maintail section.box {
+        margin:2px;
+        width:243px;
+        height:224px;
+    }
+
+}
+
+@media only screen and (orientation:landscape){
+    body.maintail {
+        position:absolute;
+        left:0px;
+        top:-257px;
+    }
+    .maintail section.box {
+        margin:2px;
+        width:243px;
+        height:224px;
+    }
+}
+
+/* iPhone portrait */
+@media all and (device-width: 320px) and (max-width: 320px) {
+    body.maintail {
+        position:absolute;
+        left:-177px;
+        top:0px;
+    }
+    .maintail article#main {
+        top:157px; left:177px;
+        width:747px;
+        height:747px;
+    }
+    .maintail aside#top {
+        top:0; left:177px;
+        width:747px; height:149px;
+    }
+    .maintail aside#left {
+        top:157px; left:0px;
+        width:149px; height:747px;
+    }
+
+    .maintail section.box {
+        margin:2px;
+        width:143px;
+        height:143px;
+    }
+
+}
+
+/* iPhone landscape */
+@media all and (device-width: 320px) and (min-width:321px) and (max-width: 480px) {
+    body.maintail {
+        position:absolute;
+        left:0px;
+        top:-157px;
+    }
+    .maintail article#main {
+        top:157px; left:177px;
+        width:747px;
+        height:747px;
+    }
+    .maintail aside#top {
+        top:0; left:177px;
+        width:747px; height:149px;
+    }
+    .maintail aside#left {
+        top:157px; left:0px;
+        width:149px; height:747px;
+    }
+
+    .maintail section.box {
+        margin:2px;
+        width:143px;
+        height:143px;
+    }
+
+}
+
+/* ipad portrait*/
+@media all and (min-width: 321px) and (max-width: 1024px) and (max-height:1000px) and (orientation:portrait) {
+    .maintail aside#top {
+        width:747px; height:230px;
+    }
+}
+
+/* ipad landscape */
+@media all and (min-width: 481px) and (max-width: 1024px) and (max-height:699px) and (orientation:landscape) {
+}
+
+/* ipad portrait full screen */
+@media all and (max-device-width: 1024px) and (min-height:1001px) and (orientation:portrait) {
+
+    /* aldready done in generic portrait
+    body.maintail {
+        position:absolute;
+        left:-277px;
+        top:-257px;
+    }
+    */
+
+    .maintail article#main {
+        top:257px; left:277px;
+        width:747px;
+        height:747px;
+    }
+    .maintail aside#top {
+        top:0; left:277px;
+        width:747px; height:249px;
+    }
+    .maintail aside#left {
+        top:257px; left:0px;
+        width:249px; height:747px;
+    }
+
+    .maintail section.box {
+        margin:2px;
+        width:243px;
+        height:243px;
+    }
+
+}
+
+/* ipad landscape full screen */
+@media all and (min-height: 700px) and (max-height: 900px) and (orientation:landscape) {
+
+    /* already done in generic landscape
+    body.maintail {
+        position:absolute;
+        left:-277px;
+        top:-257px;
+    }
+    */
+
+    .maintail article#main {
+        top:257px; left:277px;
+        width:747px;
+        height:747px;
+    }
+    .maintail aside#top {
+        top:0; left:277px;
+        width:747px; height:249px;
+    }
+    .maintail aside#left {
+        top:257px; left:0px;
+        width:249px; height:747px;
+    }
+
+    .maintail section.box {
+        margin:2px;
+        width:243px;
+        height:243px;
+    }
+
+}
+
+@media all and (min-device-width: 1025px) {
+
+    body.maintail {
+        top: -207px;
+    }
+    /* modern desktop */
+    /*.maintail section.box {*/
+        /*margin:2px;*/
+        /*width:243px;*/
+        /*height:243px;*/
+    /*}*/
+}
