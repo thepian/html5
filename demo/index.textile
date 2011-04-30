@@ -16,6 +16,12 @@ layout: master
 
 "Rotating Space Background":/demo/animations/space.html
 
+h1. Basic Technologies
+
+"Width Test":/demo/techs/widthtest.html
+
+"Worker Test":/demo/techs/workertest.html
+
 h1.	Slablet - Tablet UI
 
 Code repository at <a href="http://github.com/fellowshiptech/slablet">GitHub</a>

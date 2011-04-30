@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Web Worker test</title>
+    <script>var worker = new Worker("worker.js");</script>
+</head>
+<body>
+
+</body>
+<script>
+//    worker.onmessage = function(event) {
+//        console.log('tick');
+//    };
+    worker.postMessage({console:console});
+</script>
+</html>
