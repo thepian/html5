@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>iPad CSS Layout with Landscape/Portrait Orientations (Demo)</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="iPad CSS Layout with Landscape/Portrait Orientations (Demo)" />
+	<meta name="keywords" content="iPad CSS Layout with Landscape/Portrait Orientations (Demo)" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=768px, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="ipad.css" media="screen" />
+</head>
+<body>
+
+<div id="wrap">
+	<div id="header">
+		<p>&laquo; Back to the article <a href="http://matthewjamestaylor.com/blog/ipad-layout-with-landscape-portrait-modes">iPad CSS Layout with landscape/portrait orientation modes</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
+		<h1>iPad CSS Layout with Landscape/Portrait Modes</h1>
+		<p>This layout has been designed to take advantage of the Apple iPad's two orientation modes (landscape &amp; portrait). Open this demo page in Safari on your iPad with this short link: <strong>http://j.mp/ipadlayout</strong></p>
+	</div>
+	<div id="content">
+		<div id="main">
+			<!-- Main content start -->
+			<img src="ipad-layout-dimensions.gif" width="708" height="470" alt="iPad portrait/landscape layout dimensions" />
+			<h2>Change this layout by rotating your iPad</h2>
+			<p>When in landscape mode on the Apple iPad this layout has two columns. The main content is in the left column and three smaller sections join to form a right column of content. When the iPad is rotated to a portrait orientation the main content takes the full width of the device and the three smaller sections move down into three columns below. In both the landscape and portrait layouts there is a header at the top and a footer at the bottom.</p>
+			<p>Both the main content area and the three smaller areas keep exactly the same width in portrait and landscape modes. This means you can be sure each area of content will always look the same even if it has moved to a different position. This is great news if you want to use images within the page, they can take up the full width of their content area and they will always be seen properly.</p>
+			<h2>The div structure</h2>
+			<img src="ipad-layout-nested-divs.gif" width="200" height="300" alt="iPad layout structural divs" class="r" />
+			<p>The structural divs in this layout are actually quite simple considering that they are exactly the same for both the two column landscape layout and the single column portrait layout. The whole layout is contained in a wrapping div with three main parts inside; the header, the content, and the footer. The content div contains the main div (for your main content) plus a side div that contains the three side sections.</p>
+<pre><code>&lt;div id="wrap"&gt;
+   &lt;div id="header"&gt;&lt;/div&gt;
+   &lt;div id="content"&gt;
+      &lt;div id="main"&gt;&lt;/div&gt;
+      &lt;div id="side"&gt;
+         &lt;div id="sidea"&gt;&lt;/div&gt;
+         &lt;div id="sideb"&gt;&lt;/div&gt;
+         &lt;div id="sidec"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div id="footer"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><br />
+			<h2>Full Cross-Browser Compatible</h2>
+			<p>This layout not only works on the iPad but it will also work on all the most common web browsers. If this page is viewed in a browser that is wider than 1024px then the layout will appear centered on the page.</p>
+			<p>Standards compliant browsers that are supported are: Firefox, Safari, Opera, Google Chrome, plus also the non-standard Internet Explorer version 6, 7 and 8. The orientation switching will only work on the iPad, Firefox and Google Chrome.</p>
+			<h2>Problems with this layout</h2>
+			<p>If you're using an iPad this layout will work perfectly but if you are using a different device that has a screen smaller than 1024x 768 pixels then this page will scroll horizontally. There are ways to fix this, for example using JavaScript to dynamically change the layout to accommodate the current screen size but for this demo I wanted it to work without any JavaScript. A more universal layout that works on all screen resolutions plus the iPad and iPhone will be the subject of a future post. Subscribe to my <a href="http://feeds.feedburner.com/matthewjamestaylor">RSS feed</a> and you will be alerted when I post new articles and demos.</p>
+			<!-- Main content end -->
+		</div>
+		<div id="side">
+			<div id="sidea">
+				<!-- Side A content start -->
+				<h2>100% Pure CSS</h2>
+				<p>No CSS hacks have been used in this layout. A mixture of floats and relative positioning is all that's required for the structural divs. This method works for all common browsers.</p>
+				<h2>No JavaScript</h2>
+				<p>JavaScript is not necessary to make this layout work on the iPad or any other browser. The switch between portrait and landscape layouts is done with pure CSS.</p>
+				<h2>No Images</h2>
+				<p>This layout does not require images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design.</p>
+				<!-- Side A content end -->
+			</div>
+			<div id="sideb">
+				<!-- Side B content start -->
+				<h2>SEO friendly</h2>
+				<p>The higher up content is in your page code, the more important it is considered by search engine algorithms (see my article on <a href="http://matthewjamestaylor.com/blog/link-source-ordering-seo">link source ordering</a> for more details on how this affects links). To make your website as optimised as possible, your main page content must come before any side columns. This layout does exactly that.</p>
+				<h2>Full length column background colours</h2>
+				<p>In landscape mode the background colours of the two columns will always stretch to the length of the longest column. You can read my article on <a href="http://matthewjamestaylor.com/blog/equal-height-columns-cross-browser-css-no-hacks">equal height columns</a> if you want to see how this is done.</p>
+				<!-- Side B content end -->
+			</div>
+			<div id="sidec">
+				<!-- Side C content start -->
+				<h2>Resizable text compatible</h2>
+				<p>This layout is fully compatible with resizable text. Resizable text is important for web accessibility - people who are vision impaired can make the text larger so it's easier for them to read.</p>
+				<h2>Valid XHTML strict markup</h2>
+				<p>The HTML in this layout validates as XHTML 1.0 strict.</p>
+				<h2>Centered menus compatible</h2>
+				<p>This layout is fully compatible with my <a href="http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support">cross-browser compatible centered menus</a>.</p>
+				<!-- Side C content end -->
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>This layout uses the <a href="http://matthewjamestaylor.com/demos/ipad-css-layout/index.html">iPad CSS layout with landscape/portrait orientation modes</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p>
+	</div>
+</div>
+
+</body>
+</html>
+
