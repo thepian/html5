@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>iPad CSS Layout with Landscape/Portrait Orientations (Demo)</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="iPad CSS Layout with Landscape/Portrait Orientations (Demo)" />
+	<meta name="keywords" content="iPad CSS Layout with Landscape/Portrait Orientations (Demo)" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, user-scalable=no minimum-scale=1.0, maximum-scale=1.0" />
+
+    <!-- If page is saved to desktop, it can be opened with an overlapping status bar and without chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    -->
+    <link rel="apple-touch-icon" href="images/yellow72.png"/>
+
+
+    <link href="../css/reset.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="../css/ipad.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="space.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mainlead" onload="init();">
+    <script>
+        function init() {
+            var sizes = document.getElementsByClassName("sizes")[0];
+            sizes.innerHTML = window.innerWidth + " x " + window.innerHeight;
+        }
+        function touchMove(event) {
+            event.preventDefault();
+        }
+    </script>
+	<article id="main" ontouchmove="touchMove(event);">
+		<header>
+			<nav>
+                <a>HOME</a><a>PROGRAM</a><a>WATCH IT LIVE</a>
+				<a href="#">&nbsp; </a>
+				<a href="#">&nbsp; </a>
+				<a href="#">&nbsp; </a>
+				</nav>
+		</header>
+		<footer></footer>
+
+		<section>
+            <h1>Space</h1>
+            <h5>by:<a href="http://media.24ways.org/2009/15/space.html" title="24 ways">24 ways</a></h5>
+
+        <p>
+            <span id="fog">A long</span>
+            <span id="fog-2">long time</span>
+            <span id="glow">ago,</span>
+            <span id="light">in a</span>
+            <span id="stars">galaxy</span>
+            <span id="stars-2">far</span>
+            <span id="small-stars">far</span>
+            <span id="small-stars-2">away&hellip;</span>
+        </p>
+		</section>
+	</article>
+
+    <aside id="overview">
+        <section>
+            <h1>BUSINESS CONFERENCE</h1>
+            <h2>REGISTER NOW!</h2>
+            <button>WATCH IT LIVE ONLINE ON FORA.TV</button>
+
+            <h2>SPEAKERS</h2>
+
+            <h3>Chris Anderson</h3>
+            <p>Editor in Chief, WIRED</p>
+            <h3>William J. Bratton</h3>
+            <p>Chairman, Altegrity Risk Internation;<br>
+                Former Commisioner, NYPD, &and; Chief, LAPD</p>
+        </section>
+        <section>
+            <h1>Part 2</h1>
+            <form>
+                <input type="checkbox" name="toggle">
+                <input type="search" placeholder="Search">
+                <button style="-webkit-appearance:square-button"></button>
+                <button>Go!</button>
+            </form>
+        </section>
+        <section>
+            <h1>BUSINESS CONFERENCE</h1>
+            <h2>REGISTER NOW!</h2>
+            <button>WATCH IT LIVE ONLINE ON FORA.TV</button>
+
+            <h2>SPEAKERS</h2>
+
+            <h3>Chris Anderson</h3>
+            <p>Editor in Chief, WIRED</p>
+            <h3>William J. Bratton</h3>
+            <p>Chairman, Altegrity Risk Internation;<br>
+                Former Commisioner, NYPD, &and; Chief, LAPD</p>
+        </section>
+    </aside>
+</body>
+
+</html>

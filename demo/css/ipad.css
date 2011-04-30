@@ -1,0 +1,29 @@
+h2 {
+	padding:1em 0 0 0;
+}
+p {
+	line-height:1.4em;
+}
+p + p {
+	text-indent:2em;
+}
+pre {
+	display:block;
+	margin:1em 0 0 0;
+	width:488px;
+}
+pre code {
+	background:#eee;
+	display:block;
+	padding:10px;
+}
+.r {
+	float:right;
+	padding:0 0 10px 20px;
+}
+
+div#corner {
+    display:absolute; left:1023px; top:1023px;
+    width:1px; height:1px;
+}
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Boxes layout</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no minimum-scale=1.0, maximum-scale=1.0" />
+
+    <!-- If page is saved to desktop, it can be opened with an overlapping status bar and without chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    -->
+    <link rel="apple-touch-icon" href="images/yellow72.png"/>
+
+
+    <link href="css/reset.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="css/structural.css" rel="stylesheet" media="screen" type="text/css" >
+    <link href="css/ipad.css" rel="stylesheet" media="screen" type="text/css" >
+</head>
+
+<body class="maintail">
+    <script src="/js/jquery.1.4.2.min.js" type="text/javascript"></script>
+    <script>
+        var $body;
+        
+        function init() {
+            var sizes = document.getElementsByClassName("sizes")[0];
+            sizes.innerHTML = window.innerWidth + " x " + window.innerHeight;
+        }
+        function touchMove(event) {
+            event.preventDefault();
+        }
+
+        function handleTouch(e) {
+
+            var $el = $(e.target);
+
+            // Only handle touchSelectors
+            if (!$(e.target).is(touchSelectors.join(', ')))
+            {
+                var $link = $(e.target).closest('a');
+
+                if ($link.length){
+                    $el = $link;
+                } else {
+                    return;
+                }
+            }
+            if (event)
+            {
+                var hoverTimeout = null,
+                    startX = event.changedTouches[0].clientX,
+                    startY = event.changedTouches[0].clientY,
+                    startTime = (new Date).getTime(),
+                    deltaX = 0,
+                    deltaY = 0,
+                    deltaT = 0;
+
+                // Let's bind these after the fact, so we can keep some internal values
+                $el.bind('touchmove', touchmove).bind('touchend', touchend);
+
+                hoverTimeout = setTimeout(function(){
+                    $el.makeActive();
+                }, 100);
+
+            }
+
+            // Private touch functions (TODO: insert dirty joke)
+            function touchmove(e) {
+
+                updateChanges();
+                var absX = Math.abs(deltaX);
+                var absY = Math.abs(deltaY);
+
+                // Check for swipe
+                if (absX > absY && (absX > 35) && deltaT < 1000) {
+                    $el.trigger('swipe', {direction: (deltaX < 0) ? 'left' : 'right'}).unbind('touchmove touchend');
+                } else if (absY > 1) {
+                    $el.removeClass('active');
+                }
+
+                clearTimeout(hoverTimeout);
+            }
+
+            function touchend(){
+                updateChanges();
+
+                if (deltaY === 0 && deltaX === 0) {
+                    $el.makeActive();
+                    // New approach:
+                    // Fake the double click?
+                    // TODO: Try with all click events (no tap)
+                    // if (deltaT < 40)
+                    // {
+                    //     setTimeout(function(){
+                    //        $el.trigger('touchstart')
+                    //          .trigger('touchend');
+                    //     }, 0);
+                    // }
+                    $el.trigger('tap');
+                } else {
+                    $el.removeClass('active');
+                }
+                $el.unbind('touchmove touchend');
+                clearTimeout(hoverTimeout);
+            }
+
+            function updateChanges(){
+                var first = event.changedTouches[0] || null;
+                deltaX = first.pageX - startX;
+                deltaY = first.pageY - startY;
+                deltaT = (new Date).getTime() - startTime;
+            }
+
+        } // End touch handler
+
+
+
+        $(document).ready(function(){
+            $body = $('body');
+
+        });
+    </script>
+
+    <aside id="left">
+        <section class="box">
+            <h1>PAGE PROPERTIES<span class="media-profile"></span></h1>
+            <p>
+                <span class="media-profile"></span>
+            </p>
+        </section>
+        <section class="box">
+            B
+        </section>
+        <section class="box">
+            C
+        </section>
+        <section class="box">
+            D
+        </section>
+    </aside>
+
+    <aside id="top">
+        <section class="box">
+            <h1>PAGE PROPERTIES<span class="media-profile"></span></h1>
+            <p>
+                <span class="media-profile"></span>
+            </p>
+        </section>
+        <section class="box">
+            B
+        </section>
+        <section class="box">
+            C
+        </section>
+        <section class="box">
+            D
+        </section>
+    </aside>
+
+	<article id="main" ontouchmove="touchMove(event);">
+		<header>
+		</header>
+		<footer></footer>
+
+		<section class="box">
+            A
+		</section>
+        <section class="box">
+            B
+        </section>
+        <section class="box">
+            C
+        </section>
+        <section class="box">
+
+            <h1>PAGE PROPERTIES</h1>
+            <p>
+                <span class="media-profile"></span>
+            </p>
+        </section>
+        <section class="box">
+            E
+        </section>
+        <section class="box">
+            F
+        </section>
+        <section class="box">
+            G
+        </section>
+        <section class="box">
+            H
+        </section>
+        <section class="box">
+            I
+        </section>
+        <section class="box">
+            J
+        </section>
+        <section class="box">
+            K
+        </section>
+	</article>
+
+    <div id="corner"></div>
+</body>
+
+</html>
