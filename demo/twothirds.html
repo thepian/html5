@@ -32,7 +32,8 @@ category:
 
 <article class="main">
 	<div class="sections">
-		Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+		<code class="info">Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+		
 	<div class="stretcher">	
 	<div class="stretched">
 	<section>
@@ -183,7 +184,9 @@ category:
 		for(var i=0,v; v=vars[i]; ++i) {
 			var elemProp = v.getAttribute("data-parent-prop");
 			if (elemProp) {
-				v.innerHTML = v.offsetParent[elemProp];
+				var p = v.offsetParent;
+				if (p.tagName == "CODE") p = p.parentNode;
+				v.innerHTML = p[elemProp];
 			}
 		}
 	};

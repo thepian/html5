@@ -55,10 +55,10 @@ nav.main-menu {
     text-align:right;
 }
 
+
 article.main {
     position:relative;
     left:0;
-    text-align:right;
     min-height:@article_aside1_height + @article_aside2_height;
     padding-top:10px; /* vert gap */
     
@@ -66,9 +66,14 @@ article.main {
     background-color: @article_background_color;
 
     .sections {
-        display:inline-block; /* rightmost using text-align */
         position: relative;
-        text-align:left;
+        text-align:right;
+
+        .stretcher {
+            display:inline-block; /* rightmost using text-align */
+            position: relative;
+            text-align:left;
+        }
     }
     
     .asides {
@@ -104,6 +109,9 @@ footer .copyright img {
     vertical-align: -4px;
 }
 	
+
+/* development styling */
+code.info { display: block; position: absolute;}
 
 
 

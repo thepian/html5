@@ -11,13 +11,13 @@
     @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
 
     /**
-     * Sections take up two thirds of min width minus edge gap growing at half speed
+     * Sections take up two thirds of min width minus edge gap growing at 2/3 speed
      * Min width is problematic as content will be obscured by asides, so trying out a smaller base.
      */
-    @min_left_width: @min_content_width * .67 - @horz_edge_gap;
+    @min_left_width: @min_width * .67 - @horz_edge_gap;
     @base_left_width: @min_left_width / 3;
     @max_left_width: @max_width * .67 - @horz_edge_gap - @base_left_width;
-    @dynamic_left_width: 100% * (@min_width * .67 - @horz_edge_gap) / (@min_width * .67) / 2;
+    @dynamic_left_width: 100% * (@min_width * .67 - @horz_edge_gap) / (@min_width * .67) / 1.5;
      
     /**
      * Asides take up a third of min width minus edge gap growing at half speed
@@ -48,8 +48,6 @@
 
         
         .sections {
-            width:67%;
-
             .stretcher {
                 position:relative;
                 padding-right: @base_left_width;
