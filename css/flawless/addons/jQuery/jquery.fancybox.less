@@ -1,3 +1,5 @@
+.fancybox() {
+    
 html, body {
 	height: 100%;
 }
@@ -15,7 +17,7 @@ div#fancy_overlay {
 
 * html div#fancy_overlay {
 	position: absolute;
-	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+	/* height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px'); */
 }
 
 div#fancy_wrap {
@@ -135,7 +137,7 @@ a#fancy_left, a#fancy_right {
 	cursor: pointer;
 	z-index: 111; 
 	display: none;
-	background-image: url(data:image/gif;base64,AAAA);
+	background-image: url('data:image/gif;base64,AAAA');
 	outline: none;
 }
 
@@ -312,4 +314,5 @@ td#fancy_title_right {
 	height: 32px;
 	width: 15px;
 	background: transparent url(/images/fancybox/fancy_title_right.png) repeat-x;
+}
 }
