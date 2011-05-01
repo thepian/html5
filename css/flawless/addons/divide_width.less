@@ -29,11 +29,19 @@
     
     body > header .leftside {
         width:67%;
+        .stretcher {
+            padding-right: @base_left_width;
+            width: @dynamic_left_width; 
+            max-width: @max_left_width;
+            
+            .stretched {
+                margin-right: e(%("-%spx",@base_left_width));
+            }
+        }
     }
     
     body > header h1 {
-        width:@min_left_width;
-        max-width:90%;
+        padding-left: @left_overhang;
         text-align:left;
         margin-right:@horz_side_gap;
     }

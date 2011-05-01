@@ -10,6 +10,8 @@ category:
 
 <header>
 	<div class="leftside">
+	<div class="stretcher"><div class="stretched">
+		
 	<h1>
 	Two Thirds (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 	</h1>
@@ -22,6 +24,8 @@ category:
             <li><a href="#">Link 5</a></li>
         </ul>
 	</nav>
+	
+	</div></div> <!-- stretcher and stretched -->
 	</div>
 	
 	<nav class="page-menu">
@@ -34,8 +38,7 @@ category:
 	<div class="sections">
 		<code class="info">Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 		
-	<div class="stretcher">	
-	<div class="stretched">
+	<div class="stretcher"><div class="stretched">
 	<section>
 		<h3>Layout principle</h3>
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
@@ -107,15 +110,19 @@ category:
 				<li></li>	
 				</ul>
 				
-	        {{ content }}
-
 	        <div id="disqus_thread"></div>
 	<!-- 
 	<script type="text/javascript" src="http://disqus.com/forums/zduck/embed.js"></script><noscript><a href="http://zduck.disqus.com/?url=ref">View comments.</a></noscript>
 	-->
 	</section>
-	</div>
-	</div>
+	
+	<section>
+		<h2>Mobile Support</h2>
+		<p>Specific alternatives for iPad.</p>
+		<p>Future Add Icon to desktop support, and optional pop-up</p>
+	</section>
+	
+	</div></div> <!-- stretcher and stretched -->
 	</div>
 	
 	<div class="asides">
@@ -179,6 +186,7 @@ category:
 </div>
 
 <script type="text/javascript">
+	window.onorientationchange =
 	window.onresize = function() {
 		var vars = document.body.getElementsByTagName("var");
 		for(var i=0,v; v=vars[i]; ++i) {
@@ -190,5 +198,5 @@ category:
 			}
 		}
 	};
-setTimeout(window.onresize,100);
+setTimeout(window.onresize,200);
 </script>

@@ -2,8 +2,16 @@
 
 
 /* Base layout SuperVGA and up */
-.divide_width_twothirds(1024px * 1.5,1024px);
+.divide_width_twothirds(1600px,1024px);
 
+/* Slightly smaller than SuperVGA */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+	
+	/* DEV ONLY */
+	body { border-top: 3px solid red; }
+	
+    .divide_width_twothirds(1200px,900px);
+}
 
 /* Core division of the page */
 body {
@@ -24,11 +32,21 @@ body > header {
     .leftside {
         height: @header_height;
         position: relative;
+        text-align:right;
+
+        .stretcher {
+            display:inline-block; /* rightmost using text-align */
+            text-align:left;
+            
+            .stretched {
+                position: relative;
+                height: @header_height;
+            }
+        }
     }
 
     h1 {
         position: absolute;
-        right: 0px;
         text-align:left;
         overflow: hidden;
     }
