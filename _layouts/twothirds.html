@@ -1,59 +1,19 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-  <meta charset="utf-8">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]-->
-
-  <!--  Mobile Viewport Fix
-        http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag 
-  device-width : Occupy full width of the screen in its current orientation
-  initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
-  maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
-  -->
-  <meta name="viewport" content="width=1024, user-scalable=yes" />
-
-  <title>{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}</title>
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="Henrik Vendelbo">
-
-  <!--[if IE]>
-    <script src="/js/html5.js" />
-  <![endif]-->
-  <!-- All JavaScript at the bottom, except for Modernizr. -->
-  <script src="/js/modernizr-1.7.min.js"></script>
-
+  {% include ipad_friendly_html5_head.html %}
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet/less" type="text/css" href="/css/twothirds.less" media="screen" title="flawless_css"/>
   <link rel="stylesheet" type="text/css" href="/css/style/twothirds.css" media="screen" />
 
 	<link rel="stylesheet" type="text/css" href="/css/jScrollPane.css" />
 
-    <script type="text/javascript">
-		var FLAWLESS_DIRECTORY = "/css/flawless/"; // path to the flawless folder
-    	var FLAWLESS_MENU = true; // set this to false to deactivate flawless ui (best for profiling with F9)
-    	var FLAWLESS_WATCH = true; // enable watch mode -> changes to files update in browser
-		var FLAWLESS_WATCH_INTERVAL = 3000; // fetch files every 3 seconds
-		var FLAWLESS_FRAMEWORK_CACHING = true; // cache framework files, performance! -> reload for changes
-		var FLAWLESS_CUSTOM_CACHING = false; // cache custom files @imported in style_dev -> bad for watch mode
-    </script>
-	<script type="text/javascript" src="/css/flawless/core/development/init.js"></script>
-    
-  <script type="text/javascript">
-/*
-CSS Browser Selector v0.3.5 (Feb 05, 2010)
-Rafael Lima (http://rafael.adm.br)
-http://rafael.adm.br/css_browser_selector
-License: http://creativecommons.org/licenses/by/2.5/
-Contributors: http://rafael.adm.br/css_browser_selector#contributors
-*/
-function css_browser_selector(u){var ua = u.toLowerCase(),is=function(t){return ua.indexOf(t)>-1;},g='gecko',w='webkit',s='safari',o='opera',h=document.documentElement,b=[(!(/opera|webtv/i.test(ua))&&/msie\s(\d)/.test(ua))?('ie ie'+RegExp.$1):is('firefox/2')?g+' ff2':is('firefox/3.5')?g+' ff3 ff3_5':is('firefox/3')?g+' ff3':is('gecko/')?g:is('opera')?o+(/version\/(\d+)/.test(ua)?' '+o+RegExp.$1:(/opera(\s|\/)(\d+)/.test(ua)?' '+o+RegExp.$2:'')):is('konqueror')?'konqueror':is('chrome')?w+' chrome':is('iron')?w+' iron':is('applewebkit/')?w+' '+s+(/version\/(\d+)/.test(ua)?' '+s+RegExp.$1:''):is('mozilla/')?g:'',is('j2me')?'mobile':is('iphone')?'iphone':is('ipod')?'ipod':is('mac')?'mac':is('darwin')?'mac':is('webtv')?'webtv':is('win')?'win':is('freebsd')?'freebsd':(is('x11')||is('linux'))?'linux':'','js']; c = b.join(' '); h.className += ' '+c; return c;}; css_browser_selector(navigator.userAgent);
-  </script>
+  {% include flawless_development.html %}
+  {% include css_browser_selector.html %}    
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml" />
 
 </head>
