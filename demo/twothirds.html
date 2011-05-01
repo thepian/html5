@@ -11,7 +11,7 @@ category:
 <header>
 	<div class="leftside">
 	<h1>
-	Two Thirds
+	Two Thirds (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 	</h1>
 	<nav class="main-menu">
     	<ul>
@@ -32,11 +32,15 @@ category:
 
 <article class="main">
 	<div class="sections">
-		
+		Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	<div class="stretcher">	
+	<div class="stretched">
 	<section>
 		<h3>Layout principle</h3>
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
 
+		Section (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+		
 		<dl>
 			<dt>Main</dt>
 			<dd>The main-menu is part of the header and is positioned in the lower right corner of the left side.
@@ -109,10 +113,17 @@ category:
 	<script type="text/javascript" src="http://disqus.com/forums/zduck/embed.js"></script><noscript><a href="http://zduck.disqus.com/?url=ref">View comments.</a></noscript>
 	-->
 	</section>
-	
+	</div>
+	</div>
 	</div>
 	
 	<div class="asides">
+		Asides (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+		
+	<div class="stretcher">
+		Stretcher (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	<div class="stretched">	
+		Stretched (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 		<aside class="sidebar-1">
 			width division
 			- 20px left padding
@@ -129,7 +140,7 @@ category:
 			- 290px article area
 			- 28px padding of free space right edge of tablet or small browser
 		</aside>
-		<aside>
+		<aside class="sidebar-2">
 			sfsdfd
 			sdfsdf
 			sdf
@@ -141,10 +152,14 @@ category:
 			
 		</aside>
 	</div>
+	</div>
+	</div>
 </article>
 
 <footer>
-	<nav class="elsewhere"></nav>
+	<nav class="elsewhere">
+		Elsewhere (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	</nav>
 	
 	<div class="copyright">
 		Essential JavaScript is powered by <a target="_new" href="http://pages.github.com/">Github Pages</a>. <br>
@@ -161,3 +176,16 @@ category:
 	
 <div class="bottom-edge">
 </div>
+
+<script type="text/javascript">
+	window.onresize = function() {
+		var vars = document.body.getElementsByTagName("var");
+		for(var i=0,v; v=vars[i]; ++i) {
+			var elemProp = v.getAttribute("data-parent-prop");
+			if (elemProp) {
+				v.innerHTML = v.offsetParent[elemProp];
+			}
+		}
+	};
+setTimeout(window.onresize,100);
+</script>

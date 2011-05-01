@@ -1,11 +1,32 @@
+/**
+ * Split layout into a left two thirds and right third.
+ */
 .divide_width_twothirds(@max_width,@min_width) {
-    @horz_side_gap: 20px;
-    @horz_edge_gap: 28px;
+    @horz_side_gap: 20px; /* Gap from content to the middle divider */
+    @horz_edge_gap: 28px; /* Gap from content to edge of window */
     @left_overhang: 64px;
-    @min_content_width: @min_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
-    @min_left_width: @min_content_width * .67;
-    @min_right_width: @min_content_width * .33;
 
+    @min_content_width: @min_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
+
+    @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
+
+    /**
+     * Sections take up two thirds of min width minus edge gap growing at half speed
+     * Min width is problematic as content will be obscured by asides, so trying out a smaller base.
+     */
+    @min_left_width: @min_content_width * .67 - @horz_edge_gap;
+    @base_left_width: @min_left_width / 3;
+    @max_left_width: @max_width * .67 - @horz_edge_gap - @base_left_width;
+    @dynamic_left_width: 100% * (@min_width * .67 - @horz_edge_gap) / (@min_width * .67) / 2;
+     
+    /**
+     * Asides take up a third of min width minus edge gap growing at half speed
+     */
+    @min_right_width: @min_width * .33 - @horz_edge_gap;
+    @base_right_width: @min_right_width / 2;
+    @max_right_width: @max_width * .33 - @horz_edge_gap - @base_right_width;
+    @dynamic_right_width: 100% * (@min_width * .33 - @horz_edge_gap) / (@min_width * .33) / 2;
+    
     body > header .leftside {
         width:67%;
     }
@@ -25,11 +46,23 @@
         width:67%;
         padding-right:33%;
 
+        
         .sections {
+            width:67%;
+
+            .stretcher {
+                position:relative;
+                padding-right: @base_left_width;
+                width: @dynamic_left_width; 
+                max-width: @max_left_width;
+                
+                .stretched {
+                    margin-right: e(%("-%spx",@base_left_width));
+                }
+            }
+
             section {
-                width:@min_left_width;
                 padding-left: @left_overhang;
-                max-width:90%;
                 margin-right:@horz_side_gap; /* horz gap */
             }
         }
@@ -37,10 +70,20 @@
         .asides {
             
             width:33%;
+            
+            .stretcher {
+                position:relative;
+                padding-left: @base_right_width;
+                width: @dynamic_right_width; 
+                max-width: @max_right_width;
+                
+                .stretched {
+                    position:absolute;
+                    left:0; right: 0;
+                }
+            }
 
             aside {
-                width:@min_right_width;
-                max-width:90%;
                 margin-left:@horz_side_gap;
             }
         }
