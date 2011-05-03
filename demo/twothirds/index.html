@@ -9,9 +9,9 @@ category:
 ---
 
 
-<header>
-	<div class="leftside">
-	<div class="stretcher"><div class="stretched">
+<header class="split-thirds">
+	<div class="left-double"><div class="restricted-width">
+	<section>
 		
 	<h1>
 	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
@@ -26,17 +26,17 @@ category:
         </ul>
 	</nav>
 	
-	</div></div> <!-- stretcher and stretched -->
-	</div>
+	</section>
+	</div></div>
 	
 	{% include page_menu.html %}
 </header>
 
-<article class="main">
-	<div class="sections">
+<article class="main split-thirds">
+	<div class="left-double sections">
 		<code class="info">Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+		<div class="restricted-width">
 		
-	<div class="stretcher"><div class="stretched">
 	<section>
 		<h3>Layout principle</h3>
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
@@ -99,38 +99,32 @@ category:
 		<p>Future Add Icon to desktop support, and optional pop-up</p>
 	</section>
 	
-	</div></div> <!-- stretcher and stretched -->
-	</div>
+	</div></div> <!-- right-third and restricted-width -->
 	
-	<div class="asides">
-		Asides (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	<div class="right-third asides">
+		<code class="info">Asides (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+		<div class="restricted-width">
 		
-	<div class="stretcher">
-		Stretcher (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
-	<div class="stretched">	
-		Stretched (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 		<aside class="sidebar-1">
+			Aside (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+
 			{% include lorem_ipsum.html %}
 		</aside>
 		<aside class="sidebar-2">
 			{% include lorem_ipsum.html %}
 		</aside>
-	</div>
-	</div>
-	</div>
+	</div></div>
 </article>
+
+
 
 <article class="thirds">
 	<div class="left">
-		<div class="stretcher">
-			<section>{% include lorem_ipsum.html %}</section>
-		</div>
+		<section>{% include lorem_ipsum.html %}</section>
 	</div>
 
 	<div class="middle">
-		<div class="stretcher">
-			<section>{% include lorem_ipsum.html %}</section>
-		</div>
+		<section>{% include lorem_ipsum.html %}</section>
 	</div>
 
 	<div class="right">

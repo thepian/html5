@@ -7,9 +7,6 @@
 /* Slightly smaller than SuperVGA */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
 	
-	/* DEV ONLY */
-	body { border-top: 3px solid red; }
-	
     .divide_width_twothirds(1200px,900px);
 }
 
@@ -29,19 +26,10 @@ body > header {
     height: @header_height;
     background-color: @page_header_background_color;
 
-    .leftside {
-        height: @header_height;
-        position: relative;
-        text-align:right;
+    .left-double {
 
-        .stretcher {
-            display:inline-block; /* rightmost using text-align */
-            text-align:left;
-            
-            .stretched {
-                position: relative;
-                height: @header_height;
-            }
+        section {
+            height: @header_height;
         }
     }
 
@@ -73,37 +61,38 @@ nav.main-menu {
     text-align:right;
 }
 
+/**
+ * Core positioning for splitting into thirds
+ */
+.split-thirds {
+    
+    .left-double {
+    }
+    
+    .right-third {
+        position:absolute;
+        top:0;
+        height:100%;
+        
+        .restricted-width {
+            position:absolute;
+            top:0;
+        }
+    }
+}
 
 article.main {
-    position:relative;
-    left:0;
     min-height:@article_aside1_height + @article_aside2_height;
     padding-top:10px; /* vert gap */
     
     /* themed */
     background-color: @article_background_color;
 
-    .sections {
-        position: relative;
-        text-align:right;
-
-        .stretcher {
-            display:inline-block; /* rightmost using text-align */
-            position: relative;
-            text-align:left;
-        }
-    }
-    
     .asides {
         background-color: @asides_background_color;
-        position:absolute;
-        top:0;
-        right:0;
-        height:100%;
         
         aside {
             margin-top:10px;
-            border:1px solid black;
         }    
         aside.sidebar-1 {
         	background-color: @aside1_background_color; /* add background color */
@@ -112,6 +101,15 @@ article.main {
         aside.sidebar-2 {
         	background-color: @aside2_background_color; /* add background color */
         }
+    }
+}
+
+.thirds {
+    position: relative;
+    min-height: 100px;
+    
+    section {
+        min-height: 100px;
     }
 }
 
@@ -127,9 +125,6 @@ footer .copyright img {
     vertical-align: -4px;
 }
 	
-
-/* development styling */
-code.info { display: block; position: absolute;}
 
 
 

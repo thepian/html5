@@ -11,13 +11,33 @@
     @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
 
     /**
+     * Generic thirds take up a third of min width minus edge gap growing at 2/3 speed
+     *  - The edge gap must be added to double width areas
+     */
+    @min_third_width: @min_width * .333 - @horz_edge_gap;
+    @base_third_width: @min_third_width / 3;
+    @base_double_width: @min_third_width / 3 * 2 + @horz_edge_gap; /* added the third edge gap */
+    @max_third_width: @max_width * .333 - @horz_edge_gap - @base_third_width; /* limit the dynamic part by this */
+    @max_double_width: @max_third_width * 2;
+    @dynamic_third_fraction: @min_third_width / (@min_width * .333) / 1.5; /* The dynamic fraction of third or double columns ~0.627 */
+    @dynamic_third_width: 100% * @dynamic_third_fraction;
+    @dynamic_double_width: 100% * @dynamic_third_fraction;
+    @dynamic_third_right_offset: 100% * (1 - @dynamic_third_fraction);
+    @dynamic_third_left_offset: 100% * (1 - @dynamic_third_fraction);
+    
+    /**
      * Sections take up two thirds of min width minus edge gap growing at 2/3 speed
      * Min width is problematic as content will be obscured by asides, so trying out a smaller base.
      */
     @min_left_width: @min_width * .67 - @horz_edge_gap;
     @base_left_width: @min_left_width / 3;
     @max_left_width: @max_width * .67 - @horz_edge_gap - @base_left_width;
-    @dynamic_left_width: 100% * (@min_width * .67 - @horz_edge_gap) / (@min_width * .67) / 1.5;
+    @dynamic_left_fraction: @min_left_width / (@min_width * .67) / 1.5;
+    @dynamic_left_width: 100% * @dynamic_left_fraction;
+    
+    /** For when the left is split in a left and a middle */
+    @dynamic_middle_left_offset: 100% * (.33 + (1 - @dynamic_left_fraction)/3);
+    @dynamic_middle_right_padding: 100% * (1 - @dynamic_left_fraction)/3;
      
     /**
      * Asides take up a third of min width minus edge gap growing at half speed
@@ -27,74 +47,133 @@
     @max_right_width: @max_width * .33 - @horz_edge_gap - @base_right_width;
     @dynamic_right_width: 100% * (@min_width * .33 - @horz_edge_gap) / (@min_width * .33) / 2;
     
-    body > header .leftside {
-        width:67%;
-        .stretcher {
-            padding-right: @base_left_width;
-            width: @dynamic_left_width; 
-            max-width: @max_left_width;
-            
-            .stretched {
-                margin-right: e(%("-%spx",@base_left_width));
+    /**
+     * Full three thirds
+     */
+    @min_full_width: @min_width - 2 * @horz_edge_gap;
+    @base_full_width: @min_left_width / 3 + @min_right_width / 2;
+    @max_full_width: @max_width - 2 * @horz_edge_gap - @base_left_width - @base_right_width;
+    @dynamic_left_width: 100% * ((@min_width * .67 - @horz_edge_gap) / (@min_width * .67) / 1.5 + (@min_width * .33 - @horz_edge_gap) / (@min_width * .33) / 2);
+    
+    body > header {
+        .left-double {
+
+            h1 {
+                padding-left: @left_overhang;
+                text-align:left;
+                margin-right:@horz_side_gap;
             }
         }
     }
-    
-    body > header h1 {
-        padding-left: @left_overhang;
-        text-align:left;
-        margin-right:@horz_side_gap;
-    }
+
 
     nav.main-menu {
         width:@min_left_width;
     }
 
-    article.main {
-        width:67%;
-        padding-right:33%;
+    /**
+     * Split in twothirds sections and third asides
+     */
+    .split-thirds {
+        position:relative;
+        width:66.6% + 0.1%;
+        padding-right:33.3%;
 
-        
-        .sections {
-            .stretcher {
-                position:relative;
-                padding-right: @base_left_width;
-                width: @dynamic_left_width; 
-                max-width: @max_left_width;
+        .left-double {
+            position: relative;
+            margin-left:@dynamic_third_left_offset;
+
+            .restricted-width {
+                position: relative;
+                margin-left: e(%("-%spx",@base_double_width));
+                /* width: @dynamic_double_width; */
+                max-width: @max_double_width;
                 
-                .stretched {
-                    margin-right: e(%("-%spx",@base_left_width));
-                }
-            }
-
-            section {
-                padding-left: @left_overhang;
-                margin-right:@horz_side_gap; /* horz gap */
+                section {
+                    padding-left: @left_overhang;
+                    margin-right:@horz_side_gap; /* horz gap */
+                }    
             }
         }
         
-        .asides {
+        .right-third {
+            left:66.6% + 0.1%;
+            right: 0;
+            text-align:left;
             
-            width:33%;
+            .restricted-width {
+                max-width: @max_third_width;
+
+                /* Place right edge correctly*/
+                margin-right: e(%("-%spx",@base_third_width)) ;
+                right: @dynamic_third_right_offset;
+
+                aside {
+                    margin-left:@horz_side_gap;
+
+                }
+            }
             
+        }
+    }
+    
+    .thirds {
+        
+        .left {
+            position:absolute;
+
+            /* Place right edge correctly*/
+            right:48%; top:0;
+            margin-right: @base_left_width / 2;
+
+            /* Make up width for sections */
+            padding-right: @base_left_width / 2;
+            width: @dynamic_left_width / 2; 
+            max-width: @max_left_width / 2;
+            
+            section {
+                position:absolute;
+                left:0; right: 0;
+            }
+        }
+        .middle {
+            position: relative;
+            /* Place left edge correctly*/
+            margin-left: e(%("-%spx",@base_left_width/2)) ;
+            left: @dynamic_middle_left_offset;
+
+            /* Make up width for sections */
+            padding-right: @base_left_width / 2;
+            width: @dynamic_left_width / 2; 
+            max-width: @max_left_width / 2;
+            
+            section {
+                position: relative;
+                /*
+                margin-right: e(%("-%spx",@base_left_width/2));
+                */
+            }
+        }
+
+        .right {
+            position:absolute;
+            right:0; top:0;
+            width: 33%;
+
             .stretcher {
                 position:relative;
                 padding-left: @base_right_width;
                 width: @dynamic_right_width; 
                 max-width: @max_right_width;
-                
-                .stretched {
-                    position:absolute;
-                    left:0; right: 0;
-                }
             }
 
-            aside {
-                margin-left:@horz_side_gap;
+            section {
+                position:absolute;
+                left:0; right: 0;
             }
-        }
+         }
+
     }
-
 
 
     footer {

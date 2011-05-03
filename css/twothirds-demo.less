@@ -6,3 +6,36 @@
 
 
 code.info { display: block; position: absolute;}
+
+.asides {
+    aside {
+        border:1px solid black;
+    }
+}
+
+.thirds {
+    border-top: 3px solid blue;
+    
+    .left {
+        min-height: 100px;
+    }
+    .middle {
+        min-height: 100px;
+    }
+    .right {
+        min-height: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+	
+	article {
+	    background: red !important;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	article {
+	    background: blue !important;
+	}
+}
