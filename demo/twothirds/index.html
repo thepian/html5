@@ -1,6 +1,7 @@
 ---
 layout: twothirds-dev
 title: Two Thirds sizes
+header_title: Two Thirds
 author: Henrik Vendelbo
 date: 2010-01-01
 category:
@@ -13,7 +14,7 @@ category:
 	<div class="stretcher"><div class="stretched">
 		
 	<h1>
-	Two Thirds (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 	</h1>
 	<nav class="main-menu">
     	<ul>
@@ -28,10 +29,7 @@ category:
 	</div></div> <!-- stretcher and stretched -->
 	</div>
 	
-	<nav class="page-menu">
-		<a href="javascript:void(0);">Login</a>
-		<a href="javascript:void(0);">Help</a>
-	</nav>
+	{% include page_menu.html %}
 </header>
 
 <article class="main">
@@ -83,7 +81,7 @@ category:
 	                {% endfor %}
 
 	                <a class="retweet" href="{{site.url}}{{page.url}}">{{page.title}}</a>
-					<p>Ipsum whatever whereever</p>
+					<p>{% include lorem_ipsum.html %}</p>
 				</li>
 					
 				<li></li>	
@@ -112,21 +110,33 @@ category:
 	<div class="stretched">	
 		Stretched (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 		<aside class="sidebar-1">
-			bla bla
+			{% include lorem_ipsum.html %}
 		</aside>
 		<aside class="sidebar-2">
-			sfsdfd
-			sdfsdf
-			sdf
-			dsfs
-			sdf
-			sdfsdfsdf
-			sdfsdfsd
-			sdfsdfsd
-			
+			{% include lorem_ipsum.html %}
 		</aside>
 	</div>
 	</div>
+	</div>
+</article>
+
+<article class="thirds">
+	<div class="left">
+		<div class="stretcher">
+			<section>{% include lorem_ipsum.html %}</section>
+		</div>
+	</div>
+
+	<div class="middle">
+		<div class="stretcher">
+			<section>{% include lorem_ipsum.html %}</section>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="stretcher">
+			<section>{% include lorem_ipsum.html %}</section>
+		</div>
 	</div>
 </article>
 
