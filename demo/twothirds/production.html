@@ -26,7 +26,6 @@ category:
 
 <article class="main split-thirds">
 	<div class="left-double sections">
-		<code class="info">Sections (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 		<div class="restricted-width">
 		
 	<section>
@@ -91,30 +90,6 @@ category:
 		<p>Future Add Icon to desktop support, and optional pop-up</p>
 	</section>
 	
-	</div></div> <!-- right-third and restricted-width -->
-	
-	<div class="right-third asides">
-		<code class="info">Asides (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
-		<div class="restricted-width">
-		
-		<aside class="sidebar-1">
-			Aside (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
-
-			{% include lorem_ipsum.html %}
-		</aside>
-		<aside class="sidebar-2">
-			{% include lorem_ipsum.html %}
-		</aside>
-
-		<!-- Aside level navigation -->
-		<nav class="top-overhang">
-	    	<ul>
-	        	<li><a class="active" href="#">Sidebar 1</a></li>
-	            <li><a href="#">Sidebar 2</a></li>
-	            <li><a href="#">Sidebar 3</a></li>
-	        </ul>
-		</nav>
-	</div></div>
 
 	<!-- Article level navigation -->
 	<nav class="top-overhang">
@@ -126,6 +101,29 @@ category:
             <li><a href="#">Article 5</a></li>
         </ul>
 	</nav>
+	</div></div> <!-- right-third and restricted-width -->
+	
+	<div class="right-third asides">
+		<div class="restricted-width">
+		
+		<aside class="sidebar-1">
+			{% include lorem_ipsum.html %}
+		</aside>
+		<aside class="sidebar-2">
+			{% include lorem_ipsum.html %}
+		</aside>
+
+	</div>
+	
+	<!-- Aside level navigation -->
+	<nav class="top-overhang">
+    	<ul>
+        	<li><a class="active" href="#">Sidebar 1</a></li>
+            <li><a href="#">Sidebar 2</a></li>
+            <li><a href="#">Sidebar 3</a></li>
+        </ul>
+	</nav>
+	</div>
 </article>
 
 {% include demo-footer.html %}
