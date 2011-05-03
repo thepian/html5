@@ -2,7 +2,7 @@
  * Split layout into a left two thirds and right third.
  */
 .divide_width_twothirds(@max_width,@min_width) {
-    @horz_side_gap: 20px; /* Gap from content to the middle divider */
+    @horz_side_gap: 14px; /* Gap from content to the middle divider */
     @horz_edge_gap: 28px; /* Gap from content to edge of window */
     @left_overhang: 64px;
 
@@ -51,6 +51,7 @@
         position:relative;
         width:66.6% + 0.1%;
         padding-right:33.3%;
+        .util_clearfix();
 
         .left-double {
             position: relative;
@@ -69,86 +70,63 @@
             }
         }
         
+        .left-third {
+            position:relative;
+            margin-left:@dynamic_third_left_offset;
+            margin-right: @dynamic_third_width/2; /* dynamic middle width (note relative to width excl. padding)*/
+
+            .restricted-width {
+                position: relative;
+                margin-left: e(%("-%spx",@base_double_width));
+                margin-right: @base_third_width; /* base middle width */
+                
+                section {
+                    margin-right:@horz_edge_gap; /* horz gap */
+                    max-width: @max_third_width;
+                }    
+            }
+        }
+        .middle-third {
+            position: absolute;
+            top: 0;
+            right: 33.3%;
+            width: @dynamic_third_width/3; /* relative to parent width+padding */
+            max-width: @max_third_width;
+            /* margin-left: e(%("-%spx",@base_third_width)); */
+
+            .restricted-width {
+                position: absolute;
+                left: e(%("-%spx",@base_third_width)); 
+                right: 0;
+                
+                section {
+                    position: relative;
+                    margin-right:@horz_side_gap; /* horz gap */
+                }    
+            }
+        }
+
         .right-third {
             left:66.6% + 0.1%;
             right: 0;
             text-align:left;
             
             .restricted-width {
-                max-width: @max_third_width;
+                max-width: @max_third_width; /* TODO invert? */
 
                 /* Place right edge correctly*/
                 margin-right: e(%("-%spx",@base_third_width)) ;
                 right: @dynamic_third_right_offset;
 
+                section,
                 aside {
                     margin-left:@horz_side_gap;
-
                 }
             }
             
         }
     }
     
-    .thirds {
-        
-        .left {
-            position:absolute;
-
-            /* Place right edge correctly*/
-            right:48%; top:0;
-            margin-right: @base_third_width;
-
-            /* Make up width for sections */
-            padding-right: @base_third_width;
-            width: @dynamic_third_width; 
-            max-width: @max_third_width;
-            
-            section {
-                position:absolute;
-                left:0; right: 0;
-            }
-        }
-        .middle {
-            position: relative;
-            /* Place left edge correctly*/
-            margin-left: e(%("-%spx",@base_third_width)) ;
-            left: @dynamic_third_left_offset;
-
-            /* Make up width for sections */
-            padding-right: @base_third_width;
-            width: @dynamic_third_width; 
-            max-width: @max_third_width;
-            
-            section {
-                position: relative;
-                /*
-                margin-right: e(%("-%spx",@base_third_width));
-                */
-            }
-        }
-
-        .right {
-            position:absolute;
-            right:0; top:0;
-            width: 33%;
-
-            .stretcher {
-                position:relative;
-                padding-left: @base_third_width;
-                width: @dynamic_third_width; 
-                max-width: @max_third_width;
-            }
-
-            section {
-                position:absolute;
-                left:0; right: 0;
-            }
-         }
-
-    }
-
-
     footer {
         left:50%;
         margin-left:-.5 * @min_content_width;
