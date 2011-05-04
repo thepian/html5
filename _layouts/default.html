@@ -26,7 +26,53 @@
 <!--[if gt IE 9]>  <body>             <![endif]-->
 <!--[if !IE]><!--> <body>         <!--<![endif]-->
 
+	<header class="split-thirds">
+		<div class="left-double"><div class="restricted-width">
+
+		<h1>{{ page.header_title }}</h1>
+		
+		<section>
+		</section>
+
+		</div></div>
+
+		{% include page_menu.html %}
+	</header>
+
 {{ content }}
+
+<footer>
+	<nav class="etc split-thirds">
+		<div class="left-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="middle-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="right-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+	</nav>
+	
+	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+
+	{% include demo-footer-copyright.html %}
+</footer>
+
+<div class="top-edge">
+</div>
+	
+<div class="bottom-edge">
+	<a href="production">Development Version [swap]</a>
+</div>
 
   <!-- JavaScript -->
 

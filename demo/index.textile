@@ -1,5 +1,5 @@
 ---
-layout: master
+layout: demo-default
 ---
 "Fluid Theme Demo":/demo/fluid/
 "Two-thirds demo":/demo/twothirds/
