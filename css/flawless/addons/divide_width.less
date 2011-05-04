@@ -19,19 +19,21 @@
     @base_double_width: @min_third_width / 3 * 2 + @horz_edge_gap; /* added the third edge gap */
     @max_third_width: @max_width * .333 - @horz_edge_gap - @base_third_width; /* limit the dynamic part by this */
     @max_double_width: @max_third_width * 2;
+    @max_tripple_width: @max_third_width * 3;
     @dynamic_third_fraction: @min_third_width / (@min_width * .333) / 1.5; /* The dynamic fraction of third or double columns ~0.627 */
     @dynamic_third_width: 100% * @dynamic_third_fraction;
     @dynamic_double_width: 100% * @dynamic_third_fraction;
     @dynamic_third_right_offset: 100% * (1 - @dynamic_third_fraction);
     @dynamic_third_left_offset: 100% * (1 - @dynamic_third_fraction);
+    @dynamic_tripple_right_offset: 100% * (1 - @dynamic_third_fraction) / 2;
     
     /**
      * Full three thirds
      */
-    @min_full_width: @min_width - 3 * @horz_edge_gap;
-    @base_full_width: @base_double_width + @base_third_width;
-    @max_full_width: @max_width - 3 * @horz_edge_gap - @base_double_width - @base_third_width;
-    @dynamic_full_width: 100% * ((@min_width * .666 - @horz_edge_gap) / (@min_width * .666) / 1.5 + (@min_width * .333 - @horz_edge_gap) / (@min_width * .333) / 1.5);
+    @min_tripple_width: @min_width - 3 * @horz_edge_gap;
+    @base_tripple_width: @base_double_width + @base_third_width;
+    @max_tripple_width: @max_width - 3 * @horz_edge_gap - @base_double_width - @base_third_width;
+    @dynamic_tripple_width: 100% * ((@min_width * .666 - @horz_edge_gap) / (@min_width * .666) / 1.5 + (@min_width * .333 - @horz_edge_gap) / (@min_width * .333) / 1.5);
     
     body > header {
         .left-double {
@@ -53,6 +55,25 @@
         padding-right:33.3%;
         .util_clearfix();
 
+        .tripple-third {
+            position: relative;
+            margin-left: @dynamic_third_left_offset;
+            margin-right: @dynamic_tripple_right_offset;
+
+            .restricted-width {
+                position: relative;
+                margin-left: e(%("-%spx",@base_double_width));
+                /* width: @dynamic_double_width; */
+                max-width: @max_tripple_width;
+                
+                margin-right: e(%("-%spx",@base_third_width));
+                
+                section {
+                    padding-left: @left_overhang;
+                }    
+            }
+        }
+            
         .left-double {
             position: relative;
             margin-left:@dynamic_third_left_offset;
