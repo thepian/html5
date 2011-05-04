@@ -34,19 +34,8 @@ category:
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
 
 		Section (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
-		
-		<dl>
-			<dt>Main</dt>
-			<dd>The main-menu is part of the header and is positioned in the lower right corner of the left side.
-				The main article is the big content area holding article sections in the left side of the page.</dd>
 
-			<dt>Side Menu</dt>
-			<dd>The Side menu is part of the header and is positioned in the lower right corner of the right side.</dd>
-
-			<dt>Page Menu</dt>
-			<dd>The Page menu is part of the header and is positioned in the upper right corner of the page header.</dd>
-		</dl>
-
+		{% include twothirds_terminology.html %}
 	</section>
 
 	<section>
@@ -129,35 +118,37 @@ category:
 	</div>
 </article>
 
-
-<article class="split-thirds">
-	<div class="left-third">
-		<div class="restricted-width">
-			<section>{% include lorem_ipsum.html %}</section>
+<footer>
+	<nav class="etc split-thirds">
+		<div class="left-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
 		</div>
-	</div>
 
-	<div class="middle-third">
-		<div class="restricted-width">
-			<section>{% include lorem_ipsum.html %}</section>
+		<div class="middle-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
 		</div>
-	</div>
 
-	<div class="right-third">
-		<div class="restricted-width">
-			<section>{% include lorem_ipsum.html %}</section>
+		<div class="right-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
 		</div>
-	</div>
-</article>
+	</nav>
+	
+	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 
-
-{% include demo-footer.html %}
+	{% include demo-footer-copyright.html %}
+</footer>
 
 <div class="top-edge">
-	<a href="production">Development Version [swap]</a>
 </div>
 	
 <div class="bottom-edge">
+	<a href="production">Development Version [swap]</a>
 </div>
 
 {% include dev_time_markup.html %}

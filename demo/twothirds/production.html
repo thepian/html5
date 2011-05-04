@@ -13,7 +13,7 @@ category:
 	<div class="left-double"><div class="restricted-width">
 		
 	<h1>
-	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	{{ page.header_title }}
 	</h1>
 	<section>
 		<h2>- sub title</h2>
@@ -32,20 +32,7 @@ category:
 		<h3>Layout principle</h3>
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
 
-		Section (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
-		
-		<dl>
-			<dt>Main</dt>
-			<dd>The main-menu is part of the header and is positioned in the lower right corner of the left side.
-				The main article is the big content area holding article sections in the left side of the page.</dd>
-
-			<dt>Side Menu</dt>
-			<dd>The Side menu is part of the header and is positioned in the lower right corner of the right side.</dd>
-
-			<dt>Page Menu</dt>
-			<dd>The Page menu is part of the header and is positioned in the upper right corner of the page header.</dd>
-		</dl>
-
+		{% include twothirds_terminology.html %}
 	</section>
 
 	<section>
@@ -126,7 +113,29 @@ category:
 	</div>
 </article>
 
-{% include demo-footer.html %}
+<footer>
+	<nav class="etc split-thirds">
+		<div class="left-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="middle-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="right-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+	</nav>
+	
+	{% include demo-footer-copyright.html %}
+</footer>
 
 <div class="top-edge">
 </div>
