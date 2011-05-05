@@ -1,5 +1,7 @@
 ---
 layout: demo-default
+title: Demo Overview
+header_title: Demo Overview
 ---
 "Fluid Theme Demo":/demo/fluid/
 "Two-thirds demo":/demo/twothirds/

@@ -1,0 +1,57 @@
+---
+layout: demo-default
+title: HTML Default Styling
+header_title: HTML Default Styling
+---
+
+Within the areas of the page placed by the layout rules you will be inserting your content.
+The content will be either a visual spread like a logo or an advertisement, a textual spread
+such as a introduction, quote or blog post, or a form for registration, contact or basket checkout.
+[[Test]]
+
+h2. General Purpose Tags
+
+strong, em, sup, sub, small, ins, del, mark
+
+HTML adds two tags that are for general purposes. For this reason they have no special styling in
+this typography. It should not be necessary to use *&lt;span&gt;* or *&lt;div&gt;* in regular page content. If you
+must do a special purpose styling use another general purpose tag and add a CSS class. 
+
+
+h2. Headers, Blocks and Separators
+
+h1,h2,h3,h4,h5,h6
+
+p,pre, address, blockquote
+
+br, hr
+
+h2. Semantic Meaning tags
+
+code, time, q, dfn, var, abbr, cite, kbd
+
+
+h2. Lists and Tables
+
+table, caption, tbody, tfoot, thead, tr, th, td, ul, ol, dl, dt, dd
+
+
+h2. Forms
+
+form, fieldset, legend, label
+
+a, button, input, textarea, select, output, 
+
+
+h2. Illustrations
+
+img, figcaption, figure, video, audio
+
+
+h2. Browser defaults
+
+OS X 
+* &lt;select&gt; height=18px
+* &lt;button&gt; height=18px
+* &lt;input radio&gt; height=13px width=12px
+* &lt;input checkbox&gt; height=12px width=12px
