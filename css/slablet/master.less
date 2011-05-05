@@ -1,6 +1,16 @@
-@import '../reset.css';
-@import 'text.css';
-@import 'form.css';
-@import 'icons.css';
-@import 'site.css';
+/* Here we import the framework. Note that this does not
+ * add any styles yet. We are using the less.js framework
+ * which adds variables and mixins (behave like function calls)
+ * This way the framework can provide infinite features, without
+ * adding anything more than you need on your website.
+ */
+@import "../flawless/loader.less";
+
+
+.reset_html5doctor();
+
+@import 'text.less';
+@import 'form.less';
+@import 'icons.less';
+@import 'site.less';
 @import 'ie8.less';
