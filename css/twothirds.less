@@ -33,41 +33,15 @@
 /* Tell the framework where it is relative to the html file  */
 @setup_framework_path: "css/flawless/core/production";
 
-/* The vertical rhythm is used to give your webpages a consistent
- * look. The whole grid system relies on this value to calculate
- * gaps, spans and so on. Basically this defines the row-height of
- * the grid in pixels and aligns all elements in the flow of the grid. 
- */
-@setup_vertical_rhythm: 20;
-
-/* Here you can control the overall font size. Not that this value 
- * strongly correlates with the vertical rhythm. If you make these
- * two values too different your text flow will look ugly
- */
-@setup_font_size: 13;
-
-@header_height: 80px;
-@horz_side_gap: 20px;
-@article_aside1_height: 250px;
-@article_aside2_height: 250px;
-
-@page_background_color: #646C5D;
-@page_header_background_color: white;
-@page_footer_color: #ccc;
-@nav_background_color: transparent;
-@article_background_color: #ccc;
-@asides_background_color: #4183C4;
-@aside1_background_color: #4183C4;
-@aside2_background_color: #4183C4;
-
+@import "twothirds-defaults.less";
 
 /* ================ SPLIT UP YOUR CODE ================
  * It is highly recommended to split up your various parts
  * of custom styles for your website to improve maintainance 
  */
 
-@import "twothirds-text.less"; /* everything related to text */
-@import "twothirds-base.less"; /* the base layout applied to all screen sizes */
-@import "twothirds-medium.less"; /* the changes applied to medium screen sizes */
-@import "twothirds-small.less"; /* changes applied to small screen sizes */
+@import "twothirds/text.less"; /* everything related to text */
+@import "twothirds/base.less"; /* the base layout applied to all screen sizes */
+@import "twothirds/medium.less"; /* the changes applied to medium screen sizes */
+@import "twothirds/small.less"; /* changes applied to small screen sizes */
 

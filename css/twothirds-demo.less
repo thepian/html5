@@ -1,3 +1,13 @@
+/* Here we import the framework. Note that this does not
+ * add any styles yet. We are using the less.js framework
+ * which adds variables and mixins (behave like function calls)
+ * This way the framework can provide infinite features, without
+ * adding anything more than you need on your website.
+ */
+@import "flawless/loader.less";
+
+@import "twothirds-defaults.less";
+
 /* Slightly smaller than SuperVGA */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
 	
@@ -56,3 +66,8 @@ section {
     margin-bottom: 1em;
 }
 
+.nice-flow {
+    .size_headers();
+    .size_blocks();
+    .nice_anchors();
+}
