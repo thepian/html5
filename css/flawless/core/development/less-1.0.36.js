@@ -2276,6 +2276,9 @@ less.sheets = [];
 for (var i = 0; i < links.length; i++) {
     if (links[i].rel === 'stylesheet/less' || (links[i].rel.match(/stylesheet/) &&
        (links[i].type.match(typePattern)))) {
+        if (links[i].getAttribute("alternate")) {
+            links[i].alternate = links[i].getAttribute("alternate");
+        }
         less.sheets.push(links[i]);
     }
 }
@@ -2421,6 +2424,12 @@ function createCSS(styles, sheet, lastModified) {
         css.type = 'text/css';
         css.media = sheet.media || 'screen';
         css.id = id;
+        /* PATCH HV - alternate stylesheets */
+        if (sheet.alternate) {
+            css.rel = "alternate";
+            css.setAttribute("rel","alternate");
+            css.title = sheet.alternate;
+        }
         document.getElementsByTagName('head')[0].appendChild(css);
     }
 
