@@ -1,0 +1,135 @@
+---
+layout: twothirds-dev-themes
+title: Two Thirds Themes
+header_title: Two Thirds Themes
+author: Henrik Vendelbo
+date: 2010-01-01
+category:
+ - sizes
+---
+
+
+<header class="split-thirds">
+	<div class="left-double"><div class="restricted-width">
+		
+	<h1>{{ page.header_title }}</h1>
+	<section>
+		<h2>- sub title</h2>
+	</section>
+	
+	</div></div>
+	
+	{% include page_menu.html %}
+</header>
+
+<article class="main split-thirds">
+	<div class="left-double sections">
+		<div class="restricted-width">
+		
+	<section>
+		<h2>Lorem Ipsum</h2>
+		{% include lorem_ipsum.html %}
+	</section>
+
+	<section>
+		<h3 class="portrait-only">Portrait</h3>
+		<h3 class="landscape-only">Landscape</h3>
+	</section>
+		
+	<section class="post">
+	        <h2>
+	            <a href='{{page.url}}'>{{page.title}}</a></h1>
+	
+				<ul class="posts">
+				<li>
+					<time class="postdate">
+						<!-- 
+						<span class="postweekday">{{ page.date | date: "%w" }}</span>
+						-->
+						<span class="postmonth">{{ page.date | date: "%b" }}</span>
+						<span class="postday">{{ page.date | date: "%d" }}</span>
+					</time>
+		
+	                {% for category in page.categories %}
+	                <span class="category">{{category}}</span>
+	                {% endfor %}
+
+	                <a class="retweet" href="{{site.url}}{{page.url}}">{{page.title}}</a>
+					<p>{% include lorem_ipsum.html %}</p>
+				</li>
+					
+				<li></li>	
+				</ul>
+				
+	        <div id="disqus_thread"></div>
+	<!-- 
+	<script type="text/javascript" src="http://disqus.com/forums/zduck/embed.js"></script><noscript><a href="http://zduck.disqus.com/?url=ref">View comments.</a></noscript>
+	-->
+	</section>
+	
+	<!-- Article level navigation -->
+	<nav class="top-overhang">
+    	<ul>
+        	<li><a class="active" href="#">Article 1</a></li>
+            <li><a href="#">Article 2</a></li>
+            <li><a href="#">Article 3</a></li>
+            <li><a href="#">Article 4</a></li>
+            <li><a href="#">Article 5</a></li>
+        </ul>
+	</nav>
+	</div></div> <!-- right-third and restricted-width -->
+	
+	<div class="right-third asides">
+		<div class="restricted-width">
+		
+		<aside class="sidebar-1">
+			{% include lorem_ipsum.html %}
+		</aside>
+		<aside class="sidebar-2">
+			{% include lorem_ipsum.html %}
+		</aside>
+	</div>
+
+	<!-- Aside level navigation -->
+	<nav class="top-overhang">
+    	<ul>
+        	<li><a class="active" href="#">Sidebar 1</a></li>
+            <li><a href="#">Sidebar 2</a></li>
+            <li><a href="#">Sidebar 3</a></li>
+        </ul>
+	</nav>
+	</div>
+</article>
+
+<footer>
+	<nav class="etc split-thirds">
+		<div class="left-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="middle-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+
+		<div class="right-third">
+			<div class="restricted-width">
+				<section>{% include lorem_ipsum.html %}</section>
+			</div>
+		</div>
+	</nav>
+	
+	{% include demo-footer-copyright.html %}
+</footer>
+
+<div class="top-edge">
+</div>
+	
+<div class="bottom-edge">
+	<a href="production">Development Version [swap]</a>
+</div>
+
+{% include dev_time_markup.html %}
