@@ -11,10 +11,6 @@
 }
 
 /* Core division of the page */
-body {
-    background-color: @page_background_color;
-}
-
 nav.page-menu {
     position: absolute;
     right: 0px;
@@ -24,7 +20,6 @@ nav.page-menu {
 
 body > header {
     height: @header_height;
-    background-color: @page_header_background_color;
 
     .left-double {
 
@@ -44,9 +39,6 @@ body > header {
 nav.top-overhang {
 	/* compose a horizontal navigation */
 	.nav_horizontal();
-	/* these are the colors for the states - normal, hover, active */
-	.nav_background(#E3E3E3, @nav_background_color, @nav_background_color);
-	.nav_text_color(black, black, black);
 	
 	/* like css rounded corners: top-left, top-right, bottom-right, bottom-left */
 	.nav_rounded(0px 5px 0px 0px);
@@ -94,26 +86,14 @@ article.main {
     overflow:visible; /* allow top-overhang navigation to be visible */
     min-height:@article_aside1_height + @article_aside2_height;
     
-    /* themed */
-    background-color: @article_background_color;
-    
     .restricted-width {
         padding-top:10px; /* vert gap */
     }
 
     .asides {
-        background-color: @asides_background_color;
-        
         aside {
             margin-top:10px;
         }    
-        aside.sidebar-1 {
-        	background-color: @aside1_background_color; /* add background color */
-        }
-
-        aside.sidebar-2 {
-        	background-color: @aside2_background_color; /* add background color */
-        }
     }
 }
 

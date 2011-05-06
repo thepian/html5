@@ -12,6 +12,61 @@
 
 @import "defaults.less";
 
+/**
+ * Typefaces
+ */
+@heading-family: Georgia,"Times New Roman", Times, serif;
+@body-family: Helvetica, Arial, sans-serif;
+@blockquote-family: Georgia,"Times New Roman", Times, serif;
+
+/**
+ * Colors
+ */
+@page_background_color: #646C5D;
+@page_header_background_color: white;
+@page_footer_color: #ccc;
+@nav_background_color: transparent;
+@article_background_color: #ccc;
+@asides_background_color: #4183C4;
+@aside1_background_color: #4183C4;
+@aside2_background_color: #4183C4;
+
+
+body {
+    background-color: @page_background_color;
+	/* this adds the standard typography theme with custom families and colors */
+	.type_theme_flawless(@type-family, @type-head-family, #333, #036);
+}
+
+body > header {
+    background-color: @page_header_background_color;
+}
+
+nav.top-overhang {
+	/* these are the colors for the states - normal, hover, active */
+	.nav_background(#E3E3E3, @nav_background_color, @nav_background_color);
+	.nav_text_color(black, black, black);
+}
+
+article.main {
+    
+    /* themed */
+    background-color: @article_background_color;
+    
+    .asides {
+        background-color: @asides_background_color;
+        
+        aside.sidebar-1 {
+        	background-color: @aside1_background_color; /* add background color */
+        }
+
+        aside.sidebar-2 {
+        	background-color: @aside2_background_color; /* add background color */
+        }
+    }
+}
+
+
 /* Slightly smaller than SuperVGA */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
 	
@@ -62,12 +117,23 @@ section {
 }
 
 .forms-demo blockquote {
-    font-family: Georgia,"Times New Roman", Times, serif;
     line-height: 1.7;
     font-style: italic;
     color: #ccc;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+footer .copyright {
+    font-size: 10px;
+    line-height:1.6;
+}
+footer .copyright a {
+    color: white;
+}
+
+blockquote {
+    font-family: @blockquote-family;
 }
 
 /*

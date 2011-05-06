@@ -1,4 +1,79 @@
 /**
  * Night colored Sans Serif font theme
  */
- 
+
+/* Here we import the framework. Note that this does not
+ * add any styles yet. We are using the less.js framework
+ * which adds variables and mixins (behave like function calls)
+ * This way the framework can provide infinite features, without
+ * adding anything more than you need on your website.
+ */
+@import "flawless/loader.less";
+
+/**
+ * Typefaces
+ */
+@body-family: Helvetica, Arial, sans-serif;
+@heading-family: Georgia,"Times New Roman", Times, serif;
+@blockquote-family: Georgia,"Times New Roman", Times, serif;
+
+/**
+ * Colors
+ */
+@page_background_color: #646C5D;
+@page_header_background_color: white;
+@page_footer_color: #ccc;
+@nav_background_color: transparent;
+@article_background_color: #ccc;
+@asides_background_color: #4183C4;
+@aside1_background_color: #4183C4;
+@aside2_background_color: #4183C4;
+
+
+body {
+    background-color: @page_background_color;
+	/* this adds the standard typography theme with custom families and colors */
+	.type_theme_flawless(@body-family, @heading-family, #333, #036);
+}
+
+body > header {
+    background-color: @page_header_background_color;
+}
+
+nav.top-overhang {
+	/* these are the colors for the states - normal, hover, active */
+	.nav_background(#E3E3E3, @nav_background_color, @nav_background_color);
+	.nav_text_color(black, black, black);
+}
+
+article.main {
+    
+    /* themed */
+    background-color: @article_background_color;
+    
+    .asides {
+        background-color: @asides_background_color;
+        
+        aside.sidebar-1 {
+        	background-color: @aside1_background_color; /* add background color */
+        }
+
+        aside.sidebar-2 {
+        	background-color: @aside2_background_color; /* add background color */
+        }
+    }
+}
+
+footer .copyright {
+    font-size: 10px;
+    line-height:1.6;
+}
+footer .copyright a {
+    color: white;
+}
+
+blockquote {
+    font-family: @blockquote-family;
+}
+
+
