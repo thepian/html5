@@ -1,0 +1,771 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>"Striking" Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		.panel_title { color: #21759b;text-decoration:underline;}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Striking&rdquo; Documentation by &ldquo;KaptinLin&rdquo; v1.5</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Striking&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 10/1/2010<br>
+					By: KaptinLin<br>
+					Email: <a href="mailto:kaptinlin@gmail.com">KaptinLin@Gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/KaptinLin">here</a>. And You should <a href="http://twitter.com/kaptinlin">follow me on twitter</a> to get the updates. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#general">General Options</a></li>
+			<li><a href="#color">Color Options</a></li>
+			<li><a href="#font">Font Options</a></li>
+			<li><a href="#slideshow">Slide Show Options</a></li>
+			<li><a href="#sidebar">Sidebar Options</a></li>
+			<li><a href="#image">Image Options</a></li>
+			<li><a href="#homepage">Homepage Options</a></li>
+			<li><a href="#blog">Blog Options</a></li>
+			<li><a href="#portfolio">Portfolio Options</a></li>
+			<li><a href="#footer">Footer Options</a></li>
+			<li><a href="#navigation">Navigation</a></li>
+			<li><a href="#addportfolio">Add Portfolio Gallery</a></li>
+			<li><a href="#portfolioitem">Add Portfolio Item</a></li>
+			<li><a href="#slideritem">Add Slider Item</a></li>
+			<li><a href="#setfeatured">Set Featured Image</a></li>
+			<li><a href="#shortcodes">Shortcodes</a></li>
+			<li><a href="#contactform">Contact Form</a></li>
+			<li><a href="#widgets">Custom Widgets</a></li>
+			<li><a href="#template">Template Pages</a></li>
+			<li><a href="#cufon">Cufon Generate</a></li>
+			<li><a href="#updating">Updating</a></li>
+			<li><a href="#translate">Translate</a></li>
+			<li><a href="#wpml">WPML Integration</a></li>
+			<li><a href="#pageorder">Page & Slider & Portfolio Order</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+
+		
+		<hr>
+		
+		<h3 id="installation"><strong>A) Installation</strong> - <a href="#toc">top</a></h3>
+		
+		<h4><strong>Installation of Striking</strong></h4>
+			<p><strong>1.  Downloading from Themeforest</strong></p>
+
+				<p>Download the Striking theme and unzip this download.  Any good quality zip program will do.  &nbsp;Just follow the unzip instructions of your program carefully. &nbsp;Some give you the option of unzipping only a portion, or all, of the files. &nbsp;You want to select "all". &nbsp;Once unzipped, you will find the following folders will be in the unzipped directory:</p>
+						<ul>
+							<li><strong>striking.zip </strong>&nbsp;- a separate zip of the theme files that you need upload to your wordpress installation.</li>
+							<li><strong>resource\psds</strong>&nbsp;- all layered psd sources.</li>
+							<li><strong>resource\fonts</strong>&nbsp;- fonts original copy that embedding for cufon use.</li>
+							<li><strong>resource\src</strong>&nbsp;- source file use in the theme.</li>
+							<li><strong>licensing</strong>&nbsp;- license for the theme.</li>
+							<li><strong>documentation</strong>&nbsp;- documentation files for current package.</li>
+							<li><strong>demo</strong>&nbsp;- you can import demo site xml data to learn striking fast.</li>
+						</ul>
+				<br>
+				<img height="281" width="593" alt="zip-contents" src="assets/images/strikingzipcontentsjpg.jpg" alt="Striking Zip Contents">
+			<p><strong>2.  Installing on your Host</strong></p>
+			<p>Before you install the theme, make sure your installed wordpress version is 3.1 or higher. &nbsp;You also need to have PHP 5 or higher versions in order for Striking to function correctly.</p><br>
+			<p> Method 1 - Upload via Wordpress built in Theme Install function</p>
+			<p >Log into your existing wordpress installation - if you just recently installed wordpress on your site, you most likely will have the default "Twenty Ten" theme supplied in all wordpress default installs as the active theme:</p>
+			<ul>
+			<li>In the wordpress left hand menu, go to the <em>Appearance</em> menu and select <em>Themes</em>.</li>
+			<br>
+			<li>On the <em>Themes</em> page you will see 2 tabs - <em>Manage Themes</em> and <em>Install Themes</em>. &nbsp;Select the <em>Install Themes</em> tab.</li><br>
+			<li> You will then see immediately below the tabs a navigation menu and one option will be <em>Upload</em>. &nbsp;Click <em>Upload</em> and you will see the ability to browse your computer drive and an instruction  "Install a theme in .zip format" (see picture below).</li>
+			<br>
+			<li>Browse your hard drive to where you stored the <b>striking.zip</b> that was part of your master download from Themeforest.  </li>
+			<br>
+			<li>Double click on the <b>striking.zip</b> so that it is selected and then click on the <em>Install Now</em> button, and wordpress will automatically install Striking.</li>	
+			</ul><br>
+			<br>
+			<img height="217" width="524" src="assets/images/WPThemeinstaller.jpg" alt="WP Theme Installer"> <br><br><br>
+			<p>Method 2 - Upload via FTP</p>
+			<p>You need an ftp program such as Filezilla (free) or CuteFTP Home or CuteFTP Pro (free for 30 days then cost money) both found at <a href="http://www.download.com">www.download.com</a>  &nbsp;CuteFTP Pro has many online editing functions that heavy ftp users and developers often find useful.</p>
+			<p> You will need to first uncompress the striking.zip file you have found in the master zip downloaded from Themeforest. &nbsp;This zip uncompresses into a normal folder <b>striking</b>. &nbsp;This is the only folder you need to transfer via ftp and if you open it, you will see all sorts of folders and files which contain the Striking coding (see picture below). &nbsp;</p><br>
+			<p><img height="937" width="796" src="assets/images/strikingzip.jpg" alt="Striking Zip"></p>
+			<p>&nbsp;</p>
+			<p>You transfer this folder which contains the above files to the WordPress installation root directory:<br>
+			  <br>
+			 /wp-content/themes/ <br><br>
+			 by way of your FTP program. &nbsp;Do not upload any of the other folders such such as <b>licensing</b> or <b>resource</b> or <b>documentation</b>. Uploading any of the other folders may cause problems resulting in your Striking theme  working properly.</p>
+			<br>
+			<p><strong>3. Activate Striking as Default Theme</strong></p>
+			<p>After you have completed the upload, activate the theme as you would activate any other theme.  &nbsp;Normally when you get the message the install is complete, you are given a prompt for the option to activate the theme. &nbsp;So go ahead and activate Striking and you are done your installation!</p>
+			<br>
+			<p><strong>4. The Striking Theme Panels</strong></p>
+			<p >Once you have activated Striking, you will see the new <em>Striking</em> panels added below the Wordpress <em>Settings</em> Panels. &nbsp;Expand the Striking panel menu if it is minimized and you will see 16 different supanels (as of Striking Ver 3.0). &nbsp;Now you are ready to start your website development using STRIKING!!</p><br>
+
+			<img height="484" width="479" src="assets/images/StrikingPanels.jpg" alt="Striking Panels">
+			<br><br><br>
+			<p><strong>5. Problems Installing?</strong></p>
+			<p >On rare occassions Striking does not install properly and you get an error message while attempting the install, or during or after activation of the theme. &nbsp;See the section below on "Installation Errors &amp;Theme Functions Not Working" for some trouble shooting tips.</p>
+			<br>	
+		<h4><strong>Installation of the Demo Content Package</strong></h4>
+			<p>As a bonus I supply you with a complete demo package. &nbsp;It can assist you in learning striking fast. &nbsp;Below are the steps to installing the demo content:
+			</p><ol>
+				<li>Locate the <strong>demo_export.xml</strong> file and <strong>options.txt</strong> file in the <strong>demo</strong> folder of the zip package.</li>
+				<li>Go to Tool-&gt;Import module in your backend, click the <strong>WordPress</strong> option.</li>
+				<li>Then add the <strong>demo_export.xml</strong> file to the <strong>Choose a file from your computer</strong> option and click the <strong>upload the file and import</strong> button.</li>
+				<li>Go to Striking-&gt;Advance in your backend, locate the <strong>Import &amp; Export</strong> module, copy all the code in <strong>options.txt</strong> file to the <strong>Import Striking Options Data</strong> option. &nbsp;Then click the <strong>Save Changes</strong> button.</li>
+			</ol>
+		
+		<h4><strong>How to Update Striking</strong></h4>
+			<p>As in performing a new install, there is more then one way to do an update your Striking Theme. </p>
+			<p>Most often updates are performed by using an FTP program.  &nbsp;Traditionally, the wordpress default <em>Install Theme</em> function was not applicable to updating premium themes, but if you have installed a free 3rd party plugin called "Easy Theme and Plugin Updater" then you can use the Install Theme wordpress function to update your theme.  &nbsp;Please reference that plugin's instructions for using it to do the theme update.</p>
+			<p><strong>The most important aspect of updating is that one should always have made a backup of their site and database prior to performing an update.</strong> &nbsp;Updates are very easy to do, but because we are dealing with the internet, and also several different programs attempting to work together, sometimes updates will fail, and "bad things" can happen to your existing site. &nbsp;If you have made a backup, then the problems may be reversible.</p>
+			<p>Recent versions of Striking (Ver 2.0+) have the ability for you to export your current web content as a wordpress xml file, so it is suggested that you use this feature found in the Advance Panel to create a copy of your site data as well.  So later, should you have a problem, you can use the import function also found in Striking in the Advance panel to import your site.</p>
+			<p>DON'T WORRY - UPDATES RARELY FAIL, AND WE ARE HERE TO ASSIST. &nbsp;IF YOU MADE A BACKUP, THEN THERE IS UNLIKELY TO BE ANY ISSSUES AT ALL.</p>
+			<p>Wordpress.org plugins section has many good backup programs to choose from. &nbsp;Choose one that is up to date and is highly rated.</p>
+			<p><strong>Update via FTP</strong></p>
+			<ol>
+				<li>Download the latest version of Striking from Themeforest to your drive. &nbsp;As long as you are a purchaser of Striking, you always are entitled to all upgrades free. &nbsp;So check back every so often to the Striking page on Themeforest. &nbsp;If you see that an upgrade has been released and you have an older version number, log into your account, go to the downloads page of your themeforest account interface, and download Striking again.</li><br>
+				<li>Before you unzip the download, you should copy the striking folder to your hard_drive then name it "Striking_old".	</li><br>	
+				<li>Unzip the download. &nbsp;As with a new install (see above) you only need the 'striking" folder from the folders unzipped, for the upgrade. &nbsp;You will not be transferring license or resources, etc to your online host.</li><br>
+				<li>It is very easy to do an update via ftp. &nbsp;Open your ftp program, and on the drive side, navigate to the "striking" subfolder. &nbsp;On the host side, navigate to your WordPress installation root directory:<br><br> /wp-content/themes/ <br><br>where you have your current version of striking installed.</li><br>
+				<li>simply drag over the striking folder from your drive to the themes folder, overwriting the existing striking folder.</li><br>
+				<li>Log back into your wordrpess admin and go to your themes panel. You should see the latest version of Striking installed (check the version number). &nbsp;You are done your update!</li>
+			</ol>
+			<p>Many often worry that upgrading by ftp overwrite will cause one to lose the existing content they have input into their site. &nbsp;This is not the case.  &nbsp;Your content, formatting and images you have uploaded are not effected, nor is any custom css you have input into the custom css box in the striking general panel.</p>
+
+			<p>However, if you have made any custom modifications to your php files - for example you have have hardcoded changes to a file, you will lose those modifications in the update method above. &nbsp;You should definitely save each php or css file you have "hard" modified, so that you can reinstall them after the global program update. </p>
+			<br>
+		<h4><strong>Trouble Shooting Tips</strong></h4>
+			<ul>
+				<li>
+					<strong>Does your server have the GD library compiled with its version of PHP?</strong>
+					<p>Striking use <a target="_blank" href="http://code.google.com/p/timthumb/">TimThumb</a> for image resizing. &nbsp;It requires the GD library to be installed. &nbsp;If your thumbnails are not working, check with your host to make sure that you have it.</p>
+				</li>
+				<li>
+					<strong>Does your cache folder have the correct permissions?</strong>
+					<p> All files and folders on a website have what is called CHMOD permissions.  &nbsp;CHMOD = Change Mode, and refers to the unix command that determines how much access is permitted to a file or folder.  &nbsp;You can find out more about how Wordpress deals with permissions at <a href="http://codex.wordpress.org/Changing_File_Permissions">http://codex.wordpress.org/Changing_File_Permissions</a></p>
+					<p>Sometimes when you are installing or updating wordpress, the new wordpress install may set/reset file permissions resulting in you having difficulties with images / slider  operation / changing colors, etc.  &nbsp;You should know that how your server host has set up its server security also is an equally important factor.  &nbsp;Every host sets up their servers differently, and this also can cause some functions not to work correctly until you have modified the default permissions.</p>
+					<p>Finally, to change to certain "open" permissions, you will likely have to use the control panel file manager supplied by your host, rather then an ftp program (many ftp programs have a function that allows one to modify permissions).  &nbsp;Most hosts configure server security so that open file permissions such as 777, 767, and sometimes even 757 need to be done from a host level, in order to prevent a non-site administrator from hacking the site security.  &nbsp;You may think that you have changed a permission to 777 via ftp (it will often say successfully changed), but if the problem persists, likely the change is not "hardcoded" on the host side. &nbsp;Permissions can be a complex issue, and you should not hesitate to speak with your host customer service if you are running into issues.</p>
+					<p>You need to give your image cache folder (/themes/striking/cache/) with CHMOD 777 permissions. </p>
+				</li>
+				<li>
+					<strong>Does the file "timthumb.php" have the correct permissions?</strong>
+					<p>Make sure the file (/themes/striking/includes/timthumb.php) has the correct permissions needed for your server. &nbsp;In most cases this is "644" but it may vary depending on where you are hosted. If 644 does not work, try 755 or 777.</p>
+				</li>
+				<li>
+					<strong>Does your server have mod_security settings that are impeding the scripts functionality?</strong>
+					<p>Some servers may have mod_security settings that will stop the timthumb scripts from working. You should always contact your host if you are having problems to make sure they do not have settings enabled that would stop the script from working.</p>
+				</li>
+			</ul>
+					<p>If you need help installing Wordpress see the link below:<br />
+					<a target="_blank" href="http://codex.wordpress.org/Installing_WordPress">http://codex.wordpress.org/Installing_WordPress</a><p>
+					
+				
+				
+				
+		
+		<hr>
+
+		<h3 id="general"><strong>B) General Options</strong> - <a href="#toc">top</a></h3>
+		<p><strong>Striking</strong> have several options pages for customize your website. Now we see the general options page.</p>
+		<p class="center"><img src="assets/images/striking_general.png" alt="General Options" /></p>
+		
+		<p>for <strong>Navigation Menu</strong> section, If Wordpress Built-in Menu is on, <strong>Striking</strong> will use WordPress's Custom Navigation Menu. You can see official documentation <a target="_blank" href="http://codex.wordpress.org/Appearance_Menus_SubPanel">here</a>. Click <a href="#navigation">here</a> to see how to make it works.</p>
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="color"><strong>C) Color Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p><strong>Striking</strong> has flexible color control system. You can change the element's color just by selecting what you preferred in the color picker. After clicking on the "Save Changes" button, you can go to your website URL in your web browser to view the newly selected color variation.</p>
+
+		<p class="center"><img src="assets/images/striking_color.png" alt="Color Options" /></p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="font"><strong>D) Font Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Font Options page have two sections. As shown below on the top of the page, you can customize your website element's fontsize easily.</p>
+		
+		<p><strong>Striking</strong> support "cufón" font replacing script on your website. Click <a target="_blank" href="http://github.com/sorccu/cufon/wiki/About">here</a> to see more information about this script and what it does.</p>
+		
+		<p>And <strong>Striking</strong> contains some creative fonts which had converted for cufon use under '<strong>/wp-content/themes/striking/fonts</strong>' folder. The page will list these fonts on the screen. </p><p>If you want to use your own font, 
+		learn from <a href="#cufon">here</a>.
+		</p> 
+		
+		<p>You can choose one font you prefer, turn on it's toggle button and turn off the other's. After "<strong>Save Changes</strong>", you will see the replacing effect.</p>
+		
+		<p>If you want to replace the elements what you prefer or use more than one fonts, you should fill cufon replace scripts into "<strong>Cufon code</strong>" option textarea, and turn on the toggle button of fonts you used in the scripts. Learn more about cufon's usage <a target="_blank" href="http://github.com/sorccu/cufon/wiki/Usage">here</a>.</p>
+		
+		<p>The following is the list of elements which you can replace with.
+		<ul>
+			<li>#site_name, #site_description</li>
+			<li>#navigation a</li>
+			<li>.kwick_title, .kwick_detail h3</li>
+			<li>#feature h1, #introduce</li>
+			<li>#introduce .entry_meta</li>
+			<li>h1, h2, h3, h4, h5, h6</li>
+			<li>.entry h1</li>
+			<li>.portfolio_title</li>
+			<li>blockquote, .dropcap1, .dropcap2, .dropcap3, .dropcap4</li>
+			<li>#sidebar .widgettitle</li>
+			<li>#footer .widgettitle</li>
+			<li>#copyright</li>
+			<li>#footer_menu a</li>
+		</ul>
+		</p>
+		
+		<p class="center"><img src="assets/images/striking_font.png" alt="Font Options" /></p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="slideshow"><strong>E) Slide Show Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p><strong>Striking</strong> contains 3 different slider show types. When you select one type, you should configure the corresponding options.</p>
+		<p>After configuration, click <a href="#slideritem">here</a> go to see how to add slider item.</p>
+		
+		<p class="center"><img src="assets/images/striking_slideshow.png" alt="Font Options" /></p>
+		
+		
+		<h3 id="sidebar"><strong>F) Sidebar Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p class="center"><img src="assets/images/striking_sidebar.png" alt="Sidebar Options" /></p>
+		
+		<p><strong>Striking</strong> support dynamic sidebar, you can assign a page or post a custom sidebar that created in <span class="panel_title">Sidebar Options</span> page.</p>
+		
+		<p>First, enter the name of the new custom sidebar you would like add and click on the "Save Changes" button.</p>
+		
+		<p>You will now see your newly created custom widget available by clicking on <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Appearance">Appearance</a> -> <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Widgets">Widgets</a> on your WordPress administration menu. You can now add Widgets to your newly created sidebar.</p>
+		
+		<p>You can now activate your newly created sidebar on a post-by-post or page-by-page basis whenever you create or
+edit a page or post in the "<strong>Striking</strong> Page General Options" panel as shown below:</p>
+
+		<p class="center"><img src="assets/images/page_sidebar.png" alt="Custom Sidebar Metabox" /></p>
+		
+		
+		
+		
+		
+		<hr>
+
+		<h3 id="image"><strong>G) Image Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p class="center"><img src="assets/images/striking_image.png" alt="Image Options" /></p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="homepage"><strong>H) Homepage Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p> To make homepage displays as expect, you should go to <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Settings">Appearance</a> -> <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Reading">Reading</a> SubPanel, set the <strong>"Front page displays"</strong> Option to "<strong>Your latest posts</strong>".</p>
+
+		<p class="center"><img src="assets/images/striking_homepage.png" alt="Homepage Options" /></p>
+		
+		<hr>
+		
+		<h3 id="blog"><strong>I) Blog Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p>If you want to display your blog, you should create a blank page with the name of your choice first. Then go to <strong>Blog Options</strong> page, assign the <strong>Blog Page</strong> option with the page you created.</p>
+		<p class="center"><img src="assets/images/striking_blog.png" alt="Blog Options" /></p>	
+		
+		
+		<hr>
+		
+		<h3 id="portfolio"><strong>J) Portfolio Options</strong> - <a href="#toc">top</a></h3>
+		
+		
+		<p class="center"><img src="assets/images/striking_portfolio.png" alt="Portfolio Options" /></p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="footer"><strong>K) Footer Options</strong> - <a href="#toc">top</a></h3>
+		
+		<p class="center"><img src="assets/images/striking_footer.png" alt="Footer Options" /></p>
+		
+		<p><strong>Striking</strong> contain a footer custom menu. Click <a href="#navigation">here</a> to see how to enable it.</p>
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="navigation"><strong>L) Navigation</strong> - <a href="#toc">top</a></h3>
+		<p>If you set "Wordpress Built-in Menu" option on in <span class="panel_title">Striking</span> -> <span class="panel_title">General</span>, you can use WordPress's Custom Navigation Menu system.</p>
+		
+		Go to <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Appearance">Appearance</a> -> <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Menus">Menus</a> subpanel and add two menu items as shown in the “<a target="_blank" href="http://codex.wordpress.org/Appearance_Menus_SubPanel">Wordpress Official Documentation</a>“.</p>
+				
+		<p class="center"><img src="assets/images/striking_navigation.png" alt="navigation Options" /></p>
+		
+		<p>As shown above, I named the two menus “Main Navigation” and “Footer Links”, but you can call them as you prefer. The important thing is to select them in the “<strong>Template Locations</strong>” box:</p>
+		
+		<p class="center"><img src="assets/images/navigation_locations.png" alt="Navigation Locations" /></p>
+		
+		<p>“<strong><strong>Striking</strong> Navigation</strong>” includes a drop-down menu of three levels, while in “<strong><strong>Striking</strong> Footer Menu</strong>” the hierarchical relationship is not shown.</p>
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="addportfolio"><strong>M) Add Portfolio Gallery</strong> - <a href="#toc">top</a></h3>
+		
+		<p>If you want to add a portfolio gallery to your website, follow the steps below:</p>
+		
+		<ol>
+			<li>
+				<p>Create a new page by going to <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Pages">Pages</a> -> <a target="_blank" href="http://codex.wordpress.org/Administration_Panels#Add_New_Page">Add New</a> in the <a target="_blank" href="http://codex.wordpress.org/Administration_Panels">Administration Panels.</a></p>
+			</li>
+			<li>
+				<p>Then change the page template to "Full width".</p>
+				<p class="center"><img src="assets/images/portfolio_template.png" alt="Portfolio Options" /></p>
+			</li>
+			<li>
+				<p>Then use <strong>Shortcode Generator</strong> to generate the shortcode for portfolio. You can learn more about <a href="#shortcode">shortcode</a> here.
+				<p class="center"><img src="assets/images/portfolio_shortcode.png" alt="Portfolio Shortcode Generator" /></p>
+				<p>After configuration, remember click "<strong>Send Shortcode to Editor</strong>" Button.</p>
+ 			</li>
+ 			<li>
+ 				<p>Then <strong>Publish</strong> the page.</p>
+ 			</li>
+		</ol>
+		
+		<p>After creating the portfolio gallery, you should add some portfolio item to it, learn about it <a href="#portfolioitem">here</a>.</p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="portfolioitem"><strong>N) Add Portfolio Item</strong> - <a href="#toc">top</a></h3>
+		<p>If you want to add a new portfolio item, follow the steps below:</p>
+		<ol>
+			<li>
+				<p>Click "<span class="panel_title">Add New</span>" in the "<span class="panel_title">Portfolios</span>" panel. </p>
+				<p class="center"><img src="assets/images/portfolios_panel.png" alt="Portfolios Panel" /></p>
+			</li>
+			<li>		
+				<p>Set the thumbnail of portfolio as <strong>Featured Image</strong>. Click <a href="#setfeatured">here</a> to see how to set a <strong>Featured Image</strong>.</p>
+			</li>
+			<li>
+				<p>Then configure the portfolio item options.</p>
+				<p class="center"><img src="assets/images/portfolio_item_options.png" alt="Portfolio Item Options" /></p>
+			</li>
+			<li>
+				<p>Then fill the title, and add the detail of portfolio to the content editor. You can also add the description to the <strong>Excerpt</strong> textarea for display in the gallery page.</p>
+			</li>
+			<li>
+				<p>Once you have done, click <strong>Publish</strong> button.</p>
+			</li>
+		</ol>
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="slideritem"><strong>O) Add Slider Item</strong> - <a href="#toc">top</a></h3>
+		<p>If you want to add a new slider item, follow the steps below:</p>
+		
+		<ol>
+			<li>
+				<p>Click "<span class="panel_title">Add New</span>" in the "<span class="panel_title">Slider Items</span>" panel. </p>
+				<p class="center"><img src="assets/images/slider_panel.png" alt="Slider Panel" /></p>
+			</li>
+			<li>		
+				<p>Set the image of slider item as <strong>Featured Image</strong>. Click <a href="#setfeatured">here</a> to see how to set a <strong>Featured Image</strong>.</p>
+				<p>Notice that default size of slider is 960x440px.</p>
+			</li>
+			<li>
+				<p>Then after fill the title and the description (only work for Accordion slider), click <strong>Publish</strong> Button, and go to your homepage, you'll see it works.</p>
+			</li>
+		</ol>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="setfeatured"><strong>P) Set Featured Image</strong> - <a href="#toc">top</a></h3>
+
+		<p>If you want to set <strong>Featured Image</strong> for post,page,portfolio or slider item, follow the steps below:
+		
+		<ol>
+			<li>
+				<p>Go to <strong>Add New</strong> or open an existing post in editing mode.
+			</li>
+			
+			<li>
+				<p>locate the <strong>Featured Image</strong> module and click the <strong>Set featured image</strong> link.</p>
+				
+				<p class="center"><img src="assets/images/featured_image.png" alt="Featured Image Metabox" /></p>
+			</li>
+				
+			<li>
+				<p>You will see an uploading screen identical to that used when <a target="_blank" href="http://en.support.wordpress.com/images/#uploading-images">inserting an image</a> into a blog post. Follow the on-screen prompts to choose the image from your computer and upload it or choose it from one of the images already in your Media Library.</p>
+				
+				
+			</li>
+			
+			<li>
+				<p>Once the image has successfully been uploaded, look underneath the sizing options, and click on the Use as featured image link:</p>
+				
+				<p class="center"><img src="assets/images/set_as_featured.png" alt="Set As Featured" /></p>
+				
+				<p>Your Feature image is now set! You can close the Media selector once you’ve chosen the featured image. The image will then appear wherever a featured image is available.
+			</li>
+		</ol>
+		
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="shortcodes"><strong>Q) Shortcodes</strong> - <a href="#toc">top</a></h3>
+		<p><strong>Striking</strong> comes with over 60 custom style shortcodes that allow you to add custom styles to your post or page content.</p>
+		
+		<p>You can easily use Shortcodes by Shortcode Generator.</p>
+		<p class="center"><img src="assets/images/shortcode_generator.png" alt="Shortcode Generator" /></p>
+		
+		<p>Simply select the style you would like to use then click "<strong>Send Shortcode to Editor</strong>" to insert the style shortcode into the WYSIWYG editor. You can then type any text within side the shortcode brackets and the style will be applied to the text. You can visit the following url to see the examples of all the custom shortcode styles available for <strong>Striking</strong>:</p>
+		
+		<p><a target="_blank" href="http://kaptinlin.com/themes/striking/shortcodes/">http://kaptinlin.com/themes/striking/shortcodes/</a></p>
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="contactform"><strong>R) Contact Form</strong> - <a href="#toc">top</a></h3>
+		<p>To add a contact form to your website, first create a blank page with the name of your choice. Then use Shortcode Generator to add Contact Form shortcode.</p>
+		
+		<p>Select the <strong>Widget</strong> shortcode, and you'll find <strong>Contact Form</strong> listed in it.</p>
+		
+		<p class="center"><img src="assets/images/contact_form.png" alt="Contact Form" /></p>
+		
+		<p>Enter in the email address where you would like the contact form submission to be sent. And fill out the <strong>Success Text</strong>'s textarea for the text rendering after submission.</p>
+		
+		<p>Note: After set-up, you should send a test message to yourself to see if things are working. The <strong>Contact Form</strong> use <a target="_blank" href="http://codex.wordpress.org/Function_Reference/wp_mail">wp_mail</a> function to send mails. If it doesn't work, please check with your host to make sure SMTP and smtp_port have been set in php.ini. Or you can install a Plugin for Wordpress to enable SMTP configuration. For example, <a href="http://wordpress.org/extend/plugins/configure-smtp/" target="_blank">Configure SMTP</a> is worked well for me.</p>
+		
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="widgets"><strong>S) Custom Widgets</strong> - <a href="#toc">top</a></h3>
+		<p><strong>Striking</strong> comes with 11 custom widgets:</p>
+		<ol>
+			<li>
+				<p>Sub Navigation:<br/>
+				Displays a list of SubPages.</p>
+			</li>
+			<li>
+				<p>Popular Post:<br/>
+				Displays the popular posts on your site.</p>
+			</li>
+			<li>
+				<p>Recent Post:<br/>
+				Displays the popular posts on your site.</p>
+			</li>
+			<li>
+				<p>Recent Post:<br/>
+				Displays the popular posts on your site.</p>
+			</li>
+			<li>
+				<p>Flickr:<br/>
+				Displays photos from a Flickr ID.</p>
+			</li>
+			<li>
+				<p>Twitter:<br/>
+				Displays a list of twitter feeds.</p>
+			</li>
+			<li>
+				<p>Social Icon:<br/>
+				Displays a list of social media icons.</p>
+			</li>
+			<li>
+				<p>Contact Form:<br/>
+				Displays a email contact form.</p>
+			</li>
+			<li>
+				<p>Contact Info:<br/>
+				Displays a list of contact info.</p>
+			</li>
+			<li>
+				<p>Gmap:<br/>
+				Displays a google map.</p>
+			</li>
+		</ol>
+		
+		<p>Simply drag one of your theme's custom widgets to a sidebar and enter the appropriate settings if needed.</p>
+		
+		
+		
+		
+		<hr>
+		
+		<h3 id="template"><strong>T) Template Pages</strong> - <a href="#toc">top</a></h3>
+		<p><strong>Striking</strong> comes with three WordPress template pages that you can select when you edit/publish a page from the “Edit Page” “<strong>Attributes</strong>” settings box as seen below:</p>
+		
+		<p class="center"><img src="assets/images/page_attributes_template.png" alt="Page Attributes Metabox" /></p>
+		
+		<p>The pages are:</p>
+		
+		<ol>
+			<li>
+				<p>
+					Default Template:<br/>
+					Displays the themeʼs sidebar on the right side of the page.
+				</p>
+			</li>
+			<li>
+				<p>
+					Full Width Template:<br/>
+					Disables WordPressʼs widget area and allows you to layout content across the full width of the page.
+				</p>
+			</li>
+			<li>
+				<p>
+					Left Sidebar Template:<br/>
+					Displays the themeʼs sidebar on the left side of the page.
+				</p>
+			</li>
+			<li>
+				<p>
+					Sitemap Template:<br/>
+					Creates a page that lists all of your sites internal “Pages”, “Categories Archives” and “Blog Posts”.
+				</p>
+			</li>
+			
+		
+		</ol>
+		
+		<p>To activate one of your themeʼs page templates simply select it from the drop-down box and then click the “<strong>Publish</strong>” or “<strong>Update</strong>” button.</p>
+		
+		
+
+
+		<hr>
+		
+		<h3 id="cufon"><strong>U) Cufon Generate</strong> - <a href="#toc">top</a></h3>
+		<p>If you want use your own font with cufon replacement, please follow the steps below:
+		<ol>
+			<li>Go to <a target="_blank" href="http://cufon.shoqolate.com/generate/">http://cufon.shoqolate.com/generate</a></li>
+			<li class="center"><img src="assets/images/cufon_generate.png" alt="Cufon Generate" /></li>
+			<li>upload the generated .font.js file to '/wp-content/themes/striking/fonts' folder through your FTP Client.</li>
+			
+			<li>Refresh the <span class="panel_title">Striking</span> -> <span class="panel_title">Font</span> Options page, you will see the font on it. </li>
+		</ol>
+
+		<h3 id="updating"><strong>V) Updating</strong> - <a href="#toc">top</a></h3>
+		<p>Just like doing a new install, there is more then one way to do an update successfully. Most often updates are performed by using an FTP program. Traditionally, the wordpress default Install Theme function was not applicable to updating premium themes, but if you have installed a free 3rd party plugin called "Easy Theme and Plugin Updater" then you can use the Install Theme wordpress function to update your theme. Please reference that plugin's instructions for using it to do the theme update. </p>
+
+		<p><strong>The most important aspect of updating is that one should always have made a backup of their site and database prior to performing an update.</strong> Updates are very easy to do, but because we are dealing with the internet, and also several different programs attempting to work together, sometimes updates will fail, and "bad things" can happen to your site. If you have made a backup, then the problems are very easily reversed. DON'T WORRY - UPDATES RARELY FAIL, AND WE ARE HERE TO ASSIST. IF YOU MADE A BACKUP, THEN THERE IS UNLIKELY TO BE ANY ISSSUES AT ALL. </p>
+		
+		<p>Wordpress.org plugins section has many good backup programs to choose from. Choose one that is up to date and is highly rated.</p>
+
+		<h4><strong>Update via FTP</strong></h4>
+		
+		<ol>
+			<li>
+				<p>Download the latest version of Striking from Themeforest to your drive.  As long as you are a purchaser of Striking, you always are entitled to all upgrades free.  So check back every so often to the Striking page on Themeforest.  If you see that an upgrade has been released and you have an older version number, log into your account, go to the downloads page of your themeforest account interface, and download Striking again.</p>
+			</li>
+			<li>Befor you un unzip the download, you should copy the striking folder to your hard_drive then name it "Striking_old".	
+			</li>	
+			<li>
+				<p> Unzip the download.  As with a new install (see above) you only need the 'striking" folder from the folders unzipped, for the upgrade.  You will not be transferring license or resources, etc to your online host.</p>
+			</li>
+			<li>
+				<p> It is very easy to do an update via ftp.  Open your ftp program, and on the drive side, navigate to the "striking" subfolder.  On the host side, navigate to <br>
+			   your WordPress installation root directory: /wp-content/themes/ <br>
+			   where you have your current version of striking installed.</p>
+			</li>
+			<li>
+				<p>simply drag over the striking folder from your drive to the themes folder, overwriting the existing striking folder.</p>
+			</li>
+			<li>
+				<p>Log back into your wordrpess admin and go to your themes panel. You should see the latest version of Striking installed (check the version number).  You are done your update!</p>
+			</li>
+		</ol>
+		
+		<p>Many often worry that upgrading by ftp overwrite will cause one to lose the existing content they have input into their site.  This is not the case.  Your content, formatting and images you have uploaded are not effected, nor is any custom css you have input into the custom css box in the striking general panel.</p>
+		
+		<p>However, if you have made any custom modifications to your php files - for example you have have hardcoded changes to a file, you will lose those modifications in the update method above.  You should definitely save each php or css file you have "hard" modified, so that you can reinstall them after the global program update. </p>
+
+
+
+		<hr>
+		
+		<h3 id="translate"><strong>W) Translate</strong> - <a href="#toc">top</a></h3>
+		<p>You can learn from <a href="http://codex.wordpress.org/Translating_WordPress">here</a> about Translating Striking into your language.</p>
+
+		<p>The .po file is in 'striking/languages' folder named 'striking_front.pot'.</p>
+		
+		<p>You can use Poedit to translate the .pot file. Before translate, you should set the plural forms for Poedit. You can learn from <a href="http://hakre.wordpress.com/2010/01/11/translating-plural-forms-with-poedit/">here</a>.</p>
+
+
+
+
+		<hr>
+
+		<h3 id="wpml"><strong>X) WPML Integration</strong> - <a href="#toc">top</a></h3>
+		<p>After you enable WPML plugin, You can go to <span class="panel_title">Striking</span> -> <span class="panel_title">General</span> subPanel to enable Language Flags in header.</p>
+
+		<p class="center"><img src="assets/images/wpml_flags.png" alt="WPML Flags" /></p>
+
+		<p>If you want add translate for Portfolio and Slider Items, follow the steps below:</p>
+
+		<ol>
+			<li>Enable WPML’s Advanced mode.</li>
+			<li>Then, go to <span class="panel_title">WPML</span> -> <span class="panel_title">Translation sync</span> and scroll to the bottom. You will see something like this:
+			<p class="center"><img src="assets/images/translate_custom.png" alt="Translate Custom post type" /></p></li>
+			<li>Choose Translate for Portfolios,Slider Items and Portfolio Categories.</li>
+		</ol>
+
+
+		<hr>
+
+
+		<h3 id="pageorder"><strong>X) Page & Slider & Portfolio Order</strong> - <a href="#toc">top</a></h3>
+		<p>You can install <a href="http://wordpress.org/extend/plugins/post-types-order/">Post Types Order</a> Plugin helping reorder the Slider & portfolio items.</p>
+
+		<p>For hierarchical page, you can install <a href="http://wordpress.org/extend/plugins/custom-post-type-order/">Custom Post Type Order</a> Plugin for it.</p>
+
+
+		<hr>
+
+		<h3 id="credits"><strong>Z) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following opensource projects, graphics, fonts or other files as listed. Thanks to the author for the creative work they made.</p>
+		
+		<h4><strong>OpenSource Projects</strong></h4>
+		<ul>
+			<li>Piecemaker by <a href="http://www.modularweb.net/piecemaker/">Björn Crüger</a></li> 
+			<li>jQuery by <a href="http://jquery.com/">John Resig</a></li>
+			<li>jQuery ColorBox by <a href="http://colorpowered.com/colorbox/">Jack Moore</a></li>
+			<li>jQuery gmap plugin by <a href="http://http://gmap.nurtext.de/">Cedric Kastner</a></li>
+			<li>jQuery Kwicks plugin by <a href="http://www.jeremymartin.name/projects.php?project=kwicks">Jeremy Martin</a></li>
+			<li>jQuery Easing plugin by <a href="http://gsgd.co.uk/sandbox/jquery/easing/">George McGinley Smith</a></li>
+			<li>jQuery Nivo Slider plugin by <a href="http://nivo.dev7studios.com">Gilbert Pellegrom</a></li>
+			<li>jQuery Quicksand plugin by <a href="http://razorjack.net/quicksand">Jacek Galanciak</a></li>
+			<li>jQuery SWFObject plugin by <a href="http://jquery.thewikies.com/swfobject">Jonathan Neal</a></li>
+			<li>jQuery Tools plugin by <a href="http://flowplayer.org/tools/">Tero Piirainen</a></li>
+			<li>jQuery Tweet plugin by <a href="http://tweet.seaofclouds.com/">seaofclouds</a></li>
+			<li>jQuery Multi Level CSS Menu #2 by <a href="http://www.dynamicdrive.com/">Dynamic Drive</a></li>
+			<li>iPhone-style Checkboxes jQuery plugin by <a href="http://tdreyno.github.com/iphone-style-checkboxes/">Thomas Reynolds</a></li>
+			<li>ZeroClipboard by <a href="http://code.google.com/p/zeroclipboard/">Joseph Huckaby</a></li>
+			<li>DD_belatedPNG by <a href="http://www.dillerdesign.com/experiment/DD_belatedPNG/">Drew Diller</a></li>
+			<li>mColorPicker by <a href="http://blog.meta100.com/post/600571131/mcolorpicker">Meta100</a></li>
+			<li>cufon by <a href="http://cufon.shoqolate.com/">Simo Kinnunen</a></li>
+			<li>html5doctor.com Reset Stylesheet by <a href="http://richclarkdesign.com">Richard Clark</a></li>
+			<li>TimThumb script by <a href="http://www.binarymoon.co.uk/projects/timthumb/">Tim McDaniels, Darren Hoyt, Ben Gillbanks</a></li>
+			<li>Breadcrumbs Plus Plugin by <a href="http://luisalberto.org/">Luis Alberto Ochoa</a></li>
+			<li>WP-PageNavi Plugin by <a href="http://lesterchan.net/">Lester 'GaMerZ' Chan</a></li>
+		</ul>
+		
+		<h4><strong>Graphics</strong></h4>
+		<ul>
+			<li>The Ultimate Free Web Designer’s Icon Set by <a href="http://www.smashingmagazine.com/2010/04/15/the-ultimate-free-web-designer-s-icon-set-750-icons-incl-psd-sources/">Vitaly Friedman</a></li>
+			<li>Social Network Icon Pack by <a href="http://www.komodomedia.com/blog/2009/06/social-network-icon-pack/">Komodo Media, Rogie King</a></li>
+			<li>User Interface Design Framework by <a href="http://www.webalys.com/design-interface-application-framework.php">Webalys</a></li>
+			<li>flickr creative commons library pictures by <a href="http://www.flickr.com/photos/ajari/">ajari</a>, <a href="http://www.flickr.com/photos/aussiegall/">aussiegall</a>, <a href="http://www.flickr.com/photos/hamed/">hamed</a>, <a href="http://www.flickr.com/photos/nattu/">nattu</a>, <a href="http://www.flickr.com/photos/visualpanic/">visualpanic</a>, <a href="http://www.flickr.com/photos/xjrlokix/">xjrlokix</a></li>
+		</ul>
+		
+		<h4><strong>Fonts</strong></h4>
+		<ul>
+			<li>Aaargh by <a target="_blank" href="http://www.tupwanders.nl/">Tup Wanders</a></li>
+			<li>Andika Basic by <a target="_blank" href="http://scripts.sil.org/">SIL International</a></li>
+			<li>Aurulent Sans by Stephen G. Hartke</li>
+			<li>Blokletters by <a target="_blank" href="http://lefly.vepar.nl/">LeFly</a></li>
+			<li>Candela by <a target="_blank" href="http://www.tipomatika.co.nr">La Tipomatika</a></li>
+			<li>Chelsea by <a target="_blank" href="http://www.steffmann.de/">Dieter Steffmann</a></li>
+			<li>ChunkFive by <a target="_blank" href="http://www.theleagueofmoveabletype.com/">The League of Moveable Type</a></li>
+			<li>Cicle by <a target="_blank" href="http://tipomatika.co.nr/">La Tipomatika</a></li>
+			<li>Colaborate by <a target="_blank" href="http://www.carrois.com/">Ralph Oliver du Carrois</a></li>
+			<li>Daniel by Daniel Midgley</li>
+			<li>Droid Serif by <a target="_blank" href="http://code.google.com/android/">Google Android</a></li>
+			<li>Hattori Hanzo by <a target="_blank" href="http://www.behance.net/romanshamin/">Roman Shamin</a></li>
+			<li>Imperator by <a target="_blank" href="http://moorstation.org/typoasis/designers/lloyd/">Paul Lloyd</a></li>
+			<li>Liberation Sans by<a target="_blank" href="http://www.redhat.com/">Red Hat</a></li>
+			<li>Nobile by <a target="_blank" href="http://www.newtypography.co.uk/">Vernon Adams</a></li>
+			<li>Oregon LDO by Luke Owens</li>
+			<li>PT Sans by <a target="_blank" href="http://fonts.ru/">Paratype</a></li>
+			<li>Quicksand by <a target="_blank" href="http://www.andrewpaglinawan.com/">Andrew Paglinawan</a></li>
+			<li>Segan by <a href="mailto:felinefury82@gmail.com">Rodney Rogers</a></li>
+			<li>Swansea by <a target="_blank" href="http://www.rogersfonts.org.uk/">Roger White</a></li>
+			<li>Tenderness by <a target="_blank" href="http://www.dotcolon.net/">arro</a></li>
+			<li>Titillium Text by <a target="_blank" href="http://www.campivisivi.net/titillium/">Accademia di Belle Arti Urbino</a></li>
+			<li>Vegur by <a target="_blank" href="http://www.dotcolon.net/">arro</a></li>
+			<li>Walkway by <a target="_blank" href="http://www.moorstation.org/typoasis/designers/gemnew/w01.htm">GemFonts</a></li>
+			<li>luna by Carolina Mejia Villegas</li>
+			<li>BPscript by backpacker</li>
+			<li>BlackJack by Typadelic</li>
+			<li>Existence Light by Yeah Noah</li>
+		</ul>
+		
+		<p>And finally thanks to my special friend Miss Zhang for checking the document.</p>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>KaptinLin</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

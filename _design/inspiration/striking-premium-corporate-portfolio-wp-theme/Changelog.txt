@@ -1,0 +1,226 @@
+Version 3.0.1 - Apr.1th ＆11
+===============================================
+Fixed : Blog meta bar issue
+Fixed : Accordion default is closed issue
+Fixed : Contact form issue
+Fixed : Cufon replacement for sortable portfolio title in ie issue
+Fixed : autoheight for image shortcode issue
+Fixed : Display full content with shortcode support for blog posts shortcode
+Fixed : Sub footer link color issue
+Fixed : Homepage slideshow category issue
+Fixed : Nivo Slideshow shortcode issue
+Added : Id attribute for flash video shortcode
+
+
+Version 3.0 - Mar.25th ＆11
+===============================================
+Added : WP 3.1 Compatibility, IE 9 and FF 4.0 Compatibility
+Added : Nivo Slideshow Shortcode added with 10 attributes
+Added : Custom Background loader for header, feature, page body and footer areas with adjustable attributes (position, tiling)
+Added : 45 Fontface Fonts
+Added : Online Documentation
+Added : Table width attribute to table shortcode
+Added : History attribute to Tabs Shortcode
+Added : History attribute to Mini Tabs Shortcode
+Added : Download links attribute to HTML 5 video shortcode
+Added : 10 new attributes to Google video shortcode
+Added : 4 new attributes to Vimeo Video Shortcode
+Added : 3 new attributes to Dailymotion shortcode
+Added : Thumbnail Height attribute to portfolio shortcode
+Added : Advanced Display Description Attribute to portfolio shortcode
+Added : Lightbox Title attribute w/3 selectable settings to portofolio shortcode
+Added : # of Columns Attribute w/6 selectable settings to Blog Shortcode
+Added : Height of Feature Images attribute to Blog Shortcode
+Added : Description attribute to Blog Shortcode
+Added : 2 more color controls for header area
+Added : 4 more color controls for page area
+Added : mobile slider replacement control for 3D slider
+Added : 2 more Single Blog Image controls
+Added : 5 more Portfolio controls
+Added : excluded pages from 404 page as navigation menu.
+Added : Link attribute for Contact info widget
+Added : Link target for Advertisement 125 Widget
+Changed : tri-state toggle for 'Disable Breadcrumbs option' in 'Page General Options' Module.
+Changed : tri-state toggle for 'Enable Read More' in 'Portfolio Item Options' Module.
+
+Version 2.2.3 - Dec.18th ＆10
+===============================================
+Fixed : Page navigation on dedicated blog page issue
+
+Version 2.2.2 - Dec.16th ＆10
+===============================================
+Fixed : Custom homepage with custom sidebar issue
+Added : Custom homepage with custom feauture color
+Added : Norwegian translation
+Added : target for portfolio more link 
+
+Version 2.2.1 - Dec.15th ＆10
+===============================================
+Fixed : Contact form shortcode issue
+Fixed : Homepage with slider issue
+
+Version 2.2 - Dec.14th ＆10
+===============================================
+Added : Header widget area
+Added : Sub Footer widget area
+Added : Homepage with introduce text
+Added : Author page
+Added : Author widget
+Added : Avatar and multi user support for twitter widget
+Added : SlideShow for pages & posts
+Added : multi image for portfolio item
+Added : more control for portfolio shortcode
+Added : iframe shortcode
+Added : lightbox for gallery shortcode
+Added : the ability to Import/Export all the theme options data
+Added : javascript & css optimizer to speed up the site
+Added : video size option for portfolio item
+Added : font line-height option
+Added : color option for Nivo slider caption
+Added : Background color option for Anything slider
+Added : color option for Tab & Accordion
+Added : link target for slideshow item
+Added : Traditional Chinese, Russian, Dutch, Spanish translation
+Fixed : Capitalization for Social widget
+Fixed : Color for contact info in footer
+Fixed : translation for contact form
+Fixed : ie6 compatibility
+Changed : Move Cache folder to the top
+Updated : update videojs to version 2.0.2
+Updated : update nivo slider to version 2.3
+Updated : update ColorBox to version 1.3.15
+Updated : update cufon-yui to version 1.09i
+Updated : update TimThumb to version 1.19
+
+Version 2.1 - Nov.10th ＆10
+===============================================
+Added : close button option for lightbox shortcode
+Added : next & previous button support for all types of portfolio item
+Changed : remove wpautop function for column shortcode
+Fixed : video shortcode fallback flash player overlap issue
+Fixed : image shortcode issue
+
+
+Version 2.0 - Nov.9th ＆10
+===============================================
+Added : Anything slider
+Added : sort support for portfolio
+Added : next & previous button for portfolio item single page
+Added : Portfolio thumbnail link to external link
+Added : Link icon for framed image
+Added : shortcode for sitemap item
+Added : Lightbox shortcode
+Added : google chart shortcode
+Added : group support for flickr widget
+Added : target for icon link shortcode
+Added : align option for google map shortcode
+Added : title option for vimeo video shortcode
+Added : rollover color option for button shortcode
+Added : color option for portfolio sortable header
+Added : blog meta information options
+Added : height control for 3d slider
+Added : option for global disable featured bar
+Added : Styles for search widget in footer
+Added : full width featured image support
+Added : auto adjust Height option for image shortcode
+Added : stop at end option for nivo slider
+Added : translation support for copyright, twitter widget, contact widget
+Added : Simplified Chinese, Italian, Deutsch, Japanese, Brazilian, Slovenian Translation
+Changed : localize html5.js file
+Changed : table shortcode to make it compatible with WP-Table Reloaded plugin
+Changed : remove loading image text on 3d slider
+Changed : the gap between sidebar & featured area when disable breadcrumbs
+Changed : remove alt for portfolio featured image
+Fixed : sortable portfolio animation issue
+Fixed : disable portfolio "read more" in one column
+Fixed : ie layout issue
+Fixed : the issue that access homepage directly with wpml
+Fixed : html5 shortcode issue with ie
+Fixed : Full Blog Posts with <!--more--> tag issue in blog index page
+
+
+Version 1.9.1 - Oct.26th ＆10
+===============================================
+Added : Video shortcodes
+Added : Font family option
+Added : color option for h1~h6
+Added : Advertisement 125 widget
+Added : Style for Footer Tab shortcode
+Added : Rounded corner option for framed box
+Added : Latin-1 Supplement glyphs for cufon replacement
+Added : Layout for portfolio item
+Added : Layout for blog post
+Added : Compatible with Google XML Sitemaps
+Added : Portfolio for sitemap page
+Fixed : Blog post filter issue
+Fixed : Column shortcode issue
+Fixed : Table shortcode issue
+Fixed : Cufon replacement delay on ie
+
+
+Version 1.8 每 Oct.19th ＆10
+===============================================
+Added : WPML support
+Added : Custom style sheet option
+Added : toggle option for blog post feature image
+Added : specific category for posts widgets
+Added : Related posts widget
+Added : Left float image for Blog posts list
+Added : Timthumb Support for Multisite Domain Mapping
+Added : Option for the bottom of Logo
+Added : Link target for buttons
+Fixed : Footer contact info widget icon issue.
+Fixed : Blog posts shortcode meta linefeed issue.
+Fixed : Google map widget height issue.
+Changed : Blog posts list title warpped in h2
+
+Version 1.7 每 Oct.15th ＆10
+===============================================
+Added : Translate Support
+Added : Featured Image for Portfolio Item
+Added : Next-prev buttons for video portfolio Item
+Added : Height control for Portfolio item thumbnail
+Added : Align Control for Button
+Added : Cellphone for Contact Info Widget
+Added : Control for the gap between posts
+Added : Custom icon for social widget
+Added : Icons for Ozh＊ Admin Drop Down Menu
+Fixed : Refresh cufon replacement after re-sort the portfolio items
+Fixed : Left Sidebar for page
+Changed : Reduce the gap between content and footer
+
+Version 1.6.1 每 Oct.12th ＆10
+===============================================
+Added : Font size Control for sidebar widget title
+Added : Sort support for Slider item
+Added : different feature background color per page
+Added : Previous-next navigation for post
+Added : height option for accordion slider
+Fixed : multi-category for portfolio
+Fixed : Preview button error
+Changed : make sidebar divider long enough
+
+Version 1.5.1 每 Oct.8th ＆10
+===============================================
+Added : Shortcode for Blog posts that you can display posts on frontpage
+Added : Captions for Nivo Slider
+Added : Shortcode Generator for Homepage content editor
+Added : left sidebar layout for blog
+Added : Slider item link to portfolio
+Added : More control for footer
+Changed : Styles for sidebar widgets
+Changed : Layout of subfooter to avoid linefeed
+Fixed : Homepage Content Formatting issue
+Fixed : Meta bar display issue in single post
+
+Version 1.4 每 Oct.7th ＆10
+===============================================
+Added : Control for Nivo Slider height (click)
+Added : Control for Blog Featured Image (click)
+Fixed : Category archive error in PHP4
+Fixed : Category archive error when use default permalink
+
+Version 1.3 每 Oct.6th ＆10
+===============================================
+Added : Added more control for styled framed box shortcode.
+Changed : compatible with PHP4
