@@ -1,0 +1,36 @@
+/* General */
+
+.tw-content { display:block; float:left; width:100%; }
+.tabbed-widget { float:left; width:100%; border:none; } 
+
+
+/* Accordion */
+
+.ui-accordion { float:left; width:100%; }
+.ui-accordion span.ui-icon { float:right; width:1.5em; height:1.25em; }
+.ui-accordion .ui-state-active a { background:url('../images/onlight-accordion-open.png') no-repeat 100% 50%; color:#333; text-decoration:none; }
+.ui-accordion .ui-state-default a { background:url('../images/onlight-accordion-closed.png') no-repeat 100% 50%; }
+.ui-accordion .ui-accordion-header.ui-state-default:hover { cursor:pointer; text-decoration:underline!important; }
+.ui-accordion .tw-title { margin:0; padding:0; float:left; width:100%; }
+.ui-accordion .tw-title a { padding:0.5em 0; display:block; border-top:1px solid #ddd; }
+.ui-accordion .ui-state-active a { border-bottom:none; }
+
+
+/* Tabbed  */
+
+.tabbed-widget .ui-tabs-hide { display:none; }
+.tabbed-widget .ui-state-active a { font-weight:bold; text-decoration:none; color:#333; }
+.tabbed-widget .ui-tabs .ui-tabs-nav { float:left; width:100%; clear:both; margin:0; padding:0; }
+.tabbed-widget .ui-tabs .ui-tabs-nav li { display:block; float:left; width:auto; margin-right:0.5em; }
+.tabbed-widget .ui-tabs li.ui-tabs-selected a { background:#333; color:#fff; padding:0 0.25em; text-decoration:none; }
+
+
+/* Twenty Ten */
+
+#main .tabbed-widget ul.tw-tabbed-nav { font-size:larger; margin:0; padding:0; font-family: helvetica neue, arial, helvetica, sans-serif; }
+#main .tabbed-widget ul.tw-tabbed-nav a { color:#666; float:left; padding:0.2em 0.55em; background:#ddd; }
+#main .tabbed-widget ul.tw-tabbed-nav li { margin:0 0.2em 0 0; padding:0; }
+#main .tabbed-widget ul.tw-tabbed-nav li.ui-tabs-selected a { color:#fff; background-color:#000; }
+#main .tabbed-widget .ui-accordion .tw-title { font-size:larger; font-family: helvetica neue, arial, helvetica, sans-serif; }
+#main .tabbed-widget .ui-accordion { border-bottom:1px solid #ddd; } 
+

@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)http://lesscss.org/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet/less" type="text/css" href="./LESS « The Dynamic Stylesheet language_files/main.less">
+    <script src="./LESS « The Dynamic Stylesheet language_files/less.js" type="text/javascript"></script><style type="text/css" media="screen" id="less:less-main">html {
+  margin: 0;
+}
+body {
+  background-color: #262626;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  overflow-x: hidden;
+}
+nav,
+header,
+footer,
+section,
+article {
+  display: block;
+}
+a {
+  color: #b83000;
+}
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: normal;
+}
+ul, li {
+  list-style-type: none;
+}
+code {
+  font-family: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', 'Monaco', Courier, monospace !important;
+}
+code .string, code .regexp {
+  color: #3d575c;
+}
+code .keyword {
+  font-weight: bold;
+}
+code .comment {
+  color: rgba(0, 0, 0, 0.5);
+}
+code .number {
+  color: #143352;
+}
+code .class, code .special {
+  color: rgba(0, 50, 100, 0.8);
+}
+pre {
+  padding: 0 30px;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  /* css-3 */
+
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+
+}
+blockquote {
+  font-style: italic;
+}
+body > footer {
+  text-align: left;
+  margin-left: 10px;
+  font-style: italic;
+  font-size: 18px;
+  color: #888;
+}
+#logo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  width: 199px;
+  height: 81px;
+  background: url(/images/logo.png) no-repeat;
+}
+nav {
+  margin-left: 15px;
+}
+nav a, #dropdown li {
+  display: inline-block;
+  color: white;
+  line-height: 42px;
+  margin: 0;
+  padding: 0px 15px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-width: 0 2px;
+}
+nav a:hover, #dropdown li:hover {
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-bottom: 0;
+  border-top: 0;
+  background-color: #521f14;
+  text-decoration: none;
+}
+.dark-red {
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-bottom: 0;
+  border-top: 0;
+  background-color: #521f14;
+}
+.content {
+  margin: 0 auto;
+  width: 980px;
+}
+#menu {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  clear: both;
+  display: block;
+  background-color: #143352;
+  height: 42px;
+  border-top: 2px solid rgba(92, 153, 214, 0.5);
+  border-bottom: 2px solid rgba(15, 38, 61, 0.5);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 0 #000;
+}
+#menu.docked {
+  background-color: rgba(41, 102, 163, 0.4);
+}
+#menu:hover {
+  background-color: #143352;
+}
+#menu #dropdown {
+  margin: 0 0 0 117px;
+  padding: 0;
+  padding-top: 5px;
+  display: none;
+  width: 190px;
+  border-top: 2px solid #7a2e1f;
+  color: #eaf2d9;
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-top-width: 0;
+  background-color: #521f14;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-top-right-radius: 0;
+  -moz-border-top-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+#menu #dropdown ul {
+  padding: 0px;
+}
+#menu #dropdown li {
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  padding: 0;
+  border: 0;
+}
+#menu #dropdown li a {
+  display: block;
+  padding: 0px 15px;
+  text-decoration: none;
+  color: white;
+}
+#menu #dropdown li a:hover {
+  background-color: #3d170f;
+  text-decoration: none;
+}
+#main {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #79c3d2;
+  border-top: 8px solid #66bbcc;
+}
+#main #intro {
+  background-color: #d9eef2;
+  float: left;
+  margin-top: -8px;
+  margin-right: 5px;
+  height: 380px;
+  position: relative;
+  z-index: 2;
+  font-family: 'Droid Serif', 'Georgia';
+  width: 395px;
+  padding: 45px 20px 23px 30px;
+  border: 2px dashed #53b2c6;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.5);
+  border-bottom: 0;
+  border-top: 0;
+}
+#main #intro #download {
+  color: transparent;
+  border: 0;
+  float: left;
+  display: inline-block;
+  margin: 15px 0 15px -5px;
+}
+#main #intro #download img {
+  display: inline-block;
+}
+#main #intro #download-info {
+  color: #476685;
+  display: inline;
+  float: left;
+  margin: 36px 0 0 15px;
+}
+#main #intro #download-info code {
+  font-size: 13px;
+}
+#main h2 {
+  color: #143352;
+  margin: 20px 0;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+#main h2 span {
+  color: #7a2e1f;
+}
+#main h3 {
+  color: #143352;
+  line-height: 1.4em;
+  margin: 30px 0 15px 0;
+  font-size: 1em;
+  text-shadow: 0px 0px 0px #e6ebe0;
+}
+#main h3 span {
+  color: #7a2e1f;
+}
+#main #example {
+  float: right;
+  font-size: 12px;
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+  width: 500px;
+}
+#main #example p {
+  font-size: 18px;
+  color: #143352;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #e6ebe0;
+}
+#main #example pre {
+  margin: 0;
+  text-shadow: 0 -1px 1px #262626;
+  margin-top: 20px;
+  background-color: #262626;
+  border: 0;
+  width: 450px;
+  color: #ebefe7;
+  background-repeat: repeat;
+  padding: 15px;
+  border: 1px dashed #e6ebe0;
+  line-height: 15px;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0px 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', 'Monaco', Courier, monospace !important;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+#main #example pre code .attribute {
+  color: #d9bf8c;
+}
+#main #example pre code .variable {
+  color: #738c73;
+}
+#main #example pre code .element {
+  color: #669991;
+}
+#main #example pre code .string, #main #example pre .regexp {
+  color: #bcd279;
+}
+#main #example pre code .class {
+  color: #c2a770;
+  font-weight: normal;
+}
+#main #example pre code .id {
+  color: #c2b470;
+  font-weight: normal;
+}
+#main #example pre code .comment {
+  color: rgba(255, 255, 255, 0.2);
+}
+#main #example pre code .number, #main #example pre .color {
+  color: #b35e4d;
+}
+#main #example pre code .class, #main #example pre code .mixin, #main #example pre .special {
+  color: #669199;
+}
+#main #example pre #time {
+  color: #aaaaaa;
+}
+.page {
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 0 60px;
+}
+.page .content {
+  width: 870px;
+  padding: 45px;
+}
+.page code {
+  font-size: 16px;
+}
+.page pre {
+  border-width: 1px;
+  border-style: dashed;
+  padding: 15px;
+  margin: 15px 0;
+}
+.page h1 {
+  text-align: left;
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.page p + h1 {
+  margin-top: 60px;
+}
+.page h2, .page h3 {
+  margin: 30px 0 15px 0;
+}
+.page p + h2, .page pre + h2, .page code + h2 {
+  border-top: 6px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+.page h3 {
+  margin: 15px 0;
+}
+#docs {
+  border-top: 2px solid #9fd5df;
+  color: #143352;
+  background-color: #79c3d2;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+#docs h1 {
+  font-family: 'Droid Serif', 'Georgia', serif;
+  padding-top: 30px;
+  padding-left: 45px;
+  font-size: 44px;
+  text-align: left;
+  margin: 30px 0 !important;
+  text-shadow: 0px 1px 1px #e6ebe0;
+  font-weight: bold;
+}
+#docs .content {
+  clear: both;
+  border-color: transparent;
+  background-color: #d9eef2;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+#docs pre {
+  color: #1f4c7a;
+  background-color: #ffffff;
+  border-color: #d9eef2;
+  border-width: 2px;
+}
+#docs pre code .attribute {
+  color: #735926;
+}
+#docs pre code .variable {
+  color: #455445;
+}
+#docs pre code .element {
+  color: #3d5c57;
+}
+#docs pre code .string, #docs pre .regexp {
+  color: #70862d;
+}
+#docs pre code .class {
+  color: #6b572e;
+  font-weight: normal;
+}
+#docs pre code .id {
+  color: #6b612e;
+  font-weight: normal;
+}
+#docs pre code .comment {
+  color: rgba(0, 0, 0, 0.4);
+}
+#docs pre code .number, #docs pre .color {
+  color: #6b382e;
+}
+#docs pre code .class, #docs pre code .mixin, #docs pre .special {
+  color: #3d575c;
+}
+#docs pre code {
+  font-size: 15px;
+}
+#docs p + h2, #docs pre + h2, #docs code + h2 {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+td {
+  padding-right: 30px;
+}
+#synopsis {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+#synopsis h2, #about h2 {
+  font-size: 30px;
+  padding: 10px 0;
+}
+#synopsis h1 + h2, #about h1 + h2 {
+  margin-top: 15px;
+}
+#synopsis h3, #about h3 {
+  font-size: 22px;
+}
+#synopsis .code-example, #about .code-example {
+  border-spacing: 0;
+  border-width: 1px;
+  border-style: dashed;
+  padding: 0;
+}
+#synopsis .code-example pre, #about .code-example pre {
+  border: 0;
+  margin: 0;
+}
+#synopsis .code-example td, #about .code-example td {
+  border: 0;
+  margin: 0;
+  background-color: #191919;
+  vertical-align: top;
+  padding: 0;
+}
+#synopsis .code-example tr, #about .code-example tr {
+  padding: 0;
+}
+#synopsis .css-output td, #about .css-output td {
+  border-left: 0;
+}
+#synopsis .css-output,
+#about .css-output,
+#synopsis .less-example,
+#about .less-example {
+  width: 390px;
+}
+#synopsis pre, #about pre {
+  padding: 20px;
+  line-height: 20px;
+  font-size: 14px;
+}
+#about, #synopsis, #guide {
+  text-shadow: 0 -1px 1px #262626;
+  color: #eaf2d9;
+  background-color: #191919;
+}
+#about a, #synopsis a, #guide a {
+  text-decoration: none;
+  color: #fbfbcb;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+#about a:hover, #synopsis a:hover, #guide a:hover {
+  text-decoration: none;
+  border-bottom: 1px dashed #fbfbcb;
+}
+#about .content, #synopsis .content, #guide .content {
+  background-color: #262626;
+  clear: both;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+#about h1,
+#synopsis h1,
+#guide h1,
+#about h2,
+#synopsis h2,
+#guide h2,
+#about h3,
+#synopsis h3,
+#guide h3 {
+  color: #e2e2b1;
+}
+#about pre, #synopsis pre, #guide pre {
+  background-color: #191919;
+  border-color: #f9f9b3;
+}
+#about pre code .attribute, #synopsis pre code .attribute, #guide pre code .attribute {
+  color: #d9bf8c;
+}
+#about pre code .variable, #synopsis pre code .variable, #guide pre code .variable {
+  color: #738c73;
+}
+#about pre code .element, #synopsis pre code .element, #guide pre code .element {
+  color: #669991;
+}
+#about pre code .string,
+#synopsis pre code .string,
+#guide pre code .string,
+#about pre .regexp,
+#synopsis pre .regexp,
+#guide pre .regexp {
+  color: #bcd279;
+}
+#about pre code .class, #synopsis pre code .class, #guide pre code .class {
+  color: #c2a770;
+  font-weight: normal;
+}
+#about pre code .id, #synopsis pre code .id, #guide pre code .id {
+  color: #c2b470;
+  font-weight: normal;
+}
+#about pre code .comment, #synopsis pre code .comment, #guide pre code .comment {
+  color: rgba(255, 255, 255, 0.2);
+}
+#about pre code .number,
+#synopsis pre code .number,
+#guide pre code .number,
+#about pre .color,
+#synopsis pre .color,
+#guide pre .color {
+  color: #b35e4d;
+}
+#about pre code .class,
+#synopsis pre code .class,
+#guide pre code .class,
+#about pre code .mixin,
+#synopsis pre code .mixin,
+#guide pre code .mixin,
+#about pre .special,
+#synopsis pre .special,
+#guide pre .special {
+  color: #669199;
+}
+#about code, #synopsis code, #guide code {
+  color: #dcdc9e;
+}
+#about code .string,
+#synopsis code .string,
+#guide code .string,
+#about code .regexp,
+#synopsis code .regexp,
+#guide code .regexp {
+  color: #87bbc5;
+}
+#about code .keyword, #synopsis code .keyword, #guide code .keyword {
+  color: #c2a770;
+  font-weight: normal;
+}
+#about code .comment, #synopsis code .comment, #guide code .comment {
+  color: rgba(255, 255, 255, 0.2);
+}
+#about code .number, #synopsis code .number, #guide code .number {
+  color: #1f4c7a;
+}
+#about code .class,
+#synopsis code .class,
+#guide code .class,
+#about code .special,
+#synopsis code .special,
+#guide code .special {
+  color: #669199;
+}
+#guide {
+  background-color: #262626;
+}
+#guide .content {
+  background-color: transparent;
+}
+#about {
+  background-color: #262626 !important;
+}
+#about .content {
+  background-color: #2e2e2e;
+}
+#synopsis {
+  background-color: #2e2e2e !important;
+}
+#synopsis .content {
+  background-color: #2e2e2e;
+}
+#synopsis pre {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+#synopsis .content, #guide .content {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+#about footer {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 6px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.35);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.02);
+}
+#about footer #copy {
+  font-size: 12px;
+}
+</style>
+    <link href="./LESS « The Dynamic Stylesheet language_files/css" rel="stylesheet" type="text/css">
+    <link rel="alternate" type="application/atom+xml" title="app - feed" href="http://lesscss.org/index.xml">
+    
+    <title>LESS « The Dynamic Stylesheet language</title>
+    <script type="text/javascript">
+      (function () {
+        if (/Microsoft/.test(navigator.appName)) { return }
+
+        window.onload = function () {
+          var headers = document.querySelectorAll('#docs h2, #guide h1');
+          var menu = document.getElementById('menu');
+          var init = menu.offsetTop;
+          var docked;
+
+          for (var i = 0; i < headers.length; i++) {
+            headers[i].id = '-' + headers[i].innerHTML.toLowerCase().replace(/ /g, '-');
+          }
+
+          window.onscroll = function () {
+            if (!docked && (menu.offsetTop - scrollTop() < 0)) {
+              menu.style.top = 0;
+              menu.style.position = 'fixed';
+              menu.className = 'docked';
+              docked = true;
+            } else if (docked && scrollTop() <= init) {
+              menu.style.position = 'absolute';
+              menu.style.top = init + 'px';
+              menu.className = menu.className.replace('docked', '');
+              docked = false;
+            }
+          };
+
+
+          (function () {
+            var link     = document.getElementById('guide-link'),
+                menu     = document.getElementById('menu'),
+                dropdown = document.getElementById('dropdown');
+
+            link.onmouseover = function () {
+              link.className = 'dark-red';
+              dropdown.style.display = 'block';
+            };
+            link.onmouseout = function (e) {
+              if (e.relatedTarget === dropdown) { return }
+              link.className = link.className.replace('dark-red', '');
+              hide ();
+            };
+            dropdown.onmouseout = function (e) {
+              var t = e.relatedTarget;
+
+              if (e.target == link) { return }
+
+              while (t !== document.body) {
+                if (t == dropdown) { return }
+                else               { t = t.parentNode }
+              } 
+              link.className = link.className.replace('dark-red', '');
+              hide ();
+            };
+
+            function hide() { dropdown.style.display = 'none' }
+          })();
+        };
+
+        function scrollTop() {
+          return document.body.scrollTop || document.documentElement.scrollTop;
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <section>
+      <header id="main">
+  <div class="content">
+    <section id="intro">
+      <div id="logo"></div>
+      <h2>The <span>dynamic</span> stylesheet <span>language</span>.</h2>
+      <h3>
+        LESS extends CSS with dynamic behavior such as <span>variables</span>, <span>mixins</span>,
+        <span>operations</span> and <span>functions</span>. LESS runs on both the <span>client-side</span> (IE 6+, Webkit, Firefox) and
+        server-side, with <span>Node.js</span>.
+      </h3>
+      <a id="download" href="http://lesscss.googlecode.com/files/less-1.0.41.min.js">
+        <img src="./LESS « The Dynamic Stylesheet language_files/download-button.png"></a><div id="download-info">version <code><span class="number">1.0</span><span class="number">.41</span></code></div>
+    </section>
+
+    <section id="example">
+    <p>Write some LESS:</p>
+
+<pre><code><span class="class">.box-shadow</span> (<span class="variable">@x</span>: <span class="number">0</span>, <span class="variable">@y</span>: <span class="number">0</span>, <span class="variable">@blur</span>: <span class="number">1px</span>, <span class="variable">@alpha</span>) {
+  <span class="variable">@val</span>: <span class="variable">@x </span><span class="variable">@y </span><span class="variable">@blur </span>rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="variable">@alpha</span>);
+
+  <span class="attribute">box-shadow</span>:         <span class="variable">@val</span>;
+  <span class="attribute">-webkit-box-shadow</span>: <span class="variable">@val</span>;
+  <span class="attribute">-moz-box-shadow</span>:    <span class="variable">@val</span>;
+}
+<span class="class">.box</span> { <span class="variable">@base</span>: <span class="color">#f938ab</span>;
+  <span class="attribute">color</span>:        saturate(<span class="variable">@base</span>, <span class="number">5%</span>);
+  <span class="attribute">border-color</span>: lighten(<span class="variable">@base</span>, <span class="number">30%</span>);
+  <span class="element">div</span> { <span class="mixin">.box-shadow</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">5px</span>, <span class="number">0.4</span>) }
+}
+</code></pre>
+
+<p>Include <code>less.js</code> with your styles:</p>
+
+<pre><code>&lt;link rel=<span class="string">"stylesheet/less"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.less"</span>&gt;
+&lt;script src=<span class="string">"less.js"</span> type=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;
+</code></pre>
+
+    </section>
+  </div>
+  <div style="clear: both"></div>
+</header>
+
+<section id="menu" style="top: 0px; position: fixed; " class="docked">
+  <div class="content">
+    <nav>
+      <a href="http://lesscss.org/#synopsis">overview</a>
+      <a href="http://lesscss.org/#-client-side-usage">usage</a>
+      <a href="http://lesscss.org/#docs" id="guide-link" class="">language</a>
+      <a href="http://github.com/cloudhead/less.js">source</a>
+      <a href="http://lesscss.org/#about">about</a>
+    </nav>
+    <div id="dropdown" style="display: none; ">
+      <ul>
+        <li><a href="http://lesscss.org/#-variables">Variables</a></li>
+        <li><a href="http://lesscss.org/#-mixins">Mixins</a></li>
+        <li><a href="http://lesscss.org/#-parametric-mixins">Parametric Mixins</a></li>
+        <li><a href="http://lesscss.org/#-nested-rules">Nested Rules</a></li>
+        <li><a href="http://lesscss.org/#-operations">Operations</a></li>
+        <li><a href="http://lesscss.org/#-color-functions">Color functions</a></li>
+        <li><a href="http://lesscss.org/#-namespaces">Namespaces</a></li>
+        <li><a href="http://lesscss.org/#-scope">Scope</a></li>
+        <li><a href="http://lesscss.org/#-comments">Comments</a></li>
+        <li><a href="http://lesscss.org/#-importing">Importing</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="synopsis" class="page">
+  <div class="content">
+    <h2>Variables</h2>
+
+<p>Variables allow you to specify widely used values in a single place, and then re-use them throughout the style sheet,
+making global changes as easy as changing one line of code.</p>
+
+<table class="code-example" cellpadding="0">
+  <tbody><tr><td>
+  <pre class="less-example">  <code><span class="comment">// LESS</span>
+
+<span class="variable">@color</span>: <span class="color">#4D926F</span>;
+
+<span class="id">#header</span> {
+  <span class="attribute">color</span>: <span class="variable">@color</span>;
+}
+<span class="element">h2</span> {
+  <span class="attribute">color</span>: <span class="variable">@color</span>;
+}</code></pre>
+  </td><td>
+  <pre class="css-output"><code><span class="comment">/* Compiled CSS */</span>
+
+<span class="id">#header</span> {
+  <span class="attribute">color</span>: <span class="color">#4D926F</span>;
+}
+<span class="element">h2</span> {
+  <span class="attribute">color</span>: <span class="color">#4D926F</span>;
+}</code></pre></td>
+  </tr>
+</tbody></table>
+
+
+<h2>Mixins</h2>
+
+<p>Mixins allow you to embed all the properties of a class into another class by
+simply including the class name as one of its properties. It’s just like variables,
+but for whole classes. Mixins can also behave like functions, and take arguments,
+as seen in the example bellow.</p>
+
+<table class="code-example" cellpadding="0">
+  <tbody><tr><td>
+  <pre class="less-example"><code><span class="comment">// LESS</span>
+
+<span class="class">.rounded-corners</span> (<span class="variable">@radius</span>: <span class="number">5px</span>) {
+  <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;
+}
+
+<span class="id">#header</span> {
+  <span class="mixin">.rounded-corners</span>;
+}
+<span class="id">#footer</span> {
+  <span class="mixin">.rounded-corners</span>(<span class="number">10px</span>);
+}</code></pre></td>
+
+<td>
+  <pre class="css-output"><code><span class="comment">/* Compiled CSS */</span>
+
+<span class="id">#header</span> {
+  <span class="attribute">border-radius</span>: <span class="number">5px</span>;
+  <span class="attribute">-webkit-border-radius</span>: <span class="number">5px</span>;
+  <span class="attribute">-moz-border-radius</span>: <span class="number">5px</span>;
+}
+<span class="id">#footer</span> {
+  <span class="attribute">border-radius</span>: <span class="number">10px</span>;
+  <span class="attribute">-webkit-border-radius</span>: <span class="number">10px</span>;
+  <span class="attribute">-moz-border-radius</span>: <span class="number">10px</span>;
+}</code></pre>
+  </td></tr>
+</tbody></table>
+
+
+<h2>Nested Rules</h2>
+
+<p>Rather than constructing long selector names to specify inheritance,
+in Less you can simply nest selectors inside other selectors.
+This makes inheritance clear and style sheets shorter.</p>
+
+<table class="code-example" cellpadding="0">
+  <tbody><tr><td>
+  <pre class="less-example"><code><span class="comment">// LESS</span>
+
+<span class="id">#header</span> {
+  <span class="element">h1</span> {
+    <span class="attribute">font-size</span>: <span class="number">26px</span>;
+    <span class="attribute">font-weight</span>: bold;
+  }
+  <span class="element">p</span> { <span class="attribute">font-size</span>: <span class="number">12px</span>;
+    <span class="element">a</span> { <span class="attribute">text-decoration</span>: none;
+      &amp;<span class="class">:hover</span> { <span class="attribute">border-width</span>: <span class="number">1px</span> }
+    }
+  }
+}
+
+</code></pre></td>
+
+<td>
+  <pre class="css-output"><code><span class="comment">/* Compiled CSS */</span>
+
+<span class="id">#header</span> <span class="element">h1</span> {
+  <span class="attribute">font-size</span>: <span class="number">26px</span>;
+  <span class="attribute">font-weight</span>: bold;
+}
+<span class="id">#header</span> <span class="element">p</span> {
+  <span class="attribute">font-size</span>: <span class="number">12px</span>;
+}
+<span class="id">#header</span> <span class="element">p</span> <span class="element">a</span> {
+  <span class="attribute">text-decoration</span>: none;
+}
+<span class="id">#header</span> <span class="element">p</span> <span class="element">a</span><span class="class">:hover</span> {
+  <span class="attribute">border-width</span>: <span class="number">1px</span>;
+}
+
+</code></pre>
+  </td></tr>
+</tbody></table>
+
+
+<h2>Functions &amp; Operations</h2>
+
+<p>Are some elements in your style sheet proportional to other elements?
+Operations let you add, subtract, divide and multiply property values and colors,
+giving you the power to create complex relationships between properties.
+Functions map one-to-one with JavaScript code, allowing you to manipulate values however
+you want.</p>
+
+<table class="code-example" cellpadding="0">
+  <tbody><tr><td>
+  <pre class="less-example"><code><span class="comment">// LESS</span>
+
+<span class="variable">@the-border</span>: <span class="number">1px</span>;
+<span class="variable">@base-color</span>: <span class="color">#111</span>;
+<span class="variable">@red</span>:        <span class="color">#842210</span>;
+
+<span class="id">#header</span> {
+  <span class="attribute">color</span>: <span class="variable">@base-color </span>* <span class="number">3</span>;
+  <span class="attribute">border-left</span>: <span class="variable">@the-border</span>;
+  <span class="attribute">border-right</span>: <span class="variable">@the-border </span>* <span class="number">2</span>;
+}
+<span class="id">#footer</span> { 
+  <span class="attribute">color</span>: <span class="variable">@base-color </span>+ <span class="color">#003300</span>;
+  <span class="attribute">border-color</span>: desaturate(<span class="variable">@red</span>, <span class="number">10%</span>);
+}
+
+</code></pre></td>
+
+<td>
+  <pre class="css-output"><code><span class="comment">/* Compiled CSS */</span>
+
+<span class="id">#header</span> {
+  <span class="attribute">color</span>: <span class="color">#333</span>;
+  <span class="attribute">border-left</span>: <span class="number">1px</span>;
+  <span class="attribute">border-right</span>: <span class="number">2px</span>;
+}
+<span class="id">#footer</span> { 
+  <span class="attribute">color</span>: <span class="color">#114411</span>;
+  <span class="attribute">border-color</span>: <span class="color">#7d2717</span>;
+}
+
+</code></pre>
+  </td></tr>
+</tbody></table>
+
+
+  </div>
+</section>
+
+<section id="guide" class="page">
+  <div class="content">
+    <h1 id="-client-side-usage">Client-side usage</h1>
+
+<p>Link your <code>.less</code> stylesheets with the <code>rel</code> set to “<code>stylesheet/less</code>”:</p>
+
+<pre><code>&lt;link rel=<span class="string">"stylesheet/less"</span> type=<span class="string">"text/css"</span> href=<span class="string">"styles.less"</span>&gt;
+</code></pre>
+
+<p>Then download <code>less.js</code> from the top of the page, and include it in the <code>&lt;head&gt;</code> element of your page, like so:</p>
+
+<pre><code>&lt;script src=<span class="string">"less.js"</span> type=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Make sure you include your stylesheets <em>before</em> the script.</p>
+
+<h1 id="-server-side-usage">Server-side usage</h1>
+
+<h2>Installation</h2>
+
+<p>The easiest way to install LESS on the server, is via <a href="http://github.com/isaacs/npm">npm</a>, the node package manager, as so:</p>
+
+<pre><code>$ npm install less
+</code></pre>
+
+<p>This will get you the latest stable version. If you want the bleeding edge, try:</p>
+
+<pre><code>$ npm install less@latest
+</code></pre>
+
+<h2>Use</h2>
+
+<p>Once installed, you can invoke the compiler from node, as such:</p>
+
+<pre><code>var less = require('less');
+
+less.render('.class { width: 1 + 1 }', function (e, css) {
+    console.log(css);
+});
+</code></pre>
+
+<p>which will output</p>
+
+<pre><code><span class="class">.class</span> {
+  <span class="attribute">width</span>: <span class="number">2</span>;
+}
+</code></pre>
+
+<p>you can also manually invoke the parser and compiler:</p>
+
+<pre><code>var parser = new(less.Parser);
+
+parser.parse('.class { width: 1 + 1 }', function (err, tree) {
+    if (err) { return console.error(err) }
+    console.log(tree.toCSS());
+});
+</code></pre>
+
+<h2>Configuration</h2>
+
+<p>You may pass some options to the compiler:</p>
+
+<pre><code>var parser = new(less.Parser)({
+    paths: ['.', './lib'], // Specify search paths for @import directives
+    filename: 'style.less' // Specify a filename, for better error messages
+});
+
+parser.parse('.class { width: 1 + 1 }', function (e, tree) {
+    tree.toCSS({ compress: true }); // Minify CSS output
+});
+</code></pre>
+
+<h2>Command-line usage</h2>
+
+<p>Less comes with a binary, which lets you invoke the compiler from the command-line, as such:</p>
+
+<pre><code>$ lessc styles.less
+</code></pre>
+
+<p>This will output the compiled CSS to <code>stdout</code>, you may then redirect it to a file of your choice:</p>
+
+<pre><code>$ lessc styles.less &gt; styles.css
+</code></pre>
+
+<p>To output minified CSS, simply pass the <code>-x</code> option.</p>
+
+  </div>
+</section>
+
+<section id="docs" class="page">
+  <h1>The Language</h1>
+  <div class="content">
+      <p>As an extension to CSS, LESS is not only backwards compatible with CSS, but the extra features it adds use <em>existing</em> CSS syntax. This makes learning LESS a <em>breeze</em>, and if in doubt, lets you fall back to CSS.</p>
+
+<h2 id="-variables">Variables</h2>
+
+<p>These are pretty self-explanatory:</p>
+
+<pre><code><span class="variable">@nice-blue</span>: <span class="color">#5B83AD</span>;
+<span class="variable">@light-blue</span>: <span class="variable">@nice-blue </span>+ <span class="color">#111</span>;
+
+<span class="id">#header</span> { <span class="attribute">color</span>: <span class="variable">@light-blue</span>; }
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code><span class="id">#header</span> { <span class="attribute">color</span>: <span class="color">#6c94be</span>; }
+</code></pre>
+
+<p>Note that variables are actually ‘constants’ in that they can only be defined once.</p>
+
+<h2 id="-mixins">Mixins</h2>
+
+<p>In LESS, it is possible to include a bunch of properties from one ruleset into another ruleset. So say we have the following class:</p>
+
+<pre><code><span class="class">.bordered</span> {
+  <span class="attribute">border-top</span>: dotted <span class="number">1px</span> black;
+  <span class="attribute">border-bottom</span>: solid <span class="number">2px</span> black;
+}
+</code></pre>
+
+<p>And we want to use these properties inside other rulesets. Well, we just have to drop in the name of
+the class in any ruleset we want to include its properties, like so:</p>
+
+<pre><code><span class="id">#menu</span> <span class="element">a</span> {
+  <span class="attribute">color</span>: <span class="color">#111</span>;
+  <span class="mixin">.bordered</span>;
+}
+<span class="class">.post</span> <span class="element">a</span> {
+  <span class="attribute">color</span>: red;
+  <span class="mixin">.bordered</span>;
+}
+</code></pre>
+
+<p>The properties of the <code>.bordered</code> class will now appear in both <code>#menu a</code> and <code>.post a</code>:</p>
+
+<pre><code><span class="id">#menu</span> <span class="element">a</span> {
+  <span class="attribute">color</span>: <span class="color">#111</span>;
+  <span class="attribute">border-top</span>: dotted <span class="number">1px</span> black;
+  <span class="attribute">border-bottom</span>: solid <span class="number">2px</span> black;
+}
+<span class="class">.post</span> <span class="element">a</span> {
+  <span class="attribute">color</span>: red;
+  <span class="attribute">border-top</span>: dotted <span class="number">1px</span> black;
+  <span class="attribute">border-bottom</span>: solid <span class="number">2px</span> black;
+}
+</code></pre>
+
+<p>Any CSS <em>class</em>, <em>id</em> or <em>element</em> ruleset can be mixed-in that way.</p>
+
+<h2 id="-parametric-mixins">Parametric Mixins</h2>
+
+<p>LESS has a special type of ruleset which can be mixed in like classes, but accepts parameters. Here’s the canonical example:</p>
+
+<pre><code><span class="class">.border-radius</span> (<span class="variable">@radius</span>) {
+  <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;
+}
+</code></pre>
+
+<p>And here’s how we can mix it into various rulesets:</p>
+
+<pre><code><span class="id">#header</span> {
+  <span class="mixin">.border-radius</span>(<span class="number">4px</span>);
+}
+<span class="class">.button</span> {
+  <span class="mixin">.border-radius</span>(<span class="number">6px</span>);  
+}
+</code></pre>
+
+<p>Parametric mixins can also have default values for their parameters:</p>
+
+<pre><code><span class="class">.border-radius</span> (<span class="variable">@radius</span>: <span class="number">5px</span>) {
+  <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;
+  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;
+}
+</code></pre>
+
+<p>We can invoke it like this now:</p>
+
+<pre><code><span class="id">#header</span> {
+  <span class="mixin">.border-radius</span>;  
+}
+</code></pre>
+
+<p>And it will include a 5px border-radius.</p>
+
+<p>You can also use parametric mixins which don’t take parameters. This is useful if you want to hide the ruleset from the CSS output,
+but want to include its properties in other rulesets:</p>
+
+<pre><code><span class="class">.wrap</span> () {
+  <span class="attribute">text-wrap</span>: wrap;
+  <span class="attribute">white-space</span>: pre-wrap;
+  <span class="attribute">white-space</span>: -moz-pre-wrap;
+  <span class="attribute">word-wrap</span>: break-word;
+}
+
+<span class="element">pre</span> { <span class="mixin">.wrap</span> }
+</code></pre>
+
+<p>Which would output:</p>
+
+<pre><code><span class="element">pre</span> {
+  <span class="attribute">text-wrap</span>: wrap;
+  <span class="attribute">white-space</span>: pre-wrap;
+  <span class="attribute">white-space</span>: -moz-pre-wrap;
+  <span class="attribute">word-wrap</span>: break-word;
+}
+</code></pre>
+
+<h2 id="-nested-rules">Nested rules</h2>
+
+<p>LESS gives you the ability to use <em>nesting</em> instead of, or in combination with cascading.
+Lets say we have the following CSS:</p>
+
+<pre><code><span class="id">#header</span> { <span class="attribute">color</span>: black; }
+<span class="id">#header</span> <span class="class">.navigation</span> {
+  <span class="attribute">font-size</span>: <span class="number">12px</span>;
+}
+<span class="id">#header</span> <span class="class">.logo</span> { 
+  <span class="attribute">width</span>: <span class="number">300px</span>; 
+}
+<span class="id">#header</span> <span class="class">.logo</span><span class="class">:hover</span> {
+  <span class="attribute">text-decoration</span>: none;
+}
+</code></pre>
+
+<p>In LESS, we can also write it this way:</p>
+
+<pre><code><span class="id">#header</span> {
+  <span class="attribute">color</span>: black;
+
+  <span class="class">.navigation</span> {
+    <span class="attribute">font-size</span>: <span class="number">12px</span>;
+  }
+  <span class="class">.logo</span> {
+    <span class="attribute">width</span>: <span class="number">300px</span>;
+    &amp;<span class="class">:hover</span> { <span class="attribute">text-decoration</span>: none }
+  }
+}
+</code></pre>
+
+<p>Or this way:</p>
+
+<pre><code><span class="id">#header</span>        { <span class="attribute">color</span>: black;
+  <span class="class">.navigation</span>  { <span class="attribute">font-size</span>: <span class="number">12px</span> }
+  <span class="class">.logo</span>        { <span class="attribute">width</span>: <span class="number">300px</span>;
+    &amp;<span class="class">:hover</span>    { <span class="attribute">text-decoration</span>: none }
+  }
+}
+</code></pre>
+
+<p>The resulting code is more concise, and mimics the structure of your <code>DOM tree</code>.</p>
+
+<p>Notice the <code>&amp;</code> combinator—it’s used when you want a nested selector to be concatinated to its parent selector, instead
+of acting as a descendent. This is especially important for pseudo-classes like <code>:hover</code> and <code>:focus</code>.</p>
+
+<p>For example:</p>
+
+<pre><code><span class="class">.bordered</span> {
+  &amp;<span class="class">.float</span> {
+    <span class="attribute">float</span>: left; 
+  }
+  <span class="class">.top</span> {
+    <span class="attribute">margin</span>: <span class="number">5px</span>; 
+  }
+}
+</code></pre>
+
+<p>Will output</p>
+
+<pre><code><span class="class">.bordered</span><span class="class">.float</span> {
+  <span class="attribute">float</span>: left;  
+}
+<span class="mixin">.bordered</span> <span class="mixin">.top</span> [
+  <span class="attribute">margin</span>: <span class="number">5px</span>;
+}
+</code></pre>
+
+<h2 id="-operations">Operations</h2>
+
+<p>Any number, color or variable can be operated on. Here are a couple of examples:</p>
+
+<pre><code><span class="variable">@base</span>: <span class="number">5%</span>;
+<span class="variable">@filler</span>: <span class="variable">@base </span>* <span class="number">2</span>;
+<span class="variable">@other</span>: <span class="variable">@base </span>+ <span class="variable">@filler</span>;
+
+<span class="attribute">color</span>: <span class="color">#888</span> / <span class="number">4</span>;
+<span class="attribute">background-color</span>: <span class="variable">@base-color </span>+ <span class="color">#111</span>;
+<span class="attribute">height</span>: <span class="number">100%</span> / <span class="number">2</span> + <span class="variable">@filler</span>;
+</code></pre>
+
+<p>The output is pretty much what you expect—LESS understands the difference between colors and units. If a unit is used in an operation, like in:</p>
+
+<pre><code><span class="variable">@var</span>: <span class="number">1px</span> + <span class="number">5</span>;
+</code></pre>
+
+<p>LESS will use that unit for the final output—<code><span class="number">6px</span></code> in this case.</p>
+
+<p>Brackets are also authorized in operations:</p>
+
+<pre><code><span class="attribute">width</span>: (<span class="variable">@var </span>+ <span class="number">5</span>) * <span class="number">2</span>;
+</code></pre>
+
+<p>And are required in compound values:</p>
+
+<pre><code><span class="attribute">border</span>: (<span class="variable">@width </span>* <span class="number">2</span>) solid black;
+</code></pre>
+
+<h2 id="-color-functions">Color functions</h2>
+
+<p>LESS provides a variety of functions which transform colors. Colors are first converted to
+the <em>HSL</em> color-space, and then manipulated at the channel level:</p>
+
+<pre><code>lighten(<span class="variable">@color</span>, <span class="number">10%</span>);     <span class="comment">// return a color which is 10% *lighter* than @color</span>
+darken(<span class="variable">@color</span>, <span class="number">10%</span>);      <span class="comment">// return a color which is 10% *darker* than @color</span>
+
+saturate(<span class="variable">@color</span>, <span class="number">10%</span>);    <span class="comment">// return a color 10% *more* saturated than @color</span>
+desaturate(<span class="variable">@color</span>, <span class="number">10%</span>);  <span class="comment">// return a color 10% *less* saturated than @color</span>
+
+fadein(<span class="variable">@color</span>, <span class="number">10%</span>);      <span class="comment">// return a color 10% *less* transparent than @color</span>
+fadeout(<span class="variable">@color</span>, <span class="number">10%</span>);     <span class="comment">// return a color 10% *more* transparent than @color</span>
+
+spin(<span class="variable">@color</span>, <span class="number">10</span>);         <span class="comment">// return a color with a 10 degree larger in hue than @color</span>
+spin(<span class="variable">@color</span>, -<span class="number">10</span>);        <span class="comment">// return a color with a 10 degree smaller hue than @color</span>
+</code></pre>
+
+<p>Using them is pretty straightforward:</p>
+
+<pre><code><span class="variable">@base</span>: <span class="color">#f04615</span>;
+
+<span class="class">.class</span> {
+  <span class="attribute">color</span>: saturate(<span class="variable">@base</span>, <span class="number">5%</span>);
+  <span class="attribute">background-color</span>: lighten(spin(<span class="variable">@base</span>, <span class="number">8</span>), <span class="number">25%</span>);
+}
+</code></pre>
+
+<p>You can also extract color information:</p>
+
+<pre><code>hue(<span class="variable">@color</span>);        <span class="comment">// returns the `hue` channel of @color</span>
+saturation(<span class="variable">@color</span>); <span class="comment">// returns the `saturation` channel of @color</span>
+lightness(<span class="variable">@color</span>);  <span class="comment">// returns the 'lightness' channel of @color</span>
+</code></pre>
+
+<p>This is useful if you want to create a new color based on another color’s channel, for example:</p>
+
+<pre><code><span class="variable">@new</span>: hsl(hue(<span class="variable">@old</span>), <span class="number">45%</span>, <span class="number">90%</span>);
+</code></pre>
+
+<p><code><span class="variable">@new</span></code> will have <code><span class="variable">@old</span></code>’s <em>hue</em>, and its own saturation and lightness.</p>
+
+<h2 id="-namespaces">Namespaces</h2>
+
+<p>Sometimes, you may want to group your variables or mixins, for organizational purposes, or just to offer some encapsulation.
+You can do this pretty intuitively in LESS—say you want to bundle some mixins and variables under <code>#bundle</code>, for later re-use, or for distributing:</p>
+
+<pre><code><span class="id">#bundle</span> {
+  <span class="class">.button</span> () {
+    <span class="attribute">display</span>: block;
+    <span class="attribute">border</span>: <span class="number">1px</span> solid black;
+    <span class="attribute">background-color</span>: grey;
+    &amp;<span class="class">:hover</span> { <span class="attribute">background-color</span>: white }
+  }
+  <span class="class">.tab</span> { ... }
+  <span class="class">.citation</span> { ... }
+}
+</code></pre>
+
+<p>Now if we want to mixin the <code>.button</code> class in our <code>#header a</code>, we can do:</p>
+
+<pre><code><span class="id">#header</span> <span class="element">a</span> {
+  <span class="attribute">color</span>: orange;
+  <span class="mixin">#bundle</span> &gt; <span class="mixin">.button</span>;
+}
+</code></pre>
+
+<h2 id="-scope">Scope</h2>
+
+<p>Scope in LESS is very similar to that of programming languages. Variables and mixins are first looked up locally,
+and if they aren’t found, the compiler will look in the parent scope, and so on.</p>
+
+<pre><code><span class="variable">@var</span>: red;
+
+<span class="id">#page</span> {
+  <span class="variable">@var</span>: white;
+  <span class="id">#header</span> {
+    <span class="attribute">color</span>: <span class="variable">@var</span>; <span class="comment">// white</span>
+  }
+}
+
+<span class="id">#footer</span> {
+  <span class="attribute">color</span>: <span class="variable">@var</span>; <span class="comment">// red  </span>
+}
+</code></pre>
+
+<h2 id="-comments">Comments</h2>
+
+<p>CSS-style comments are preserved by LESS:</p>
+
+<pre><code><span class="comment">/* Hello, I'm a CSS-style comment */</span>
+<span class="class">.class</span> { <span class="attribute">color</span>: black }
+</code></pre>
+
+<p>Single-line comments are also valid in LESS, but they are ‘silent’,
+they don’t show up in the compiled CSS output:</p>
+
+<pre><code><span class="comment">// Hi, I'm a silent comment, I won't show up in your CSS</span>
+<span class="class">.class</span> { <span class="attribute">color</span>: white }
+</code></pre>
+
+<h2 id="-importing">Importing</h2>
+
+<p>You can import <code>.less</code> files, and all the variables and mixins in them will be made available to the main file.
+The <code>.less</code> extension is optional, so both of these are valid:</p>
+
+<pre><code><span class="variable">@import </span><span class="string">"lib.less"</span>;
+<span class="variable">@import </span><span class="string">"lib"</span>;
+</code></pre>
+
+<p>If you want to import a CSS file, and don’t want LESS to process it, just use the <code>.css</code> extension:</p>
+
+<pre><code><span class="variable">@import </span><span class="string">"lib.css"</span>;
+</code></pre>
+
+<p>The directive will just be left as is, and end up in the CSS output.</p>
+
+<h2 id="-escaping">Escaping</h2>
+
+<p>Sometimes you might need to output a CSS value which is either not valid CSS syntax,
+or uses propriatery syntax which LESS doesn’t recognize.</p>
+
+<p>You can use the <code>e()</code> function for that, which takes a string as parameter. Here’s an example:</p>
+
+<pre><code><span class="class">.class</span> {
+  <span class="attribute">filter</span>: e(<span class="string">"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.png')"</span>);
+}
+</code></pre>
+
+<p>Which will result in:</p>
+
+<pre><code><span class="class">.class</span> {
+  <span class="attribute">filter</span>: <span class="attribute">progid</span>:DXImageTransform<span class="mixin">.Microsoft</span><span class="mixin">.AlphaImageLoader</span>(src=<span class="string">'image.png'</span>);
+}
+</code></pre>
+
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="content">
+    <h1>About</h1>
+
+<p>LESS was developed by <a href="http://cloudhead.io/">Alexis Sellier</a>, more commonly known as <a href="http://cloudhead.io/">cloudhead</a>.</p>
+
+    <footer>
+        <p>powered by <a href="http://cloudhead.io/toto">toto</a>, <a href="http://github.com/cloudhead/less.js">LESS</a> and <a href="http://github.com/cloudhead/hiless">hiless</a></p>
+        <p id="copy">Copyright © Alexis Sellier 2010</p>
+    </footer>
+  </div>
+</section>
+
+    </section>
+    <a href="http://github.com/cloudhead/less.js">
+      <img style="position: absolute; z-index: 5; top: 0; left: 0; border: 0;" src="./LESS « The Dynamic Stylesheet language_files/forkme_left_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+    <script src="./LESS « The Dynamic Stylesheet language_files/hiless.js"></script>
+  
+
+
+</body></html>
