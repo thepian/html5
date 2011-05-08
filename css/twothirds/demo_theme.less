@@ -33,6 +33,7 @@
 
 
 body {
+    .body_rhythm();
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
 	.type_theme_flawless(@type-family, @type-head-family, #333, #036);
@@ -53,8 +54,22 @@ article.main {
     /* themed */
     background-color: @article_background_color;
     
+    .sections {
+        .article_rhythm();
+        
+        section {
+            .list_rhythm();
+        }
+    }
+    
     .asides {
         background-color: @asides_background_color;
+        
+        .aside_rhythm();
+        
+        aside {
+            .list_rhythm();
+        }
         
         aside.sidebar-1 {
         	background-color: @aside1_background_color; /* add background color */

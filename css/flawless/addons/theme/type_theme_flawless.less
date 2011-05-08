@@ -19,6 +19,7 @@
   font-family: @family;
   color: @color;
   
+  /* Headings and Paragraphs */
   h1 {
     font-family: @head-family;
     color: @color-sheme;
@@ -26,11 +27,27 @@
   
   h2 {
     font-family: @head-family;
-    color: desaturate(@color-sheme, 30);
+    color: desaturate(@color-sheme, 30%);
   }
   
   h3 {
     font-family: @head-family;
-    color: darken(@color, 20);
+    color: darken(@color, 20%);
   }
+  
+  h1,h2,h3,h4,h5,h6 { 
+      font-weight: normal; word-spacing: -0.125em;
+  }
+  h4, h5, h6										{ font-weight: bold; }
+  p												{ word-spacing: 0.125em; hyphenate: auto; hyphenate-lines: 3; }
+  p+p												{ text-indent: 1.5em; }
+  p+p.no-indent									{ text-indent: 0; }
+  
+  
+  /* Lists */
+  dt                                              { font-weight: bold; }
+  ul, ol											{ margin-left: 1.5em; }
+  ul, ul li											{ list-style: disc outside; }
+  ol, ol li											{ list-style: decimal outside; }
+
 }

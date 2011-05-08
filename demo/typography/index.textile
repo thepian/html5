@@ -1,0 +1,56 @@
+---
+layout: demo-default
+title: Baseline - Typography
+header_title: Baseline - Typography
+---
+<header>
+	<h1>Typography</h1>
+	<hr>
+</header>
+
+<section>
+
+h1. Title &mdash; h1
+
+{% include lorem_ipsum.html %} 
+
+h2. Subtitle &mdash; h2
+
+{% include ut_wisi_enim.html %}
+
+h3. Subtitle &mdash; h3
+
+{% include lorem_ipsum.html %} 
+
+h4. Subtitle &mdash; h4
+
+{% include ut_wisi_enim.html %}
+
+h5. Subtitle &mdash; h5
+
+{% include lorem_ipsum.html %} 
+
+h6. Subtitle &mdash; h6
+
+{% include ut_wisi_enim.html %}
+
+<ul>
+	<li>List item 01</li>
+	<li>List item 02</li>
+	<li>List item 03</li>
+</ul>
+{% include lorem_ipsum.html %} 
+
+<blockquote cite="http://www.projeturbain.com">
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+</blockquote>
+
+{% include ut_wisi_enim.html %}
+
+<hr>
+
+{% include lorem_ipsum.html %} 
+	
+</section>

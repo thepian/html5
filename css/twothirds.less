@@ -35,12 +35,17 @@
 
 @import "twothirds/defaults.less";
 
+/* The Flawless Reset is the most advanced reset mixin. You can also
+ * choose eric meyers or yui reset. But if you use html5 like in this
+ * example, then the flawless reset is best suited
+ */
+.reset_html5doctor();
+
 /* ================ SPLIT UP YOUR CODE ================
  * It is highly recommended to split up your various parts
  * of custom styles for your website to improve maintainance 
  */
 
-@import "twothirds/text.less"; /* everything related to text */
 @import "twothirds/base.less"; /* the base layout applied to all screen sizes */
 @import "twothirds/medium.less"; /* the changes applied to medium screen sizes */
 @import "twothirds/small.less"; /* changes applied to small screen sizes */
