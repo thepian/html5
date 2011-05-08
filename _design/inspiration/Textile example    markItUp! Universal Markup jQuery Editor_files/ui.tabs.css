@@ -1,0 +1,87 @@
+@media projection, screen { 
+    .ui-tabs-hide {
+        display: none;
+    }
+}
+@media print {
+    .ui-tabs-nav {
+        display: none;
+    }
+}
+.ui-tabs-nav {
+	margin-top:15px;
+}
+.ui-tabs-nav:after { 
+    display: block;
+    clear: both;
+    content: " ";
+}
+.ui-tabs-nav {
+
+}
+.ui-tabs-nav li {
+	list-style:none;
+	float:left;
+}
+.ui-tabs-nav a, .ui-tabs-nav a span {
+    float:left; 
+	list-style:none;
+}
+.ui-tabs-nav a {
+	padding:2px 40px 0px 40px;
+    outline: 0;  
+	font-weight:bold;
+	color:#000;
+	text-transform:uppercase;
+	z-index:200;
+    white-space: nowrap; /* @ IE 6 */
+    outline: 0; /* @ Firefox, prevent dotted border after click */  
+}
+.ui-tabs-nav a:link, .ui-tabs-nav a:visited {
+	background:transparent url(../_images/tab-off.png) no-repeat left top;
+}
+.ui-tabs-nav .ui-tabs-selected a {
+	background:transparent url(../_images/tab-on.png) no-repeat left top;
+	color:#FFF;
+}
+.ui-tabs-nav .ui-tabs-selected a:link, .ui-tabs-nav .ui-tabs-selected a:visited,
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited { 
+    cursor: text;
+}
+.ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active,
+.ui-tabs-nav .ui-tabs-unselect a:hover, .ui-tabs-nav .ui-tabs-unselect a:focus, .ui-tabs-nav .ui-tabs-unselect a:active { 
+    cursor: pointer;
+}
+.ui-tabs-disabled {
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited {
+
+}
+.ui-tabs-panel {
+	padding:10px;
+ 	border: 1px solid #3C769D;
+ 	border-top: 10px solid #3C769D;
+	background:#F5F5F5;
+	background:-moz-linear-gradient(#EEE, #FFF);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #EEE), color-stop(1, #FFF));
+
+	overflow:auto;
+	clear:both;
+	float:none;
+}
+.ui-tabs-panel h4 {
+	color:#3C769D;
+}
+* html .ui-tabs-nav { 
+    display: inline-block;
+}
+*:first-child+html .ui-tabs-nav  { 
+    display: inline-block;
+}
+.ui-tabs-loading em {
+	padding-left:1000px;
+	overflow:hidden;
+	background:transparent url(../_images/loading-white.gif) no-repeat 10px 50%;
+}
