@@ -14,16 +14,15 @@
   <link rel="stylesheet/less" type="text/css" href="/css/twothirds/demo_theme.less" media="screen" title="demo_css" alternate="Demo Theme">
 
 	<!-- baseline templ -->
-	<link type="text/css" rel="stylesheet" media="screen" href="/css/baseline/uncompressed/baseline.base.css">
 	<link type="text/css" rel="stylesheet" media="screen" href="/css/baseline/uncompressed/baseline.type.css">
 	<link type="text/css" rel="stylesheet" media="screen" href="/css/baseline/uncompressed/baseline.table.css">
 	<link type="text/css" rel="stylesheet" media="screen" href="/css/baseline/uncompressed/baseline.form.css">
-	<link type="text/css" rel="stylesheet" media="screen" href="/css/baseline/uncompressed/baseline.grid.css">
 	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/css/baseline/iphone/baseline.iphone.css">
+
 
 	<link rel="stylesheet" type="text/css" href="/css/jScrollPane.css">
 
-  {% include flawless_production.html %}
+  {% include flawless_development.html %}
   {% include css_browser_selector.html %}    
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
@@ -44,6 +43,12 @@
 		<h1>{{ page.header_title }}</h1>
 		
 		<section>
+			<ul>
+				<li class="grid-baseline"><a href="" rel="Pale Serif" class="styleswitch">Pale Serif</a></li>
+				<li class="grid-column"><a href="" rel="Night Sans" class="styleswitch">Night Sans</a></li>
+				<li class="grid-baseline-column"><a href="" rel="Demo Theme" class="styleswitch">Demo Theme</a></li>
+				<li class="grid-remove"><a href="" rel="remove" class="styleswitch">Remove Theme</a></li>
+			</ul>
 		</section>
 
 		</div></div>
