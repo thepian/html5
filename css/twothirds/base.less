@@ -4,10 +4,18 @@
 /* Base layout SuperVGA and up */
 .divide_width_twothirds(1600px,1024px);
 
+.four-columns {
+    .divide_four_columns(1600px,1024px);
+}
+
 /* Slightly smaller than SuperVGA */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
 	
     .divide_width_twothirds(1200px,900px);
+
+    .four-columns {
+        .divide_four_columns(1200px,900px);
+    }
 }
 
 /* Core division of the page */

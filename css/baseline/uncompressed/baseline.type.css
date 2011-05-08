@@ -6,9 +6,6 @@ version 0.5
 */
 
 /******************** Baseline grid: 13/18px ********************/
-body								{ font-size: 75%; line-height: 1.5; /*12/18*/ }
-
-h1, h2, h3, h4, h5, h6				{ position: relative; }
 h1, h2								{ line-height: 36px; margin-bottom: 18px; }
 h1, h2, h3, h4						{ margin-top: 18px; }
 h3, h4, h5, h6						{ line-height: 18px; }
