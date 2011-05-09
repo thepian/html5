@@ -51,3 +51,22 @@
   ol, ol li											{ list-style: decimal outside; }
 
 }
+
+.inline_flow(@mark_background: rgba(255, 255, 0, 0.4), @code_family: mono-space, monospace, @title_underline_color: black) {
+    
+    b, strong                                  		{ font-weight: bold; }
+    cite, dfn, em, i								{ font-style: italic; }
+    code, kbd, samp, pre, tt, var					{ font-family: @code_family; }
+    pre												{ white-space: pre; }
+    del												{ text-decoration: line-through; }
+    mark											{ background: @mark_background; padding: 0 .25em; }
+    ins												{ color: #f00; }
+    small, sup, sub									{ font-size: 80%; }
+    big												{ font-size: 125%; line-height: 80%; }
+    abbr, acronym									{ font-size: 85%; text-transform: uppercase; letter-spacing: .1em; }
+    abbr[title], acronym[title], dfn[title]			{ border-bottom: 1px dotted @title_underline_color; cursor: help; }
+    sup, sub										{ line-height: 0; }
+    sup												{ vertical-align: super; }
+    sub												{ vertical-align: sub; }
+
+}
