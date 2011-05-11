@@ -49,72 +49,68 @@
     @factor: @height / @size;
     @rhythm: 1em * @factor;
     
-    @h1 : @size * 36/13;
-    @h2 : @size * 28/13;
-    @h3 : @size * 22/13;
-    @h4 : @size * 18/13;
-    @h5 : @size * 15/13;
+    @h1 : @size * 27/13;
+    @h2 : @size * 21/13;
+    @h3 : @size * 18/13;
+    @h4 : @size * 15/13;
+    @h5 : @size * 13/13;
     
     > header {
         h1, h2, h3, h4 			        	{ position: relative; }
         h1, h2								{ line-height: @height * 2; margin-bottom: @height; }
         h3, h4      						{ line-height: @height; }
-        h1									{ font-size: @h1; top: 5px; }
-        h2									{ font-size: @h2; top: 8px; }
-        h3									{ font-size: @h3; top: 1px; }
-        h4									{ font-size: @h4; top: 2px; }
+        h1									{ font-size: @h1; /*top: 5px;*/ }
+        h2									{ font-size: @h2; /*top: 8px;*/ }
+        h3									{ font-size: @h3; /*top: 1px;*/ }
+        h4									{ font-size: @h4; /*top: 2px;*/ }
     }
 }
 
-/*
-Baseline - a designer framework
-Copyright (C) 2009 Stephane Curzi, ProjetUrbain.com
-Creative Commons Attribution-Share Alike 3.0 License
-version 0.5
-
-Similar to baseline.type.css
-*/
-
+/**
+ *
+ * Similar to baseline.type.css
+ */
 .article_rhythm(@height: 1px * @theme_vertical_rhythm, @size: 1px * @theme_font_size) {
     
     @base: @size / 16;
     @factor: @height / @size;
     @rhythm: 1em * @factor;
     
-    @h1 : @size * 36/13;
-    @h2 : @size * 28/13;
-    @h3 : @size * 22/13;
-    @h4 : @size * 18/13;
-    @h5 : @size * 15/13;
+    @h1 : @size * 27/13;
+    @h2 : @size * 21/13;
+    @h3 : @size * 18/13;
+    @h4 : @size * 15/13;
+    @h5 : @size * 13/13;
     
     @small: @size * 11/13;
     @small_height: @height * 15/18;
 
-    h1, h2, h3, h4, h5, h6				{ position: relative; }
-    h1, h2								{ line-height: @height * 2; margin-bottom: @height; }
+    h1, h2, h3, h4, h5, h6				{ position: relative; padding-bottom: @height / 3; }
+    h1, h2								{ line-height: @height * 2; margin-bottom: @height / 2; }
     h1, h2, h3, h4						{ margin-top: @height; }
     h3, h4, h5, h6						{ line-height: @height; }
-    h1									{ font-size: @h1; top: 5px; }
-    h2									{ font-size: @h2; top: 8px; }
-    h3									{ font-size: @h3; top: 1px; }
-    h4									{ font-size: @h4; top: 2px; }
-    h5									{ font-size: @h5; top: 4px; }
-    h6									{ font-size: @size; top: 5px; }
+    h1									{ font-size: @h1; /*top: 5px;*/ }
+    h2									{ font-size: @h2; /*top: 8px;*/ }
+    h3									{ font-size: @h3; /*top: 1px;*/ }
+    h4									{ font-size: @h4; /*top: 2px;*/ }
+    h5									{ font-size: @size; /*top: 4px;*/ }
+    h6									{ font-size: @size; /*top: 5px;*/ }
     h1:first-child,
     h2:first-child,
     h3:first-child,
     h4:first-child						{ margin-top: 0; }
     
+    /*  sidebars/non-underhang/footer-notes  */
     aside {
         h1								    { line-height: @height * 2; margin-bottom: @height; }
         h1, h2, h3  						{ margin-top: @height; }
         h2, h3, h4, h5, h6					{ line-height: @height; }
-        h1									{ font-size: @h2; top: 8px; }
-        h2									{ font-size: @h3; top: 1px; }
-        h3									{ font-size: @h4; top: 2px; }
-        h4									{ font-size: @h5; top: 4px; }
-        h5									{ font-size: @size; top: 5px; }
-        h6									{ font-size: @size; top: 5px; }
+        h1									{ font-size: @h2; /*top: 8px;*/ }
+        h2									{ font-size: @h3; /*top: 1px;*/ }
+        h3									{ font-size: @h4; /*top: 2px;*/ }
+        h4									{ font-size: @size; /*top: 4px;*/ }
+        h5									{ font-size: @size; /*top: 5px;*/ }
+        h6									{ font-size: @size; /*top: 5px;*/ }
     }
 
     p, pre, address						{ font-size: @size; line-height: @height; position: relative; top: 5px; }
