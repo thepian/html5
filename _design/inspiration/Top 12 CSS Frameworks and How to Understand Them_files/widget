@@ -1,0 +1,57 @@
+var content = '';
+content += '<style type="text/css">';
+content += '#mighty-deals-widget { margin:5px 0;font-family:Arial; position:relative; border-top:1px solid #d7d7d7; border-bottom:1px solid #d7d7d7; padding:5px 123px 5px 0;}';
+content += '.mighty-deals-notify-text { color:#612883; font-size: 16px; font-weight:bold;}';
+content += 'a.mighty-deals-notify-link:link, a.mighty-deals-notify-link:visited {position: relative; top:1px; color:#e64f32; font-size: 16px; font-weight:bold; text-decoration:none;}';
+content += 'a.mighty-deals-notify-link:hover { color:#e64f32; font-weight:bold; text-decoration:underline;}';
+content += '.mighty-deals-logo { background: url(http://mightydeals.com/web/images/widget-logo.png) no-repeat; display:inline-block; position:absolute; right:0; top:-12px; width:110px; height:49px;}';
+content += '.mighty-deals-nav-link-left, .mighty-deals-nav-link-right { text-decoration: none; display:inline-block; width:10px; height:14px; top: 2px; position: relative;}';
+content += '.mighty-deals-nav-link-left{  margin-right: 5px; background: url(http://mightydeals.com/web/images/triangle_grey_inv.png) no-repeat; }';
+content += '.mighty-deals-nav-link-right{  background: url(http://mightydeals.com/web/images/triangle_grey.png) no-repeat; }';
+content += '</style>';
+
+content += '<div id="mighty-deals-widget">';
+content += '<span class="mighty-deals-notify-text">';
+
+
+content += '<a class="mighty-deals-notify-link" id="mgdeal-widget-link-0" href="http://www.mightydeals.com/deal/templatesbox.html?ref=widget">Get a 1 Year Membership to TemplateBox for only $35</a>';
+
+content += '<a class="mighty-deals-notify-link" id="mgdeal-widget-link-1" style="display:none;" href="http://www.mightydeals.com/deal/principles-of-beautiful-webdesign.html?ref=widget">Get The Principles of Beautiful Web Design eBook - only $15</a>';
+
+
+content += '<a href="javascript:;" class="mighty-deals-nav-link-left" onclick="showPrevMgDeal()"></a>'
+content += '<a href="javascript:;" class="mighty-deals-nav-link-right" onclick="showNextMgDeal()"></a>'
+
+
+//<a href="http://www.mightydeals.com/deal/premium-feedback-at-conceptfeedback.html" class="mighty-deals-notify-link" target="_blank">50% off Premium Feedback at ConceptFeedback.com</a>
+//content += '<a href="http://www.mightydeals.com/?ref=widget" class="mighty-deals-notify-link">More deals starting January 10th</a>';
+content += '</span>&nbsp;';
+//content += '<a href="http://www.mightydeals.com/deal/premium-feedback-at-conceptfeedback.html" class="mighty-deals-notify-link" target="_blank">Get notified!</a>';
+content += '<a href="http://www.mightydeals.com/?ref=widget" target="_blank"><span class="mighty-deals-logo"></span></a>';
+content += '</div>';
+document.write(content);
+
+  var mgdeal_deals_count = 2;
+  var mgdeal_current_deal = 0;
+  
+  function showNextMgDeal(){
+  	var oldLink = document.getElementById('mgdeal-widget-link-' + mgdeal_current_deal);
+  	oldLink.style.display = 'none';
+  	mgdeal_current_deal++;
+  	if(mgdeal_current_deal >= mgdeal_deals_count)
+  		mgdeal_current_deal = 0;
+  	var newLink = document.getElementById('mgdeal-widget-link-' + mgdeal_current_deal);
+  	newLink.style.display = 'inline';
+  	
+  }
+  
+  function showPrevMgDeal(){
+    var oldLink = document.getElementById('mgdeal-widget-link-' + mgdeal_current_deal);
+    oldLink.style.display = 'none';
+  	mgdeal_current_deal--;
+  	if(mgdeal_current_deal < 0)
+  		mgdeal_current_deal = mgdeal_deals_count -1;
+  	var newLink = document.getElementById('mgdeal-widget-link-' + mgdeal_current_deal);
+  	newLink.style.display = 'inline';
+  	
+  }
