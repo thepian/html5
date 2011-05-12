@@ -34,7 +34,9 @@
  * gaps, spans and so on. Basically this defines the row-height of
  * the grid in pixels and aligns all elements in the flow of the grid. 
  */
-@theme_vertical_rhythm: 21;
+ @normal_read_vertical_rhythm: 1.5;
+ @light_read_vertical_rythm: 2;
+ @dense_read_vertical_rythm: 1.2;
 
 /* Here you can control the overall font size. Not that this value 
  * strongly correlates with the vertical rhythm. If you make these
@@ -44,7 +46,13 @@
 
 
 body {
+    /** Define vertical rythm of text in normal/light/dense read areas */
     .body_rhythm();
+    
+    .normal-read {
+        .normal_rhythm();
+    }
+    
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
 	.type_theme_flawless(@body-family, @heading-family, #222, #066);
@@ -67,8 +75,6 @@ article.main {
     background-color: @article_background_color;
     
     .sections {
-        .article_rhythm();
-
         section {
             .list_rhythm();
         }
@@ -77,8 +83,6 @@ article.main {
     .asides {
         background-color: @asides_background_color;
 
-        .aside_rhythm();
-        
         aside {
             .list_rhythm();
         }

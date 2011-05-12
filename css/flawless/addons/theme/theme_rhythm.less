@@ -1,53 +1,11 @@
-.theme_rhythm(@height: @theme_vertical_rhythm, @size: @theme_font_size) {
-  
-  @base: @size / 16;
-  font-size: 1% * @base * 100;
-  @factor: @height / @size;
-  @rhythm: 1em * @factor;
 
-  p {
-    font-size: 1em;
-    line-height: @rhythm;
-    margin-top: 0;
-    margin-bottom: @rhythm;
-  }
-  
-  h1 {
-    font-size: @rhythm;
-    line-height: 1em;
-    margin-bottom: 1em;
-	margin-top: 0;
-  }
-  
-  h2 {
-    font-size: @rhythm / 1.1;
-    line-height: 1.1em;
-    margin-bottom: 1.1em;
-	margin-top: 0;
-  }
-  
-  h3 {
-    font-size: @rhythm / 1.2;
-    line-height: 1.2em;
-    margin-bottom: 1.2em;
-	margin-top: 0;
-  }
-  
-  h4 {
-    font-size: @rhythm / 1.3;
-    line-height: 1.3em;
-    margin-bottom: 1.3em;
-	margin-top: 0;
-  }
-}
-
-.body_rhythm(@height: 1px * @theme_vertical_rhythm, @size: 1px * @theme_font_size) {
+/* TODO line-heights in factor instead */
+.body_rhythm(@size: 1px * @theme_font_size, @normal: @normal_read_vertical_rhythm) {
     
-    line-height: @height;
+    line-height: @normal;
     @base: @size / 16;
     font-size: 1% * @base * 100;
-    @factor: @height / @size;
-    @rhythm: 1em * @factor;
+    @rhythm: 1em * @normal;
     
     @h1 : @size * 27/13;
     @h2 : @size * 21/13;
@@ -57,123 +15,131 @@
     
     > header {
         h1, h2, h3, h4 			        	{ position: relative; }
-        h1, h2								{ line-height: @height * 2; margin-bottom: @height; }
-        h3, h4      						{ line-height: @height; }
-        h1									{ font-size: @h1; /*top: 5px;*/ }
-        h2									{ font-size: @h2; /*top: 8px;*/ }
-        h3									{ font-size: @h3; /*top: 1px;*/ }
-        h4									{ font-size: @h4; /*top: 2px;*/ }
+        h1, h2								{ margin-bottom: .25em; }
+        h1									{ font-size: @h1; }
+        h2									{ font-size: @h2; }
+        h3									{ font-size: @h3; }
+        h4									{ font-size: @h4; }
     }
+
+    
+    /*
+    h1, h2, h3, h4, h5, h6 {  }
+    p {  }
+    blockquote {  }
+    pre {}
+    */
 }
 
-/**
- *
- * Similar to baseline.type.css
- */
-.article_rhythm(@height: 1px * @theme_vertical_rhythm, @size: 1px * @theme_font_size) {
+/*
+.light_rhythm(@size: 1px * @theme_font_size, @normal: @light_read_vertical_rhythm) {
+
+    line-height: @light;
+}
+
+.dense_rhythm(@size: 1px * @theme_font_size, @normal: @dense_read_vertical_rhythm) {
+
+    line-height: @dense;
+}
+*/
+.normal_rhythm(@size: 1px * @theme_font_size, @normal: @normal_read_vertical_rhythm) {
     
+    line-height: @normal;
+
     @base: @size / 16;
-    @factor: @height / @size;
-    @rhythm: 1em * @factor;
+    @rhythm: 1em * @normal;
     
     @h1 : @size * 27/13;
     @h2 : @size * 21/13;
     @h3 : @size * 18/13;
     @h4 : @size * 15/13;
     @h5 : @size * 13/13;
-    
     @small: @size * 11/13;
+    
+    @height: @size * @normal;
     @small_height: @height * 15/18;
 
-    h1, h2, h3, h4, h5, h6				{ position: relative; padding-bottom: @height / 3; }
-    h1, h2								{ line-height: @height * 2; margin-bottom: @height / 2; }
+    h1, h2, h3, h4, h5, h6				{ 
+        position: relative; padding-bottom: @height / 3; 
+        &:first-child                   { margin-top: 0; }
+    }
+    h1, h2								{ margin-bottom: @height / 2; }
     h1, h2, h3, h4						{ margin-top: @height; }
-    h3, h4, h5, h6						{ line-height: @height; }
-    h1									{ font-size: @h1; /*top: 5px;*/ }
-    h2									{ font-size: @h2; /*top: 8px;*/ }
-    h3									{ font-size: @h3; /*top: 1px;*/ }
-    h4									{ font-size: @h4; /*top: 2px;*/ }
-    h5									{ font-size: @size; /*top: 4px;*/ }
+    h1									{ font-size: @h1; }
+    h2									{ font-size: @h2; }
+    h3									{ font-size: @h3; }
+    h4									{ font-size: @h4; }
+    h5									{ font-size: @size; }
+    h6									{ font-size: @size; }
+
+    p, pre, address						{ 
+        font-size: @size; position: relative; margin-bottom: .5em;
+        &:first-child                   { margin-top: 0; }
+    }
+    
+    small								{ font-size: @small; }
+    abbr, code, kbd,
+    samp, small, var					{ line-height: @small_height; }
+
+    form, legend, label					{ font-size: @size; }
+    legend								{ position: relative; top: 5px; }
+    table								{ font-size: @size; }
+    caption								{ font-size: @size; position: relative; }
+    hr									{ position: relative; height: 4px; margin: @height 0 @small_height 0; }
+}
+
+.secondary_rhythm(@size: 1px * @theme_font_size,
+    @normal: @normal_read_vertical_rhythm, @light: @light_read_vertical_rythm, @dense: @dense_read_vertical_rythm
+    ) {
+    
+    @base: @size / 16;
+    @rhythm: 1em * @normal;
+    
+    @h1 : @size * 27/13;
+    @h2 : @size * 21/13;
+    @h3 : @size * 18/13;
+    @h4 : @size * 15/13;
+    @h5 : @size * 13/13;
+    @small: @size * 11/13;
+
+    @height: @size * @normal;
+    @small_height: @height * 15/18;
+
+    h1, h2, h3, h4, h5, h6				{ position: relative; }
+    h1								    { margin-bottom: @height / 2; }
+    h1, h2, h3  						{ margin-top: @height; }
+    h1									{ font-size: @h2; /*top: 8px;*/ }
+    h2									{ font-size: @h3; /*top: 1px;*/ }
+    h3									{ font-size: @h4; /*top: 2px;*/ }
+    h4									{ font-size: @h5; /*top: 4px;*/ }
+    h5									{ font-size: @size; /*top: 5px;*/ }
     h6									{ font-size: @size; /*top: 5px;*/ }
     h1:first-child,
     h2:first-child,
     h3:first-child,
     h4:first-child						{ margin-top: 0; }
     
-    /*  sidebars/non-underhang/footer-notes  */
-    aside {
-        h1								    { line-height: @height * 2; margin-bottom: @height; }
-        h1, h2, h3  						{ margin-top: @height; }
-        h2, h3, h4, h5, h6					{ line-height: @height; }
-        h1									{ font-size: @h2; /*top: 8px;*/ }
-        h2									{ font-size: @h3; /*top: 1px;*/ }
-        h3									{ font-size: @h4; /*top: 2px;*/ }
-        h4									{ font-size: @size; /*top: 4px;*/ }
-        h5									{ font-size: @size; /*top: 5px;*/ }
-        h6									{ font-size: @size; /*top: 5px;*/ }
-    }
-
-    p, pre, address						{ font-size: @size; line-height: @height; position: relative; top: 5px; }
+    p, pre, address						{ font-size: @size; position: relative; top: 5px; }
     small								{ font-size: @small; }
     abbr, code, kbd,
     samp, small, var					{ line-height: @small_height; }
 
-    form, legend, label					{ font-size: @size; line-height: @height; }
+    form, legend, label					{ font-size: @size; }
     legend								{ position: relative; top: 5px; }
     table								{ font-size: @size; }
-    caption								{ font-size: @size; line-height: @height; position: relative; }
+    caption								{ font-size: @size; position: relative; }
     hr									{ position: relative; height: 4px; margin: @height 0 @small_height 0; }
 }
 
-.aside_rhythm(@height: 1px * @theme_vertical_rhythm, @size: 1px * @theme_font_size) {
-    
-    @base: @size / 16;
-    @factor: @height / @size;
-    @rhythm: 1em * @factor;
-    
-    @h1 : @size * 36/13;
-    @h2 : @size * 28/13;
-    @h3 : @size * 22/13;
-    @h4 : @size * 18/13;
-    @h5 : @size * 15/13;
-    
-    @small: @size * 11/13;
-    @small_height: @height * 15/18;
-
-    h1, h2, h3, h4, h5, h6				{ position: relative; }
-    h1								    { line-height: @height * 2; margin-bottom: @height; }
-    h1, h2, h3  						{ margin-top: @height; }
-    h2, h3, h4, h5, h6					{ line-height: @height; }
-    h1									{ font-size: @h2; top: 8px; }
-    h2									{ font-size: @h3; top: 1px; }
-    h3									{ font-size: @h4; top: 2px; }
-    h4									{ font-size: @h5; top: 4px; }
-    h5									{ font-size: @size; top: 5px; }
-    h6									{ font-size: @size; top: 5px; }
-    h1:first-child,
-    h2:first-child,
-    h3:first-child,
-    h4:first-child						{ margin-top: 0; }
-    
-    p, pre, address						{ font-size: @size; line-height: @height; position: relative; top: 5px; }
-    small								{ font-size: @small; }
-    abbr, code, kbd,
-    samp, small, var					{ line-height: @small_height; }
-
-    form, legend, label					{ font-size: @size; line-height: @height; }
-    legend								{ position: relative; top: 5px; }
-    table								{ font-size: @size; }
-    caption								{ font-size: @size; line-height: @height; position: relative; }
-    hr									{ position: relative; height: 4px; margin: @height 0 @small_height 0; }
-}
-
-.list_rhythm(@height: 1px * @theme_vertical_rhythm, @size: 1px * @theme_font_size) {
+.list_rhythm(@size: 1px * @theme_font_size,
+    @normal: @normal_read_vertical_rhythm, @light: @light_read_vertical_rythm, @dense: @dense_read_vertical_rythm
+    ) {
     
     ul, ol, dl, dialog					{ 
-        font-size: @size; line-height: @height; 
+        font-size: @size;  
         position: relative; 
         top: 5px; 
-        margin-top: @height; margin-bottom: @height; }
+        margin-top: @normal; margin-bottom: @normal; }
     li ul, li ol, ul ul, ol ol			{ top: 0; margin-top: 0; margin-bottom: 0; }
     li h1, li h2, li h3,
     li h4, li h5, li h6,

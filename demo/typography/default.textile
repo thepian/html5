@@ -9,6 +9,23 @@ The content will be either a visual spread like a logo or an advertisement, a te
 such as a introduction, quote or blog post, or a form for registration, contact or basket checkout.
 [[Test]]
 
+h2. Light/Normal/Dense Read
+
+A light read area is defined by adding "list-read" to the bounding element. This is equivalent to line-height 2.
+A normal read ("normal-read") is equivalent to line-height 1.5.
+A dense read ("dense-read") is equivalent to line-height 1.2.
+
+Themes only come with "normal-read" for now. This is put on the article tag in the demo pages.
+
+Secondary areas use slightly smaller heading size currently the ones are:
+
+* .about
+* .sidebar .sidebar-1 .sidebar-2
+* .comments
+
+If you need to make your own secondary area within a light/normal/dense read add the class "secondary-area".
+
+
 h2. General Purpose Tags
 
 strong, em, sup, sub, small, ins, del, mark

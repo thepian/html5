@@ -33,7 +33,13 @@
 
 
 body {
+    /** Define vertical rythm of text in normal/light/dense read areas */
     .body_rhythm();
+    
+    .normal-read {
+        .normal_rhythm();
+    }
+    
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
 	.type_theme_flawless(@type-family, @type-head-family, #333, #036);
@@ -57,7 +63,6 @@ article.main {
     background-color: @article_background_color;
     
     .sections {
-        .article_rhythm();
         
         section {
             .list_rhythm();
@@ -67,7 +72,6 @@ article.main {
     .asides {
         background-color: @asides_background_color;
         
-        .aside_rhythm();
         
         aside {
             .list_rhythm();
@@ -83,6 +87,20 @@ article.main {
     }
 }
 
+article {
+
+    .comments {
+        .secondary_rhythm();
+    }    
+}
+
+body > footer {
+    
+    .about {
+        .secondary_rhythm();
+    }
+}
+
 
 /* Slightly smaller than SuperVGA */
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -91,7 +109,7 @@ article.main {
 }
 
 
-.debug-styles()
+.debug-styles();
 
 .asides {
     aside {

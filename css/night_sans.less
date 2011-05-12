@@ -20,21 +20,40 @@
 /**
  * Colors
  */
-@page_background_color: #646C5D;
-@page_header_background_color: white;
-@page_footer_color: #ccc;
+ 
+@regular-color: #999; //#333;
+@alternate-color: #036;
+
+@page_header_background_color: #080808;
+
 @nav_background_color: transparent;
-@article_background_color: #ccc;
+@overhang_background_color: @nav_background_color;
+@article_background_color: #080808;
+
 @asides_background_color: #4183C4;
-@aside1_background_color: #4183C4;
-@aside2_background_color: #4183C4;
+@aside1_background_color: @asides_background_color;
+@aside2_background_color: @asides_background_color;
+
+@page_footer_background_color: #222;
+@page_footer_color: #ccc;
+@page_footer_anchor_color: #eee;
+
+@etc_color: @page_footer_color; //darken(@page_footer_color,10%);
+@etc_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,10%);
+
+@copyright_color: @page_footer_color; //darken(@page_footer_color,20%);
+@copyright_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,20%);
+
+@page_background_color: @page_footer_background_color;
 
 /* The vertical rhythm is used to give your webpages a consistent
  * look. The whole grid system relies on this value to calculate
  * gaps, spans and so on. Basically this defines the row-height of
  * the grid in pixels and aligns all elements in the flow of the grid. 
  */
-@theme_vertical_rhythm: 21;
+@normal_read_vertical_rhythm: 1.5;
+@light_read_vertical_rythm: 2;
+@dense_read_vertical_rythm: 1.2;
 
 /* Here you can control the overall font size. Not that this value 
  * strongly correlates with the vertical rhythm. If you make these
@@ -44,10 +63,16 @@
 
 
 body {
+    /** Define vertical rythm of text in normal/light/dense read areas */
     .body_rhythm();
+    
+    .normal-read {
+        .normal_rhythm();
+    }
+    
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
-	.type_theme_flawless(@body-family, @heading-family, #333, #036);
+	.type_theme_flawless(@body-family, @heading-family, @regular-color, @alternate-color);
 	.inline_flow();
 }
 
@@ -57,7 +82,7 @@ body > header {
 
 nav.top-overhang {
 	/* these are the colors for the states - normal, hover, active */
-	.nav_background(#E3E3E3, @nav_background_color, @nav_background_color);
+	.nav_background(#E3E3E3, @overhang_background_color, @overhang_background_color);
 	.nav_text_color(black, black, black);
 }
 
@@ -67,8 +92,6 @@ article.main {
     background-color: @article_background_color;
     
     .sections {
-        .article_rhythm();
-
         section {
             .list_rhythm();
         }
@@ -76,8 +99,6 @@ article.main {
     
     .asides {
         background-color: @asides_background_color;
-        
-        .aside_rhythm();
         
         aside {
             .list_rhythm();
@@ -93,12 +114,23 @@ article.main {
     }
 }
 
+footer .etc {
+    
+    color: @etc_color;
+
+    a {
+        color: @etc_color;
+    }
+}
+
 footer .copyright {
     font-size: 10px;
     line-height:1.6;
-}
-footer .copyright a {
-    color: white;
+    color: @copyright_color;
+
+    a {
+        color: @copyright_anchor_color;
+    }
 }
 
 blockquote {
