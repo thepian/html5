@@ -20,23 +20,41 @@
 /**
  * Colors
  */
-@page_background_color: #9ff;
+
+@regular-color: #333;
+@alternate-color: #036;
+
 @page_header_background_color: white;
-@page_footer_color: #ccc;
+
 @nav_background_color: transparent;
+@overhang_background_color: @nav_background_color;
 @article_background_color: #e8e8e8;
+
 @asides_background_color: #ddd;
-@aside1_background_color: #4183C4;
-@aside2_background_color: #4183C4;
+@aside1_background_color: @asides_background_color;
+@aside2_background_color: @asides_background_color;
+
+@page_footer_background_color: #9ff;
+@page_footer_color: #ccc;
+@page_footer_anchor_color: #eee;
+
+@etc_color: @page_footer_color; //darken(@page_footer_color,10%);
+@etc_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,10%);
+
+@copyright_color: @page_footer_color; //darken(@page_footer_color,20%);
+@copyright_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,20%);
+
+@page_background_color: @page_footer_background_color;
+
 
 /* The vertical rhythm is used to give your webpages a consistent
  * look. The whole grid system relies on this value to calculate
  * gaps, spans and so on. Basically this defines the row-height of
  * the grid in pixels and aligns all elements in the flow of the grid. 
  */
- @normal_read_vertical_rhythm: 1.5;
- @light_read_vertical_rythm: 2;
- @dense_read_vertical_rythm: 1.2;
+@normal_read_vertical_rhythm: 1.5;
+@light_read_vertical_rythm: 2;
+@dense_read_vertical_rythm: 1.2;
 
 /* Here you can control the overall font size. Not that this value 
  * strongly correlates with the vertical rhythm. If you make these
@@ -53,9 +71,16 @@ body {
         .normal_rhythm();
     }
     
+    .comments, .asides, .etc, .secondary-read {
+        .normal-read &,
+        &.normal-read {
+            .secondary_rhythm();
+        }
+    }
+
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
-	.type_theme_flawless(@body-family, @heading-family, #222, #066);
+	.type_theme_flawless(@body-family, @heading-family, @regular-color, @alternate-color);
 	.inline_flow();
 }
 
@@ -75,6 +100,15 @@ article.main {
     background-color: @article_background_color;
     
     .sections {
+        
+        header {
+            .list_rhythm();
+
+            .postinfo {
+                .posts_info();
+            }
+        }    
+        
         section {
             .list_rhythm();
         }
@@ -97,12 +131,23 @@ article.main {
     }
 }
 
+footer .etc {
+    
+    color: @etc_color;
+
+    a {
+        color: @etc_color;
+    }
+}
+
 footer .copyright {
     font-size: 10px;
     line-height:1.6;
-}
-footer .copyright a {
-/*    color: white; */
+    color: @copyright_color;
+
+    a {
+        color: @copyright_anchor_color;
+    }
 }
 
 blockquote {

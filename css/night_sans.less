@@ -69,6 +69,12 @@ body {
     .normal-read {
         .normal_rhythm();
     }
+    .comments, .asides, .etc, .secondary-read {
+        .normal-read &,
+        &.normal-read {
+            .secondary_rhythm();
+        }
+    }
     
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
@@ -92,6 +98,15 @@ article.main {
     background-color: @article_background_color;
     
     .sections {
+        
+        header {
+            .list_rhythm();
+            
+            .postinfo {
+                .posts_info();
+            }
+        }    
+        
         section {
             .list_rhythm();
         }

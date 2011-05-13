@@ -3,8 +3,7 @@
 .body_rhythm(@size: 1px * @theme_font_size, @normal: @normal_read_vertical_rhythm) {
     
     line-height: @normal;
-    @base: @size / 16;
-    font-size: 1% * @base * 100;
+    font-size: 100% * (@size / 16px); // percentage of browser 16px default
     @rhythm: 1em * @normal;
     
     @h1 : @size * 27/13;
@@ -46,7 +45,6 @@
     
     line-height: @normal;
 
-    @base: @size / 16;
     @rhythm: 1em * @normal;
     
     @h1 : @size * 27/13;
@@ -60,10 +58,14 @@
     @small_height: @height * 15/18;
 
     h1, h2, h3, h4, h5, h6				{ 
-        position: relative; padding-bottom: @height / 3; 
+        position: relative; 
+        line-height: 1; /* Headers are not affected by light/normal/dense */
+        padding-top: @height / 3; 
+        /*padding-bottom: @height / 3; */
         &:first-child                   { margin-top: 0; }
     }
     h1, h2								{ margin-bottom: @height / 2; }
+    h3								    { margin-bottom: @height / 3; }
     h1, h2, h3, h4						{ margin-top: @height; }
     h1									{ font-size: @h1; }
     h2									{ font-size: @h2; }
@@ -73,7 +75,7 @@
     h6									{ font-size: @size; }
 
     p, pre, address						{ 
-        font-size: @size; position: relative; margin-bottom: .5em;
+        font-size: @size; position: relative; margin-bottom: 1em;
         &:first-child                   { margin-top: 0; }
     }
     
@@ -92,7 +94,6 @@
     @normal: @normal_read_vertical_rhythm, @light: @light_read_vertical_rythm, @dense: @dense_read_vertical_rythm
     ) {
     
-    @base: @size / 16;
     @rhythm: 1em * @normal;
     
     @h1 : @size * 27/13;
@@ -138,10 +139,29 @@
     ul, ol, dl, dialog					{ 
         font-size: @size;  
         position: relative; 
-        top: 5px; 
         margin-top: @normal; margin-bottom: @normal; }
     li ul, li ol, ul ul, ol ol			{ top: 0; margin-top: 0; margin-bottom: 0; }
     li h1, li h2, li h3,
     li h4, li h5, li h6,
     li p								{ top: 0; }
+    
+    ul.breadcrumb {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        
+        li { 
+            display: inline-block;
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                color: white;
+            }
+            
+            /* TODO move to theming*/
+            :after {
+                content: " > ";
+            }
+        }
+    }
 }
