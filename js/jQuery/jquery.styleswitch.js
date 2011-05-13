@@ -9,16 +9,51 @@
 	$(document).ready(function() {
 		$('.styleswitch').click(function()
 		{
-			switchStylestyle(this.getAttribute("rel"));
+    	    var themes = listThemes(); // stylesheets are generated late
+
+		    var styleName = this.getAttribute("rel");
+		    if (styleName) {
+    			switchStylestyle(styleName);
+		    }
+		    else {
+		        var useNext = false;
+        		var c = readCookie('style');
+                var firstName;
+                
+		        for(var n in themes) {
+		            if (! firstName) firstName = n; // to fall back on when at end
+		            
+		            if (useNext) {
+		                useNext = false;
+		                styleName = n;
+		            }
+		            if (n == c) useNext = true; // cycle to next theme
+		        }
+    			switchStylestyle(styleName || firstName);
+		    }
 			return false;
 		});
 		var c = readCookie('style');
 		if (c) switchStylestyle(c);
 	});
+	
+	function listThemes() 
+	{
+	    var r = {};
+		$('link[rel*=alternate][title]').each(function(i) 
+		{
+		    if (this.getAttribute('type') == "text/css") r[this.getAttribute('title')] = this;
+		});
+		$('style[title]').each(function(i) 
+		{
+		    if (this.getAttribute('type') == "text/css") r[this.getAttribute('title')] = this;
+		});
+	    return r;
+	}
 
 	function switchStylestyle(styleName)
 	{
-		$('link[@rel*=style][title]').each(function(i) 
+		$('link[rel*=alternate][title]').each(function(i) 
 		{
 			this.disabled = true;
 			if (this.getAttribute('title') == styleName) this.disabled = false;
@@ -30,7 +65,7 @@
 		});
 		createCookie('style', styleName, 365);
 	}
-})(jQuery);
+
 // cookie functions http://www.quirksmode.org/js/cookies.html
 function createCookie(name,value,days)
 {
@@ -60,3 +95,5 @@ function eraseCookie(name)
 	createCookie(name,"",-1);
 }
 // /cookie functions
+
+})(jQuery);
