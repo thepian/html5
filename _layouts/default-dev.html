@@ -96,6 +96,15 @@
 </footer>
 
 <div class="top-edge">
+	
+	<ul class="breadcrumb">
+	    <li class="home"><a href="/">HTML 5 Playground</a></li>
+		{% if page.folder %}
+	    <li class="folder"><a href="{{ page.folderurl }}">{{ page.folder }}</a></li>
+		{% endif %}
+	    <li><a href="." class="active">{{ page.header_title }}</a></li>
+	</ul>
+
 </div>
 	
 <div class="bottom-edge">
