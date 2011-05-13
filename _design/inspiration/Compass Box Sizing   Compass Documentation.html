@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://compass-style.org/reference/compass/css3/box_sizing/ -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths dark scss" dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style>
+<meta charset="utf-8">
+<meta content="chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=780" name="viewport">
+<link href="http://compass-style.org/images/compass_icon.png" rel="shortcut icon" type="image/png">
+<link href="http://compass-style.org/blog/atom.xml" rel="alternate" title="Compass Blog" type="application/atom+xml">
+<title>
+Compass Box Sizing | Compass Documentation
+</title>
+<link charset="utf-8" href="./Compass Box Sizing   Compass Documentation_files/screen.css" rel="stylesheet" type="text/css">
+<script src="./Compass Box Sizing   Compass Documentation_files/modernizr-1.6.min.js" type="text/javascript"></script>
+<script src="./Compass Box Sizing   Compass Documentation_files/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="./Compass Box Sizing   Compass Documentation_files/jquery.cookie.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/placeholder.js" type="text/javascript"></script>
+<script src="./Compass Box Sizing   Compass Documentation_files/site.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/fixups.js" type="text/javascript"></script>
+
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/shCore.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/shBrushSass.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/shBrushCss.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/shBrushXml.js" type="text/javascript"></script>
+<script deferred="deferred" src="./Compass Box Sizing   Compass Documentation_files/shBrushPlain.js" type="text/javascript"></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+<script type="text/javascript" async="" src="./Compass Box Sizing   Compass Documentation_files/embed.js"></script><script async="" src="./Compass Box Sizing   Compass Documentation_files/count.js"></script><script src="./Compass Box Sizing   Compass Documentation_files/thread.js" async="" charset="UTF-8"></script><link rel="stylesheet" type="text/css" href="./Compass Box Sizing   Compass Documentation_files/defaults.css"><script src="./Compass Box Sizing   Compass Documentation_files/disqus.js" async="" charset="UTF-8" data-callback-id="1"></script><style></style><link rel="stylesheet" type="text/css" href="./Compass Box Sizing   Compass Documentation_files/t_c4ca4238a0b923820dcc509a6f75849b.css"><script src="./Compass Box Sizing   Compass Documentation_files/t_c4ca4238a0b923820dcc509a6f75849b.js" async="" charset="UTF-8" data-callback-id="10"></script></head>
+<body class=" reference core css3" id="reference-compass-css3-box-sizing"><div id="wrap">
+<header id="banner" role="banner">
+<form action="http://compass-style.org/search/" id="search-docs" method="GET">
+<input id="search" name="q" placeholder="Search the docs" type="text" value="">
+</form>
+<nav id="main-nav" role="navigation">
+<ul>
+<li class="vcard">
+<a class="fn org url uid" href="http://compass-style.org/" rel="home">Home</a>
+</li>
+<li>
+<a href="http://compass-style.org/reference/compass/" rel="documentation">Reference</a>
+</li>
+<li>
+<a href="http://compass-style.org/help/" rel="help">Help</a>
+</li>
+<li>
+<a href="http://compass-style.org/blog/" rel="blog">Blog</a>
+</li>
+<li>
+<a href="http://compass-style.org/get-involved/" rel="get-involved">Get Involved</a>
+</li>
+<li>
+<a href="http://compass-style.org/install/" rel="install">Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id="sub-nav">
+<nav id="docs-nav" role="navigation">
+<a href="http://compass-style.org/reference/blueprint/" rel="blueprint">Blueprint</a>
+<a href="http://compass-style.org/reference/compass/" rel="core">Core</a>
+</nav>
+<nav id="module-nav"><ul><ul><li class="selected">
+<a class="selected" href="http://compass-style.org/reference/compass/css3/">
+<span>CSS3</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/helpers/">
+<span>Helpers</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/layout/">
+<span>Layout</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/reset/">
+<span>Reset</span>
+</a>
+</li>
+<li class="deprecated">
+<a class="deprecated" href="http://compass-style.org/reference/compass/reset-legacy/">
+<span>Reset (legacy)</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/typography/">
+<span>Typography</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/utilities/">
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+</div>
+<div id="page">
+<div id="docs_panel">
+<div id="theme_pref">
+<a href="http://compass-style.org/reference/compass/css3/box_sizing/#" rel="theme" title="switch theme">Q</a>
+</div>
+<div id="syntax_pref">
+<a href="http://compass-style.org/reference/compass/css3/box_sizing/#" rel="scss">scss</a>
+<a href="http://compass-style.org/reference/compass/css3/box_sizing/#" rel="sass">sass</a>
+</div>
+<div id="version">
+Version:
+<a class="number" href="http://compass-style.org/CHANGELOG/">0.11.1</a>
+</div>
+</div>
+<aside role="sidebar"><nav id="local-nav">
+<ul><li class="selected">
+<h2>
+<a class="selected" href="http://compass-style.org/reference/compass/css3/">CSS3</a>
+</h2>
+</li>
+<ul><li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/appearance/">
+<span>Appearance</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/background_clip/">
+<span>Background Clip</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/background_origin/">
+<span>Background Origin</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/background_size/">
+<span>Background Size</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/border_radius/">
+<span>Border Radius</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/box/">
+<span>Box</span>
+</a>
+</li>
+<li class="beta">
+<a class="beta" href="http://compass-style.org/reference/compass/css3/box_shadow/">
+<span>Box Shadow</span>
+</a>
+</li>
+<li class="selected">
+<a class="selected" href="./Compass Box Sizing   Compass Documentation_files/Compass Box Sizing   Compass Documentation.html">
+<span>Box Sizing</span>
+</a>
+</li>
+<li class="beta">
+<a class="beta" href="http://compass-style.org/reference/compass/css3/pie/">
+<span>CSS3 Pie</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/columns/">
+<span>Columns</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/font_face/">
+<span>Font Face</span>
+</a>
+</li>
+<li class="deprecated">
+<a class="deprecated" href="http://compass-style.org/reference/compass/css3/gradient/">
+<span>Gradient</span>
+</a>
+</li>
+<li class="beta">
+<a class="beta" href="http://compass-style.org/reference/compass/css3/images/">
+<span>Images</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/inline_block/">
+<span>Inline Block</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/opacity/">
+<span>Opacity</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/shared/">
+<span>Shared Utilities</span>
+</a>
+</li>
+<li class="beta">
+<a class="beta" href="http://compass-style.org/reference/compass/css3/text-shadow/">
+<span>Text Shadow</span>
+</a>
+</li>
+<li class="beta">
+<a class="beta" href="http://compass-style.org/reference/compass/css3/transform/">
+<span>Transform</span>
+</a>
+</li>
+<li class="deprecated">
+<a class="deprecated" href="http://compass-style.org/reference/compass/css3/transform-legacy/">
+<span>Transform (legacy)</span>
+</a>
+</li>
+<li class="">
+<a class="" href="http://compass-style.org/reference/compass/css3/transition/">
+<span>Transition</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/css3/_box-sizing.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Compass Box Sizing</h1>
+<p>
+Provides a mixin for the <code>box-sizing</code> property, which allows you to change how the box model works. See <a href="http://www.w3.org/TR/css3-ui/#box-sizing">W3C CSS3 spec: box-sizing</a>.
+</p>
+
+<p>
+This file can be imported using:
+<code>@import "compass/css3/box-sizing"</code>
+</p>
+<h2>Examples</h2>
+<dl class="examples">
+<dt><a href="http://compass-style.org/examples/compass/css3/box_sizing/">Box-sizing</a></dt>
+<dd>css3 mixin for box-sizing</dd>
+</dl><h2>Imports</h2>
+<ol>
+<li>
+<a href="http://compass-style.org/reference/compass/css3/shared/" title="@import shared">Shared Utilities</a>
+</li>
+</ol><h2>Mixins</h2>
+<a href="http://compass-style.org/reference/compass/css3/box_sizing/#mixin-box-sizing-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-box-sizing">
+<a class="permalink" href="http://compass-style.org/reference/compass/css3/box_sizing/#mixin-box-sizing">box-sizing(<span class="arg">$bs</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-box-sizing-source">
+<div><div id="highlighter_55100" class="syntaxhighlighter  sass"><div class="toolbar"><span><a href="http://compass-style.org/reference/compass/css3/box_sizing/#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sass functions">=box-sizing($bs)</code></div><div class="line number2 index1 alt1"><code class="sass spaces">&nbsp;&nbsp;</code><code class="sass variable">$bs</code><code class="sass plain">: unquote(</code><code class="sass variable">$bs</code><code class="sass plain">)</code></div><div class="line number3 index2 alt2"><code class="sass spaces">&nbsp;&nbsp;</code><code class="sass functions">+experimental(box-sizing, $bs, -moz, -webkit, not -o, -ms, not -khtml, official)</code></div></div></td></tr></tbody></table></div></div>
+<div><div id="highlighter_368445" class="syntaxhighlighter  scss"><div class="toolbar"><span><a href="http://compass-style.org/reference/compass/css3/box_sizing/#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="scss preprocessor">@mixin</code> <code class="scss plain">box-sizing(</code><code class="scss variable">$bs</code><code class="scss plain">) {</code></div><div class="line number2 index1 alt1"><code class="scss spaces">&nbsp;&nbsp;</code><code class="scss variable">$bs</code><code class="scss plain">: unquote(</code><code class="scss variable">$bs</code><code class="scss plain">);</code></div><div class="line number3 index2 alt2"><code class="scss spaces">&nbsp;&nbsp;</code><code class="scss preprocessor">@include</code> <code class="scss plain">experimental(box-sizing, </code><code class="scss variable">$bs</code><code class="scss plain">, -moz, -webkit, not -o, -ms, not -khtml, official); }</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<div class="source-documentation">
+<p>Change the box model for Mozilla, Webkit, IE8 and the future</p>
+
+<p>@param $bs
+  [ content-box | border-box ]</p>
+
+</div></article>
+
+<div id="comments"><div id="disqus_thread"><div id="dsq-content-stub" style="display: none; "><img width="71" height="17" alt="DISQUS" src="data:image/png;base64,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"><img width="16" height="11" alt="..." src="data:image/gif;base64,R0lGODlhEAALAPQAAP///z2LqeLt8dvp7u7090GNqz2LqV+fuJ/F1IW2ycrf51aatHWswaXJ14i4ys3h6FmctUCMqniuw+vz9eHs8fb5+meku+Tu8vT4+cfd5bbT3tbm7PH2+AAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA" style="margin:0 0 3px 5px"></div><div id="dsq-content" style="display: block; " class="clearfix">    <div id="dsq-global-toolbar" class="dsq-community-preview">    <table class="dsq-global-toolbar-container">      <tbody><tr>        <td class="dsq-global-toolbar-likes">                  </td>        <td>                        <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" class="dsq-community-launcher dsq-toolbar-item dsq-tt" onclick="DISQUS.dtpl.actions.fire(&#39;community.show&#39;); return false" title="Expand Community Box"> Community</a>                    </td>                <td class="dsq-global-toolbar-dropdown-container">              <div id="dsq-toolbar-dropdown">    <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" onclick="return false" class="dsq-toolbar-logo dsq-toolbar-item">Disqus</a>    <div id="dsq-toolbar-dropdown-wrap" style="display: none">      <ul>                    <li><a href="http://compass-style.org/reference/compass/css3/box_sizing/#" onclick="DISQUS.dtpl.actions.fire(&#39;auth.login&#39;); return false">Login</a></li>                    <li><a href="http://disqus.com/" target="_blank">About Disqus</a></li>      </ul>    </div>  </div>        </td>      </tr>    </tbody></table>  </div>  <div id="dsq-like-tooltip">    <div id="dsq-share-step-1" class="dsq-share-step">      <h3>Glad you liked it. Would you like to share?</h3>      <p class="dsq-tooltip-checkbox"><input type="checkbox" id="dsq-share-thread-facebook" value="Facebook"><label for="dsq-share-thread-facebook"><span class="dsq-facebook">Facebook</span></label></p>      <p class="dsq-tooltip-checkbox"><input type="checkbox" id="dsq-share-thread-twitter" value="Twitter"><label for="dsq-share-thread-twitter"><span class="dsq-twitter">Twitter</span></label></p>      <ul id="dsq-tooltip-actions">                    <li><a href="http://compass-style.org/reference/compass/css3/box_sizing/#" onclick="DISQUS.dtpl.actions.fire(&#39;thread.share&#39;); return false" class="dsq-primary-action">Share</a></li>                <li><a href="http://compass-style.org/reference/compass/css3/box_sizing/#" onclick="DISQUS.dtpl.actions.fire(&#39;thread.share.cancel&#39;); return false" class="dsq-secondary-action">No thanks</a></li>      </ul>    </div>    <div id="dsq-share-step-2" class="dsq-share-step" style="display:none !important">      <p>Sharing this page …</p>    </div>    <div id="dsq-share-step-3" class="dsq-share-step" style="display:none !important">      <p>Thanks! <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" class="dsq-tooltip-decline" onclick="DISQUS.dtpl.actions.fire(&#39;thread.share.cancel&#39;); return false">Close</a></p>    </div>  </div>                    <div id="dsq-new-post" class="dsq-post-area dsq-unauthenticated">          <h3>Add New Comment</h3>      <div style="clear:both"></div>                    <div id="dsq-authenticate" class="dsq-authenticate">    <p class="dsq-autheneticate-copy">                          Optional: Login below.          </p>    <ul class="dsq-login-buttons">                                    <li class="dsq-login-button dsq-login-button-disqus">              <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" title="Login with Disqus" onclick="return DISQUS.dtpl.actions.fire(&#39;auth.disqus&#39;);"></a>            </li>                                                                    <li class="dsq-login-button dsq-login-button-twitter">              <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" title="Login with Twitter" onclick="return DISQUS.dtpl.actions.fire(&#39;auth.twitter&#39;);"></a>            </li>                                                                    <li class="dsq-login-button dsq-login-button-openid">              <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" title="Login with Openid" onclick="return DISQUS.dtpl.actions.fire(&#39;auth.openid&#39;);"></a>            </li>                                            <li style="clear:both"></li>    </ul>  </div>        <div id="dsq-form-area">      <div class="dsq-textarea">        <div class="dsq-textarea-wrapper" id="dsq-textarea-wrapper" style="height: auto; ">            <!-- filled dynamically -->        <iframe name="easyXDM_DISQUS_net_default7011_provider" id="easyXDM_DISQUS_net_default7011_provider" scrolling="no" frameborder="0" src="./Compass Box Sizing   Compass Documentation_files/reply.html" style="position: relative; top: 0px; height: 58px; "></iframe></div>      </div>              <div id="dsq-media-preview" class="dsq-media-preview" style="display:none">        </div>                  <div class="dsq-post-footer">              <div class="dsq-attach-media">            <div class="dsq-attach-media-container">                <span>Image</span>                <!-- filled dynamically -->            <iframe name="easyXDM_DISQUS_net_default7012_provider" id="easyXDM_DISQUS_net_default7012_provider" scrolling="no" frameborder="0" src="./Compass Box Sizing   Compass Documentation_files/upload.html"></iframe></div>        </div>                                    <button type="button" class="dsq-button" id="dsq-post-button" onclick="DISQUS.dtpl.actions.fire(&#39;comments.validate&#39;, null);">            <span>              Post as …            </span>          </button>                      </div>      <div style="clear:both"></div>    </div>  </div>              <div id="dsq-comments-title">    <h3>                        Showing <span id="dsq-num-posts">0</span> comments                  </h3>  </div>  <div class="dsq-options">      <span class="dsq-item-sort">    Sort by    <select id="dsq-sort-select" onchange="DISQUS.dtpl.actions.fire(&#39;thread.sort&#39;, this.value);">            <option value="hot" selected="selected">Popular now</option>            <option value="best">Best rating</option>            <option value="newest">Newest first</option>            <option value="oldest">Oldest first</option>          </select>  </span>      <span class="dsq-subscribe-email">    <img src="./Compass Box Sizing   Compass Documentation_files/email.png" alt="">&nbsp;    <span id="dsq-subscribe">            <a href="http://compass-style.org/reference/compass/css3/box_sizing/#" onclick="return DISQUS.dtpl.actions.fire(&#39;thread.subscribe&#39;);">Subscribe by email</a>          </span>    <span class="dsq-subscribe-rss">      <img src="./Compass Box Sizing   Compass Documentation_files/bullet-feed.png" alt="">&nbsp;      <a href="http://compassbetadocs.disqus.com/compass_box_sizing_compass_documentation/latest.rss">Subscribe by RSS</a>    </span>  </span>  </div>                  <ul id="dsq-comments">      </ul>        <div id="dsq-pagination" class="dsq-pagination">        </div>          </div><div>  </div></div>
+<script type="text/javascript">
+   var disqus_identifier = "/reference/compass/css3/box_sizing/";
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://compassbetadocs.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript=compassbetadocs"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+</div>
+</div>
+<footer role="contentinfo"><div class="links">
+<ul>
+<li>
+<a rel="license" href="http://compass-style.org/copyright/" id="cc-logo"><img alt="Creative Commons License" style="border-width:0" src="./Compass Box Sizing   Compass Documentation_files/88x31.png"></a>
+<span>by Christopher M. Eppstein.</span>
+</li>
+<li>
+Compass is Charityware -
+<a href="http://umdf.org/compass">Donate Now!</a>
+</li>
+</ul>
+</div>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Compass Box Sizing   Compass Documentation_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+<iframe name="easyXDM_DISQUS_net_default7010_provider" id="easyXDM_DISQUS_net_default7010_provider" style="position: absolute; top: -2000px; left: 0px; " frameborder="0" src="./Compass Box Sizing   Compass Documentation_files/def.html"></iframe></body></html>
