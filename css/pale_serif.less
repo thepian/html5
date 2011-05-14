@@ -129,7 +129,8 @@ article.main {
             .normal_list_rhythm();
             .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
-            .regular_figure_theme(@article_figure_background_color,@article_figure_border);            
+            .regular_figure_theme(@article_figure_background_color,@article_figure_border);
+            .regular_table_theme();            
         }
         
         header {
@@ -150,6 +151,8 @@ article.main {
             .normal_list_rhythm();
             .regular_list_theme();
             .regular_inline_flow(@asides_mark_background, @code-family, @asides_title_underline_color); 
+            .regular_figure_theme(@article_figure_background_color,@article_figure_border);
+            .regular_table_theme();            
         }
 
         aside {
@@ -170,6 +173,8 @@ body > footer {
     .normal_list_rhythm();
     .regular_list_theme();
     .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
+    .regular_figure_theme(@article_figure_background_color,@article_figure_border);
+    .regular_table_theme();            
 } 
 
 footer .etc {

@@ -57,36 +57,47 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 </section>
 
 <section>
-h2. List Types
+h2. Tables
 
-h3. Ordered list
-
-# List item
-# List item
-# List item
-## List item level 2
-## List item level 2
-### List item level 3
-### List item level 3
-
-
-h3. Unordered list						
-
-* List item 01
-* List item 02
-* List item 03
-** List item level 2
-** List item level 2
-*** List item 3
-*** List item 3
-
-
-h3. Definition List
-
-- Definition list title := Definition list data
-- Definition list title := Definition list data
-- Definition list title := Definition list data.
-
+<table class="table-column">
+	<caption>Basic table</caption>
+	<thead>
+		<tr>
+			<th>header 1</th>
+			<th>header 2</th>
+			<th>header 3</th>
+			<th>header 4</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+			<td>data 4</td>
+		</tr>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+			<td>data 4</td>
+		</tr>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+			<td>data 4</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>footer 1</td>
+			<td>footer 2</td>
+			<td>footer 3</td>
+			<td>footer 4</td>
+		</tr>
+	</tfoot>
+</table>
 </section>
 
 </div></div> <!-- double-third and restricted-width -->
@@ -106,7 +117,6 @@ h3. Ordered list
 ### List item level 3
 ### List item level 3
 
-
 h3. Unordered list						
 
 * List item 01
@@ -117,7 +127,6 @@ h3. Unordered list
 *** List item 3
 *** List item 3
 
-		
 h3. Definition List
 
 - Definition list title := Definition list data
@@ -125,6 +134,7 @@ h3. Definition List
 - Definition list title := Definition list data.
 
 h3. Dialog
+
 
 <dialog>
 	<dt> Costello</dt>

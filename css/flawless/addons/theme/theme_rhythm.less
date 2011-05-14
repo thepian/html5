@@ -85,9 +85,20 @@
 
     form, legend, label					{ font-size: @size; }
     legend								{ position: relative; top: 5px; }
-    table								{ font-size: @size; }
-    caption								{ font-size: @size; position: relative; }
     hr									{ position: relative; height: 4px; margin: @height 0 @small_height 0; }
+    
+    table { 
+        font-size: @size; 
+        margin-top: @height; // 18px
+
+        th, td								{ line-height: @height; padding: @height/2 @height @height/2 0; }
+    }
+    caption								{ font-size: @size; position: relative; top: 5px; margin-bottom: @height; }
+    
+    table								{ border-collapse: collapse; position: relative; margin-top: 18px; }
+
+    thead th, thead td					{ padding-top: @height/3; }
+    tfoot th, tfoot td					{ padding-bottom: @height/3; }
 }
 
 .secondary_rhythm(@size: 1px * @theme_font_size,
