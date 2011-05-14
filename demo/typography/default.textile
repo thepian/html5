@@ -37,6 +37,8 @@ must do a special purpose styling use another general purpose tag and add a CSS 
 
 h2. Headers, Blocks and Separators
 
+Level One (h1) should be used for the Blog or Page Title. Level Two (h2) is the biggest header in blog/page content and sidebars.
+
 h1,h2,h3,h4,h5,h6
 
 p,pre, address, blockquote
@@ -52,6 +54,12 @@ h2. Lists and Tables
 
 table, caption, tbody, tfoot, thead, tr, th, td, ul, ol, dl, dt, dd
 
+- coffee := Hot and black
+- tea := Also hot, but a little less black
+- milk :=
+Nourishing beverage for baby cows.
+
+Cold drink that goes great with cookies. =:
 
 h2. Forms
 

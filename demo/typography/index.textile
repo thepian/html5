@@ -1,12 +1,15 @@
 ---
-layout: demo-default
+layout: default-dev
 title: Baseline - Typography
 header_title: Baseline - Typography
 ---
-<header>
-	<h1>Typography</h1>
-	<hr>
-</header>
+<article class="main split-thirds">
+	<div class="left-double sections normal-read">
+		<div class="restricted-width four-columns">
+			<header>
+				<h1>Typography</h1>
+				<hr>
+			</header>
 
 <section>
 
@@ -42,9 +45,7 @@ h6. Subtitle &mdash; h6
 {% include lorem_ipsum.html %} 
 
 <blockquote cite="http://www.projeturbain.com">
-
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-
 </blockquote>
 
 {% include ut_wisi_enim.html %}
@@ -54,3 +55,169 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 {% include lorem_ipsum.html %} 
 	
 </section>
+
+<section>
+h2. List Types
+
+h3. Ordered list
+
+# List item
+# List item
+# List item
+## List item level 2
+## List item level 2
+### List item level 3
+### List item level 3
+
+
+h3. Unordered list						
+
+* List item 01
+* List item 02
+* List item 03
+** List item level 2
+** List item level 2
+*** List item 3
+*** List item 3
+
+
+h3. Definition List
+
+- Definition list title := Definition list data
+- Definition list title := Definition list data
+- Definition list title := Definition list data.
+
+</section>
+
+</div></div> <!-- double-third and restricted-width -->
+
+<div class="right-third asides normal-read">
+	<div class="restricted-width two-columns">
+	<aside>
+h2. List Types
+
+h3. Ordered list
+
+# List item
+# List item
+# List item
+## List item level 2
+## List item level 2
+### List item level 3
+### List item level 3
+
+
+h3. Unordered list						
+
+* List item 01
+* List item 02
+* List item 03
+** List item level 2
+** List item level 2
+*** List item 3
+*** List item 3
+
+		
+h3. Definition List
+
+- Definition list title := Definition list data
+- Definition list title := Definition list data
+- Definition list title := Definition list data.
+
+h3. Dialog
+
+<dialog>
+	<dt> Costello</dt>
+	<dd> Look, you gotta first baseman?</dd>
+	<dt> Abbott</dt>
+	<dd> Certainly.</dd>
+	<dt> Costello</dt>
+	<dd> Who's playing first?</dd>
+	<dt> Abbott</dt>
+	<dd> That's right.</dd>
+	<dt> Costello</dt>
+	<dd> When you pay off the first baseman every month, who gets the money?</dd>
+	<dt> Abbott</dt>
+	<dd> Every dollar of it.</dd>
+</dialog>
+h2. Blockquote
+
+<blockquote cite="http://www.projeturbain.com">
+	<p>Duis autem vel eum iriure dolor in hendrerit in <q>vulputate velit esse molestie consequat</q>, vel illum dolore eu feugiat nulla facilisis.</p>
+</blockquote>
+h2. Tables
+
+		<table>
+			<caption>Table caption</caption>
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Data 1</td>
+					<td>Data 2</td>
+				</tr>
+				<tr>
+					<td>Data 3</td>
+					<td>Data 4</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Footer 5</td>
+					<td>Footer 6</td>
+				</tr>
+			</tfoot>			
+		</table>
+		<h2>Other markup code</h2>
+		<p><a href="">hyperlink</a><br>
+			<abbr title="title">abbreviation</abbr><br>
+			<b>offset text typically styled in bold</b><br>
+			<cite>cited title of a work</cite><br>
+			<code>code fragment</code><br>
+			<del>deleted text</del><br>
+			<dfn title="title">defining instance</dfn><br>
+			<em>emphatic stress</em><br>
+			<i>offset text typically styled in italic</i><br>
+			<ins>inserted text</ins><br>
+			<kbd>user input</kbd><br>
+			<mark>marked (highlighted) text</mark><br>
+			<samp>sample output</samp><br>
+			<small>small print</small><br>
+			<strong>strong importance</strong><br>
+			<sup>superscript</sup> <sub>subscript</sub><br>
+			<var>variable or placeholder text</var><br>
+			<q>Short Quotation</q></p>
+			
+address. contact information, for the person, you are talking about.
+		<pre>preformatted text</pre>
+soft hyphen : <code>&shy; or &#173;</code>
+
+h2. White space
+
+		<ul class="white-space">
+			<li><q>&ensp;</q><span class=" description">en space : <code>&#8194;</code></span></li>
+			<li><q>&emsp;</q><span class=" description">em space : <code>&#8195;</code></span></li>
+			<li><q>&#8196;</q><span class=" description">3-per-em space : <code>&#8196;</code></span></li>
+			<li><q>&#8197;</q><span class=" description">4-per-em space : <code>&#8197;</code></span></li>
+			<li><q>&#8198;</q><span class=" description">6-per-em space : <code>&#8198;</code></span> <span class="space-width"> </span></li>
+			<li><q>&#8199;</q><span class=" description">figure space : <code>&#8199;</code></span></li>
+			<li><q>&#8200;</q><span class=" description">punctuation space : <code>&#8200;</code></span></li>
+			<li><q>&thinsp;</q><span class=" description">thin space : <code>&#8201;</code></span></li>
+			<li><q>&#8202;</q><span class=" description">hair space : <code>&#8202;</code></span> </li>
+		</ul>
+	</aside>
+</div>
+<nav class="top-overhang">
+	<ul>
+    	<li><a class="active" href="#">Sidebar 1</a></li>
+        <li><a href="#">Sidebar 2</a></li>
+        <li><a href="#">Sidebar 3</a></li>
+    </ul>
+</nav>
+
+</div>
+</article>

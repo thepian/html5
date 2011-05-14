@@ -10,11 +10,13 @@
  */
 @import "flawless/loader.less";
 
+.font-face('CaviarDreamsRegular','/fonts/CaviarDreams-webfont','webfontdHSnsI35');
+
 /**
  * Typefaces
  */
 @body-family: Georgia,"Times New Roman", Times, serif;
-@heading-family: Helvetica, Arial, sans-serif;
+@heading-family: CaviarDreamsRegular, Helvetica, Arial, sans-serif;
 @blockquote-family: Helvetica, Arial, sans-serif;
 
 /**
@@ -142,7 +144,7 @@ article.main {
     }
     
     .asides {
-        background-color: @asides_background_color;code-family
+        background-color: @asides_background_color;
 
         .restricted-width {
             .normal_list_rhythm();

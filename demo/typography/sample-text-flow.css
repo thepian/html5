@@ -194,22 +194,12 @@ div.article p {
 padding: 0 0 16px 0;
 margin: 0;
 }
-div.article p.credit {
-font-size: 1.2em;
-}
-.article p.credit a {
-font-weight: bold;
-text-decoration: none;
-}
 div.article div.excerpt {
 font-size: 1.3em;
 line-height: 1.5;
 }
 div.article div.excerpt * {
 font-size: 1em;
-}
-div.article p.links {
-font-size: 1.2em;
 }
 div.article p.links a.article-link {
 float: left;
@@ -230,9 +220,6 @@ margin: 0;
 padding: 0;
 font-size: 1.2em;
 margin-bottom: 20px;
-}
-body.article p.credit {
-float: left;
 }
 body.article p.links {
 display: inline;
