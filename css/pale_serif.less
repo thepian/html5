@@ -23,6 +23,10 @@
 
 @regular-color: #333;
 @alternate-color: #036;
+@regular_anchor_color: @pink-color;
+@regular_anchor_hover_color: #036;
+@figure-background-color: white;
+@figure-border: 1px solid #ccc;
 
 @page_header_background_color: white;
 
@@ -30,9 +34,26 @@
 @overhang_background_color: @nav_background_color;
 @article_background_color: #e8e8e8;
 
+@code_background_color: #666;
+@code_color: #aaa;
+@code-family: Monospace, mono-space, monospace;
+
+@mark_background: rgba(255, 255, 0, 0.4);
+@title_underline_color: #000;
+@article_mark_background: @mark_background;
+@article_title_underline_color: @title_underline_color;
+@article_figure_background_color: @figure-background-color;
+@article_figure_border: @figure-border;
+
+@asides_mark_background: @mark_background;
+@asides_title_underline_color: @title_underline_color;
+
 @asides_background_color: #ddd;
 @aside1_background_color: @asides_background_color;
 @aside2_background_color: @asides_background_color;
+
+@page_footer_mark_background: @mark_background;
+@page_footer_title_underline_color: @title_underline_color;
 
 @page_footer_background_color: #9ff;
 @page_footer_color: #ccc;
@@ -71,7 +92,7 @@ body {
         .normal_rhythm();
     }
     
-    .comments, .asides, .etc, .secondary-read {
+    .comments-list .odd, .comments-list .even, .asides, .etc, .secondary-read {
         .normal-read &,
         &.normal-read {
             .secondary_rhythm();
@@ -80,8 +101,9 @@ body {
 
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
-	.type_theme_flawless(@body-family, @heading-family, @regular-color, @alternate-color);
-	.inline_flow();
+	.regular_body_theme(@body-family, @heading-family, @regular-color, @alternate-color);
+    .regular_anchor_theme(@regular_anchor_color, @regular_anchor_hover_color);
+	.regular_inline_flow(@mark_background, @code-family, @title_underline_color);
 }
 
 body > header {
@@ -101,24 +123,34 @@ article.main {
     
     .sections {
         
+        header, footer, section {
+            .normal_list_rhythm();
+            .regular_list_theme();
+            .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
+            .regular_figure_theme(@article_figure_background_color,@article_figure_border);            
+        }
+        
         header {
-            .list_rhythm();
-
             .postinfo {
                 .posts_info();
             }
         }    
         
-        section {
-            .list_rhythm();
+        section.comments {
+            .comments_gradient_background_theme(@article_background_color,1px solid #bbb)
         }
     }
     
     .asides {
-        background-color: @asides_background_color;
+        background-color: @asides_background_color;code-family
+
+        .restricted-width {
+            .normal_list_rhythm();
+            .regular_list_theme();
+            .regular_inline_flow(@asides_mark_background, @code-family, @asides_title_underline_color); 
+        }
 
         aside {
-            .list_rhythm();
         }
         
         aside.sidebar-1 {
@@ -130,6 +162,13 @@ article.main {
         }
     }
 }
+
+body > footer {
+    
+    .normal_list_rhythm();
+    .regular_list_theme();
+    .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
+} 
 
 footer .etc {
     

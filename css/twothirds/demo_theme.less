@@ -31,6 +31,12 @@
 @aside1_background_color: #4183C4;
 @aside2_background_color: #4183C4;
 
+@code_background_color: #666;
+@code_color: #aaa;
+@code-family: Monospace, mono-space, monospace;
+
+@mark_background: rgba(255, 255, 0, 0.4);
+@title_underline_color: black;
 
 body {
     /** Define vertical rythm of text in normal/light/dense read areas */
@@ -42,9 +48,9 @@ body {
     
     background-color: @page_background_color;
 	/* this adds the standard typography theme with custom families and colors */
-	.type_theme_flawless(@type-family, @type-head-family, #333, #036);
+	.regular_body_theme(@type-family, @type-head-family, #333, #036);
 	
-	.inline_flow();
+	.regular_inline_flow(@mark_background, @code-family, @title_underline_color);
 }
 
 body > header {
@@ -65,7 +71,7 @@ article.main {
     .sections {
         
         section {
-            .list_rhythm();
+            .normal_list_rhythm();
         }
     }
     
@@ -74,7 +80,7 @@ article.main {
         
         
         aside {
-            .list_rhythm();
+            .normal_list_rhythm();
         }
         
         aside.sidebar-1 {
@@ -158,6 +164,12 @@ section {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+body > footer {
+    
+    .normal_list_rhythm();
+    .regular_list_theme();
+} 
 
 footer .copyright {
     font-size: 10px;

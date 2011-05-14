@@ -132,14 +132,16 @@
     hr									{ position: relative; height: 4px; margin: @height 0 @small_height 0; }
 }
 
-.list_rhythm(@size: 1px * @theme_font_size,
-    @normal: @normal_read_vertical_rhythm, @light: @light_read_vertical_rythm, @dense: @dense_read_vertical_rythm
-    ) {
+.normal_list_rhythm(@size: 1px * @theme_font_size, @normal: @normal_read_vertical_rhythm) {
     
+    @rhythm: 1em * @normal;
+
     ul, ol, dl, dialog					{ 
         font-size: @size;  
         position: relative; 
-        margin-top: @normal; margin-bottom: @normal; }
+        margin-top: @rhythm; 
+        margin-bottom: @rhythm; 
+    }
     li ul, li ol, ul ul, ol ol			{ top: 0; margin-top: 0; margin-bottom: 0; }
     li h1, li h2, li h3,
     li h4, li h5, li h6,

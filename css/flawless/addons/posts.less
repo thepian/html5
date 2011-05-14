@@ -1,7 +1,6 @@
 .posts_info() {
     position: relative;
     top: -7px;
-    margin-bottom: 1em;
     white-space: nowrap;
     
     
@@ -93,4 +92,33 @@
         font-family:Georgia, "Times New Roman", Times, serif;
     }
     */
+}
+
+.comments_gradient_background_theme(@base_background_color,@border_bottom) {
+    
+    margin-right: 0;
+    ul.comments-list {
+        margin-left: 0;
+        li {
+            
+            list-style: none;
+            border-bottom: @border_bottom;
+            margin-bottom: 1em;
+        }
+    }
+    
+    .comment-text {
+        padding: 0 20px 0 1em;
+    }
+    
+    .comment-info {
+        margin:0;
+        padding: 1em 20px .5em 1em;
+    }
+    .comments-list .even .comment-info {
+        .css3_linear_gradient(darken(@base_background_color,10%), @base_background_color, center bottom, 90deg, center top);
+    }
+    .comments-list .odd .comment-info {
+        .css3_linear_gradient(lighten(@base_background_color,10%), @base_background_color, center bottom, 90deg, center top);
+    }
 }

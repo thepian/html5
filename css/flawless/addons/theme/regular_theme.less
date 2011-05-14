@@ -1,5 +1,6 @@
 @type-family: "Lucida Grande", Arial, sans-serif;
 @type-head-family: Helvetica, Arial, sans-serif;
+@type-code-family: mono-space, monospace;
 @type-color: #666;
 @type-color-sheme: #4083C4;
 
@@ -10,7 +11,7 @@
  * to a specific color sheme or font family on all
  * sub elements.
  */
-.type_theme_flawless(@family: @type-family, 
+.regular_body_theme(@family: @type-family, 
             @head-family: @type-head-family,
             @color: @type-color,
             @color-sheme: @type-color-sheme) 
@@ -45,15 +46,27 @@
   p+p.no-indent							{ text-indent: 0; }
   
   
-  /* Lists */
-  dt                                              { font-weight: bold; }
-  ul, ol											{ margin-left: 1.5em; }
-  ul, ul li											{ list-style: disc outside; }
-  ol, ol li											{ list-style: decimal outside; }
-
 }
 
-.inline_flow(@mark_background: rgba(255, 255, 0, 0.4), @code_family: mono-space, monospace, @title_underline_color: black) {
+/*
+ Regular indicates regular text in article section,aside,footer, or comments.
+ Other types of texts might be handled differently
+*/
+.regular_list_theme() {
+    
+    /* Lists */
+    dt                                              { font-weight: bold; }
+    ul, ol											{ margin-left: 2em; }
+    ul, ul li											{ list-style: disc outside; }
+    ol, ol li											{ list-style: decimal outside; }
+}
+
+/*
+ Regular indicates regular text in article section,aside,footer, or comments.
+ Other types of texts might be handled differently
+*/
+.regular_inline_flow(@mark_background: rgba(255, 255, 0, 0.4), 
+        @code_family: @type-code-family, @title_underline_color_: @title_underline_color) {
     
     b, strong                                  		{ font-weight: bold; }
     cite, dfn, em, i								{ font-style: italic; }
@@ -65,9 +78,30 @@
     small, sup, sub									{ font-size: 80%; }
     big												{ font-size: 125%; line-height: 80%; }
     abbr, acronym									{ font-size: 85%; text-transform: uppercase; letter-spacing: .1em; }
-    abbr[title], acronym[title], dfn[title]			{ border-bottom: 1px dotted @title_underline_color; cursor: help; }
+    abbr[title], acronym[title], dfn[title]			{ border-bottom: 1px dotted @title_underline_color_; cursor: help; }
     sup, sub										{ line-height: 0; }
     sup												{ vertical-align: super; }
     sub												{ vertical-align: sub; }
 
 }
+
+.regular_anchor_theme(@color: @regular_anchor_color, @hover-color: @regular_anchor_hover_color) {
+    a {
+        color: @color;
+        &:hover {
+            color: @hover-color;
+        }
+    }
+}
+
+.regular_figure_theme(@figure_background_color,@figure_border) {
+
+    blockquote.full,
+    figure,
+    pre {
+        background-color: @figure_background_color;
+        border: @figure_border;
+        padding: 0.25em;
+    }
+}
+
