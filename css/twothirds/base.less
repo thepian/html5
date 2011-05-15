@@ -77,11 +77,10 @@ nav.page-menu {
     margin: 5px 8px;
 }
 
-body > header {
-    padding-top: 10px;
-    height: @header_height;
-
-    h1,h2 {
+body {
+    position: relative; // Otherwise bottom-edge doesn't work
+    
+    > header {
         margin: 0;
         padding-top: .3em;
         text-align:left;
@@ -142,6 +141,7 @@ article.main {
     
 }
 .bottom-edge {
+    // relies on body position relative
     position:absolute;
     bottom:0; left:0; width:100%;
 }

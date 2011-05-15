@@ -11,6 +11,13 @@
 @import "flawless/loader.less";
 
 /**
+ * Sizes
+ */
+@top-edge-height: 20px;
+@header_height: 80px;
+@bottom-edge-height: 20px;
+
+/**
  * Typefaces
  */
 @body-family: Helvetica, Arial, sans-serif;
@@ -28,6 +35,9 @@
 @figure-background-color: #1c2200;
 @figure-border: 1px solid #444;
 
+/**
+ * Specific parameters
+ */
 @page_header_background_color: #080808;
 
 @nav_background_color: transparent;
@@ -105,6 +115,8 @@ body {
 }
 
 body > header {
+    padding-top: @top-edge-height;
+    height: @header_height;
     background-color: @page_header_background_color;
 }
 
@@ -165,6 +177,8 @@ article.main {
 }
 
 body > footer {
+    
+    padding-bottom: @bottom-edge-height;
     
     .normal_list_rhythm();
     .regular_list_theme();
