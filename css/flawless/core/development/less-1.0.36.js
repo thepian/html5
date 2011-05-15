@@ -2453,7 +2453,7 @@ function createCSS(styles, sheet, lastModified) {
 
     // Don't update the local store if the file wasn't modified
     if (lastModified && cache) {
-        log('saving ' + href + ' to cache.');
+        //log('saving ' + href + ' to cache.');
         cache.setItem(href, styles);
         cache.setItem(href + ':timestamp', lastModified);
     }
