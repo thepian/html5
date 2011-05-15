@@ -145,6 +145,9 @@ h3. Dialog
 	<dt> Abbott</dt>
 	<dd> Every dollar of it.</dd>
 </dialog>
+<hr>
+</aside>
+<aside>
 h2. Blockquote
 
 <blockquote cite="http://www.projeturbain.com">

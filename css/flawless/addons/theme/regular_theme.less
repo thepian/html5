@@ -14,7 +14,7 @@
 .regular_body_theme(@family: @type-family, 
             @head-family: @type-head-family,
             @color: @type-color,
-            @color-sheme: @type-color-sheme) 
+            @color-sheme: @type-color-sheme, @hr-background-url) 
 {
    
   font-family: @family;
@@ -45,7 +45,12 @@
   */
   p+p.no-indent							{ text-indent: 0; }
   
-  
+  hr { 
+      background-image: @hr-background-url;
+      background-repeat: repeat-x;
+      background-position: 0% 100%;
+  }
+
 }
 
 /*
