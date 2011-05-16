@@ -5,6 +5,12 @@
  * and easy installation for the end user.
  */
 
+.opacity(@fraction) {
+     -moz-opacity: @fraction; 
+     filter: e(%("alpha(opacity=%s)",100 * @fraction)); 
+     opacity: @fraction;
+}
+
 @import "debug.less";
 @import "nav/install.less";
 @import "orientation.less";
@@ -34,3 +40,4 @@
 @import "theme/install.less";
 /*
 */
+
