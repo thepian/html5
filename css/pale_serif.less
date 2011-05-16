@@ -50,6 +50,7 @@
 @code_color: #aaa;
 @code-family: Monospace, mono-space, monospace;
 
+@article_color: @regular-color;
 @mark_background: rgba(255, 255, 0, 0.4);
 @title_underline_color: #000;
 @article_mark_background: @mark_background;
@@ -57,6 +58,8 @@
 @article_figure_background_color: @figure-background-color;
 @article_figure_border: @figure-border;
 
+@asides_color : @regular-color;
+@asides_alternate_color: @alternate-color;
 @asides_mark_background: @mark_background;
 @asides_title_underline_color: @title_underline_color;
 
@@ -67,17 +70,20 @@
 @page_footer_mark_background: @mark_background;
 @page_footer_title_underline_color: @title_underline_color;
 
-@page_footer_background_color: #9ff;
-@page_footer_color: #ccc;
-@page_footer_anchor_color: #eee;
+@page_footer_background_color: #ddeeee;
+@page_footer_color: @regular-color;
+@page_footer_anchor_color: @regular_anchor_color;
 
-@etc_color: @page_footer_color; //darken(@page_footer_color,10%);
-@etc_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,10%);
+@etc_color: lighten(@page_footer_color,10%); 
+@etc_anchor_color: lighten(@page_footer_anchor_color,10%);
 
-@copyright_color: @page_footer_color; //darken(@page_footer_color,20%);
-@copyright_anchor_color: @page_footer_anchor_color; //darken(@page_footer_anchor_color,20%);
+@copyright_color: lighten(@page_footer_color,20%); 
+@copyright_anchor_color: lighten(@page_footer_anchor_color,20%); 
 
 @page_background_color: @page_footer_background_color;
+
+@table-border-color: #000;
+@table-odd-background: rgba(0, 0, 0, 0.035);
 
 
 /* The vertical rhythm is used to give your webpages a consistent
@@ -135,6 +141,7 @@ nav.top-overhang {
 article.main {
 
     /* themed */
+    color: @article_color;
     background-color: @article_background_color;
     
     .sections {
@@ -144,7 +151,7 @@ article.main {
             .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-            .regular_table_theme();            
+            .regular_table_theme(@table-border-color,@table-odd-background);            
         }
         
         header {
@@ -159,6 +166,7 @@ article.main {
     }
     
     .asides {
+        color: @asides_color;
         background-color: @asides_background_color;
 
         .restricted-width {
@@ -166,7 +174,7 @@ article.main {
             .regular_list_theme();
             .regular_inline_flow(@asides_mark_background, @code-family, @asides_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-            .regular_table_theme();            
+            .regular_table_theme(@table-border-color,@table-odd-background);            
         }
 
         aside {
@@ -190,7 +198,7 @@ body > footer {
     .regular_list_theme();
     .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
     .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-    .regular_table_theme();            
+    .regular_table_theme(@table-border-color,@table-odd-background);            
 } 
 
 footer .etc {
@@ -204,7 +212,6 @@ footer .etc {
 
 footer .copyright {
     font-size: 10px;
-    line-height:1.6;
     color: @copyright_color;
 
     a {
