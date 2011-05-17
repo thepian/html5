@@ -39,7 +39,7 @@
 
     position:relative;
     width:66.6% + 0.1%;
-    padding-right:33.3%;
+    padding-right:33.3 + 0.2%; // greater than 100% to make up for round down
     .util_clearfix();
 
     .tripple-third {
@@ -121,7 +121,7 @@
 
     .right-third {
         left:66.6% + 0.1%;
-        right: 0;
+        right: -2px; // for rounding error of percantage
         text-align:left;
         
         .restricted-width {
