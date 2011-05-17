@@ -1,0 +1,40 @@
+@import url("/stylesheets/shared/reset.css");
+@import url("/stylesheets/shared/layout.css");
+@import url("/stylesheets/shared/application_switcher.css");
+@import url("/stylesheets/shared/footer.css");
+
+#header {
+  margin: 2em 0;
+  overflow: hidden;
+  position: relative;
+}
+#header h1 {
+  background: transparent url("/images/appicons/snippet/Snippet_128x128.png") 0 0 no-repeat;
+  color: #444444;
+  font-size: 4em;
+  font-weight: bold;
+  height: 128px;
+  margin: 0;
+  line-height: 3.6;
+  text-indent: 3.8em;
+  text-shadow: 0 1px 0 #ffffff;
+}
+#header h1 span { font-weight: 100; }
+.section {
+  overflow: hidden;
+  padding: 20px 0;
+}
+#video_preview {
+  float: left;
+  width: 600px;
+}
+#screenshots {
+  float: right;
+  width: 410px;
+  z-index: 500;
+}
+#screenshots li {
+  float: left;
+  margin: 0 10px 20px 0;
+}
+#screenshots li:nth-child(2n) { margin: 0 0 20px; }
