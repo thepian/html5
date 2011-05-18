@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://desandro.com/resources/jquery-masonry/ -->
+<html lang="en" class="js canvas cssanimations csscolumns csstransforms no-csstransforms3d csstransitions wf-proximanova1proximanova2-n1-inactive wf-proximanova1proximanova2-i1-inactive wf-proximanova1proximanova2-n4-inactive wf-proximanova1proximanova2-i4-inactive wf-proximanova1proximanova2-n7-inactive wf-proximanova1proximanova2-i7-inactive wf-proximanova1proximanova2-n9-inactive wf-proximanova1proximanova2-i9-inactive wf-inactive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>jQuery Masonry ·  David DeSandro</title>
+  
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/desandro">
+  <link rel="stylesheet" href="http://desandro.com/_base/css/desandro.css" media="screen">
+  
+            <link rel="stylesheet" href="http://desandro.com/content/2.resources/4.jquery-masonry/masonry_resource.css" media="screen">
+    
+  
+
+  <script async="" src="./jQuery Masonry · David DeSandro_files/ga.js"></script><script src="./jQuery Masonry · David DeSandro_files/modernizr.js"></script>
+  <script src="./jQuery Masonry · David DeSandro_files/bqa1ehi.js"></script>
+  <style type="text/css">.tk-proxima-nova,.tk_proxima_nova{font-family:"proxima-nova-1","proxima-nova-2","Helvetica Neue","Arial",sans-serif;}</style><link rel="stylesheet" href="http://use.typekit.com/k/bqa1ehi-d.css?3bb2a6e53c9684ffdc9a99f61f5b2a62903f1c1625298e6d593d790846cfa19f489850475760319cc4e7168a60bbeae258644bee2dbd3ee1f33fbf698504a00e127cf12c06c99657990ef2484b1bfdcda89c7f7af1302719d3b8777e3c41a6eb4286327f862edda85a06091c661cbaa89e0e900651b2c7eefb1da823bb65316eb403c7b8abbd7e3bdd531be37290a3f6acac05b03ec4361d3c1734d18ddbff7d34b1e62493190a78ac5528caf52d52bb7ab7e3a5604295c9ace55ac237b8a0d869598f107a03e8c94c5c27029d93ceba0587da9a885c46bf4ad9e67c146178d6790a0a91486d527ca7d8f9b723b7eaea3542de47380313da3276f2d3803b8ac7a6ce28b6a3cc14edf4a17482efe4e0f13f3b4c7e525e7d7dccb4625e59fa0f5c4d8b8d4fa00e2da9f14c93fe2dcfffc03d"><script>try{Typekit.load();}catch(e){}</script>
+
+
+
+
+
+<script type="text/javascript" src="./jQuery Masonry · David DeSandro_files/saved_resource"></script></head>
+<body class="resources  ">
+
+<section id="site-header" class="tk_proxima_nova">
+    <div id="branding">
+        <div class="rss">
+            <a href="http://feeds.feedburner.com/desandro" title="Subscribe">
+                RSS
+                <span class="dot"></span>
+                <span class="inside ring"></span>
+                <span class="outside ring"></span>
+            </a>
+        </div>
+        <p><a href="http://desandro.com/"><span>David</span> DeSandro</a>  / </p>
+
+    </div>
+    <ol>
+        <li class="articles"><a href="http://desandro.com/articles">Articles</a>
+            
+        </li>
+        <li class="resources"><a href="http://desandro.com/resources">Resources</a>
+            
+                / <a href="./jQuery Masonry · David DeSandro_files/jQuery Masonry · David DeSandro.html">jQuery Masonry</a>
+            
+        </li>
+        <li class="portfolio"><a href="http://desandro.com/portfolio">Portfolio</a>
+            
+        </li>
+        <li class="about"><a href="http://desandro.com/about">About &amp; Contact</a></li>
+    </ol>    
+</section>
+
+<section id="content">
+    
+    <div class="wrap12">
+    <h1 class="col12">jQuery Masonry</h1>
+
+    <div class="col6">
+        <p>Masonry is a layout plugin for jQuery. Think of it as the flip side of CSS floats. Whereas floating arranges elements horizontally then vertically, Masonry arranges elements vertically then horizontally according to a grid. The result minimizes vertical gaps between elements of varying height, just like a mason fitting stones in a wall.</p>
+        
+        <p><a href="http://desandro.com/demo/masonry/docs/" class="button">View Demos and Docs</a></p>
+    </div>
+    
+        
+
+    <div class="col6">
+        <p><a href="http://github.com/desandro/masonry/raw/master/jquery.masonry.min.js" class="button">Download jquery.masonry.min.js</a> production-ready</p>
+        <p><a href="http://github.com/desandro/masonry/raw/master/jquery.masonry.js" class="button">Download jquery.masonry.js</a> for development</p>
+
+        <p>This project lives on GitHub at <a href="http://github.com/desandro/masonry">github.com/desandro/masonry</a>, where you can follow progress, download all this documentation, grab the latest version of the script, or fork this project and make it better yourself.</p>
+
+        <p>There you can find an <a href="http://github.com/desandro/masonry/issues">issue tracker</a> where you can look through other people’s <a href="http://github.com/desandro/masonry/issues/closed">resolved issues</a> or submit a new one for yourself. If you’re still having trouble, try <a href="http://wiki.github.com/desandro/masonry/">looking over the FAQ</a>.</p>
+
+    </div>
+
+    <div class="col12">
+
+        <div id="comparison">
+            <h2>Comparison Example</h2>
+            <div class="example">
+                <h3>CSS Floats</h3>
+                <div id="primary" class="wrap">
+                    <div class="box msnry_col1">
+                        <h5>1</h5>
+                        <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris. </p>
+                    </div>
+
+                    <div class="box msnry_col2">
+                        <h5>2</h5>
+                        <p>Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit.</p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                        <h5>3</h5>
+                        <p>Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Ut eget sem risus, et posuere velit.  Aenean ac mauris non ligula.    </p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                        <h5>4</h5>
+                        <p>Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.</p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                        <h5>5</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                        <h5>6</h5>
+                        <p>Cadipiscing in, lacinia vel, tellus. </p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                        <h5>7</h5>
+                        <p>Pellentesque a diam sit amet mi ullamcorper vehicula.  adipiscing in, lacinia vel, tellus.</p>
+                    </div>
+
+                    <div class="box msnry_col3">
+                        <h5>8</h5>
+                        <p>Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus.  Suspendisse ac urna. Etiam pellentesque. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.  Suspendisse ac urna. Etiam pellentesque. </p>
+                    </div>
+
+                    <div class="box msnry_col2">
+                        <h5>9</h5>
+                        <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Pellentesque a diam sit amet mi ullamcorper vehicula.  adipiscing in, lacinia vel, tellus.</p>
+                    </div>
+
+                    <div class="box msnry_col1">
+                         <h5>10</h5>
+                         <p>Etiam pellen tesque mauris ut lectus.</p>
+                     </div>
+
+                     <div class="box msnry_col1">
+                         <h5>11</h5>
+                         <p>Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspen disse ac urna. Ut condi mentum mi vel tellus.</p>
+                     </div>
+
+                     <div class="box msnry_col1">
+                          <h5>12</h5>
+                         <p>Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+                     </div>
+
+                </div> <!-- /#primary.wrap -->
+            </div> 
+
+            <div class="example">
+                <h3>Masonry</h3>
+                <div id="secondary" class="wrap masoned" style="position: relative; height: 531px; ">
+                    <div class="box msnry_col1" style="position: absolute; left: 10px; top: 10px; ">
+                        <h5>1</h5>
+                        <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris. </p>
+                    </div>
+
+                    <div class="box msnry_col2" style="position: absolute; left: 110px; top: 10px; ">
+                        <h5>2</h5>
+                        <p>Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit.</p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 310px; top: 10px; ">
+                        <h5>3</h5>
+                        <p>Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Ut eget sem risus, et posuere velit.  Aenean ac mauris non ligula.    </p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 110px; top: 77px; ">
+                        <h5>4</h5>
+                        <p>Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus.</p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 210px; top: 77px; ">
+                        <h5>5</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 10px; top: 113px; ">
+                        <h5>6</h5>
+                        <p>Cadipiscing in, lacinia vel, tellus. </p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 10px; top: 180px; ">
+                        <h5>7</h5>
+                        <p>Pellentesque a diam sit amet mi ullamcorper vehicula.  adipiscing in, lacinia vel, tellus.</p>
+                    </div>
+
+                    <div class="box msnry_col3" style="position: absolute; left: 110px; top: 204px; ">
+                        <h5>8</h5>
+                        <p>Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus.  Suspendisse ac urna. Etiam pellentesque. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.  Suspendisse ac urna. Etiam pellentesque. </p>
+                    </div>
+
+                    <div class="box msnry_col2" style="position: absolute; left: 10px; top: 343px; ">
+                        <h5>9</h5>
+                        <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Pellentesque a diam sit amet mi ullamcorper vehicula.  adipiscing in, lacinia vel, tellus.</p>
+                    </div>
+
+                    <div class="box msnry_col1" style="position: absolute; left: 210px; top: 343px; ">
+                         <h5>10</h5>
+                         <p>Etiam pellen tesque mauris ut lectus.</p>
+                     </div>
+
+                     <div class="box msnry_col1" style="position: absolute; left: 310px; top: 343px; ">
+                         <h5>11</h5>
+                         <p>Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspen disse ac urna. Ut condi mentum mi vel tellus.</p>
+                     </div>
+
+                     <div class="box msnry_col1" style="position: absolute; left: 210px; top: 422px; ">
+                          <h5>12</h5>
+                         <p>Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+                     </div>
+
+                </div> <!-- /#secondary.wrap -->
+            </div>        
+
+        </div>
+
+
+
+    	<div class="copy">
+
+
+            <h2>Examples in the Wild</h2>
+
+            
+            
+            <p>In addition to the examples below, see <a href="http://delicious.com/desandro/jquerymasonry">delicious links tagged with jquerymasonry</a> and <a href="http://emberapp.com/desandro/collections/jquery-masonry">jQuery Masonry Collection on Ember for screenshots</a>.</p>
+
+            <ul id="inthewild" style="position: relative; height: 2070px; " class="masoned">
+                <li style="position: absolute; left: 0px; top: 0px; "><a href="http://thomasmatthews.com/index.php/portfolio/print/">
+                    Portfolio - thomas.matthews
+                    <img src="./jQuery Masonry · David DeSandro_files/thomasmatthews.jpg" alt="Portfolio - thomas.matthews" width="280" height="300">
+                </a></li>
+                <li style="position: absolute; left: 300px; top: 0px; "><a href="http://bygonebureau.com/">
+                    The Bygone Bureau
+                    <img src="./jQuery Masonry · David DeSandro_files/bygone-bureau.jpg" alt="The Bygone Bureau" width="280" height="451">
+                </a></li>
+                <li style="position: absolute; left: 600px; top: 0px; "><a href="http://iamdarrenjohn.com/">
+                    Darren John
+                    <img src="./jQuery Masonry · David DeSandro_files/darrenjohn.jpg" alt="Darren John" width="280" height="771">
+                </a></li>
+                <li style="position: absolute; left: 0px; top: 365px; "><a href="http://www.puma.com/running/media">
+                    PUMA Running Media
+                    <img src="./jQuery Masonry · David DeSandro_files/puma-running.jpg" alt="PUMA Running Media" width="280" height="496">
+                </a></li>
+                <li style="position: absolute; left: 300px; top: 516px; "><a href="http://photography.iamkoa.net/">
+                    Photography by Koa Metter
+                    <img src="./jQuery Masonry · David DeSandro_files/koa.jpg" alt="Photography by Koa Metter" width="280" height="347">
+                </a></li>
+                <li style="position: absolute; left: 600px; top: 836px; "><a href="http://thoughtandtheory.com/collection/">
+                    Thought &amp; Theory: Collection
+                    <img src="./jQuery Masonry · David DeSandro_files/thought-theory.jpg" alt="Thought &amp; Theory: Collection" width="280" height="581">
+                </a></li>
+                <li style="position: absolute; left: 0px; top: 926px; "><a href="http://veerle.duoh.com/inspiration">
+                    The Inspiration Stream | Veerle's blog 3.0
+                    <img src="./jQuery Masonry · David DeSandro_files/veerle-inspir.jpg" alt="The Inspiration Stream | Veerle&#39;s blog 3.0" width="280" height="496">
+                </a></li>
+                <li style="position: absolute; left: 300px; top: 928px; "><a href="http://scaffold.tumblr.com/">
+                    Scaffold Tumblr Theme
+                    <img src="./jQuery Masonry · David DeSandro_files/scaffold.jpg" alt="Scaffold Tumblr Theme" width="280" height="345">
+                </a></li>
+                <li style="position: absolute; left: 300px; top: 1338px; "><a href="http://rathersplendid.net/">
+                    Rather Splendid    
+                    <img src="./jQuery Masonry · David DeSandro_files/rather-splendid.jpg" alt="Rather Splendid" width="280" height="517">
+                </a></li>
+                <li style="position: absolute; left: 600px; top: 1482px; "><a href="http://chromeography.com/">
+                    Chromeography    
+                    <img src="./jQuery Masonry · David DeSandro_files/chromeography.jpg" alt="Chromeography" width="280" height="523">
+                </a></li>
+                <li style="position: absolute; left: 0px; top: 1487px; "><a href="http://www.dazeddigital.com/">
+                    Dazed Digital    
+                    <img src="./jQuery Masonry · David DeSandro_files/dazed-digital.jpg" alt="Dazed Digital" width="280" height="468">
+                </a></li>
+            </ul>
+
+            <h2>License</h2>
+
+            <p>jQuery Masonry is licensed under the MIT license, just like <a href="http://jquery.org/license">jQuery itself.</a> It may be used for personal and commercial applications.</p>
+
+    	</div>
+
+
+    </div> <!-- /.col12 -->
+</div>
+    
+</section>
+
+    <section id="site-footer" class="vcard tk_proxima_nova">
+        <div class="wrap12">
+            
+            <div class="made-this col4">
+                <a href="http://desandro.com/" class="url uid" rel="me">
+                    <strong class="fn">
+                        <span class="given-name">David</span>
+                        <span class="family-name">DeSandro</span>
+                    </strong>
+                    <span class="made">made</span> 
+                    <span class="this">this.</span>
+                </a>
+                <p class="copyright">© 2009 – 2011</p>                
+            </div>
+
+            <p class="where-what col4">
+              <span class="being">Being creative</span>
+              <span class="making">and making stuff</span>
+              <span class="happy">keeps him happy,</span>
+              <span class="designer">as a web designer,</span>
+              <span class="living">
+                living in 
+                <span class="adr">
+                  <span class="locality">Arlington</span>, 
+                  <span class="region" title="Virginia">VA</span>,
+                </span>
+              </span>
+              <span class="working vcard">
+                working at <a href="http://nclud.com/" class="fn org url">nclud</a> in 
+                <span class="adr">
+                  <span class="locality">Washington</span>, 
+                  <span class="region" title="District of Columbia">DC</span>.
+                </span>
+              </span>
+            </p>
+            <div class="also-made col4">
+                <h3>Dave also made</h3>
+                <ul>
+                    <li><a href="http://isotope.metafizzy.co/">Isotope</a></li>
+                    <li><a href="http://dropshado.ws/">dropshado.ws</a></li>
+                    <li><a href="http://desandro.com/resources/close-pixelate/">Close Pixelate</a></li>
+                </ul>
+            </div>
+        </div>
+    </section> <!-- #site-footer -->
+
+
+  <script src="./jQuery Masonry · David DeSandro_files/jquery.min.js"></script>
+  <script src="./jQuery Masonry · David DeSandro_files/application.js"></script>
+  
+  
+  
+      <script src="./jQuery Masonry · David DeSandro_files/jquery.masonry.min.js"></script>
+<script> 
+	$(function(){
+		$('#secondary').masonry({ columnWidth: 100 });
+		$('#inthewild').masonry({ singleMode: true });
+	});
+</script>
+  
+    
+
+
+  <script src="./jQuery Masonry · David DeSandro_files/saved_resource(1)"></script>
+  <script>
+   var _gaq = [['_setAccount', 'UA-592624-3'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+    
+
+
+<!-- Stacey(2.3.0). --></body></html>
