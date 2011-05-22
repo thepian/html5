@@ -1,0 +1,2412 @@
+---
+layout: demo-post
+title: A CSS Framework
+header_title: A CSS Framework
+author: Mike Stenhouse
+authorurl: /Mike+Stenhouse
+---
+In my <a href="/Articles/12/modular-css/">Modular CSS</a> article I documented the possibility of breaking down stylesheets into components that could be reused across projects. All well and good. The next logical step is to extend this to become a CSS framework, allowing rapid development of sites with pre-written and tested components. All that's really required to produce this is a set of naming conventions and a flexible base template...
+
+h2. Who is this for?
+
+If you've been creating sites with CSS for a while you may be getting frustrated with having to recreate and retest basic layouts on a regular basis. In this article I'm trying to illustrate a simple way of skipping the tedious startup on your average project, letting you get to the interesting stuff as quickly and efficiently as possible. I've not attempted to explain the layouts included here so it may not be suitable if you're a CSS beginner. Sorry about that... Feel free to dissect them yourself if you're interested; I've kept them as simple as possible.
+
+h2. How many layouts are there?
+
+Well, loads but the majority of them fall into rough groups. Any framework must account for the most common layouts, otherwise it'll never get used. 
+
+* Vertical navigation with one content column.
+* Vertical navigation with two columns of content.
+* Horizontal navigation with one content column.
+* Horizontal navigation with 2 columns of content.
+* Horizontal navigation with local navigation and one column of content.
+* Horizontal navigation with local navigation and 2 columns of content.
+
+These 6 cover most of the blogs out there and most of the corporate sites as well. How can we structure a document so that it'll be useful in all 6 of these scenarios?
+
+h2. What are the common elements?
+
+Malarkey had a shot at pinning down <a href="http://www.stuffandnonsense.co.uk/archives/whats_in_a_name_pt2.html">websites' common elements and giving them names</a> a while back but I want something a little more general so that the building blocks can be retasked without slipping their labelling.
+
+So... what are the common building blocks in the above 6 layouts?
+
+* Header
+* Footer
+* Main content
+* Sub content
+* Main nav
+* Local nav
+
+These elements are used mix and match across most sites you visit so these are the constituent elements that any framework will have to cater for. No designs will use all of them but most will use header, footer, main content and main nav with optional sub content and sub nav.
+
+h2. The ideal structure
+
+For me the most important single aspect of accessibility is the source code order: if it makes sense you're well on your way to building an accessible site.
+	
+You can't spent much time on the accessibility mailing lists or forums without someone being told that they should structure their HTML so that the content preceeds the navigation. This stops screenreader users from having to sit through the site's navigation every time they travel to a new page. You can get around this with skip links but that's an extra link to follow...
+
+So, in an ideal world, how would we structure our websites?
+
+# Header
+# Main content
+# Sub content
+# Local nav
+# Main nav
+# Footer
+
+This source order follows the exact structure people are expected to want: once they have read/listened to the content of your page they are most likely to want to navigate within the current section or to related pages. After they have worked their way through those they'll probably want another section of your site so the main navigation follows.
+
+h2. The page structure
+
+This page structure above looks something like this when turned into (X)HTML:
+
+<div class="codeblock"><pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+    &lt;head&gt;
+    	&lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="page"&gt;
+        
+            &lt;div id="header" class="clearfix"&gt;
+                &lt;hr /&gt;
+            &lt;/div&gt;&lt;!-- end header --&gt;
+            
+            &lt;div id="content" class="clearfix"&gt;
+                &lt;div id="main"&gt;
+                    &lt;hr /&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="sub"&gt;
+                    &lt;hr /&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="local"&gt;
+                    &lt;hr /&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="nav"&gt;
+                    &lt;hr /&gt;
+                &lt;/div&gt;
+                
+            &lt;/div&gt;&lt;!-- end content --&gt;
+            
+            &lt;div id="footer" class="clearfix"&gt;
+            &lt;/div&gt;&lt;!-- end footer --&gt;
+            
+        &lt;/div&gt;&lt;!-- end page --&gt;
+        
+        &lt;div id="extra1"&gt;&amp;nbsp;&lt;/div&gt;
+        &lt;div id="extra2"&gt;&amp;nbsp;&lt;/div&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+h2. The magic of CSS
+
+We're going to need some farily advanced CSS tricks to turn this source order into useful layouts. They all have to be flexible, to account for text resizing, which with the footer rules out absolute positioning...
+
+The eureka moment for me was when <a href="http://www.1976design.com/blog/archive/2004/11/21/solving-css-problems-mozilla-europe/">Dunstan published his absolutely positioned menu technique</a> as part of his Mozilla Europe work. Suddenly it became possible, using an incredibly sneaky trick, to pull the nav bar from the bottom of the source and use it horizontally in the header and still allow for text resizing. Now that's genius. 
+
+Then you've got the negative margin tricks for moving floats around. I first came across these when <a href="http://www.mezzoblue.com/archives/2004/01/23/friday_chall/">Ryan Brill posted about them on Mezzoblue</a>... Dead handy.
+
+If we're going to use floated layouts we're going to need some way of clearing the contents. I could put clearing divs into each of my elements but there is the black magic <a href="http://positioniseverything.net/easyclearing.html">clearfix method by Tony Aslett</a> that will do this for me, keeping the source clean.
+
+A few other things that might come in handy:
+	
+* Body ids to switch styles
+* "Display: inline to cure IE's double float bug":http://positioniseverything.net/explorer/floatIndent.html 
+
+h2. See where I'm going with this?
+
+We have a single, flexible source document that will take a variety of content and a load of CSS techniques to manipulate them... To make this framework useful I have to be able to get my single source document to display as any of the common layouts listed above. Once that's done I'll be able to drop any content into the HTML framework, plug in the appropriate layout stylesheet for the design, tweak it and the job will be done. No more rewriting XHTML and CSS for every project; every time I start I will begin work with a solid foundation that I can tweak to fit the specifics of the job. Startup time will be next to nothing.
+
+h2. Back to our five main layouts
+Okay, so the source code is fixed. What we want is to be able to plug in tried and tested layout stylesheets for reuse on future projects. I'm going to stick with fixed width layouts for this because they're simpler but using negative margins we could get these fluid with a bit of extra work.
+
+* "Vertical navigation with one content column":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navleft-1col.css&demo=true
+* "Vertical navigation with two columns of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navleft-2col.css&demo=true
+* "Horizontal navigation with one content column":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-1col.css&demo=true
+* "Horizontal navigation with 2 columns of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-subright.css&demo=true
+* "Horizontal navigation with local navigation and one column of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-localleft.css&demo=true    
+* "Horizontal navigation with local navigation and 2 columns of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-3col.css&demo=true
+
+h2.Achieved: Level 2!
+
+That's it - all the common layouts done with pluggable stylesheets and ready to go. They're set up in a kind of Zen Allotment for you to "have a flick through":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/"...
+
+If you want to have a play with these yourself, <a href="http://www.contentwithstyle.co.uk/resources/css-framework/1.1/css-framework.zip">all the source files</a> are packaged up in quick-grow zip file.
+
+**30/11/2007 UPDATE:** I've uploaded a slightly updated version of the framework. Very little has changed but a few people have voiced concerns over the lack of a formal license. Taking advice from "Paul Jones":http://paul-m-jones.com/ (thanks!) I've added the new BSD terms, which are about as open as they come. I'm happy for people to use the framework for whatever they want. If you do, please drop me a line - I'd love to see what you come up with!
+
+**6/09/2010 UPDATE:** This article is <a href="http://www.fatcow.com/edu/a-css-framework-be/">now available in Belorussian</a>, apparently, translated by Amanda Lynn.
+
+</section>
+
+
+<section class="comments" id="comments">
+                    <h2>Comments</h2>
+
+    
+<ul class="comments-list">
+    <li class="odd" id="comment-25">
+            <div class="comment-text">
+                wow, thanks for this write up, I have been in the process of building a css toolbox library and this is exactly what the doctor ordered….            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://aenonfiredesign.com/" rel="nofollow">clint</a> 
+                    
+                on May 22 2005, 00:27
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-25" class="no-external-icon" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-26">
+            <div class="comment-text">
+                I’m a bit late discovering this article, but nice going Mike. It’s in the same vein as something I tried to flesh out last year that I called the <a href="http://www.google.com.au/url?sa=U&start=2&q=http://www.opinios.com/archives/000073.php&e=10141">CSS Sandwich</a>, although my focus was more on a best practice for managing CSS hacks. I wonder whether it might be worth expanding to include sidebars on the left <em>and</em> right hand side too. Combined with Malarkey’s semantic naming conventions, it would be great if every site that fell into these categories followed this structure. Can you imagine how easy that would be for maintaining someone else’s code!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://opinios.com/" rel="nofollow">mattymcg</a> 
+                    
+                on May 22 2005, 07:07
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-26" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-28">
+            <div class="comment-text">
+                Matty:<br>
+<br>
+Allright, but never forget that you want to keep your job!<br>
+Therefore write <a href="http://mindprod.com/unmain.html">unmaintainable code</a> !            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on May 22 2005, 10:01
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-28" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-40">
+            <div class="comment-text">
+                Excellent… I’ve been thinking about this exact thing recently! I’ve been wanting to gather tried and true code to create this very thing. You’ve gone ahead and simplified this for me. Problem was I wasn’t aware of these great solutions that you mentioned above. How do the layouts hold up against the array of broswers out there (directed at the problematic IE)?<br>
+<br>
+A CSS Framework… Brilliant!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://edit-undo.org/" rel="nofollow">Joshua Heyer</a> 
+                    
+                on May 23 2005, 17:59
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-40" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-41">
+            <div class="comment-text">
+                Only 3 comments over one month? Why? This is huge! Isn’t it?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://tinus.guichelaar.info/" rel="nofollow">Tinus</a> 
+                    
+                on May 23 2005, 18:05
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-41" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-43">
+            <div class="comment-text">
+                sureley everyone created their own when they started learning, i know i did…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.newmediadesigns.co.uk/" rel="nofollow">mark</a> 
+                    
+                on May 23 2005, 19:33
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-43" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-45">
+            <div class="comment-text">
+                Thanks Tinus! We wrote the articles right back at the beginning of the year but real life got in the way of actually getting CwS live until Thursday last week. That’s why the articles look quiet…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 23 2005, 20:43
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-45" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-49">
+            <div class="comment-text">
+                can you make each style sheet easily downloadable?<br>
+a set of links will do            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    chris                    
+                on May 23 2005, 23:40
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-49" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-50">
+            <div class="comment-text">
+                Nice job :-)<br>
+And quite usefull!!<br>
+I just noticed that on “my” firefox (ubuntu) the navigation seems to be longer than header so the “Contact” link is on the 2nd line. Anyway, I already had to tackle that problem once. I just used a container for the horizontal navigation bar – with a fixed size (100% or in px I do not remember)  for that container. 
+
+<br>
+<br>
+
+<code>
+&lt;div id="navContainer" style="width=xxx"&gt;
+<br>
+&lt;div id="nav"&gt;links…&lt;/div&gt;
+<br>
+&lt;/div&gt;
+</code>
+<br>
+
+<a href="http://www.contentwithstyle.co.uk/resources/css-framework/index.php?css=layout-navtop-1col.css">link to page</a>            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Gabriel                    
+                on May 23 2005, 23:57
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-50" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-52">
+            <div class="comment-text">
+                Very nice! The modular approach is quite powerful.<br>
+<br>
+I don’t see any usage terms with these stylesheets. Is the intention for readers to be able to use these stylesheets directly to build from, or are you just sharing the techniques?<br>
+<br>
+(In the US, at least, you really can’t assume anything is available for any particular use unless it’s spelled out in front of you…)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.blueskyonmars.com/" rel="nofollow">Kevin Dangoor</a> 
+                    
+                on May 24 2005, 03:54
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-52" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-54">
+            <div class="comment-text">
+                Now all you need to do is automate the process with a scripting language and you have a tool to instanly build web sites. Like this;<br>
+<br>
+content -&gt; html framework -&gt; CSS applied -&gt; Go live<br>
+<br>
+Users could interface with a form on the web, upload their content, the HTML framework would get populated, the CSS sheet applied, and their web host would display the finished file. Automatic! Then the designer would just create new cool stylesheets, or be put out of work.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.devmodul.com/" rel="nofollow">jeremiah</a> 
+                    
+                on May 24 2005, 15:44
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-54" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-55">
+            <div class="comment-text">
+                How can I download the used css files?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.dutchnomad.nl/" rel="nofollow">Dutch Nomad</a> 
+                    
+                on May 24 2005, 15:49
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-55" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-56">
+            <div class="comment-text">
+                Try <a href="http://jremes.sdmhost.com/archives/2005/03/03/weird-css-issue/#comment-18">this technique</a><br>
+<br>
+To sort out your css problems:<br>
+<br>
+<code>Error: The stylesheet http://www.contentwithstyle.co.uk/css/sifr-screen.css was not loaded because its MIME type, "text/html", is not "text/css".</code>            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://gsgd.co.uk/" rel="nofollow">George Smith</a> 
+                    
+                on May 24 2005, 16:35
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-56" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-57">
+            <div class="comment-text">
+                Chris and Dutch: I’ll sort out a zip for the whole lot later on today. <br>
+<br>
+Kevin: As for terms of use, you can pretty much do what you like. I’d appreciate a credit somewhere (a reference in the source is enough) and I’d be very interested to see what you manage to do with them so drop me a mail.<br>
+<br>
+Jeremiah: That sort of thing would work really well for hosted blogging or the like, I reckon… Top idea!<br>
+<br>
+I’ve been using a similar workflow for my small freelance projects. For these I get given the design and I just pick the right layout sheet and start tweaking.<br>
+<br>
+Josh Heyer has suggested putting this framework up with a layout repository that people can contribute to. I’ve registered a domain, now I just need the time to sort out a site… Watch this space.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 24 2005, 16:44
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-57" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-58">
+            <div class="comment-text">
+                George: Where did you find that error? I thought I’d unplugged the sIFR stuff… We launched in a hurry though so it might still be lurking in there somewhere.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 24 2005, 16:46
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-58" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-62">
+            <div class="comment-text">
+                Goerge:<br>
+Thanks for flagging it up. We start with edges and corners, but we get it running smooth soon …            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on May 24 2005, 17:43
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-62" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-65">
+            <div class="comment-text">
+                Now that’s good stuff.<br>
+<br>
+This is something I’ve wanted to look into for a long time now. I’m one of those people who always manages to have to recreate basic layouts before continuing on to a more customized one, so this type of thinking should save me some work.<br>
+<br>
+Hopefully you’ll be posting more on this train of thought in the future. Thanks for the start though!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://patrickhaney.com/" rel="nofollow">Patrick Haney</a> 
+                    
+                on May 24 2005, 21:20
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-65" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-68">
+            <div class="comment-text">
+                Thanks for a most thoughtful and practical article on CSS for real world work. <br>
+<br>
+As browser support becomes more frequent it’s easier to wean myself from tables-based formats.<br>
+<br>
+I’ve just spent a day exploring its features and learnt a lot. <br>
+<br>
+My only stumbling point is that I’m not sure how to recreate it locally without having the PHP server side scripting language. <br>
+<br>
+Is it possible to get the horizontal navigation and masthead to work without the PHP?<br>
+<br>
+Thanks            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://xidp.com/" rel="nofollow">John Hilvert</a> 
+                    
+                on May 25 2005, 01:35
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-68" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-69">
+            <div class="comment-text">
+                Wonderful article!<br>
+I want to play around with the files on my own. however… I think there is some mistake in the link of the zip file. It just goes to the same place as the other demo link, Could you provide a link to the zip file?<br>
+Thanks again for a great article            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.rozin.com/" rel="nofollow">etan rozin</a> 
+                    
+                on May 25 2005, 02:32
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-69" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-71">
+            <div class="comment-text">
+                Nice write up. A very useful library of layouts.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.rebelplatoon.com/" rel="nofollow">Craig Beck</a> 
+                    
+                on May 25 2005, 09:31
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-71" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-73">
+            <div class="comment-text">
+                The link to the zip file should be working now…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 25 2005, 12:16
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-73" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-74">
+            <div class="comment-text">
+                A great idea, well thought through. Everyone works differently, of course, but even so this is an excellent starting point for the majority of layouts.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.ilovejackdaniels.com/" rel="nofollow">Dave Child</a> 
+                    
+                on May 25 2005, 14:13
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-74" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-75">
+            <div class="comment-text">
+                Great work Mike!<br>
+Only one question: in <br>
+<a href="http://www.contentwithstyle.co.uk/resources/css-framework/index.php?css=layout-navtop-localleft.css">link to page</a> <br>
+ I see that the Header is larger then the navigation menu. Isn’t it nicer if both are the same length? Or u did this way to have buttons on the navigation menu all the same length to look nicer?<br>
+<br>
+Sorry, maybe this is a newbie question<br>
+Cesidio            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Cesidio                    
+                on May 25 2005, 16:17
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-75" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-76">
+            <div class="comment-text">
+                Cesidio: The nav bar is the same width as the content area – it’s just the way I decided to do it! It could be the same width as the header bar if you wanted…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 25 2005, 17:11
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-76" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-77">
+            <div class="comment-text">
+                Cesidio again: Actually, it’s just occurred to me what you mean. The demo pages aren’t intended as ‘designs’ – they’re just examples of the concept highlighted in the article. The point is that if you keep your HTML source consistent you can write and reuse modular layout sheets for the components of your websites. For example, if you write a horizontal nav bar then you can reuse it next time you need one, instead of starting from scratch. Hope that explains things a little better.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 25 2005, 17:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-77" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-81">
+            <div class="comment-text">
+                This is such a great article—thanks so much for putting it out there.  <br>
+<br>
+I’m about to start another side project and the thought of beginning from scratch with the code is always daunting.  I am definitely going to build my own library of page layouts and components. You have completely inspired me. <br>
+<br>
+This is a software engineer’s approach to CSS design.  Modular, reusable code based on common patterns.  You never have to reinvent the wheel, and all your energy can be used towards innovation.  Brilliant!<br>
+<br>
+Thanks again!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.riddlelake.com/" rel="nofollow">Lynne</a> 
+                    
+                on May 25 2005, 23:21
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-81" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-83">
+            <div class="comment-text">
+                I’m gettin a pesky horizontal scrollbar in every layout…<br>
+what up with that?<br>
+(using both Firefox &amp; Exploder6, BTW).<br>
+<br>
+Other than that, this is an excellent idea…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Steve                    
+                on May 26 2005, 04:59
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-83" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-85">
+            <div class="comment-text">
+                This is the first example of  swapping multiple layouts whilst making CSS only modifications that I have seen. So after all it is possible in practice also …            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://deezsombor.blogspot.com/" rel="nofollow">Dee Zsombor</a> 
+                    
+                on May 26 2005, 11:29
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-85" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-87">
+            <div class="comment-text">
+                Steve: What platform/resolution? All’s fine on SP2…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 26 2005, 12:58
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-87" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-90">
+            <div class="comment-text">
+                This is Great!!! I’ve been thinking of this for a while… men this is amazing…. I was very busy to do this for at least 2 or 3 months.. thanks.<br>
+<br>
+Brilliant work.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.delta.com.gt/personal" rel="nofollow">f0vela</a> 
+                    
+                on May 26 2005, 17:20
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-90" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-94">
+            <div class="comment-text">
+                Mike,<br>
+<br>
+Re: The pesky horizontal scrollbar…<br>
+My screen res is 800×600.<br>
+<br>
+To eliminate the horiz scroller,<br>
+I actually have to grab a corner of the<br>
+web browser and drag it right…<br>
+<br>
+With anything LESS than 780 pixels for the<br>
+INSIDE window width, the horiz scroller appears.<br>
+<br>
+Here are some screenshots:<br>
+<br>
+1) Firefox – No horiz scrollbar – inside width &gt;= 780 pixels<br>
+http://img131.echo.cx/my.php?image=firefoxnoscroll4hv.jpg<br>
+<br>
+2) Firefox – fugly horiz scrollbar – inside width &lt; 780 pixels<br>
+http://img131.echo.cx/my.php?image=firefoxscroll2wo.jpg<br>
+<br>
+3) IE6 – No horiz scrollbar – inside width &gt;= 780 pixels<br>
+http://img131.echo.cx/my.php?image=ie6noscroll3fw.jpg<br>
+<br>
+4) IE6 – fugly horiz scrollbar – inside width &lt; 780 pixels<br>
+http://img131.echo.cx/my.php?image=ie6withscroll1iu.jpg<br>
+<br>
+Hope this helps….            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Steve                    
+                on May 27 2005, 00:19
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-94" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-95">
+            <div class="comment-text">
+                You can buy books about CSS, learn about stuff you’ll never use &amp;  it’s gonna cost you $.<br>
+Or, you can browse the internet and find Gems like this for FREE.<br>
+Thanks, this I am gonna use!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.magicien.biz/" rel="nofollow">Magicien</a> 
+                    
+                on May 27 2005, 02:49
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-95" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-97">
+            <div class="comment-text">
+                Thanks Steve – it’s my bad. Those layouts are all fixed-width and on anything less than 800×600 maximised you’ll get the fugly bars. I ought to add a <a href="http://www.maxdesign.com.au/presentation/liquid/">fluid</a> or <a href="http://joshuaink.com/blog/282/elastic-fantastic">flexed</a> layout really. Luckily for me, <a href="http://www.adactio.com/journal/display.php/20050415012704.xml">Jeremy</a> doesn’t seem to reading or I’d have had hate mail by now for not including any! I only did those layouts to illustrate the article’s concepts and I figured a few would be enough to give everyone a good idea of what I was on about. When I have time I’m going to revisit this and put together some ‘proper’ layouts, hopefully with some help from you guys…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 27 2005, 15:41
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-97" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-99">
+            <div class="comment-text">
+                Excellent work, Mike. This is just what I was looking for. One question from a CSS/HTML newbie: How does one get a “sub navigation” bar working? I see the ul.subnav class (?) in layout.css. How can I implement this?<br>
+<br>
+Thanks again for the great resource!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Paul                    
+                on May 28 2005, 00:44
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-99" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-100">
+            <div class="comment-text">
+                are these pages for layouts available in ENGLISH.. all i ever get when i look is pages in Danish.. HELP            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Pat                    
+                on May 28 2005, 18:44
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-100" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-101">
+            <div class="comment-text">
+                Um, the pages contain dummy <a href="http://www.lipsum.org/">lorem ipsum text</a>, which is Latin. Is that what you mean? The page content isn’t important; it’s the concept of separating your layout from your presentation into reusable modules that counts…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 29 2005, 14:36
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-101" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-102">
+            <div class="comment-text">
+                javascript error in Firefox with <br>
+display: inline-block;  <br>
+<br>
+I think you can use display: table-cell; <br>
+<br>
+But it’s an excellent work!! Congratulations!!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Ploufy                    
+                on May 30 2005, 16:48
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-102" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-103">
+            <div class="comment-text">
+                Javascript error in Firefox for a CSS property?! That’s a little crazy… Exactly which page are you seeing that on?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 31 2005, 02:28
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-103" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-104">
+            <div class="comment-text">
+                Great Article, I think it was said best when clint said “it’s just what the doctor ordered”. I too was looking for a way to structure templates so that they can easily change with the swapping of stylesheets.<br>
+<br>
+  I would like to point out thought that there is a mispelled word in The Ideal Structure section of the page second paragraph. The word “having” is mispelled to read “ahving”.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://madriz.visualcomposer.com/" rel="nofollow">Ron</a> 
+                    
+                on May 31 2005, 06:09
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-104" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-105">
+            <div class="comment-text">
+                this page http://www.contentwithstyle.co.uk/Articles/17/a-css-framework<br>
+<br>
+I have this message in the javascript console<br>
+Error: Error in parsing value for property ‘display’.  Declaration dropped.<br>
+Source File: http://www.contentwithstyle.co.uk/css/tools.css<br>
+Line: 19            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Ploufy                    
+                on May 31 2005, 08:58
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-105" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-106">
+            <div class="comment-text">
+                Another problem with Internet Explorer :<br>
+<br>
+With the layout-navtop-1col.css :<br>
+<br>
+When you move the cursor over the last item of the menu (at the bottom of the page), a blank line appears. The footer seems to move. It’s only under IE, there isn’t this problem with Firefox.<br>
+<br>
+Don’t worry I haven’t noticed another problem. :-)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Ploufy                    
+                on May 31 2005, 09:04
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-106" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-107">
+            <div class="comment-text">
+                Ploufy: Hmmmmm. I can’t replicate your ‘display’ problem… What version of FF are you on? I can’t think why the javascript console would care what CSS properties I use…<br>
+<br>
+That IE bug is a classic. I’ll sort it out later. 
+
+Ron: Thanks for the correction too – one of these days I’ll learn to type properly!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on May 31 2005, 13:52
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-107" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-108">
+            <div class="comment-text">
+                I see a tiny problem with what’s posted on this page.  The XHTML inside the grey box is missing a closing DIV for div#content.  The linked pages, though, are absolute gold.  This is a big help.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.jordanroher.com/" rel="nofollow">Jordan</a> 
+                    
+                on May 31 2005, 16:50
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-108" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-111">
+            <div class="comment-text">
+                It’s ok for FF Mike. I upgraded it and I don’t have the ‘display’ problem.<br>
+My last version was 1.0+, and today I use FF 1.0.4            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Ploufy                    
+                on June 1 2005, 10:34
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-111" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-112">
+            <div class="comment-text">
+                I love these frameworks. Thank you. Quick question: is anyone else having a render problem when they open the files in dreamweaver MX 2004? I get all black on the display page.<br>
+<br>
+Thanks again.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    guest                    
+                on June 1 2005, 22:27
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-112" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-125">
+            <div class="comment-text">
+                Dreamweaver does some pretty weird stuff with CSS rendering generally. As part of a contract I was on a couple of years ago I had to research what it supported… I found that it had serious trouble with nested floats and paid no attention to properties that hide elements, like list-style: none and display: none. I wouldn’t recommend using DW for CSS development – by all means use it as an editor but use a proper browser for previewing your work…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on June 4 2005, 16:54
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-125" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-129">
+            <div class="comment-text">
+                I get errors in konqueror 3.1.4. #footer gets positioned over the content on about all the styles. I would make some screenshots, but I think you are better off checking as you debug. Great though, I’m doing the same right now with PHP includes. I’m thinking about maybe generate the fundation CSS in PHP(mentioned in , then keep the static CSS and make changes to it, that way it won’t need to genereate the CSS each time.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.taare.org/" rel="nofollow">taare</a> 
+                    
+                on June 6 2005, 20:54
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-129" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-132">
+            <div class="comment-text">
+                Hey guys,<br>
+<br>
+on this page:<br>
+http://www.contentwithstyle.co.uk/resources/css-framework/index.php?css=layout-navleft-1col.css<br>
+<br>
+There is a blank space at the bottom of the page, below the bottom navigation…I’m just wondering, how do I get rid of that?<br>
+<br>
+I’m still getting used to the spread of files and having trouble correcting that<br>
+<br>
+thanks for any advice.<br>
+<br>
+PS: This is a great collection of cross-browser CSS templates, very much appreciated            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.google.ca/" rel="nofollow">Ash</a> 
+                    
+                on June 12 2005, 10:50
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-132" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-133">
+            <div class="comment-text">
+                Ash: You probably want to take the 20px margin-bottom off div#content in layout-navleft-1col.css.<br>
+<br>
+div#content {<br>
+    position: relative;<br>
+    width: 780px;<br>
+<br>
+    margin: 0 auto [HERE -&gt;] 20px auto;<br>
+    padding: 0;<br>
+<br>
+    text-align: left;<br>
+}<br>
+<br>
+Otherwise, got a URL?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on June 12 2005, 18:18
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-133" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-134">
+            <div class="comment-text">
+                Hey Mike<br>
+<br>
+thanks for the reply.<br>
+<br>
+It turns out that didnt fix it.  I’ve tried a few things here and there…none worked obviously.<br>
+<br>
+Site is live because less than 1% use firefox to access it.<br>
+<br>
+btw, i forgot to mention that the extra space below the footer only appears in mozilla [mac and pc] and safari<br>
+<br>
+here’s a link:  www.sajlawyers.com/areas_of_practice.php<br>
+<br>
+scroll to the bottom<br>
+<br>
+thanks for your help btw.<br>
+<br>
+also, have you ever thought of integrating a footer than sits at the bottom of the page, regardless of pagelength?  <br>
+<br>
+you know, the <br>
+css: #ieclear {clear:both}<br>
+stuff like that.<br>
+<br>
+just a thought :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.google.ca/" rel="nofollow">Ash</a> 
+                    
+                on June 13 2005, 20:46
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-134" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-135">
+            <div class="comment-text">
+                typing it again..since the browser messed it up:<br>
+<br>
+you know, the div id=”clear-ie”<br>
+css: #ieclear {clear:both}<br>
+stuff like that.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.google.ca/" rel="nofollow">Ash</a> 
+                    
+                on June 13 2005, 20:48
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-135" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-137">
+            <div class="comment-text">
+                The footer does sit at the bottom of the page, regardless of content length. It’s working fine on your site, for example… I’m using Tony Aslett’s clearfix method to avoid structural clearing elements because I’m a bit of a semantic purist. Comes from my accessibility roots.<br>
+<br>
+Incidentally, you will want to avoid using an id for your clearing elements since you’re likely to want to reuse them. Ids can only occur once on a page but classes can turn up as many times as you want.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on June 14 2005, 02:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-137" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-140">
+            <div class="comment-text">
+                actually, I meant having the footer sit at the bottom of the page, not content.<br>
+<br>
+see this page:<br>
+<br>
+http://www.sajlawyers.com/template.php            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Ash                    
+                on June 15 2005, 00:09
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-140" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-141">
+            <div class="comment-text">
+                Oh, I see what you mean. No I generally don’t go for that… Positioning elements to the bottom of other things is tough. <br>
+<br>
+To sort your background problem I’d put the repeating faux-column gif on div#page instead of body. To get the shadow to show through you’ll probably need to put about 5px right padding on #page too. Then use one of the extra divs to put a bottom shadow under your page to tie it all together.<br>
+<br>
+Your site’s looking nice, by the way.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on June 15 2005, 01:43
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-141" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-158">
+            <div class="comment-text">
+                Thanks for the suggestions and comments.  Very appreciated.<br>
+<br>
+Once again, great job on the css compilation.  You’ve got yourself another regular visitor to your website now :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.google.ca/" rel="nofollow">Ash</a> 
+                    
+                on June 17 2005, 01:16
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-158" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-170">
+            <div class="comment-text">
+                Really like the css framework.<br>
+<br>
+I have one question.<br>
+<br>
+How do I get the right column’s background colour to extend all the way down the page? The colour of the main section and sub section are different. I want them to have the same height. <br>
+<br>
+I have tried the Faux Columns solution, I seam to be going wrong somewhere.<br>
+<br>
+thanks for any advice            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Oystein                    
+                on June 21 2005, 15:28
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-170" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-173">
+            <div class="comment-text">
+                You’re putting your faux columns background on div#content? If you’re not in a hurry post a URL but if you need a quick response I HIGHLY recommend the CSS-D mailing list.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on June 21 2005, 18:58
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-173" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-183">
+            <div class="comment-text">
+                There may be some issues with the order of the markup on these ‘templates’ in terms of practical usability. I completely agree that in an ideal world and with one eye on SEO, it makes perfect sense to place content as high up the markup as possible. <br>
+<br>
+However, when an organisation with vast experience in user testing looked at this type of markup order, they felt that, precisely because it not an order practiced on most sites, it could cause significant confusion amongst some users – especially screen reader users who may navigate a page not only in a very different manner to a sighted user but far faster.<br>
+<br>
+They suggested that a markup order that deliberately placed Main Navigation as the first major element in markup might well have the benefit of being ‘familiar’ and thus increase overall usability.<br>
+<br>
+I’m not arguing against the markup order suggested above. I’m not convinced that there is a Right or Wrong here. I’m merely pointing out that what works in theory may not always translate well into practice – especially when trying to accomodate the learnt behaviours of site users.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.blackwidows.co.uk/" rel="nofollow">Mel Pedley</a> 
+                    
+                on July 1 2005, 15:37
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-183" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-185">
+            <div class="comment-text">
+                And this is the joy of using floats with negative margins for vertical layouts – i.e. with the three column vertical layout, the markup for the left column (navigation) could be placed before the main content without needing to change a single line of CSS, keeping both camps happy :) <br>
+<br>
+Similarly, the right and left columns could also be switched in the markup. The only constraint being the right column cannot preceede the central column (using a negative left margin on the central column).<br>
+<br>
+Incidentally Mike, I have used a similar technique based on a negative right margin for quite a while. Provides the flexibility described above flipped the other way – constraints on left column :<br>
+<br>
+#main {<br>
+  float: left;<br>
+  width: 340px;<br>
+  margin-right: -560px;<br>
+  margin-left: 220px;<br>
+}<br>
+<br>
+/ * / * html #main {display:inline;} /* */<br>
+<br>
+div#sub {<br>
+  float: right;<br>
+  width: 200px;<br>
+}<br>
+<br>
+div#nav {<br>
+  float: left;<br>
+  width: 200px; <br>
+}<br>
+<br>
+Generally I use this with either liquid or elastic layouts and works a charm on all modern browsers/platforms. Negative margins is a great technique with considerable flexibility and minimal constraints on markup that can help extend usability and accessibility [IMO]. <br>
+<br>
+Plus the user can choose the order of the prinicple content and navigation without needing to touch the CSS – very nice :)))<br>
+<br>
+[PS. always late to the debate me!!!]            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.severnsolutions.co.uk/twblog/" rel="nofollow">Tom</a> 
+                    
+                on July 2 2005, 22:35
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-185" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-188">
+            <div class="comment-text">
+                <strong>Mel:</strong> Very interesting comment!<br>
+<br>
+Content organised in the order I’ve suggested here is, in my opinion, the most sensible. It’s only potentially confusing because few sites have the option of considering source order – it requires quite a large mental shift for the developers to both CSS and semantic coding, but I don’t think that should count against it. Coupled with a proper heading structure (that’ll allow JAWS to construct a document outline) it ought to be ‘better’ for all non-visual users. I include PDAs in that as well as search engine robots… <br>
+<br>
+That said, when testing with screen readers, the most annoying thing for me is having to continually skip through massive navigations to get to the meat of the page because I always end up over-shooting. I tend to skip to the end of the page and then work backwards… That behaviour would be interrupted by my front-loading approach.<br>
+<br>
+Hmmmm, it might be worth passing this one on to <a href="http://www.access-matters.com/">Bob Easton</a> for discussion…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on July 11 2005, 18:02
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-188" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-189">
+            <div class="comment-text">
+                <strong>Tom:</strong> Thanks for that! When I get time I’m planning on setting up a mini site for layouts based on this framework and your CSS’d be a healthy addition, especially for people sharing Mel’s concerns.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on July 11 2005, 18:05
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-189" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-209">
+            <div class="comment-text">
+                You are welcome Mike, good to finally be able to share and discuss the code and ideas behind these techniques. My <a href="http://www.severnsolutions.co.uk/twblog/archive/2004/07/01/cssnegativemarginsalgebra">first blog on negative margins</a> last summer has a few liquid/elastic examples – (although the rounding unit discussed in article is no longer required on the main crop of browsers – was predominantly for a bug in older Mozilla’s that is now fixed).<br>
+The <a href="http://css.experiments.severnsolutions.co.uk/margins/elastic_fantastic/v1_final/">elastic fantastic</a> is a good demo also making use of unobtrusive javascript for the visuals rather than faux or other techniques. Feel free to share any of these techniques in your framework / forthcoming site :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.severnsolutions.co.uk/twblog/" rel="nofollow">Tom</a> 
+                    
+                on August 1 2005, 21:17
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-209" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-219">
+            <div class="comment-text">
+                With blogs there is the single column layout like <a href="http://garrettdimon.com/">Garret Dimon</a> has his blog.<br>
+<br>
+And what is meant with sub content? Things like blog roll, ads, news ?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://beza1e1.tuxen.de/" rel="nofollow">beza1e1</a> 
+                    
+                on August 16 2005, 14:26
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-219" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-220">
+            <div class="comment-text">
+                A great resource, but I’m curious as to why you didn’t separate color styles into a separate “skin” stylesheet  as outlined in your “Modular CSS” article?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.andrewgruner.com/" rel="nofollow">Andrew</a> 
+                    
+                on August 16 2005, 19:22
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-220" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-221">
+            <div class="comment-text">
+                My bad. On closer inspection I see that all the colors are black, white, or gray. I didn’t see a “skin.css” file so I thought  you had decided on a different approach.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.andrewgruner.com/" rel="nofollow">Andrew</a> 
+                    
+                on August 16 2005, 23:24
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-221" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-222">
+            <div class="comment-text">
+                beza1e1: By ‘sub’ I mean sub content. Anything that falls outside of the main focus of the site. That could be a blogroll, ads or news, as you correctly suggest. That Garret Dimon site is one of my favourites, actually. Beautifully simple. If I were laying out his site I’d wrap his ‘recently’ section in ‘nav’ and use a variation of the one content column layout but rewrite the navigation sheet…<br>
+<br>
+Andrew: If these were proper designs I’d have skin.css in there but they’re all dead simple so I didn’t bother. With hindsight I probably should have put one in for consistency!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on August 23 2005, 10:32
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-222" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-223">
+            <div class="comment-text">
+                Hi Mike<br>
+<br>
+All I can say is to echo what others have said, “wow”! This is the sort of thing I might dream of undertaking but never seem to have the time, energy or skill. This is brilliant.<br>
+<br>
+Thank you so much for all you have done. The thing I find even more amazing is the simple black and white design you’ve done them all in. Even that is brilliant.<br>
+<br>
+Thanks once again.<br>
+<br>
+Rich            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.cregy.co.uk/" rel="nofollow">Richard Brown</a> 
+                    
+                on August 25 2005, 09:41
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-223" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-224">
+            <div class="comment-text">
+                Oh, thanks! [blush].            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on August 25 2005, 12:16
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-224" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-225">
+            <div class="comment-text">
+                Great work, Mike!<br>
+<br>
+I got 2 questions regarding classes in <em>tools.css</em>:<br>
+<br>
+1) What do you use <em>replace</em> class for in final work? <br>
+<br>
+2) Can you explain further the way you used the <em>clearfix method</em>? You used <code>display:inline-block;</code> property which is to stop IE/Mac to widen widthless floats to full width. But then you add <code>width:100%;</code> property. What is that selector <code>* html&gt;body .clearfix</code> Looks like a combo of <em>StarHtmlHack</em> with <em>BeNiceToOpera5</em>?<br>
+<br>
+Your code differs from original method, you linked to. What’s the point?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Greg                    
+                on August 26 2005, 09:45
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-225" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-227">
+            <div class="comment-text">
+                1) tools.css is assorted rules that I reuse on every project. replace is for image replacement, but isn’t relevent here. Replace it with your own favourite IR CSS, if you like. In case you’re interested, what’s there would be used in the HTML like this: <br>
+<br>
+&lt;h2 class="replace" id="some-heading"&gt;Some heading&lt;/h2&gt;<br>
+<br>
+2) * html&gt;body .clearfix will feed the rule to IE/Mac only, since it obeys descendent selectors (way ahead of its time) but also follows the StarHtml filter, being the IE engine. It looks like the PIE article has been refined since I first grabbed the clearfix code but here’s the reasoning… <br>
+<br>
+IE/Mac can’t be forced to clear with the Holly Hack – it obeys height, unlike it’s PC counterparts, so it requires a different hack. Inline-blocks apparently expand vertically to contain their floats (like table cells, if I remember rightly), but we don’t want to shrink-wrap the block or it’ll cause the contained floats to stack vertically, hence the 100% width.<br>
+<br>
+Am I making sense?!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on August 30 2005, 08:38
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-227" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-229">
+            <div class="comment-text">
+                1) That’s what I was guessing :). However I’m using another IR CSS.<br>
+<br>
+2) I tested this selector with Win/IE and it didn’t work. That made me think of it being a Mac/IE hack. However I haven’t seen it before and I don’t have Mac to test it myslef, thus the question. Is this selector (being in fact Mac/IE hack) described somwhere in detail?<br>
+<br>
+Your explanation of inline-block property seems to make sense. Again, no chance for me to test it.<br>
+<br>
+Thanks for reply. Your article sped up my workflow. I was already thinking about something of that kind on my own but why not to use a proven one.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Greg                    
+                on September 1 2005, 08:31
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-229" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-232">
+            <div class="comment-text">
+                My usual sources don’t seem to have any documentation on * html&gt;body filter. You can piece it together yourself from this list of browser shortcomings though: <a href="http://www.dithered.com/css_filters/css_only/index.php">http://www.dithered.com/css_filters/css_only/index.php</a><br>
+<br>
+I don’t have to worry too much about IE5/Mac these days but every now and again it comes in handy. I am a bit worried that a future version of IE/PC will start supporting descendant selectors but retain the * html bug so just be aware…<br>
+<br>
+Glad to hear the article has been of use to you!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on September 5 2005, 12:06
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-232" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-239">
+            <div class="comment-text">
+                Coming back to the clearfix method:<br>
+<br>
+
+<div class="codeblock"><pre>* html .clearfix {
+/* Hides from IE-mac */
+height: 1%;
+/* End hide from IE-mac */
+}
+</pre></div>
+
+This can cause serious problems, since the page might be very high, so in IE you might suddenly have 30px gaps in there. I recommend to replace that with 1px            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on September 20 2005, 10:40
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-239" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-240">
+            <div class="comment-text">
+                I like the base idea,<br>
+<br>
+but  i think, it can not work for all Project’s like that. When i remember how long i was trying to tell IE how to center something, when the Content is dynamic. uuuu awfull…<br>
+<br>
+Ever tried to generate a dynamic CSS File ?<br>
+<br>
+I’am just working on something like that, where you have a Database and choose which parts you would like to re-use for a particular page.<br>
+<br>
+Still, i like that Article very much!<br>
+<br>
+Cheers,<br>
+<br>
+Tom            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.blubbazisch.de/" rel="nofollow">Tom</a> 
+                    
+                on September 22 2005, 03:50
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-240" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-241">
+            <div class="comment-text">
+                Pascal: Yep, I’ve come across that as well. Bit of a bugger. For anyone who doesn’t know, it’s a shortcoming of the otherwise wonderful Holly Hack. If the page is very long then 1% can cause the element to which you’ve applied the Holly Hack to stretch. I’ve seen this manifest in a horizontal nav bar…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on September 22 2005, 07:40
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-241" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-245">
+            <div class="comment-text">
+                cool            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.estudiotrama.com/" rel="nofollow"> Martin</a> 
+                    
+                on September 23 2005, 13:09
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-245" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-258">
+            <div class="comment-text">
+                Hi Mike,<br>
+Modular css and your css framework are great!  But can someone help me in understanding the benefits of placing your navigation last in the mark-up?<br>
+<br>
+It seams to me that being able to navigate a website is more important than eliminating the ‘skip navigation’ link.  When the main nav is in the bottom of the markup, it seems to me that <strong>finding</strong> the content that one wants to read becomes really difficult.  Maybe not for a blog I guess.  But even in a blog there should be a good means of navigating the archived information.  I feel that <strong>finding</strong> the information one looks for is the hard part about using the internet.<br>
+<br>
+So I have always assumed that placing navigation items at the top of the page is the only logical way to structure ones markup.  How many selections do people make before reaching a content item they want to read or hear?  More than enough to make up for a “skip navigation” link IMHO.<br>
+<br>
+But I would love to hear that I am wrong.  Because if I <strong>am</strong> wrong, I will use your css framework and make my life easy. :-)<br>
+<br>
+thanks again,<br>
+bill            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    bill                    
+                on October 9 2005, 14:33
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-258" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-259">
+            <div class="comment-text">
+                Actually, the core point of the article was to highlight the advantages of establishing a source template from which you can generate the majority of site designs. If you disagree with my source order then just switch it around! The only parts of the framework you’d have to change are the layout sheets, which are only a couple of dozen lines each… <br>
+<br>
+I think that your rationale for souce code order holds very well for a landing page – where people are likely to need navigation first and foremost, but once in browsing mode a nav-at-the-top order forces either repetitive reading of the navigation or reliance on skip links. People come to websites for their content and I want to make access to that as easy as possible. <br>
+<br>
+Have a read of ‘The Ideal Structure’ section of the article and this reply to Mel further up in the comments.<br>
+<br>
+I’d be interested to hear what you decide to do about your source order – I’m open to suggestions too!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on October 10 2005, 08:19
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-259" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-260">
+            <div class="comment-text">
+                Hi Mike,<br>
+Thanks for your reply!<br>
+I have read your article many times (along with it’s growing list of comments).  And Mel’s comment suggests that the navigation might be better at the top because of ‘familiarness’.  But I just wonder how much time is spent navigating one website and how much time is spent navigating the vast internet for meaningful content.  Will users without sight <strong>find</strong> content on a web site that they want to read/hear if the navigation follows the content (even in a ‘perfect world’)?  I just don’t know myself and that is the only reason I asked.<br>
+<br>
+Maybe it depends on the nature of the site.  Sites with a broad range of topics may benefit from a navigation-first approach.  And smaller sites with a more focused subject matter might be better off with the content first.<br>
+<br>
+At any rate, in the framework that I’ve made to speed up my own work (which has nothing to do with css apart from being able to slap new css files into it and linking to them in the db) I print the navigation first.  Your wonderful article has made me think about turning my framework into a little tableless-layout CMS by including css files that cover the layouts you’ve mentioned in your article.<br>
+<br>
+Any way it was inspiring to read and I thank you!<br>
+And you hit an important nail on the head.  Clear as a bell.  And I hope Im not off-topic in my questioning your markup.<br>
+<br>
+I think, though, that I will probably keep the navigation at the top of the markup.<br>
+<br>
+I can see.  But I also don’t have a scroll-wheel on my mouse.  And I would surely be put off by a site that could fit all its content on my screen in order to save me having to ever scroll down the page constantly to read it, by putting the navigation at the bottom of the page.<br>
+<br>
+Hope that wasn’t too long a comment.<br>
+<br>
+Have a good one,<br>
+bill            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    bill                    
+                on October 10 2005, 12:50
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-260" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-272">
+            <div class="comment-text">
+                ‘But I just wonder how much time is spent navigating one website and how much time is spent navigating the vast internet for meaningful content.’<br>
+<br>
+That’s a fair point actually, although I use the same argument to justify placing my navigation at the bottom… If someone’s on my site they probably came through Google or from an inbound link so they are likely to be after my content, not my navigation. Thinking about it, I suppose that what I’m advocating is a kind of  <a href="http://www.powazek.com/2005/09/000540.html">Embrace Your Bottom</a> for screenreaders!<br>
+<br>
+I think you’re right about the nature of the site mattering though, and I like your no-mouse-wheel analogy – it’s a really interesting way of thinking of it. Anyway, it sounds like you’ve put plenty of thought into how you’re structuring your HTML and, for me anyway, that’s the most important thing.<br>
+<br>
+Thanks very much for your reply – it was really interesting!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on October 17 2005, 10:10
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-272" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-315">
+            <div class="comment-text">
+                Hi<br>
+<br>
+The power of CSS is amazing. I’ve seen a few sites like this one where i’ve been blown away by what you can do. Alot of DHTML and other funkiness can be avoided if your clever with your stylesheet.<br>
+<br>
+I want to manage a stick up footer on the website for IE 5.0 +. with CSS As you can see 1 on bmw.co.uk<br>
+<br>
+thanks<br>
+<br>
+Imran            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.seo-professional.co.uk/" rel="nofollow">imran</a> 
+                    
+                on November 2 2005, 15:16
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-315" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-317">
+            <div class="comment-text">
+                Imran:<br>
+<br>
+I did something similar to that for a recent site using a mixture of CSS and DOM scripting: <a href="http://www.gsmd.ac.uk/">Guildhall School of Music and Drama</a>.<br>
+<br>
+The bar at the bottom is pinned there regardless of content height.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on November 3 2005, 06:04
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-317" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-324">
+            <div class="comment-text">
+                Nice!<br>
+<br>
+I think you could cut down on a few “display:inline” and “text-align” declarations though ;-)<br>
+<br>
+I’d say that links inside containers in these examples as well as some script to allow a switch of column length would be helpful. They could demonstrate real life behavior or bug. For example, the negative margin 3 column layout demo on <acronym title="A List Apart">ALA</acronym> fails to show issues with NN6 and Opera 6.<br>
+<br>
+I’ve done something a bit similar, but with fluid layouts:<br>
+<a href="http://www.tjkdesign.com/articles/liquid.asp">Liquid Layouts</a><br>
+<br>
+And I’ve used the negative margin technique the “other way around”:<br>
+<a href="http://www.tjkdesign.com/articles/3cols.asp">3 column Fluid Layout</a><br>
+<br>
+<acronym title="For What It Worth">FWIW</acronym>, all these solutions are <strong>hack free</strong>.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.tjkdesign.com/" rel="nofollow">Thierry</a> 
+                    
+                on November 8 2005, 10:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-324" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-327">
+            <div class="comment-text">
+                Thierry, this <strong>hack free</strong> issue comes along with the price of extra markup, i.e. clearing divs. We actually have <a href="http://www.contentwithstyle.co.uk/Articles/70/#comment">the same discussion</a> in the other comments.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on November 10 2005, 07:18
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-327" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-331">
+            <div class="comment-text">
+                Very good stuff. A small problem, I’ve tried adding the suckerfish dropdowns to the layout-navtop-localleft layout without any success.  The dropdowns seem to get jammed up and go sideways under the mainmenu instead of down.  Anybody implemented this?  Links would be greatly appreciated.<br>
+<br>
+Thanks. DRE            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Andre                    
+                on November 16 2005, 10:34
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-331" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-332">
+            <div class="comment-text">
+                Pascal,<br>
+When I say <strong>hack free</strong>, I mean CSS filters  <strong>and</strong>  structural hack.<br>
+The 8 layouts are based on the exact same markup; check them out, you won’t find any clearing DIV in there :-)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.tjkdesign.com/" rel="nofollow">Thierry</a> 
+                    
+                on November 16 2005, 23:12
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-332" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-336">
+            <div class="comment-text">
+                Thierry: Well done! <br>
+On a sidenote: Your solution comes along with negative margins…  personally I rate that as kind of a a hack. And again, what is so bad about overwriting rules with html&gt;body? And what is the benefit of a hack-free (validating) CSS file?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on November 21 2005, 01:34
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-336" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-338">
+            <div class="comment-text">
+                Pascal,<br>
+Not all these solutions rely on negative margins, but I must say they are very handy when the content comes first in the markup. I don’t know why you consider them as a hack though…<br>
+<br>
+Your question regarding the “be nice to Opera hack” contains my answer. I don’t like to “fork” inside a stylesheet to <strong>overwrite</strong> values. <br>
+Make it red, no make it yellow, no make is red again… That does not make sense to me (without mentioning that most CSS filters rely on parsing <strong>bugs</strong>).<br>
+<br>
+IMHO, many more people would use CSS layouts today if – instead of wasting time “talking hacks” – discussions were about how elements flow and how to construct the box to avoid box model issues… <br>
+;-)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.tjkdesign.com/" rel="nofollow">Thierry</a> 
+                    
+                on November 22 2005, 00:18
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-338" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-340">
+            <div class="comment-text">
+                Thanks Thierry, let me try to find an answer to that:<br>
+<br>
+Negative margins are as much a hack as using selectors for overwriting values. They’re not really invalid, but they’re not intended to be used for this kindo stuff if U ask me. Especially if you consider that reading “margin-left: -200px” is as confusing as ’”red, ehrm… no, green … no red”, to me at least.<br>
+<br>
+And sure, I don’t <strong>LIKE</strong> to apply hacks like <em>StarHtml</em> or <em>html&gt;body</em>, but then again if it saves me the clearing divs you’re using in your 3-col layout I’ll do it, sinde it’ll keep presentational stuff where it belongs: inside of the CSS. <br>
+Same goes for hacks in favour of Mac IE compatibility or any backwards compatible rendering.<br>
+<br>
+You might argue that <strong>IF</strong> everything worked fine everyone would … but that is not much more but bla bla since:<br>
+a) various browsers have bugs that need to be dealt with<br>
+b) you have to deal with designers that have their own ideas about how the site should look like, so you cannot design the layout around the markup<br>
+c) you need as much research to get a good layout going hack-free and browser compatible as you would need to apply clearfix and such things. and they don’t make your html any better.<br>
+<br>
+I acknowledge what you’re trying to say, fo the the reasons above I tend to dismiss the last point you were trying to argue.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on November 23 2005, 08:44
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-340" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-343">
+            <div class="comment-text">
+                Except it, I think same!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.magicien-animation.com/" rel="nofollow">eric</a> 
+                    
+                on November 28 2005, 16:25
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-343" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-345">
+            <div class="comment-text">
+                Pascal,<br>
+You mentionned structural hacks in a previous comment, and you use it again here as an “excuse” for using CSS filters, but my layouts [1] [2] do <strong>not</strong> use presentational hacks. <br>
+And IMHO, browsers bugs should not be an excuse either [3]. <br>
+;-)<br>
+<br>
+[1] <a href="http://www.tjkdesign.com/articles/3cols/3cols/5.asp">no hacks</a><br>
+[2] <a href="http://www.tjkdesign.com/articles/liquid.asp">still no hacks</a><br>
+[3] <a href="http://www.tjkdesign.com/articles/3cols/3cols/6.asp">still good browsers support</a>            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.tjkdesign.com/" rel="nofollow">Thierry</a> 
+                    
+                on November 29 2005, 21:59
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-345" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-346">
+            <div class="comment-text">
+                Thierry … Just to summarize: Given that you don’t want to add structural markup you have two ways open which are CSS filters or negative margin based layouts … both in my eyes are hacks, in your eyes the filters are worse than the negative margins. I think we call that a day now since we’ve been going on about it for a while.<br>
+Thanks for your input.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Pascal Opitz</a> 
+                    
+                on November 30 2005, 06:38
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-346" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-348">
+            <div class="comment-text">
+                Good article, thanks.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.gamelaunch.dk/" rel="nofollow">Brian</a> 
+                    
+                on December 1 2005, 11:29
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-348" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-368">
+            <div class="comment-text">
+                Thanks Mike, your framework is great. It helps me not to reinvent the wheel each time I develop a new web site.<br>
+<br>
+By the way, I’m trying unsuccessfuly to make the design fluid. Right now I work on the 3col with horizontal nav design.<br>
+<br>
+Do you have any ideas?<br>
+<br>
+Thanks!<br>
+<br>
+Drew            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Drew                    
+                on January 11 2006, 08:25
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-368" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-376">
+            <div class="comment-text">
+                I had bookmarked this page a while ago to come back to, and I’m glad I did.  Nice work.  I’ll be playing around with this idea on my next project.  Thanks.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Lance Fisher                    
+                on January 20 2006, 13:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-376" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-378">
+            <div class="comment-text">
+                I have been using the framework idea (seperating css files) for a while and have notices that occasionally when a page loads it skips a few css files randomly so you end up with an undesirable page.<br>
+<br>
+Ive noticed this in FF and IE it rarely happens and all you have to do is reload the page and the rest will get there but it does happen – so on that rare occasion someone will end up with a shocker page.<br>
+<br>
+Is this a problem with @import? or the browser skipping over files to speedup loading?<br>
+<br>
+Has anyone else come across this problem? Id rather not have to resort to putting all the css styles in 1 file.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://hybridgarden.com/" rel="nofollow">Rhys</a> 
+                    
+                on January 22 2006, 18:05
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-378" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-379">
+            <div class="comment-text">
+                Nope, never seen that myself. I’ve been splitting my files up in some form or another for about 3 years and I don’t remember even Netscape 4 doing that!<br>
+<br>
+Do you have a URL? I’d be interested to see it happen…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on January 23 2006, 07:57
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-379" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-468">
+            <div class="comment-text">
+                I’m doing a theme design contest for this framework – more details at the following URL:<br>
+<br>
+http://raibledesigns.com/page/rd?entry=css_framework_design_contest            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://raibledesigns.com/page/rd?entry=css_framework_design_contest" rel="nofollow">Matt Raible</a> 
+                    
+                on March 3 2006, 19:26
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-468" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-470">
+            <div class="comment-text">
+                It’s time consuming to find the ‘right’ CSS, just too many good layouts out there on the net. Doing a CSS contest is, but why not doing a browser contest first!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.immohit.ch/" rel="nofollow">Boda</a> 
+                    
+                on March 4 2006, 16:59
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-470" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-515">
+            <div class="comment-text">
+                Nice ideas, re-writing my website this way now :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.propump.co.uk/" rel="nofollow">foddski</a> 
+                    
+                on April 11 2006, 06:49
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-515" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-525">
+            <div class="comment-text">
+                Always a good resource article to come back to. But do you guys think we can have the Year now as part of the comment’s details? =)<br>
+<br>
+Anyways, I’m trying to revisit oldies-but-goodies-links in terms of CSS templates/framework. Seems that most of the ones I’ve bookmarked are about a year old, like this one. So, I’m just wondering if there has been any major changes etc. to the current findings in Web Design/Development and current new technology?<br>
+<br>
+PS. I wonder if anyone has tried the framework w/ “current” offerings such as OTL’s?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.justamemo.com/" rel="nofollow">Sherwin Techico</a> 
+                    
+                on April 13 2006, 04:20
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-525" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-528">
+            <div class="comment-text">
+                Hi!<br>
+Great work! Just a question, I’m playing with “Horizontal navigation with local navigation and one column of content” and I saw that the sub content is not displayed, but it’s in the html file and css (display: none;). If I delete it (or simply I leave it empty) I experience many problems, expecially with IE, for example the horizontal navigation disappear, or passing the mouse over one of the link in the left menu reduces the page, moving the footer to the top. Anyway with firefox and opera there are no problem, any idea how to solve it?<br>
+<br>
+Best regards,<br>
+ogivio            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    ogivio                    
+                on April 14 2006, 04:53
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-528" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-545">
+            <div class="comment-text">
+                A quick answer to Shewin: I’ve just been playing retrofitting a site for IE7 and I suspect that someone needs to come up with a nice way of handling these conditionally included files. One for each of these layouts, for example, would quickly get out of control. That’s the big change for me…<br>
+<br>
+Ogivio: Not seen that problem and I’ve been using this framework on projects for a year and a half now… Do you have a url I can look at?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on April 18 2006, 12:36
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-545" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-549">
+            <div class="comment-text">
+                Mike, thanks for your answer. I uploaded two pages, one with the sub part left in the source (no problem with IE6) http://www.soundsurgeons.it/hide/new/nuovo.html<br>
+ and another page with the sub part removed from the source http://www.soundsurgeons.it/hide/new/nuovo_sub.html with IE6 I can see no horizontal bar, but as I said before there are no problems with firefox or opera.<br>
+<br>
+Thank you again Mike!<br>
+<br>
+Ogivio            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    ogivio                    
+                on April 19 2006, 05:59
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-549" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-553">
+            <div class="comment-text">
+                Negative margins for floats?<br>
+<br>
+Have a play with this:<br>
+<br>
+http://positioniseverything.net/articles/jello.html<br>
+<br>
+Still has a bit of my original negative margins trick in there from way back in 2002 :-)<br>
+<br>
+Douglas            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://redmelon.net/" rel="nofollow">Douglas Livingstone</a> 
+                    
+                on April 19 2006, 21:16
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-553" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-559">
+            <div class="comment-text">
+                Thank you Douglas! It was a margin problem, now it’s ok! I didn’t think about that, I’m very new at css… Thanks again! :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    ogivio                    
+                on April 20 2006, 11:53
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-559" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-564">
+            <div class="comment-text">
+                I have come to a similar approach and I have build my own CSS framework, which I have decided to make free.<br>
+<br>
+The project is young and needs work to correct remaining inconsistencies accross browsers, so I won’t recommend to use it for serious projects, but feel  to test it, and use it if you want. Please drop me a line if you have comments or suggestions.<br>
+<br>
+here is the url: <br>
+http://www.wymstyle.org            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.pixarea.com/" rel="nofollow">Daniel R</a> 
+                    
+                on April 21 2006, 03:41
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-564" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-584">
+            <div class="comment-text">
+                This is a good stuff.  I’m thinking of integrating these templates into my open source templating framework:  <a href="http://templation.websaviour.com/">Templation</a><br>
+<br>
+I’ll definitely drop you a note before redistributing anything…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://darwinweb.net/" rel="nofollow">Gabe da Silveira</a> 
+                    
+                on April 25 2006, 15:24
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-584" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-636">
+            <div class="comment-text">
+                Thanks for css-framework.<br>
+<br>
+I was struggling with a similar idea to have a servlet-based code to populate pages as required.<br>
+<br>
+I like the idea of using the single column with the local-list and switch as required to 2-column and/or a single page as needed by the application.<br>
+<br>
+I have problems with IE6; fireFox is fine.<br>
+<br>
+The problems seem related to the div id=”sub”, unused in the layout-navtop-localleft.css that I am using to start the application.<br>
+<br>
+I have tried div id=”sub” class=”clearfix” and div class=”wrapper” without luck.<br>
+<br>
+Have a look at the referenced url.<br>
+<br>
+IE6 mangles or does not show the nav-row as well as repeting -entries in <br>
+<br>
+IE 6.0.2900.2180<br>
+fireFox: 1.5.0.3<br>
+<br>
+http://142.46.207.217/~zarama            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    zarama                    
+                on May 9 2006, 13:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-636" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-645">
+            <div class="comment-text">
+                This is really great! Nice work. <br>
+<br>
+I too am having problems with IE6 not showing the nav row. Firefox is fine. I am using layout-navtop-subright.css<br>
+<br>
+http://peteandtari.petegeniella.com            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://petegeniella.com/" rel="nofollow">pete g</a> 
+                    
+                on May 11 2006, 13:54
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-645" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-691">
+            <div class="comment-text">
+                I’m trying to get my head around merging the splendid Y!UI <a href="http://com2.devnet.scd.yahoo.com/yui/grids/">Grids</a> and this fabulous Framework (while leveraging the terrific <a href="http://www.contentwithstyle.co.uk/Articles/12/modular-css">Modular CSS</a>) . With the Framework, the HTML order remains untouched though layouts require style sheet switching; with the Grids, the HTML requires parsing, but a single CSS file handles the layout. The Framework integrates semantics, the Grids offer more layouts. Maybe the Framework’s semantic goodness could be stitched to the Grids by adding a PHP function to the mix?<br>
+<br>
+I’m no programmer, so I apologize for this lame speculation. Each $page_layout could be associated with a multi-dimensional array, the outer array being the stacking order of named $yui_rows (of which there seem to be 10 flavours), and the inner array being the content file to include in each row’s divs. <br>
+<br>
+So the pseudocode arrays look like:<br>
+<br>
+default = ( <br>
+  1/1 row =&gt; (banner),<br>
+  1/1 row =&gt; (header),<br>
+  1/4 3/4 row =&gt; (nav, content),<br>
+  1/1 row =&gt; (footer)<br>
+);<br>
+home = (<br>
+  1/1 row =&gt; (banner),<br>
+  1/1 row =&gt; (header),<br>
+  1/4 1/2 1/4 row =&gt; (nav, content, adverts),<br>
+  1/1 row =&gt; (footer)<br>
+);<br>
+etc.<br>
+<br>
+So all HTML structure is contained within ten PHP files, one for each flavour of YUI row, and each row’s divs include a call to the function. You just assemble them like lego.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    jeffo                    
+                on May 21 2006, 15:47
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-691" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-936">
+            <div class="comment-text">
+                Great idea Mike,<br>
+<br>
+I hope this can make it to some CMS engines soon.<br>
+<br>
+I bloged about it <a href="http://blog.seo7dev.com/articles/2006/06/27/css-framework-how-to-design-easy-to-maintain-websites">here</a>            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://blog.seo7dev.com/" rel="nofollow">Wiktor Schmidt</a> 
+                    
+                on June 27 2006, 06:05
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-936" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-1092">
+            <div class="comment-text">
+                I’ve just went through these styles and found that on your horizontal nav ones the ‘contact’ gets pushed under ‘home’.<br>
+The interesting thing, it only happens in Firefox, I’m using 1.5.0.4.<br>
+This is a great idea, I use CMS made simple and  these could be put up as a way to start their designs for those that are new to HTML/CSS            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.multiintech.com/" rel="nofollow">mark</a> 
+                    
+                on July 21 2006, 13:08
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1092" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-1093">
+            <div class="comment-text">
+                It’s fine for me Mark, using Firefox 1.5.0.4 too. That’ll happen if you turn the text size up though…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on July 21 2006, 13:34
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1093" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-1547">
+            <div class="comment-text">
+                Gr8 job, but how to make it work with Nifty Corners ?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    laryk                    
+                on September 12 2006, 08:25
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1547" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-1622">
+            <div class="comment-text">
+                Nice job and good idea.<br>
+<br>
+If you want another similar examples, get it:<br>
+http://www.manuelrecena.com/docs/estandaresweb_0609_ejemplos.zip<br>
+<br>
+Regards.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.manuelrecena.com/" rel="nofollow">Manuel J. Recena Soto</a> 
+                    
+                on October 17 2006, 08:58
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1622" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-1654">
+            <div class="comment-text">
+                Hi Mike,<br>
+That’s really good of you to publish the framework for us newbies, is there any licensing issues for re-working your framework…is there any license at all?<br>
+Thanks again,<br>
+Bert            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Bert                    
+                on October 23 2006, 14:31
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1654" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-1655">
+            <div class="comment-text">
+                @Bert: No, just help yourself. Attribution is always nice but you can do whatever you want with it… When I use it I tend to leave the ‘A CSS Framework…’ comment line in the top so it can be traced back to here.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on October 23 2006, 14:35
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1655" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-1798">
+            <div class="comment-text">
+                Thanks for the tips, very handy advice – interisting stuff about the ordering of content in source as well as page. We are busy re-building our site around a CSS layout.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.2dmedia.co.uk/" rel="nofollow">2Dmedia Web Design (Sam)</a> 
+                    
+                on November 29 2006, 13:50
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1798" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-1873">
+            <div class="comment-text">
+                why need to have extra DIVs at the end? seems they are useless for all you layout.<br>
+<br>
+e.g.<br>
+<br>
+&lt;div id=”extra1”&gt;&nbsp;&lt;/div&gt;<br>
+&lt;div id=”extra2”&gt;&nbsp;&lt;/div&gt;            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    keith                    
+                on January 4 2007, 13:04
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1873" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-1874">
+            <div class="comment-text">
+                Strictly speaking they’re not necessary but I got into the habit of including them after doing my Zen Garden design <a href="http://www.csszengarden.com/?cssfile=052/052.css">way back when</a>. They often come in handy for little decorative bits and bobs…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.contentwithstyle.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on January 4 2007, 13:25
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-1874" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-2028">
+            <div class="comment-text">
+                Was just testing out your css framework in a variety of browsers and versions and the only rendering bug I saw shows up only in one specific layout (<a href="http://www.contentwithstyle.co.uk/resources/css-framework/index.php?css=layout-navtop-localleft.css&demo=true">navtop-localleft</a>) in IE5.5 .  The navbar just doesnt show up!  Granted 5.5 is archaeic these days, do you have any idea of a css tweak to fix this. <br>
+<br>
+great work on this “holy grail” of a css framework!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://gedanken-experiment.com/" rel="nofollow">james wilson</a> 
+                    
+                on March 29 2007, 15:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2028" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-2029">
+            <div class="comment-text">
+                I liked the idea, I had thought about it before, but never got around to it.  Good job.  I made a design template called flexible with the framework, you can find it at graystatic.net/projects/flexible .            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://graystatic.net/" rel="nofollow">graystatic</a> 
+                    
+                on March 31 2007, 21:20
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2029" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-2098">
+            <div class="comment-text">
+                it simply works. for developers is a true, solid point of start to develop layouts.<br>
+the time to create a layout is now reduced to minutes :)<br>
+<br>
+Best,<br>
+Alex            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://dutulescu.com/" rel="nofollow">Alex</a> 
+                    
+                on July 3 2007, 12:05
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2098" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-2205">
+            <div class="comment-text">
+                Great article I was thing of doing the same thing at one point but made just trying out yours will inspire me to use a pre-built CSS code library. Either yours or one of my own creation.<br>
+<br>
+Thanks,<br>
+<a href="http://www.mydesignbuddy.com/">My Design Buddy – Katy, Texas</a>            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.buddytoupsjr.com/" rel="nofollow">Buddy</a> 
+                    
+                on July 30 2007, 10:07
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2205" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-2255">
+            <div class="comment-text">
+                A very good illustration of using &lt;div&gt; for accessibility. I’m a big fan of website accessibility, and have used this hierarchical approach to content before (having first seen it described on Dave Fisher’s website). <br>
+<br>
+Must confess, however, that I do sometimes hack the accessibility issue by using structured tables (with summary tags) and then just using &lt;div&gt; to float content to the top in the code, so that screen readers get content before navigation.<br>
+<br>
+If anyone fancies berating me for this workaround, please feel free, as I know I should be sticking to the more user-friendly and accessible website design methodology demonstrated here. <br>
+<br>
+I also have to confess that, although I keep templates handy, I do like coding on the fly. Handcoding is a really rewarding way of designing webpages, if only Dreamweaver and Photoshop junkies would give it a chance. It provides so much more control over important issues such as search engine friendly design, web accessibility and so forth.            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.foursquareinnovations.co.uk/" rel="nofollow">Chris Boswell (Leeds UK)</a> 
+                    
+                on August 13 2007, 12:42
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2255" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-2412">
+            <div class="comment-text">
+                I am still getting errors extracting your zip. Any fix or different location?<br>
+Thx            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://mozartorchestra.org/" rel="nofollow">Ami Porat</a> 
+                    
+                on December 16 2007, 10:51
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2412" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-2413">
+            <div class="comment-text">
+                It seems to be working just fine for me, Ami. Care to be more specific?            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://donotremove.co.uk/" rel="nofollow">Mike Stenhouse</a> 
+                    
+                on December 16 2007, 13:06
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2413" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-2414">
+            <div class="comment-text">
+                Mike,<br>
+After the extract command I get an error message: “the file exists already, choose another name” [there are no such files at the same location] I get the same error no matter what other file name or location I specify. After this process, I get two empty folders CSS and I. What gives?<br>
+Thanks            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://mozartorchestra.org/" rel="nofollow">Ami Porat</a> 
+                    
+                on December 17 2007, 01:46
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2414" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-2473">
+            <div class="comment-text">
+                A great resource, but I’m curious as to why you didn’t separate color styles into a separate skin stylesheet as outlined in your “Modular CSS” article??            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.tercume-burosu.org/" rel="nofollow">Tercüme bürosu</a> 
+                    
+                on January 16 2008, 04:08
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2473" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-2477">
+            <div class="comment-text">
+                Great! I am trying to gather information on the various CSS frameworks around. I love WymEditor, so I am leaning towards <a href="http://www.wymstyle.org/">wymstyle</a> but I try yours to. I am gonna do a redesign of my <a href="http://www.bubblexl.com/">big balloon webshop</a> and I wonder if this framework would work for a webshop            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.bubblexl.com/" rel="nofollow">Large balloon guy</a> 
+                    
+                on January 17 2008, 16:51
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-2477" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-3501">
+            <div class="comment-text">
+                I cant tell you how much this helps. I kept running into problems trying to position site elements using relative or absolute positioning. Now everything snaps together. Now only if I could figure out how to keep the header text from jumping out of the div block…            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.geocities.com/black_glove_elv3/" rel="nofollow">Edward V</a> 
+                    
+                on June 19 2008, 13:34
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-3501" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-4407">
+            <div class="comment-text">
+                Absolutely the best framework around!  I love it, great job!
+
+Just wanted to say how much I like your website redesign!            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Jess                    
+                on October 29 2008, 20:49
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-4407" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="even" id="comment-4570">
+            <div class="comment-text">
+                Nice ideas, re-writing my website this way now :)            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    <a href="http://www.melkior.fr/" rel="nofollow">Magicien</a> 
+                    
+                on November 11 2008, 18:12
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-4570" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    <li class="odd" id="comment-5168">
+            <div class="comment-text">
+                This looks pretty compatible with the Unobtrusive CSS Framework too - http://unobtrusivecss.com/            </div>
+
+            <p class="comment-info">
+                by 
+                    
+                    Gary                    
+                on December 28 2008, 06:49
+                - <a href="http://www.contentwithstyle.co.uk/content/a-css-framework#comment-5168" class="no-external-icon" class="no-external-icon">#</a>
+            </p>
+        </li>    
+    </ul>
+    
+                                         
+                                         
+    <p class="disabled"><br>Comments for this article are closed. <a href="#articletop">Back to the Top</a></p>                     
+            

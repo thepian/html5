@@ -8,9 +8,18 @@ folderurl: /demo
 	<div class="left-double sections normal-read">
 		<div class="restricted-width four-columns">
 		
+<header id="articletop">
+<h1>{{ page.title }}</h1>
 
+<div class="postinfo">
+    <span class="credit">by <a href="{{ page.authorurl }}">{{ page.author }}</a> on <time>{{ page.date }}</time></span>
+    <span class="links"><a href="#comments" class="comments-link">135 Comments</a></span>    
+</div>
+</header>
+
+<section>
 {{ content }}
-
+</section>
 
 	<!-- Article level navigation -->
 	<nav class="top-overhang">
@@ -27,6 +36,7 @@ folderurl: /demo
 	<div class="right-third asides normal-read">
 		<div class="restricted-width">
 			
+		<aside>{% include blog-sidebar.textile %}</aside>
 		<aside>{% include demo-sidebar.html %}</aside>
 	</div>
 

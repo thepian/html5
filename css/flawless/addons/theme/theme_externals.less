@@ -5,7 +5,7 @@
 @theme_externals_height: 16px;
 
 /*External Link - adds a little external link icon to all of your external links*/
-.type_external_link(@gap: @theme_externals_gap, 
+.theme_external_link(@gap: @theme_externals_gap, 
 					@path: @theme_externals_path, 
                     @width: @theme_externals_width, 
                     @height: @theme_externals_height,
@@ -15,13 +15,17 @@
 
 	
     a[href^='http:'] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
-      padding-left: @width + @gap;
-      margin-left: @gap;
+      background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
+      padding-right: @width + @gap;
+      margin-right: @gap;
       padding-bottom: @height;
+      
+      &.no-external-icon {
+          background-image: none;
+      }
     }
 
-    .type_external_link_hack {
+    .theme_external_link_hack {
       cue: e(%('none; } a[href^="http://www.%s"], a[href^="http://%s"] { background-image:none !important; padding-left:0px; margin-left: 0', @domain, @domain));
     }
 	
@@ -32,7 +36,7 @@
 
 /*Email Links - adds small email icon to all mailto links*/
 
-.type_external_email(@gap: @theme_externals_gap, 
+.theme_external_email(@gap: @theme_externals_gap, 
                      @path: @theme_externals_path, 
                      @width: @theme_externals_width, 
                      @height: @theme_externals_height,
@@ -40,16 +44,16 @@
                      @y: -32px) {
   
    a[href^="mailto:"] {
-     background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
-     padding-left: @width + @gap; 
-     margin-left: @gap;
+     background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
+     padding-right: @width + @gap; 
+     margin-right: @gap;
      padding-bottom: @height;
    }
 }
 
 /*AIM Links - adds small IM icon to all aim:goim?screenname=username links*/
 
-.type_external_aim(@gap: @theme_externals_gap, 
+.theme_external_aim(@gap: @theme_externals_gap, 
                    @path: @theme_externals_path, 
                    @width: @theme_externals_width, 
                    @height: @theme_externals_height,
@@ -57,7 +61,7 @@
                    @y: -64px) {
    
    a[href^="aim:"] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
+       background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
      padding-left: @width + @gap;
      padding-bottom: @height;
      margin-left: @gap;
@@ -66,7 +70,7 @@
 
 /*PDF Links - adds a small PDF icon to all PDF links*/
 
-.type_external_pdf(@gap: @theme_externals_gap, 
+.theme_external_pdf(@gap: @theme_externals_gap, 
                    @path: @theme_externals_path, 
                    @width: @theme_externals_width, 
                    @height: @theme_externals_height,
@@ -74,7 +78,7 @@
                    @y: -96px) {
 
    a[href$=".pdf"] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
+       background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
      padding-left: @width + @gap;
      padding-bottom: @height;
      margin-left: @gap;
@@ -83,7 +87,7 @@
 
 /*DOC Links - adds a small word doc icon to all word document links*/
 
-.type_external_doc(@gap: @theme_externals_gap, 
+.theme_external_doc(@gap: @theme_externals_gap, 
                    @path: @theme_externals_path, 
                    @width: @theme_externals_width, 
                    @height: @theme_externals_height,
@@ -91,7 +95,7 @@
                    @y: -128px) {
 
    a[href$=".doc"] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
+       background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
      padding-left: @width + @gap;
      padding-bottom: @height;
      margin-left: @gap;
@@ -100,7 +104,7 @@
 
 /*RSS Links - adds a small Feed icon to all RSS feed links*/
 
-.type_external_rss(@gap: @theme_externals_gap, 
+.theme_external_rss(@gap: @theme_externals_gap, 
                    @path: @theme_externals_path, 
                    @width: @theme_externals_width, 
                    @height: @theme_externals_height,
@@ -108,7 +112,7 @@
                    @y: -160px) {
 
    a[href$=".rss"] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
+       background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
      padding-left: @width + @gap;
      padding-bottom: @height;
      margin-left: @gap;
@@ -117,7 +121,7 @@
 
 /*RDF Links - adds a small Feed icon to all RDF feed links*/
 
-.type_external_rdf(@gap: @theme_externals_gap, 
+.theme_external_rdf(@gap: @theme_externals_gap, 
                    @path: @theme_externals_path, 
                    @width: @theme_externals_width, 
                    @height: @theme_externals_height,
@@ -125,7 +129,7 @@
                    @y: -192px) {
 
    a[href$=".rdf"] {
-      background: %("url(%s) no-repeat %s %s", @path, @x, @y); 
+       background: e(%("url(%s) no-repeat %s %s", @path, @x, @y)); 
      padding-left: @width + @gap;
      padding-bottom: @height;
      margin-left: @gap;
@@ -134,7 +138,7 @@
 
 /* insert all external link components with one image file */
 
-.type_externals(@gap: @theme_externals_gap, 
+.theme_externals(@gap: @theme_externals_gap, 
                 @path: @theme_externals_path, 
                 @width: @theme_externals_width, 
                 @height: @theme_externals_height,
@@ -142,12 +146,12 @@
   
   @vertical: @height * 2;
   
-  .type_external_link(@gap, @path, @width, @height);
-  .type_external_email(@gap, @path, @width, @height, 0, (@vertical * -1));
-  .type_external_aim(@gap, @path, @width, @height, 0, (@vertical * -2));
-  .type_external_pdf(@gap, @path, @width, @height, 0, (@vertical * -3));
-  .type_external_doc(@gap, @path, @width, @height, 0, (@vertical * -4));
-  .type_external_rss(@gap, @path, @width, @height, 0, (@vertical * -5));
-  .type_external_rdf(@gap, @path, @width, @height, 0, (@vertical * -6));
+  .theme_external_link(@gap, @path, @width, @height);
+  .theme_external_email(@gap, @path, @width, @height, 0, (@vertical * -1));
+  .theme_external_aim(@gap, @path, @width, @height, 0, (@vertical * -2));
+  .theme_external_pdf(@gap, @path, @width, @height, 0, (@vertical * -3));
+  .theme_external_doc(@gap, @path, @width, @height, 0, (@vertical * -4));
+  .theme_external_rss(@gap, @path, @width, @height, 0, (@vertical * -5));
+  .theme_external_rdf(@gap, @path, @width, @height, 0, (@vertical * -6));
   
 }
