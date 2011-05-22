@@ -1,0 +1,39 @@
+div.gaf-stars-rating div {
+	width: 16px; 
+	height: 16px;
+	float: left;
+	cursor: pointer;
+	margin: 3px 1px 6px; 
+	background-image: url("../img/sprite-icons2.png");
+	background-color: transparent; 
+	background-repeat: no-repeat; 
+	background-attachment: scroll; 
+}
+div.gaf-stars-rating .default {
+	background-position:-34px -1389px; 
+}
+div.gaf-stars-rating .clicked {
+	background-position:-34px -1409px;
+}
+div.gaf-stars-rating .again-default {
+	background-position:-34px -1389px; 
+}
+div.gaf-stars-rating .hover {
+	background-position:1px -1409px;
+}
+	
+.default-stars-rating {
+    background: url("../img/sprite-icons2.png") no-repeat scroll -34px -1389px transparent;
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin: 3px 1px 6px;
+}
+
+.clicked-stars-rating {
+    background: url("../img/sprite-icons2.png") no-repeat scroll -34px -1409px transparent;
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin: 3px 1px 6px;
+}

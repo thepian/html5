@@ -1,0 +1,112 @@
+/* You may adapt and learn from the elements of this CSS to use in your ownprojects, but you may not copy the design (the unique combination of images,colors, sizes, typography, and positioning) since this is copyright of Veerle Pietersand Duoh! n.v.  and may not be reproduced. ------------------------------------------------------------------*//* Veerle's blog Print stylesheet------------------------------------------------------------------*/
+
+html,body {
+	background:#fff;
+	margin:0;
+	padding:0;
+	width:100%;
+	}
+body {
+	font:9pt/12pt Corbel,Helvetica,Arial,Verdana,sans-serif;
+	color:#000;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:"Century Gothic",Helvetica,Arial,sans-serif;
+	line-height:125%;
+	}
+#wrapper, #main {width:100%;}
+img {
+	padding:1.5mm;
+	border:1px solid #ccc;
+	display:block;
+	margin-top:20px;
+}
+
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	}	
+.group {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .group {height: 1%;}
+.group {display: block;}
+/* End hide from IE-mac */
+
+#header h2 {margin:8mm 0;font-size:18px}
+h1{font-size:24px;}
+h2,h3,h4 {margin:15px 0 10px 0;}
+h2 {font-size:14pt;}
+h3 {font-size:12pt;}
+h4 {font-size:10.5pt;}
+h5, h6 {margin:0;font-size:9pt;}
+.date {font-style:italic;}
+
+ul, ol {margin:0 0 10px 0; padding:0;}
+li {margin-left:15px;}
+blockquote {margin:0;}
+blockquote p {
+	margin:0 0 1em 0;
+	padding:0 0 0 10px;
+	border-left:4px solid #ccc;
+}
+.inspr-item {background-color:#fff;}
+
+/* Show external URL's */
+
+a:link, a:visited {
+	color:#000;
+	text-decoration:none;
+	border-bottom:1px solid #ccc;
+	padding-bottom:2px;
+}
+a:link:after,
+a:visited:after {
+  content:" (" attr(href) ") ";
+  color:#ccc;
+  font:italic 9pt/12pt Corbel,Helvetica,Arial,Verdana,sans-serif;
+}
+
+/* Don't show URL's of internal anchors */
+
+a[href*="#"]:link:after,
+a[href*="#"]:visited:after {content:"";}
+a[href*="#"] {border:none;}
+
+/* Elements not to print */
+
+#skip a:link,
+#skip a:visited,
+.vcardicon,#nav,#follow-me,
+.pagination,.add-cmt,.retweet,
+form, #linklove,#thedeck,#aj,#aj-footer,
+#art-cmts-switch, .art-nav, #search,#dig-arch,
+#footer-area-wrapper, #previous,#lifestream,.clr-box
+ {display:none;}
+ 
+/* Print the comment's on a new page */
+
+#comments {page-break-before:always;}
+
+/* gallery pages */
+
+#masonry .box { width:229px;display:block;}
+#masonry .box-txt {padding:10px}
+#masonry img {padding:0;border:none;}
+#masonry a {border:none; color:#fff;}
+#masonry a:link:after,
+#masonry a:visited:after {display:none;}
+#masonry .source a {color:#000;}
+
+/* slideshow on  main pages */
+#slideshow {display:block;color:#fff;}
+#slideshow .slide {padding:5px 20px 20px 20px}
+#slideshow .slide img { margin:10px 0;}
+#slideshow img {padding:0;border:none;}
+#slideshow a:link:after,
+#slideshow a:visited:after {content:"";}
+#slideshow .slide-img a:link:after,
+#slideshow a {border:none; color:#fff;}
+
