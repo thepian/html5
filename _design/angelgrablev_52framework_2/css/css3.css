@@ -68,6 +68,7 @@
 .rotate {
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(-180deg);
+	-ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 	filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 	/* possible properties for the Internet Explorer filter rotation are: 1. Content is rotated 90 degrees.  
 		`														 		  2. Content is rotated 180 degrees.
@@ -82,6 +83,7 @@
 		
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3c5bd), color-stop(50%,#e86c57), color-stop(51%,#ea2803), color-stop(75%,#ff6600), color-stop(100%,#c72200)); /* webkit */
 		
+		-ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); /* ie */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); /* ie */
 		
 		/* generated with http://www.colorzilla.com/gradient-editor/ */
