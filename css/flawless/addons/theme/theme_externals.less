@@ -24,6 +24,10 @@
           background-image: none;
       }
     }
+    .no-external-icon a[href^='http:'] {
+        background-image: none;
+        padding-right: 0;
+    }
 
     .theme_external_link_hack {
       cue: e(%('none; } a[href^="http://www.%s"], a[href^="http://%s"] { background-image:none !important; padding-left:0px; margin-left: 0', @domain, @domain));
@@ -48,6 +52,15 @@
      padding-right: @width + @gap; 
      margin-right: @gap;
      padding-bottom: @height;
+
+     .no-external-icon &,
+     &.no-external-icon {
+         background-image: none;
+     }
+     .no-external-icon a[href^='mailto:'] {
+         background-image: none;
+         padding-right: 0;
+     }
    }
 }
 
