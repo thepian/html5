@@ -42,6 +42,35 @@ category:
 		<h3 class="portrait-only">Portrait</h3>
 		<h3 class="landscape-only">Landscape</h3>
 	</section>
+	<section>
+h2. Differences from Striking WP Theme
+
+The Striking Theme uses many old style concepts that were appropriate when Internet Explorer was king.
+These days the mobile devices are king, and there it is the modern HTML5 technologies that rule. Mobile WebKit drives the vast majority of mobile browsing experiences.
+
+Speed is often underestimated by website owners. Some user will expect your page to load in as little as a quarter second. 
+Many browse on mobile devices that do not have the computing power of a desktop. 
+Others are on very slow long distance connections and rely on your site serving efficiently.
+To reflect this Google will consider your page load speed when ranking your site.
+
+In some WordPress themes the styling of the site is generated in PHP and uses a lot of individual images. 
+This decreases performance.
+Instead the Essentials theme gives you just a few lean static files that cover the complete styling. 
+The theming control panel outputs a single CSS file that you use to overwrite the existing <code>theming.css</code>.
+
+font-face for fast cache-able fonts
+
+OO CSS principles(distinct classes, no IDs)
+
+Dynamic layouts adopting screen/browser size
+
+Show elements for one orientation only
+
+Zoomable page on tablets
+
+content with tables and figures styling.
+
+	</section>
 		
 	<section class="post">
 	        <h1>
