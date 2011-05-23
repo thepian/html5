@@ -1,0 +1,31 @@
+.sidebar_search_fieldset(@width,@height,@sprite_url) {
+    position: relative;
+/*    background: #aaa;*/
+    padding: 2px 0;
+    margin-top: 1em;
+    overflow: visible;
+    
+    .util_clearfix();
+    
+    input {
+        display: block;
+        float: left;
+        font-size: 13px;
+        margin-top: 4px;
+        padding:2px 3px 2px 3px;
+    }
+
+    button {
+        display: block;
+        float: left;
+        border:0;
+        width:@width;
+        height:@height;
+        background: @sprite_url no-repeat -132px 0;
+    }
+    button:hover {
+        width:@width;
+        height:@height;
+        background: @sprite_url no-repeat -165px 0;
+    }
+}
