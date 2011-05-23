@@ -1,0 +1,67 @@
+.regular_page_menu(@width, @height, @buttons_sprite_url) {
+    position: absolute;
+    right: 3px;
+    top: 0px;
+    
+    a {
+        line-height: @height;
+        vertical-align: top;
+    }
+
+    .font-size {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -33px 0;
+    }
+    .font-size:hover,
+    .font-size-button {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -99px 0;
+    }
+
+    .flip-theme:hover,
+    .flip-theme-button {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -198px 0;
+    }
+    .flip-theme {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -231px 0;
+    }
+
+    fieldset.search button,
+    .search-base {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -132px 0;
+    }
+    fieldset.search button:hover,
+    .search-button {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -165px 0;
+    }
+
+    .gears-button {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat 0 0;
+    }
+    .gears {
+        display:inline-block; border:0; padding:0;
+        width:@width;
+        height:@height;
+        background: @buttons_sprite_url no-repeat -66px 0;
+    }
+
+}

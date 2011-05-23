@@ -16,6 +16,7 @@
 @top-edge-height: 20px;
 @header_height: 80px;
 @bottom-edge-height: 20px;
+@page-menu-button-width: 32px;
 @page-menu-button-height: 32px;
 
 @article_aside1_height: 250px;
@@ -227,3 +228,9 @@ blockquote {
 }
 
 .no-debug-styles();
+
+/* Top Edge buttons */
+nav.page-menu {
+    
+    .regular_page_menu(@page-menu-button-width, @page-menu-button-height, url('/images/buttons/top-edge.png'));
+}
