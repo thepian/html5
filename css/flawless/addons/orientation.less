@@ -12,3 +12,17 @@
         .landscape-only { display: inherit; }
     }
 }
+
+.rotate(@rotation : 2) {
+/*    @deg: e(%("%sdeg",@rotation * 90));*/
+	-webkit-transform: rotate(90deg * @rotation);
+	-moz-transform: rotate(90deg * @rotation);
+	-o-transform: rotate(90deg * @rotation);
+	transform: rotate(90deg * @rotation);
+	-ms-filter: e(%("progid:DXImageTransform.Microsoft.BasicImage(rotation=%s)",@rotation));
+	filter: e(%("progid:DXImageTransform.Microsoft.BasicImage(rotation=%s)",@rotation)); 
+	/* possible properties for the Internet Explorer filter rotation are: 1. Content is rotated 90 degrees.  
+		`														 		  2. Content is rotated 180 degrees.
+																 		  3. Content is rotated 270 degrees.
+	*/
+}

@@ -1,12 +1,11 @@
 @horz_side_gap: 14px; /* Gap from content to the middle divider */
 @horz_edge_gap: 28px; /* Gap from content to edge of window */
-@left_overhang: 64px;
 
 /**
  * Split layout into a left two thirds and right third.
  * - Use within the article.split-thirds rule.
  */
-.divide_width_twothirds(@max_width,@min_width) {
+.divide_width_twothirds(@max_width,@min_width, @left_overhang: 64px) {
     @min_content_width: @min_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
 
     @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
@@ -140,7 +139,7 @@
     }
 }
 
-.centered_block(@width) {
+.centered_block(@width,@left_overhang : 64px) {
     @content_width: @width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
     
     left: 50%;

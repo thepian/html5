@@ -2,6 +2,7 @@
 layout: demo-post
 title: A CSS Framework
 header_title: A CSS Framework
+location: New York
 author: Mike Stenhouse
 authorurl: /Mike+Stenhouse
 ---
@@ -12,6 +13,8 @@ h2. Who is this for?
 If you've been creating sites with CSS for a while you may be getting frustrated with having to recreate and retest basic layouts on a regular basis. In this article I'm trying to illustrate a simple way of skipping the tedious startup on your average project, letting you get to the interesting stuff as quickly and efficiently as possible. I've not attempted to explain the layouts included here so it may not be suitable if you're a CSS beginner. Sorry about that... Feel free to dissect them yourself if you're interested; I've kept them as simple as possible.
 
 h2. How many layouts are there?
+
+<div class="overhang-base"><div class="left-overhang"><div class="vertical-text-100">Vertical note</div></div></div>
 
 Well, loads but the majority of them fall into rough groups. Any framework must account for the most common layouts, otherwise it'll never get used. 
 
@@ -133,7 +136,7 @@ Okay, so the source code is fixed. What we want is to be able to plug in tried a
 * "Horizontal navigation with local navigation and one column of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-localleft.css&demo=true    
 * "Horizontal navigation with local navigation and 2 columns of content":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/?css=layout-navtop-3col.css&demo=true
 
-h2.Achieved: Level 2!
+h2. Achieved: Level 2!
 
 That's it - all the common layouts done with pluggable stylesheets and ready to go. They're set up in a kind of Zen Allotment for you to "have a flick through":http://www.contentwithstyle.co.uk/resources/css-framework/1.1/"...
 

@@ -18,6 +18,9 @@
 @bottom-edge-height: 20px;
 @page-menu-button-height: 32px;
 
+@article_aside1_height: 250px;
+@article_aside2_height: 250px;
+
 /**
  * Typefaces
  */
@@ -137,6 +140,8 @@ nav.top-overhang {
 }
 
 article.main {
+
+    min-height:@article_aside1_height + @article_aside2_height;
 
     /* themed */
     color: @article_color;
