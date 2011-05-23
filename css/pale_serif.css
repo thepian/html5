@@ -1,0 +1,229 @@
+/* PALE SERIF theme */@charset "utf-8";
+.ie .in{word-wrap:break-word;overflow-x:hidden;height:1%;}
+@font-face{font-family:'CaviarDreamsRegular';src:"url(/fonts/CaviarDreams-webfont.eot)";src:local('‚ò∫'),url(/fonts/CaviarDreams-webfont.woff) format('woff'),url(/fonts/CaviarDreams-webfont.ttf) format('truetype'),url(/fonts/CaviarDreams-webfont.svg#webfontdHSnsI35) format('svg');font-weight:normal;font-style:normal;}body{line-height:1.5;font-size:81.25%;background-color:#ddeeee;font-family:Georgia,"Times New Roman",Times,serif;color:#333333;}body>header h1,body>header h2,body>header h3,body>header h4{position:relative;}
+body>header h1,body>header h2{margin-bottom:.25em;}
+body>header h1{font-size:27px;}
+body>header h2{font-size:21px;}
+body>header h3{font-size:18px;}
+body>header h4{font-size:15px;}
+body .normal-read{line-height:1.5;}body .normal-read h1,body .normal-read h2,body .normal-read h3,body .normal-read h4,body .normal-read h5,body .normal-read h6{position:relative;line-height:1;padding-top:6.5px;}body .normal-read h1:first-child,body .normal-read h2:first-child,body .normal-read h3:first-child,body .normal-read h4:first-child,body .normal-read h5:first-child,body .normal-read h6:first-child{margin-top:0;}
+body .normal-read h1,body .normal-read h2{margin-bottom:9.75px;}
+body .normal-read h3{margin-bottom:6.5px;}
+body .normal-read h1,body .normal-read h2,body .normal-read h3,body .normal-read h4{margin-top:19.5px;}
+body .normal-read h1{font-size:27px;}
+body .normal-read h2{font-size:21px;}
+body .normal-read h3{font-size:18px;}
+body .normal-read h4{font-size:15px;}
+body .normal-read h5{font-size:13px;}
+body .normal-read h6{font-size:13px;}
+body .normal-read p,body .normal-read pre,body .normal-read address{font-size:13px;position:relative;margin-bottom:1em;}body .normal-read p:first-child,body .normal-read pre:first-child,body .normal-read address:first-child{margin-top:0;}
+body .normal-read small{font-size:11px;}
+body .normal-read abbr,body .normal-read code,body .normal-read kbd,body .normal-read samp,body .normal-read small,body .normal-read var{line-height:16.25px;}
+body .normal-read form,body .normal-read legend,body .normal-read label{font-size:13px;}
+body .normal-read legend{position:relative;top:5px;}
+body .normal-read hr{position:relative;height:2px;margin:19.5px 0 16.25px 0;}
+body .normal-read table{font-size:13px;margin-top:19.5px;}body .normal-read table th,body .normal-read table td{line-height:19.5px;padding:9.75px 19.5px 9.75px 0;}
+body .normal-read caption{font-size:13px;position:relative;top:5px;margin-bottom:19.5px;}
+body .normal-read table{border-collapse:collapse;position:relative;margin-top:18px;}
+body .normal-read thead th,body .normal-read thead td{padding-top:6.5px;}
+body .normal-read tfoot th,body .normal-read tfoot td{padding-bottom:6.5px;}
+body .comments-list .odd .normal-read h1,body .comments-list .even .normal-read h1,body .asides .normal-read h1,body .etc .normal-read h1,body .secondary-read .normal-read h1,body .comments-list .odd.normal-read h1,body .comments-list .even.normal-read h1,body .asides.normal-read h1,body .etc.normal-read h1,body .secondary-read.normal-read h1,body .comments-list .odd .normal-read h2,body .comments-list .even .normal-read h2,body .asides .normal-read h2,body .etc .normal-read h2,body .secondary-read .normal-read h2,body .comments-list .odd.normal-read h2,body .comments-list .even.normal-read h2,body .asides.normal-read h2,body .etc.normal-read h2,body .secondary-read.normal-read h2,body .comments-list .odd .normal-read h3,body .comments-list .even .normal-read h3,body .asides .normal-read h3,body .etc .normal-read h3,body .secondary-read .normal-read h3,body .comments-list .odd.normal-read h3,body .comments-list .even.normal-read h3,body .asides.normal-read h3,body .etc.normal-read h3,body .secondary-read.normal-read h3,body .comments-list .odd .normal-read h4,body .comments-list .even .normal-read h4,body .asides .normal-read h4,body .etc .normal-read h4,body .secondary-read .normal-read h4,body .comments-list .odd.normal-read h4,body .comments-list .even.normal-read h4,body .asides.normal-read h4,body .etc.normal-read h4,body .secondary-read.normal-read h4,body .comments-list .odd .normal-read h5,body .comments-list .even .normal-read h5,body .asides .normal-read h5,body .etc .normal-read h5,body .secondary-read .normal-read h5,body .comments-list .odd.normal-read h5,body .comments-list .even.normal-read h5,body .asides.normal-read h5,body .etc.normal-read h5,body .secondary-read.normal-read h5,body .comments-list .odd .normal-read h6,body .comments-list .even .normal-read h6,body .asides .normal-read h6,body .etc .normal-read h6,body .secondary-read .normal-read h6,body .comments-list .odd.normal-read h6,body .comments-list .even.normal-read h6,body .asides.normal-read h6,body .etc.normal-read h6,body .secondary-read.normal-read h6{position:relative;}
+body .comments-list .odd .normal-read h1,body .comments-list .even .normal-read h1,body .asides .normal-read h1,body .etc .normal-read h1,body .secondary-read .normal-read h1,body .comments-list .odd.normal-read h1,body .comments-list .even.normal-read h1,body .asides.normal-read h1,body .etc.normal-read h1,body .secondary-read.normal-read h1{margin-bottom:9.75px;}
+body .comments-list .odd .normal-read h1,body .comments-list .even .normal-read h1,body .asides .normal-read h1,body .etc .normal-read h1,body .secondary-read .normal-read h1,body .comments-list .odd.normal-read h1,body .comments-list .even.normal-read h1,body .asides.normal-read h1,body .etc.normal-read h1,body .secondary-read.normal-read h1,body .comments-list .odd .normal-read h2,body .comments-list .even .normal-read h2,body .asides .normal-read h2,body .etc .normal-read h2,body .secondary-read .normal-read h2,body .comments-list .odd.normal-read h2,body .comments-list .even.normal-read h2,body .asides.normal-read h2,body .etc.normal-read h2,body .secondary-read.normal-read h2,body .comments-list .odd .normal-read h3,body .comments-list .even .normal-read h3,body .asides .normal-read h3,body .etc .normal-read h3,body .secondary-read .normal-read h3,body .comments-list .odd.normal-read h3,body .comments-list .even.normal-read h3,body .asides.normal-read h3,body .etc.normal-read h3,body .secondary-read.normal-read h3{margin-top:19.5px;}
+body .comments-list .odd .normal-read h1,body .comments-list .even .normal-read h1,body .asides .normal-read h1,body .etc .normal-read h1,body .secondary-read .normal-read h1,body .comments-list .odd.normal-read h1,body .comments-list .even.normal-read h1,body .asides.normal-read h1,body .etc.normal-read h1,body .secondary-read.normal-read h1{font-size:21px;}
+body .comments-list .odd .normal-read h2,body .comments-list .even .normal-read h2,body .asides .normal-read h2,body .etc .normal-read h2,body .secondary-read .normal-read h2,body .comments-list .odd.normal-read h2,body .comments-list .even.normal-read h2,body .asides.normal-read h2,body .etc.normal-read h2,body .secondary-read.normal-read h2{font-size:18px;}
+body .comments-list .odd .normal-read h3,body .comments-list .even .normal-read h3,body .asides .normal-read h3,body .etc .normal-read h3,body .secondary-read .normal-read h3,body .comments-list .odd.normal-read h3,body .comments-list .even.normal-read h3,body .asides.normal-read h3,body .etc.normal-read h3,body .secondary-read.normal-read h3{font-size:15px;}
+body .comments-list .odd .normal-read h4,body .comments-list .even .normal-read h4,body .asides .normal-read h4,body .etc .normal-read h4,body .secondary-read .normal-read h4,body .comments-list .odd.normal-read h4,body .comments-list .even.normal-read h4,body .asides.normal-read h4,body .etc.normal-read h4,body .secondary-read.normal-read h4{font-size:13px;}
+body .comments-list .odd .normal-read h5,body .comments-list .even .normal-read h5,body .asides .normal-read h5,body .etc .normal-read h5,body .secondary-read .normal-read h5,body .comments-list .odd.normal-read h5,body .comments-list .even.normal-read h5,body .asides.normal-read h5,body .etc.normal-read h5,body .secondary-read.normal-read h5{font-size:13px;}
+body .comments-list .odd .normal-read h6,body .comments-list .even .normal-read h6,body .asides .normal-read h6,body .etc .normal-read h6,body .secondary-read .normal-read h6,body .comments-list .odd.normal-read h6,body .comments-list .even.normal-read h6,body .asides.normal-read h6,body .etc.normal-read h6,body .secondary-read.normal-read h6{font-size:13px;}
+body .comments-list .odd .normal-read h1:first-child,body .comments-list .even .normal-read h1:first-child,body .asides .normal-read h1:first-child,body .etc .normal-read h1:first-child,body .secondary-read .normal-read h1:first-child,body .comments-list .odd.normal-read h1:first-child,body .comments-list .even.normal-read h1:first-child,body .asides.normal-read h1:first-child,body .etc.normal-read h1:first-child,body .secondary-read.normal-read h1:first-child,body .comments-list .odd .normal-read h2:first-child,body .comments-list .even .normal-read h2:first-child,body .asides .normal-read h2:first-child,body .etc .normal-read h2:first-child,body .secondary-read .normal-read h2:first-child,body .comments-list .odd.normal-read h2:first-child,body .comments-list .even.normal-read h2:first-child,body .asides.normal-read h2:first-child,body .etc.normal-read h2:first-child,body .secondary-read.normal-read h2:first-child,body .comments-list .odd .normal-read h3:first-child,body .comments-list .even .normal-read h3:first-child,body .asides .normal-read h3:first-child,body .etc .normal-read h3:first-child,body .secondary-read .normal-read h3:first-child,body .comments-list .odd.normal-read h3:first-child,body .comments-list .even.normal-read h3:first-child,body .asides.normal-read h3:first-child,body .etc.normal-read h3:first-child,body .secondary-read.normal-read h3:first-child,body .comments-list .odd .normal-read h4:first-child,body .comments-list .even .normal-read h4:first-child,body .asides .normal-read h4:first-child,body .etc .normal-read h4:first-child,body .secondary-read .normal-read h4:first-child,body .comments-list .odd.normal-read h4:first-child,body .comments-list .even.normal-read h4:first-child,body .asides.normal-read h4:first-child,body .etc.normal-read h4:first-child,body .secondary-read.normal-read h4:first-child{margin-top:0;}
+body .comments-list .odd .normal-read p,body .comments-list .even .normal-read p,body .asides .normal-read p,body .etc .normal-read p,body .secondary-read .normal-read p,body .comments-list .odd.normal-read p,body .comments-list .even.normal-read p,body .asides.normal-read p,body .etc.normal-read p,body .secondary-read.normal-read p,body .comments-list .odd .normal-read pre,body .comments-list .even .normal-read pre,body .asides .normal-read pre,body .etc .normal-read pre,body .secondary-read .normal-read pre,body .comments-list .odd.normal-read pre,body .comments-list .even.normal-read pre,body .asides.normal-read pre,body .etc.normal-read pre,body .secondary-read.normal-read pre,body .comments-list .odd .normal-read address,body .comments-list .even .normal-read address,body .asides .normal-read address,body .etc .normal-read address,body .secondary-read .normal-read address,body .comments-list .odd.normal-read address,body .comments-list .even.normal-read address,body .asides.normal-read address,body .etc.normal-read address,body .secondary-read.normal-read address{font-size:13px;position:relative;top:5px;}
+body .comments-list .odd .normal-read small,body .comments-list .even .normal-read small,body .asides .normal-read small,body .etc .normal-read small,body .secondary-read .normal-read small,body .comments-list .odd.normal-read small,body .comments-list .even.normal-read small,body .asides.normal-read small,body .etc.normal-read small,body .secondary-read.normal-read small{font-size:11px;}
+body .comments-list .odd .normal-read abbr,body .comments-list .even .normal-read abbr,body .asides .normal-read abbr,body .etc .normal-read abbr,body .secondary-read .normal-read abbr,body .comments-list .odd.normal-read abbr,body .comments-list .even.normal-read abbr,body .asides.normal-read abbr,body .etc.normal-read abbr,body .secondary-read.normal-read abbr,body .comments-list .odd .normal-read code,body .comments-list .even .normal-read code,body .asides .normal-read code,body .etc .normal-read code,body .secondary-read .normal-read code,body .comments-list .odd.normal-read code,body .comments-list .even.normal-read code,body .asides.normal-read code,body .etc.normal-read code,body .secondary-read.normal-read code,body .comments-list .odd .normal-read kbd,body .comments-list .even .normal-read kbd,body .asides .normal-read kbd,body .etc .normal-read kbd,body .secondary-read .normal-read kbd,body .comments-list .odd.normal-read kbd,body .comments-list .even.normal-read kbd,body .asides.normal-read kbd,body .etc.normal-read kbd,body .secondary-read.normal-read kbd,body .comments-list .odd .normal-read samp,body .comments-list .even .normal-read samp,body .asides .normal-read samp,body .etc .normal-read samp,body .secondary-read .normal-read samp,body .comments-list .odd.normal-read samp,body .comments-list .even.normal-read samp,body .asides.normal-read samp,body .etc.normal-read samp,body .secondary-read.normal-read samp,body .comments-list .odd .normal-read small,body .comments-list .even .normal-read small,body .asides .normal-read small,body .etc .normal-read small,body .secondary-read .normal-read small,body .comments-list .odd.normal-read small,body .comments-list .even.normal-read small,body .asides.normal-read small,body .etc.normal-read small,body .secondary-read.normal-read small,body .comments-list .odd .normal-read var,body .comments-list .even .normal-read var,body .asides .normal-read var,body .etc .normal-read var,body .secondary-read .normal-read var,body .comments-list .odd.normal-read var,body .comments-list .even.normal-read var,body .asides.normal-read var,body .etc.normal-read var,body .secondary-read.normal-read var{line-height:16.25px;}
+body .comments-list .odd .normal-read form,body .comments-list .even .normal-read form,body .asides .normal-read form,body .etc .normal-read form,body .secondary-read .normal-read form,body .comments-list .odd.normal-read form,body .comments-list .even.normal-read form,body .asides.normal-read form,body .etc.normal-read form,body .secondary-read.normal-read form,body .comments-list .odd .normal-read legend,body .comments-list .even .normal-read legend,body .asides .normal-read legend,body .etc .normal-read legend,body .secondary-read .normal-read legend,body .comments-list .odd.normal-read legend,body .comments-list .even.normal-read legend,body .asides.normal-read legend,body .etc.normal-read legend,body .secondary-read.normal-read legend,body .comments-list .odd .normal-read label,body .comments-list .even .normal-read label,body .asides .normal-read label,body .etc .normal-read label,body .secondary-read .normal-read label,body .comments-list .odd.normal-read label,body .comments-list .even.normal-read label,body .asides.normal-read label,body .etc.normal-read label,body .secondary-read.normal-read label{font-size:13px;}
+body .comments-list .odd .normal-read legend,body .comments-list .even .normal-read legend,body .asides .normal-read legend,body .etc .normal-read legend,body .secondary-read .normal-read legend,body .comments-list .odd.normal-read legend,body .comments-list .even.normal-read legend,body .asides.normal-read legend,body .etc.normal-read legend,body .secondary-read.normal-read legend{position:relative;top:5px;}
+body .comments-list .odd .normal-read table,body .comments-list .even .normal-read table,body .asides .normal-read table,body .etc .normal-read table,body .secondary-read .normal-read table,body .comments-list .odd.normal-read table,body .comments-list .even.normal-read table,body .asides.normal-read table,body .etc.normal-read table,body .secondary-read.normal-read table{font-size:13px;}
+body .comments-list .odd .normal-read caption,body .comments-list .even .normal-read caption,body .asides .normal-read caption,body .etc .normal-read caption,body .secondary-read .normal-read caption,body .comments-list .odd.normal-read caption,body .comments-list .even.normal-read caption,body .asides.normal-read caption,body .etc.normal-read caption,body .secondary-read.normal-read caption{font-size:13px;position:relative;}
+body h1,body h2,body h3,body h4,body h5,body h6,body .breadcrumb{font-family:CaviarDreamsRegular,Helvetica,Arial,sans-serif;}
+body h1,body .breadcrumb{color:#003366;}
+body h2{color:#0f3357;}
+body h3{color:#000000;}
+body h1,body h2,body h3{font-weight:normal;word-spacing:-0.125em;}
+body h4,body h5,body h6{font-weight:bold;word-spacing:0.125em;}
+body p{word-spacing:0.125em;hyphenate:auto;hyphenate-lines:3;}
+body p+p.no-indent{text-indent:0;}
+body hr{-moz-opacity:0.5;filter:alpha(opacity=50);opacity:0.5;border:none;background-image:url(/images/dashed_line_1px_grey.png);background-repeat:repeat-x;background-position:0% 100%;}
+body a{color:#ff54aa;}body a:hover{color:#003366;}
+body b,body strong{font-weight:bold;}
+body cite,body dfn,body em,body i{font-style:italic;}
+body code,body kbd,body samp,body pre,body tt,body var{font-family:Monospace,mono-space,monospace;}
+body pre{white-space:pre;}
+body del{text-decoration:line-through;}
+body mark{background:rgba(255, 255, 0, 0.4);padding:0 .25em;}
+body ins{color:#f00;}
+body small,body sup,body sub{font-size:80%;}
+body big{font-size:125%;line-height:80%;}
+body abbr,body acronym{font-size:85%;text-transform:uppercase;letter-spacing:.1em;}
+body abbr[title],body acronym[title],body dfn[title]{border-bottom:1px dotted #000000;cursor:help;}
+body sup,body sub{line-height:0;}
+body sup{vertical-align:super;}
+body sub{vertical-align:sub;}
+body q{padding-right:1em;}body q:before{content:"\201C";}
+body q:after{content:"\201D";}
+body a[href^='http:']{background:url(/images/external-http.png) no-repeat right 0;padding-right:14px;margin-right:2px;padding-bottom:0px;}body a[href^='http:'].no-external-icon{background-image:none;padding-right:0;}
+body .no-external-icon a[href^='http:']{background-image:none;padding-right:0;}
+body .theme_external_link_hack{cue:none; } a[href^="http://www.localhost"], a[href^="http://localhost"] { background-image:none !important; padding-left:0px; margin-left: 0;}
+body .no-ext{background-image:none !important;padding:0px;}
+body a[href^="mailto:"]{background:url(/images/external-http.png) no-repeat right -32;padding-right:14px;margin-right:2px;padding-bottom:0px;}body a[href^="mailto:"] .no-external-icon,body a[href^="mailto:"].no-external-icon{background-image:none;padding-right:0;}
+body a[href^="mailto:"] .no-external-icon a[href^='mailto:']{background-image:none;padding-right:0;}
+body>header{padding-top:20px;height:80px;background-color:white;}
+nav.top-overhang{}nav.top-overhang li a:link,nav.top-overhang li a:visited{background:#e3e3e3;}
+nav.top-overhang li a:hover{background:transparent;}
+nav.top-overhang li a.active,nav.top-overhang li .active a{background:transparent;}
+nav.top-overhang li a:link,nav.top-overhang li a:visited{color:black;}
+nav.top-overhang li a:hover{color:black;}
+nav.top-overhang li a.active,nav.top-overhang li .active a{color:black;}
+article.main{min-height:500px;color:#333333;background-color:#e8e8e8;}article.main .sections header,article.main .sections footer,article.main .sections section{}article.main .sections header ul,article.main .sections footer ul,article.main .sections section ul,article.main .sections header ol,article.main .sections footer ol,article.main .sections section ol,article.main .sections header dl,article.main .sections footer dl,article.main .sections section dl,article.main .sections header dialog,article.main .sections footer dialog,article.main .sections section dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+article.main .sections header li ul,article.main .sections footer li ul,article.main .sections section li ul,article.main .sections header li ol,article.main .sections footer li ol,article.main .sections section li ol,article.main .sections header ul ul,article.main .sections footer ul ul,article.main .sections section ul ul,article.main .sections header ol ol,article.main .sections footer ol ol,article.main .sections section ol ol{top:0;margin-top:0;margin-bottom:0;}
+article.main .sections header li h1,article.main .sections footer li h1,article.main .sections section li h1,article.main .sections header li h2,article.main .sections footer li h2,article.main .sections section li h2,article.main .sections header li h3,article.main .sections footer li h3,article.main .sections section li h3,article.main .sections header li h4,article.main .sections footer li h4,article.main .sections section li h4,article.main .sections header li h5,article.main .sections footer li h5,article.main .sections section li h5,article.main .sections header li h6,article.main .sections footer li h6,article.main .sections section li h6,article.main .sections header li p,article.main .sections footer li p,article.main .sections section li p{top:0;}
+article.main .sections header dd,article.main .sections footer dd,article.main .sections section dd{margin-bottom:1em;}
+article.main .sections header ul.breadcrumb,article.main .sections footer ul.breadcrumb,article.main .sections section ul.breadcrumb{display:inline;list-style:none;margin:0;}article.main .sections header ul.breadcrumb li,article.main .sections footer ul.breadcrumb li,article.main .sections section ul.breadcrumb li{display:inline-block;}article.main .sections header ul.breadcrumb li a,article.main .sections footer ul.breadcrumb li a,article.main .sections section ul.breadcrumb li a{text-decoration:none;font-weight:bold;color:white;}
+article.main .sections header ul.breadcrumb li :after,article.main .sections footer ul.breadcrumb li :after,article.main .sections section ul.breadcrumb li :after{content:" > ";}
+article.main .sections header dt,article.main .sections footer dt,article.main .sections section dt{font-weight:bold;}
+article.main .sections header dd,article.main .sections footer dd,article.main .sections section dd{margin-left:2em;}
+article.main .sections header ul,article.main .sections footer ul,article.main .sections section ul,article.main .sections header ol,article.main .sections footer ol,article.main .sections section ol{margin-left:2em;}
+article.main .sections header ul ul,article.main .sections footer ul ul,article.main .sections section ul ul,article.main .sections header ol ol,article.main .sections footer ol ol,article.main .sections section ol ol{margin-left:1.5em;}
+article.main .sections header ul,article.main .sections footer ul,article.main .sections section ul,article.main .sections header ul li,article.main .sections footer ul li,article.main .sections section ul li{list-style:disc outside;}
+article.main .sections header ol,article.main .sections footer ol,article.main .sections section ol,article.main .sections header ol li,article.main .sections footer ol li,article.main .sections section ol li{list-style:decimal outside;}
+article.main .sections header b,article.main .sections footer b,article.main .sections section b,article.main .sections header strong,article.main .sections footer strong,article.main .sections section strong{font-weight:bold;}
+article.main .sections header cite,article.main .sections footer cite,article.main .sections section cite,article.main .sections header dfn,article.main .sections footer dfn,article.main .sections section dfn,article.main .sections header em,article.main .sections footer em,article.main .sections section em,article.main .sections header i,article.main .sections footer i,article.main .sections section i{font-style:italic;}
+article.main .sections header code,article.main .sections footer code,article.main .sections section code,article.main .sections header kbd,article.main .sections footer kbd,article.main .sections section kbd,article.main .sections header samp,article.main .sections footer samp,article.main .sections section samp,article.main .sections header pre,article.main .sections footer pre,article.main .sections section pre,article.main .sections header tt,article.main .sections footer tt,article.main .sections section tt,article.main .sections header var,article.main .sections footer var,article.main .sections section var{font-family:Monospace,mono-space,monospace;}
+article.main .sections header pre,article.main .sections footer pre,article.main .sections section pre{white-space:pre;}
+article.main .sections header del,article.main .sections footer del,article.main .sections section del{text-decoration:line-through;}
+article.main .sections header mark,article.main .sections footer mark,article.main .sections section mark{background:rgba(255, 255, 0, 0.4);padding:0 .25em;}
+article.main .sections header ins,article.main .sections footer ins,article.main .sections section ins{color:#f00;}
+article.main .sections header small,article.main .sections footer small,article.main .sections section small,article.main .sections header sup,article.main .sections footer sup,article.main .sections section sup,article.main .sections header sub,article.main .sections footer sub,article.main .sections section sub{font-size:80%;}
+article.main .sections header big,article.main .sections footer big,article.main .sections section big{font-size:125%;line-height:80%;}
+article.main .sections header abbr,article.main .sections footer abbr,article.main .sections section abbr,article.main .sections header acronym,article.main .sections footer acronym,article.main .sections section acronym{font-size:85%;text-transform:uppercase;letter-spacing:.1em;}
+article.main .sections header abbr[title],article.main .sections footer abbr[title],article.main .sections section abbr[title],article.main .sections header acronym[title],article.main .sections footer acronym[title],article.main .sections section acronym[title],article.main .sections header dfn[title],article.main .sections footer dfn[title],article.main .sections section dfn[title]{border-bottom:1px dotted #000000;cursor:help;}
+article.main .sections header sup,article.main .sections footer sup,article.main .sections section sup,article.main .sections header sub,article.main .sections footer sub,article.main .sections section sub{line-height:0;}
+article.main .sections header sup,article.main .sections footer sup,article.main .sections section sup{vertical-align:super;}
+article.main .sections header sub,article.main .sections footer sub,article.main .sections section sub{vertical-align:sub;}
+article.main .sections header q,article.main .sections footer q,article.main .sections section q{padding-right:1em;}article.main .sections header q:before,article.main .sections footer q:before,article.main .sections section q:before{content:"\201C";}
+article.main .sections header q:after,article.main .sections footer q:after,article.main .sections section q:after{content:"\201D";}
+article.main .sections header blockquote.full,article.main .sections footer blockquote.full,article.main .sections section blockquote.full,article.main .sections header figure,article.main .sections footer figure,article.main .sections section figure,article.main .sections header pre,article.main .sections footer pre,article.main .sections section pre{background-color:white;border:1px solid #cccccc;padding:0.25em;}
+article.main .sections header table,article.main .sections footer table,article.main .sections section table{border-collapse:collapse;border-top:solid 3px #000000;position:relative;}article.main .sections header table caption,article.main .sections footer table caption,article.main .sections section table caption,article.main .sections header table th,article.main .sections footer table th,article.main .sections section table th{text-align:left;}
+article.main .sections header th,article.main .sections footer th,article.main .sections section th,article.main .sections header td,article.main .sections footer td,article.main .sections section td{padding-right:1em;}
+article.main .sections header tbody th,article.main .sections footer tbody th,article.main .sections section tbody th,article.main .sections header tbody td,article.main .sections footer tbody td,article.main .sections section tbody td,article.main .sections header tfoot th,article.main .sections footer tfoot th,article.main .sections section tfoot th,article.main .sections header tfoot td,article.main .sections footer tfoot td,article.main .sections section tfoot td{border-top:solid 1px #000000;}
+article.main .sections header th:first-child,article.main .sections footer th:first-child,article.main .sections section th:first-child,article.main .sections header td:first-child,article.main .sections footer td:first-child,article.main .sections section td:first-child{padding-left:0;}
+article.main .sections header th:last-child,article.main .sections footer th:last-child,article.main .sections section th:last-child,article.main .sections header td:last-child,article.main .sections footer td:last-child,article.main .sections section td:last-child{padding-right:0;}
+article.main .sections header tbody tr:nth-child(odd) th,article.main .sections footer tbody tr:nth-child(odd) th,article.main .sections section tbody tr:nth-child(odd) th,article.main .sections header tbody tr:nth-child(odd) td,article.main .sections footer tbody tr:nth-child(odd) td,article.main .sections section tbody tr:nth-child(odd) td{background:rgba(0, 0, 0, 0.035);}
+article.main .sections header .postbadge,article.main .sections footer .postbadge,article.main .sections section .postbadge{top:1em;}article.main .sections header .postbadge .postdate,article.main .sections footer .postbadge .postdate,article.main .sections section .postbadge .postdate{display:block;width:50px;margin-bottom:.5em;}
+article.main .sections header .postbadge .postweekday,article.main .sections footer .postbadge .postweekday,article.main .sections section .postbadge .postweekday{display:block;text-align:center;padding-bottom:.5em;}
+article.main .sections header .postbadge .postday,article.main .sections footer .postbadge .postday,article.main .sections section .postbadge .postday{display:block;font-size:1.4em;line-height:1.4;text-align:center;color:#333;border:1px solid #aaa;border-bottom:0;padding-bottom:1px;}
+article.main .sections header .postbadge .postmonth,article.main .sections footer .postbadge .postmonth,article.main .sections section .postbadge .postmonth{display:block;text-transform:uppercase;font-size:1.1em;font-weight:bold;text-align:center;background-color:#888888;color:white;border:1px solid #aaa;border-top:0;background:-moz-linear-gradient(center top -90deg, #6f6f6f, #888888);background:-webkit-gradient(linear, center top, center bottom, color-stop(0, #6f6f6f), color-stop(1, #888888));-webkit-background-origin:padding-box;-pie-background:linear-gradient(-90deg, #6f6f6f, #888888);behavior:url(css/flawless/core/production/framework/css3/PIE.htc);}
+article.main .sections header .postinfo{position:relative;top:-7px;white-space:nowrap;}article.main .sections header .postinfo span{display:inline-block;}
+article.main .sections header .postinfo a{text-decoration:none;font-weight:bold;}
+article.main .sections section.comments{margin-right:0;}article.main .sections section.comments ul.comments-list{margin-left:0;}article.main .sections section.comments ul.comments-list li{list-style:none;border-bottom:1px solid #bbbbbb;margin-bottom:1em;}
+article.main .sections section.comments .comment-text{padding:0 20px 0 1em;}
+article.main .sections section.comments .comment-info{margin:0;padding:1em 20px .5em 1em;}
+article.main .sections section.comments .comments-list .even .comment-info{background:-moz-linear-gradient(center bottom 90deg, #cfcfcf, #e8e8e8);background:-webkit-gradient(linear, center bottom, center top, color-stop(0, #cfcfcf), color-stop(1, #e8e8e8));-webkit-background-origin:padding-box;-pie-background:linear-gradient(90deg, #cfcfcf, #e8e8e8);behavior:url(css/flawless/core/production/framework/css3/PIE.htc);}
+article.main .sections section.comments .comments-list .odd .comment-info{background:-moz-linear-gradient(center bottom 90deg, #ffffff, #e8e8e8);background:-webkit-gradient(linear, center bottom, center top, color-stop(0, #ffffff), color-stop(1, #e8e8e8));-webkit-background-origin:padding-box;-pie-background:linear-gradient(90deg, #ffffff, #e8e8e8);behavior:url(css/flawless/core/production/framework/css3/PIE.htc);}
+article.main .asides{color:#333333;background-color:#dddddd;}article.main .asides .restricted-width{}article.main .asides .restricted-width ul,article.main .asides .restricted-width ol,article.main .asides .restricted-width dl,article.main .asides .restricted-width dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+article.main .asides .restricted-width li ul,article.main .asides .restricted-width li ol,article.main .asides .restricted-width ul ul,article.main .asides .restricted-width ol ol{top:0;margin-top:0;margin-bottom:0;}
+article.main .asides .restricted-width li h1,article.main .asides .restricted-width li h2,article.main .asides .restricted-width li h3,article.main .asides .restricted-width li h4,article.main .asides .restricted-width li h5,article.main .asides .restricted-width li h6,article.main .asides .restricted-width li p{top:0;}
+article.main .asides .restricted-width dd{margin-bottom:1em;}
+article.main .asides .restricted-width ul.breadcrumb{display:inline;list-style:none;margin:0;}article.main .asides .restricted-width ul.breadcrumb li{display:inline-block;}article.main .asides .restricted-width ul.breadcrumb li a{text-decoration:none;font-weight:bold;color:white;}
+article.main .asides .restricted-width ul.breadcrumb li :after{content:" > ";}
+article.main .asides .restricted-width dt{font-weight:bold;}
+article.main .asides .restricted-width dd{margin-left:2em;}
+article.main .asides .restricted-width ul,article.main .asides .restricted-width ol{margin-left:2em;}
+article.main .asides .restricted-width ul ul,article.main .asides .restricted-width ol ol{margin-left:1.5em;}
+article.main .asides .restricted-width ul,article.main .asides .restricted-width ul li{list-style:disc outside;}
+article.main .asides .restricted-width ol,article.main .asides .restricted-width ol li{list-style:decimal outside;}
+article.main .asides .restricted-width b,article.main .asides .restricted-width strong{font-weight:bold;}
+article.main .asides .restricted-width cite,article.main .asides .restricted-width dfn,article.main .asides .restricted-width em,article.main .asides .restricted-width i{font-style:italic;}
+article.main .asides .restricted-width code,article.main .asides .restricted-width kbd,article.main .asides .restricted-width samp,article.main .asides .restricted-width pre,article.main .asides .restricted-width tt,article.main .asides .restricted-width var{font-family:Monospace,mono-space,monospace;}
+article.main .asides .restricted-width pre{white-space:pre;}
+article.main .asides .restricted-width del{text-decoration:line-through;}
+article.main .asides .restricted-width mark{background:rgba(255, 255, 0, 0.4);padding:0 .25em;}
+article.main .asides .restricted-width ins{color:#f00;}
+article.main .asides .restricted-width small,article.main .asides .restricted-width sup,article.main .asides .restricted-width sub{font-size:80%;}
+article.main .asides .restricted-width big{font-size:125%;line-height:80%;}
+article.main .asides .restricted-width abbr,article.main .asides .restricted-width acronym{font-size:85%;text-transform:uppercase;letter-spacing:.1em;}
+article.main .asides .restricted-width abbr[title],article.main .asides .restricted-width acronym[title],article.main .asides .restricted-width dfn[title]{border-bottom:1px dotted #000000;cursor:help;}
+article.main .asides .restricted-width sup,article.main .asides .restricted-width sub{line-height:0;}
+article.main .asides .restricted-width sup{vertical-align:super;}
+article.main .asides .restricted-width sub{vertical-align:sub;}
+article.main .asides .restricted-width q{padding-right:1em;}article.main .asides .restricted-width q:before{content:"\201C";}
+article.main .asides .restricted-width q:after{content:"\201D";}
+article.main .asides .restricted-width blockquote.full,article.main .asides .restricted-width figure,article.main .asides .restricted-width pre{background-color:white;border:1px solid #cccccc;padding:0.25em;}
+article.main .asides .restricted-width table{border-collapse:collapse;border-top:solid 3px #000000;position:relative;}article.main .asides .restricted-width table caption,article.main .asides .restricted-width table th{text-align:left;}
+article.main .asides .restricted-width th,article.main .asides .restricted-width td{padding-right:1em;}
+article.main .asides .restricted-width tbody th,article.main .asides .restricted-width tbody td,article.main .asides .restricted-width tfoot th,article.main .asides .restricted-width tfoot td{border-top:solid 1px #000000;}
+article.main .asides .restricted-width th:first-child,article.main .asides .restricted-width td:first-child{padding-left:0;}
+article.main .asides .restricted-width th:last-child,article.main .asides .restricted-width td:last-child{padding-right:0;}
+article.main .asides .restricted-width tbody tr:nth-child(odd) th,article.main .asides .restricted-width tbody tr:nth-child(odd) td{background:rgba(0, 0, 0, 0.035);}
+article.main .asides aside.sidebar-1{background-color:#dddddd;}
+article.main .asides aside.sidebar-2{background-color:#dddddd;}
+article.main .asides-background{position:absolute;background-color:#dddddd;height:100%;background-image:url("/images/sitting-pencil-2.png");background-position:bottom right;background-repeat:no-repeat;}
+body>footer{padding-bottom:20px;}body>footer ul,body>footer ol,body>footer dl,body>footer dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+body>footer li ul,body>footer li ol,body>footer ul ul,body>footer ol ol{top:0;margin-top:0;margin-bottom:0;}
+body>footer li h1,body>footer li h2,body>footer li h3,body>footer li h4,body>footer li h5,body>footer li h6,body>footer li p{top:0;}
+body>footer dd{margin-bottom:1em;}
+body>footer ul.breadcrumb{display:inline;list-style:none;margin:0;}body>footer ul.breadcrumb li{display:inline-block;}body>footer ul.breadcrumb li a{text-decoration:none;font-weight:bold;color:white;}
+body>footer ul.breadcrumb li :after{content:" > ";}
+body>footer dt{font-weight:bold;}
+body>footer dd{margin-left:2em;}
+body>footer ul,body>footer ol{margin-left:2em;}
+body>footer ul ul,body>footer ol ol{margin-left:1.5em;}
+body>footer ul,body>footer ul li{list-style:disc outside;}
+body>footer ol,body>footer ol li{list-style:decimal outside;}
+body>footer b,body>footer strong{font-weight:bold;}
+body>footer cite,body>footer dfn,body>footer em,body>footer i{font-style:italic;}
+body>footer code,body>footer kbd,body>footer samp,body>footer pre,body>footer tt,body>footer var{font-family:Monospace,mono-space,monospace;}
+body>footer pre{white-space:pre;}
+body>footer del{text-decoration:line-through;}
+body>footer mark{background:rgba(255, 255, 0, 0.4);padding:0 .25em;}
+body>footer ins{color:#f00;}
+body>footer small,body>footer sup,body>footer sub{font-size:80%;}
+body>footer big{font-size:125%;line-height:80%;}
+body>footer abbr,body>footer acronym{font-size:85%;text-transform:uppercase;letter-spacing:.1em;}
+body>footer abbr[title],body>footer acronym[title],body>footer dfn[title]{border-bottom:1px dotted #000000;cursor:help;}
+body>footer sup,body>footer sub{line-height:0;}
+body>footer sup{vertical-align:super;}
+body>footer sub{vertical-align:sub;}
+body>footer q{padding-right:1em;}body>footer q:before{content:"\201C";}
+body>footer q:after{content:"\201D";}
+body>footer blockquote.full,body>footer figure,body>footer pre{background-color:white;border:1px solid #cccccc;padding:0.25em;}
+body>footer table{border-collapse:collapse;border-top:solid 3px #000000;position:relative;}body>footer table caption,body>footer table th{text-align:left;}
+body>footer th,body>footer td{padding-right:1em;}
+body>footer tbody th,body>footer tbody td,body>footer tfoot th,body>footer tfoot td{border-top:solid 1px #000000;}
+body>footer th:first-child,body>footer td:first-child{padding-left:0;}
+body>footer th:last-child,body>footer td:last-child{padding-right:0;}
+body>footer tbody tr:nth-child(odd) th,body>footer tbody tr:nth-child(odd) td{background:rgba(0, 0, 0, 0.035);}
+footer .etc{color:#4d4d4d;}footer .etc a{color:#4d4d4d;}
+footer .copyright{font-size:10px;color:#666666;}footer .copyright a{color:#ffbadd;}
+blockquote{font-family:Helvetica,Arial,sans-serif;}
+.debug-only{display:none;}
+code.info{display:none;}
+nav.page-menu{position:absolute;right:3px;top:0px;}nav.page-menu a{line-height:32px;vertical-align:top;}
+nav.page-menu .font-size{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -33px 0;}
+nav.page-menu .font-size:hover,nav.page-menu .font-size-button{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -99px 0;}
+nav.page-menu .flip-theme:hover,nav.page-menu .flip-theme-button{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -198px 0;}
+nav.page-menu .flip-theme{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -231px 0;}
+nav.page-menu fieldset.search button,nav.page-menu .search-base{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -132px 0;}
+nav.page-menu fieldset.search button:hover,nav.page-menu .search-button{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -165px 0;}
+nav.page-menu .gears-button{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat 0 0;}
+nav.page-menu .gears{display:inline-block;border:0;padding:0;width:32px;height:32px;background:transparent url('/images/buttons/top-edge.png') no-repeat -66px 0;}
+body article .asides fieldset .email-clear{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat -325px 0;}
+body article .asides fieldset .facebook-logo{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat -130px 0;}
+body article .asides fieldset .google-logo{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat -260px 0;}
+body article .asides fieldset .linked-in{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat -65px 0;}
+body article .asides fieldset .rss-clear{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat -195px 0;}
+body article .asides fieldset .twitter-bird{display:inline-block;width:64px;height:64px;background:transparent url('/images/buttons/site.png') no-repeat 0 0;}
+body article .asides fieldset.search{position:relative;padding:2px 0;margin-top:1em;overflow:visible;zoom:1;}body article .asides fieldset.search:before,body article .asides fieldset.search:after{content:"\0020";display:block;height:0;overflow:hidden;}
+body article .asides fieldset.search:after{clear:both;}
+body article .asides fieldset.search input{display:block;float:left;font-size:13px;margin-top:4px;padding:2px 3px 2px 3px;}
+body article .asides fieldset.search button{display:block;float:left;border:0;width:32px;height:32px;background:url('/images/buttons/top-edge.png') no-repeat -132px 0;}
+body article .asides fieldset.search button:hover{width:32px;height:32px;background:url('/images/buttons/top-edge.png') no-repeat -165px 0;}

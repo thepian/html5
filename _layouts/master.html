@@ -14,17 +14,24 @@
   <link rel="stylesheet/less" type="text/css" href="/css/twothirds.less" media="screen" title="flawless_css"/>
 {% endcase %}
 
-{% unless page.no_themes %}
-  <link rel="stylesheet/less" type="text/css" href="/css/pale_serif.less" media="screen" title="pale_serif_css" alternate="Pale Serif">
-  <link rel="stylesheet/less" type="text/css" href="/css/night_sans.less" media="screen" title="night_sans_css" alternate="Night Sans">
-  <link rel="stylesheet/less" type="text/css" href="/css/twothirds/demo_theme.less" media="screen" title="demo_css" alternate="Demo Theme">
-{% endunless %}
 	<link rel="stylesheet" type="text/css" href="/css/jScrollPane.css">
 
 {% case page.flawless  %}
 {% when 'production' %}
+
+	{% unless page.no_themes %}
+	  <link rel="stylesheet" type="text/css" href="/css/pale_serif.css" media="screen" title="Pale Serif">
+	  <link rel="stylesheet" type="text/css" href="/css/night_sans.css" media="screen" title="Night Sans">
+	{% endunless %}
+
   {% include flawless_production.html %}
 {% when 'development' %}
+
+	{% unless page.no_themes %}
+	  <link rel="stylesheet/less" type="text/css" href="/css/pale_serif.less" media="screen" title="pale_serif_css" alternate="Pale Serif">
+	  <link rel="stylesheet/less" type="text/css" href="/css/night_sans.less" media="screen" title="night_sans_css" alternate="Night Sans">
+	  <link rel="stylesheet/less" type="text/css" href="/css/twothirds/demo_theme.less" media="screen" title="demo_css" alternate="Demo Theme">
+	{% endunless %}
   {% include flawless_development.html %}
 {% endcase %}
 
