@@ -1,8 +1,11 @@
 ---
-layout: default-dev
+layout: master
+twothirds: development
+flawless: development
 title: Forms - Typography
 header_title: Forms - Typography
 ---
+{% include page_header.html %}
 <article class="main split-thirds">
 	<div class="left-double sections normal-read">
 		<div class="restricted-width four-columns">
@@ -229,3 +232,11 @@ h2. White space
 
 </div>
 </article>
+
+<footer>
+	{% include page_footer_etc.html %}
+	
+	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+
+	{% include demo-footer-copyright.html %}
+</footer>

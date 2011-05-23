@@ -1,7 +1,9 @@
 ---
-layout: default-dev
+layout: master
+twothirds: development
+flawless: development
 ---
-
+{% include page_header.html %}
 <article class="main split-thirds">
 	<div class="left-double sections normal-read">
 		<div class="restricted-width four-columns">
@@ -26,7 +28,7 @@ layout: default-dev
 		<div class="restricted-width">
 			
 		<aside>{% include demo-sidebar.html %}</aside>
-	</div>
+		</div>
 
 	<!-- Aside level navigation -->
 	<nav class="top-overhang">
@@ -38,3 +40,10 @@ layout: default-dev
 	</nav>
 	</div>
 </article>
+<footer>
+	{% include page_footer_etc.html %}
+	{% if show_offset_info %}
+	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+	{% endif %}
+	{% include demo-footer-copyright.html %}
+</footer>

@@ -60,9 +60,9 @@
 			</div>
 		</div>
 	</nav>
-	
+	{% if show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
-
+	{% endif %}
 	{% include demo-footer-copyright.html %}
 </footer>
 
@@ -99,5 +99,9 @@
   <script type="text/javascript" src="/js/jQuery/jquery.styleswitch.js"></script>
   <script type="text/javascript" src="/js/jScrollPane-1.2.3.min.js"></script>
   <script type="text/javascript" src="/js/site.js"></script>
+
+{% if dev_time_markup %}
+{% include dev_time_markup.html %}
+{% endif %}
 </body>
 </html>

@@ -1,35 +1,67 @@
 ---
-layout: master
+layout: blog
 guesswho: itsme
 ---
-<div class="width75" style="float: left;">
-    <div class="post">
-        <h1>
-            <a href='{{page.url}}'>{{page.title}}</a></h1>
+<article class="main split-thirds">
+	<div class="left-double sections normal-read">
+		<div class="restricted-width four-columns">
+			
+<section class="posts"> 
+
+		<div class="postbadge">
+			<label></label>
+			<time class="postdate">
+				<!-- 
+				<span class="postweekday">{{ page.date | date: "%w" }}</span>
+				-->
+				<span class="postmonth">{{ page.date | date: "%b" }}</span>
+				<span class="postday">{{ page.date | date: "%d" }}</span>
+			</time>
+			<address rel="location">{{ page.location }}</address>
+
+		</div>
+		
+        <h1><a href='{{page.url}}'>{{page.title}}</a></h1>
+
+			<div class="postinfo">
+			    <span class="credit">by <a href="{{page.authorurl}}">{{page.author}}</a> on <time>{{page.date | date_to_string}}</time></span>
+			    <span class="links"><a href="#comments" class="comments-link">135 Comments</a></span>    
+			</div>
+
             <div class="date">
-                {{page.date | date_to_string}}
-                {% for category in page.categories %}
-                <span class="category">{{category}}</span>
-                {% endfor %}
                 
                 <a class="retweet" href="{{site.url}}{{page.url}}">{{page.title}}</a>
             </div>
         {{ content }}
         
-        <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/zduck/embed.js"></script><noscript><a href="http://zduck.disqus.com/?url=ref">View comments.</a></noscript>
+{% if disqus_account %}
+        <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{{ disqus_account }}/embed.js"></script><noscript><a href="http://{{ disqus_account }}.disqus.com/?url=ref">View comments.</a></noscript>
     </div>
-</div>
-<div class="width25 sidebar">
-    <p style="margin-bottom: 1.5em;">
-      <a class="img" href="http://twitter.com/thezduck">
-        <img src="/images/twitter.gif" alt="Follow me on twitter!" /></a>
-    </p>
+{% endif %}
 
     <h3>
         Other Posts</h3>
     <ul>
         {% for post in site.related_posts limit:10 %}
-        <li><a href='{{ post.url }}'>{{ post.title }}</a></li>
+        <li>
+			<time class="postdate">
+				<!-- 
+				<span class="postweekday">{{ page.date | date: "%w" }}</span>
+				-->
+				<span class="postmonth">{{ post.date | date: "%b" }}</span>
+				<span class="postday">{{ post.date | date: "%d" }}</span>
+			</time>
+			<a href='{{ post.url }}'>{{ post.title }}</a>
+	</li>
         {% endfor %}
     </ul>
+
+</section>
+</div></div> 
+<div class="right-third asides-background"></div>
+<div class="right-third asides normal-read"><div class="restricted-width">
+<aside>{% include blog-sidebar.textile %}</aside>
 </div>
+<nav class="top-overhang"><ul><li><a class="active" href="#">Sidebar 1</a></li><li><a href="#">Sidebar 2</a></li><li><a href="#">Sidebar 3</a></li></ul></nav>
+</div>
+</article>

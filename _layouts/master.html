@@ -7,11 +7,27 @@
   <link rel="shortcut icon" type="image/x-icon" href="">
   <link rel="apple-touch-icon" href="">
 
+{% case page.twothirds  %}
+{% when 'production' %}
   <link rel="stylesheet" type="text/css" href="/css/twothirds.css" media="screen">
+{% when 'development' %}
+  <link rel="stylesheet/less" type="text/css" href="/css/twothirds.less" media="screen" title="flawless_css"/>
+{% endcase %}
 
+{% unless page.no_themes %}
+  <link rel="stylesheet/less" type="text/css" href="/css/pale_serif.less" media="screen" title="pale_serif_css" alternate="Pale Serif">
+  <link rel="stylesheet/less" type="text/css" href="/css/night_sans.less" media="screen" title="night_sans_css" alternate="Night Sans">
+  <link rel="stylesheet/less" type="text/css" href="/css/twothirds/demo_theme.less" media="screen" title="demo_css" alternate="Demo Theme">
+{% endunless %}
 	<link rel="stylesheet" type="text/css" href="/css/jScrollPane.css">
 
+{% case page.flawless  %}
+{% when 'production' %}
   {% include flawless_production.html %}
+{% when 'development' %}
+  {% include flawless_development.html %}
+{% endcase %}
+
   {% include css_browser_selector.html %}    
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
@@ -28,6 +44,28 @@
 
 {{ content }}
 
+{% unless page.no_top_edge %}
+<div class="top-edge">
+{% if top_edge_breadcrumb %}
+<ul class="breadcrumb">
+	<li class="home"><a href="/">HTML 5 Playground</a></li>
+	{% if page.folder %}<li class="folder"><a href="{{ page.folderurl }}">{{ page.folder }}</a></li>{% endif %}
+	<li><a href="." class="active">{{ page.header_title }}</a></li>
+</ul>
+{% endif %}
+
+{% include page_menu.html %}
+</div>
+{% endunless %}
+	
+{% unless page.no_top_edge %}
+<div class="bottom-edge">
+{% if bottom_swap_link %}
+{{ bottom_swap_link | textile }}
+{% endif %}	
+</div>
+{% endunless %}
+
   <!-- JavaScript -->
 
 {% if page.googlecdn %}
@@ -39,7 +77,9 @@
   <script src="/js/essentialjs.js"></script>
 
   <script type="text/javascript" src="/js/jQuery/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="/js/jQuery/jquery.cookie.js"></script>
   <script type="text/javascript" src="/js/jQuery/jquery.styleswitch.js"></script>
   <script type="text/javascript" src="/js/jScrollPane-1.2.3.min.js"></script>
+  <script type="text/javascript" src="/js/site.js"></script>
 </body>
 </html>

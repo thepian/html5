@@ -1,5 +1,7 @@
 ---
-layout: twothirds-dev
+layout: master
+twothirds: development
+flawless: development
 title: Two Thirds sizes
 header_title: Two Thirds
 author: Henrik Vendelbo
