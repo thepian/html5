@@ -146,3 +146,16 @@
     tbody tr:nth-child(odd) td			{ background: @odd-background; }
 }
 
+// .regular_blob_theme(#333, #F4F4F4, #DEDEDE)
+.regular_blob_theme(@color, @blob-background, @border-color) {
+    blockquote {
+        color: @color;
+        background-color: @blob-background;
+        border: 1px solid @border-color;
+        padding: 3px 22px 3px 22px;
+        margin: 1.8em 1.5em 1.8em 0;
+        .css3_box_shadow2(2px, 3px, 5px, 0px, @border-color);
+        .css3_border_radius2(16px,30px);
+    }
+}
+

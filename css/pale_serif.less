@@ -157,6 +157,8 @@ article.main {
     color: @article_color;
     background-color: @article_background_color;
     
+    .regular_blob_theme(#333, #F4F4F4, #DEDEDE);         
+
     .sections {
         
         header, footer, section {
@@ -164,7 +166,7 @@ article.main {
             .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-            .regular_table_theme(@table-border-color,@table-odd-background);            
+            .regular_table_theme(@table-border-color,@table-odd-background);   
 
             .postbadge {
                 .post_badge();

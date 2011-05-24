@@ -34,7 +34,7 @@ h4. Subtitle &mdash; h4
 
 h5. Subtitle &mdash; h5
 
-{% include lorem_ipsum.html %} 
+bq. {% include lorem_ipsum.html %} 
 
 h6. Subtitle &mdash; h6
 
