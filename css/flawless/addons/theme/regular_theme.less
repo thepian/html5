@@ -127,7 +127,7 @@
 .regular_table_theme(@border-color: #000,@odd-background: rgba(0, 0, 0, 0.035)) {
     
     table	{ 
-        border-collapse: collapse; border-top: solid 3px @border-color; position: relative; 
+        border-collapse: collapse; border-top: solid 3px @border-color; position: relative;  
         
         caption, th {
             text-align: left;
@@ -157,5 +157,54 @@
         .css3_box_shadow2(2px, 3px, 5px, 0px, @border-color);
         .css3_border_radius2(16px,30px);
     }
+}
+
+.regular_quotes_theme(@quote-border-color,@shadow-color, @left-gap) {
+    
+    @border-left: @left-gap / 8;
+    @quote-left: @left-gap / 4;
+    
+    blockquote {
+        display: block;
+        position: relative; 
+        zoom:1;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: @left-gap;
+        border-left: @border-left solid @quote-border-color;
+        text-shadow: 0 1px 1px @shadow-color;
+        
+        &:before {
+            position:absolute;
+            top: -15px;
+            left: @quote-left;
+            height: 0;
+            content: "\201f"; // other possible quote chars: 201C 201D;
+            font-size: 50px;
+            font-family: "Times New Roman", Times, serif;
+            color: white;
+        }
+    } 
+
+    /*
+    blockquote {
+    background:#f9f9f9;
+    border-left:10px solid #ccc;
+    margin:1.5em 10px;
+    padding:.5em 10px;
+    quotes:"\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+    color:#ccc;
+    content:open-quote;
+    font-size:2em;
+    line-height:.1em;
+    margin-right:.25em;
+    vertical-align:-.4em;
+    }
+    blockquote p {
+    display:inline;
+    }       
+    */
 }
 

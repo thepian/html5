@@ -45,6 +45,7 @@
 @regular_anchor_hover_color: #036;
 @figure-background-color: white;
 @figure-border: 1px solid #ccc;
+@shadow-color: #999;
 
 /**
  * Specific parameters
@@ -134,6 +135,10 @@ body {
 	
     .theme_external_link(2px, "/images/external-http.png", 12px, 0px, right);
     .theme_external_email(2px, "/images/external-http.png", 12px, 0px, right);
+    
+    h1,h2 {
+        text-shadow: 0 1px 1px @shadow-color;
+    }
 }
 
 body > header {
@@ -157,7 +162,9 @@ article.main {
     color: @article_color;
     background-color: @article_background_color;
     
-    .regular_blob_theme(#333, #F4F4F4, #DEDEDE);         
+    //.regular_blob_theme(#333, #F4F4F4, #DEDEDE); 
+    .regular_quotes_theme(#e0e0e0,@shadow-color,40px);
+    
 
     .sections {
         
@@ -226,7 +233,9 @@ body > footer {
     .regular_list_theme();
     .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
     .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-    .regular_table_theme(@table-border-color,@table-odd-background);            
+    .regular_table_theme(@table-border-color,@table-odd-background);          
+    
+    background: url("/images/footer.png") no-repeat scroll 50% 0% transparent;  
 } 
 
 footer .etc {
