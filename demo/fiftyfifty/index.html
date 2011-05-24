@@ -62,7 +62,7 @@ category:
 	                {% endfor %}
 
 	                <a class="retweet" href="{{site.url}}{{page.url}}">{{page.title}}</a>
-					<p>{% include lorem_ipsum.html %}</p>
+					<p>{{ site.lorem-ipsum | textilize }}</p>
 				</li>
 					
 				<li></li>	
@@ -100,10 +100,10 @@ category:
 		<aside class="sidebar-1">
 			Aside (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 
-			{% include lorem_ipsum.html %}
+			{{ site.lorem-ipsum | textilize }}
 		</aside>
 		<aside class="sidebar-2">
-			{% include lorem_ipsum.html %}
+			{{ site.lorem-ipsum | textilize }}
 		</aside>
 	</div>
 
@@ -122,19 +122,19 @@ category:
 	<nav class="etc split-halves">
 		<div class="left-third">
 			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
+				<section>{{ site.lorem-ipsum | textilize }}</section>
 			</div>
 		</div>
 
 		<div class="middle-third">
 			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
+				<section>{{ site.lorem-ipsum | textilize }}</section>
 			</div>
 		</div>
 
 		<div class="right-third">
 			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
+				<section>{{ site.lorem-ipsum | textilize }}</section>
 			</div>
 		</div>
 	</nav>

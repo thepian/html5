@@ -18,43 +18,43 @@ header_title: Baseline - Typography
 
 h1. Title &mdash; h1
 
-{% include lorem_ipsum.html %} 
+{{ site.lorem-ipsum | textilize }} 
 
 h2. Subtitle &mdash; h2
 
-{% include ut_wisi_enim.html %}
+{{ site.ut-wisi-enim | textilize }}
 
 h3. Subtitle &mdash; h3
 
-{% include lorem_ipsum.html %} 
+{{ site.lorem-ipsum | textilize }} 
 
 h4. Subtitle &mdash; h4
 
-{% include ut_wisi_enim.html %}
+{{ site.ut-wisi-enim | textilize }}
 
 h5. Subtitle &mdash; h5
 
-bq. {% include lorem_ipsum.html %} 
+bq. {{ site.lorem-ipsum | textilize }} 
 
 h6. Subtitle &mdash; h6
 
-{% include ut_wisi_enim.html %}
+{{ site.ut-wisi-enim | textilize }}
 
 * List item 01
 * List item 02
 * List item 03
 
-{% include lorem_ipsum.html %} 
+{{ site.lorem-ipsum | textilize }} 
 
 <blockquote cite="http://www.projeturbain.com">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 </blockquote>
 
-{% include ut_wisi_enim.html %}
+{{ site.ut-wisi-enim | textilize }}
 
 <hr>
 
-{% include lorem_ipsum.html %} 
+{{ site.lorem-ipsum | textilize }} 
 	
 </section>
 

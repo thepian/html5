@@ -53,7 +53,7 @@
 		<div class="left-third">
 			<div class="restricted-width">
 				<section>
-					{% include lorem_ipsum.html %}
+					{{ site.lorem-ipsum | textilize }}
 
 					<ul>
 						<li class="grid-baseline"><a href="" rel="Pale Serif" class="styleswitch">Pale Serif</a></li>
@@ -67,13 +67,13 @@
 
 		<div class="middle-third">
 			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
+				<section>{{ site.lorem-ipsum | textilize }}</section>
 			</div>
 		</div>
 
 		<div class="right-third">
 			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
+				<section>{{ site.lorem-ipsum | textilize }}</section>
 			</div>
 		</div>
 	</nav>
