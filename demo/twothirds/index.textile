@@ -2,6 +2,7 @@
 layout: master
 twothirds: development
 flawless: development
+bottom_swap_link: !str <a href="index-production">Development Version [swap]</a>
 title: Two Thirds sizes
 header_title: Two Thirds
 author: Henrik Vendelbo
@@ -22,8 +23,6 @@ category:
 	</section>
 	
 	</div></div>
-	
-	{% include page_menu.html %}
 </header>
 
 <article class="main split-thirds">
@@ -187,12 +186,5 @@ content with tables and figures styling.
 
 	{% include demo-footer-copyright.html %}
 </footer>
-
-<div class="top-edge">
-</div>
-	
-<div class="bottom-edge">
-	<a href="production">Development Version [swap]</a>
-</div>
 
 {% include dev_time_markup.html %}

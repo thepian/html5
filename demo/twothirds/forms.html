@@ -1,5 +1,6 @@
 ---
-layout: twothirds-forms
+layout: demo-default
+
 title: 52framework - The framework from the future, HTML5, CSS3, and more!
 header_title: Forms layout
 author: Henrik Vendelbo
@@ -21,27 +22,9 @@ category:
 		h2 {border-bottom:1px dashed #ccc; margin-top:15px;}
 	</style>
 
-<header class="split-thirds">
-	<div class="left-double"><div class="restricted-width">
-		
-	<h1>
-	{{ page.header_title }}
-	</h1>
-	<section>
-		<h2>- sub title</h2>
-	</section>
-	
-	</div></div>
-	
-	{% include page_menu.html %}
-</header>
-
-
-<article class="main split-thirds">
-	<div class="left-double sections">
-		<div class="restricted-width four-columns">
 		
 	<section>
+{% include test-include.textile %}
 		<h3>Layout principle</h3>
 		<p>On mobile iPad and Smartphones the layout will be tailored to landscape 1024 pixels like the ipad and scale in portrait and other resolutions.</p>	
 
@@ -174,37 +157,3 @@ category:
 			</blockquote>
 		</div>
 	</div>
-</article>
-
-
-<footer>
-	<nav class="etc split-thirds">
-		<div class="left-third">
-			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
-			</div>
-		</div>
-
-		<div class="middle-third">
-			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
-			</div>
-		</div>
-
-		<div class="right-third">
-			<div class="restricted-width">
-				<section>{% include lorem_ipsum.html %}</section>
-			</div>
-		</div>
-	</nav>
-	
-	{% include demo-footer-copyright.html %}
-</footer>
-
-<div class="top-edge">
-</div>
-	
-<div class="bottom-edge">
-	<a href="production">Development Version [swap]</a>
-</div>
-

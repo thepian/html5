@@ -1,9 +1,17 @@
 ---
 layout: master
 twothirds: production
-flawless: development
+flawless: production
 guesswho: itsme
 ---
+<header class="split-thirds">
+	<div class="left-double"><div class="restricted-width">
+
+	<h1>{{ page.header_title }}</h1>
+	
+	</div></div>
+</header>
+
 <article class="main split-thirds">
 	<div class="left-double sections normal-read">
 		<div class="restricted-width four-columns">
@@ -79,5 +87,55 @@ guesswho: itsme
 	</div>
 </article>
 
+<footer>
+	<nav class="etc split-thirds normal-read">
+		<div class="left-third">
+			<div class="restricted-width">
+				<section>
+					<ul class="breadcrumb">
+					    <li class="home"><a href="/">HTML 5 Playground</a></li>
+						{% if page.folder %}
+					    <li class="folder"><a href="{{ page.folderurl }}">{{ page.folder }}</a></li>
+						{% endif %}
+					    <li><a href="." class="active">{{ page.header_title }}</a></li>
+					</ul>
 
+					<h2>Estimate a Translation</h2>
+					<h2>On A Quest</h2>
+					<h2>Personal Blog Entries</h2>
+					<p><br><br><br> </p>
+			</div>
+		</div>
+
+		<div class="middle-third">
+			<div class="restricted-width">
+				<section>
+					<h2>About Fresh Translation</h2>
+					<p>
+					Fresh Translation is a newly started company founded by Caterine Apruzzese and its aim is to provide a translation service that is accessible and tailored to our customers' specific needs. Originally from Venezuela, I lived and studied in the city of Oporto in Portugal for ten years and in 2007 I moved to London to complete my education.
+</p><p>
+Before running my own translation business, I was working as an in-house translator and a marketing and consumer researcher for a Global company based in London. 
+
+					<a href="/more/">More ...</a>
+</p>
+				</section>
+			</div>
+		</div>
+
+		<div class="right-third">
+			<div class="restricted-width">
+				<section>
+{% for post in site.posts %}
+<p>
+  <a href="{{ post.url }}">{{ post.title }}</a>
+  <time>{{ site.time }}</time>
+</p>
+{% endfor %}
+				</section>
+			</div>
+		</div>
+	</nav>
+	
+{% include blog-footer-copyright.textile %}
+</footer>
 
