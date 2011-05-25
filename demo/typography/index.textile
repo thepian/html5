@@ -239,9 +239,11 @@ h2. White space
 </article>
 
 <footer>
-	{% include page_footer_etc.html %}
+	{% include demo-footer-etc.html %}
 	
+	{% if show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+	{% endif %}
 
 	{% include demo-footer-copyright.html %}
 </footer>

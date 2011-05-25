@@ -25,6 +25,7 @@
 
 @article_aside1_height: 250px;
 @article_aside2_height: 250px;
+@etc_height: 275px;
 
 
 
@@ -154,6 +155,12 @@ nav.top-overhang {
 	.nav_text_color(black, black, black);
 }
 
+section, aside {
+    
+    .normal_list_rhythm();
+    .regular_list_theme();
+}
+
 article.main {
 
     min-height:@article_aside1_height + @article_aside2_height;
@@ -169,8 +176,6 @@ article.main {
     .sections {
         
         header, footer, section {
-            .normal_list_rhythm();
-            .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
             .regular_table_theme(@table-border-color,@table-odd-background);   
@@ -197,8 +202,6 @@ article.main {
         background-color: @asides_background_color;
 
         .restricted-width {
-            .normal_list_rhythm();
-            .regular_list_theme();
             .regular_inline_flow(@asides_mark_background, @code-family, @asides_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
             .regular_table_theme(@table-border-color,@table-odd-background);            
@@ -229,8 +232,6 @@ body > footer {
     
     padding-bottom: @bottom-edge-height;
     
-    .normal_list_rhythm();
-    .regular_list_theme();
     .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
     .regular_figure_theme(@article_figure_background_color,@article_figure_border);
     .regular_table_theme(@table-border-color,@table-odd-background);          
@@ -239,11 +240,22 @@ body > footer {
 } 
 
 footer .etc {
+    min-height: @etc_height;
     
     color: @etc_color;
 
+    section {
+        padding-top: 10px;
+    }
+    
     a {
         color: @etc_color;
+    }
+    .posts h6 a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: white;
     }
 }
 
