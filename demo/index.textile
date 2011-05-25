@@ -2,11 +2,52 @@
 layout: demo-default
 title: Demo Overview
 header_title: Demo Overview
+wrap-section: yes
 ---
+h2. Page Layouts
+
+- "Two Thirds":/demo/twothirds/ := Appropriate for Articles,Blogs,News. Divides the page into thirds. 
+	Main content is place in the left two thirds with sidebars in the right third.
+	Content can also be divided in three equal columns.
+	* <a href="/demo/twothirds/themes/">Themes</a>
+	* <a href="/demo/twothirds/forms/">Forms</a>
+	* <a href="/demo/twothirds/post1/">Post 1</a>
+	* <a href="/demo/twothirds/production/">Production</a>
+	
+- "Fifty Fifty":/demo/fiftyfifty/ := 	Appropriate for Visual Spreads. Divides the page into two halves.
+		Either or both sides can be used for the main content.
+
+h2. Typography
+
+- "Common Typography":/demo/typography/ := How the common typography looks.
+- "HTML tag default styling":/demo/typography/default/ := How to write HTML using the default styling.
+- "Forms Typography":/demo/typography/forms/ := How the forms variations of typography looks.
+- "Tables Typography":/demo/typography/tables/ := How the tables are styled.
+
+h2. Graphics
+
+- Animated Images := "Moving ATAT":/demo/animations/atat.html
+     "Rotating Space Background":/demo/animations/space.html
+
+
+h2. Web Apps
+
+- "Slablet - GitHub":http://github.com/fellowshiptech/slablet :=  * <a href="/demo/iPad/light">Template - Light chrome</a>
+ * <a href="/demo/iPad/dark">Template - Dark chrome</a>
+ * <a href="/demo/iPad/mixed">Template - Mixed chrome</a>
+
+- iPad := <a href="/demo/ipad-css-layout/">iPad CSS Layout Landscape/Portrait Modes</a>
+
+
+
+
+h2. Basic Technologies
+
+"Width Test":/demo/techs/widthtest.html
+
+"Worker Test":/demo/techs/workertest.html
 "Fluid Theme Demo":/demo/fluid/
 "Two-thirds demo":/demo/twothirds/
-
-"Fifty-fifty demo":/demo/5050/
 
 "Slablet demo":/demo/slablet/
 
@@ -18,16 +59,4 @@ header_title: Demo Overview
 
 "Rotating Space Background":/demo/animations/space.html
 
-h1. Basic Technologies
 
-"Width Test":/demo/techs/widthtest.html
-
-"Worker Test":/demo/techs/workertest.html
-
-h1.	Slablet - Tablet UI
-
-Code repository at <a href="http://github.com/fellowshiptech/slablet">GitHub</a>
-
-** "Template - Light chrome":/demo/light
-** "Template - Dark chrome":/demo/dark
-** "Template - Mixed chrome":/demo/mixed

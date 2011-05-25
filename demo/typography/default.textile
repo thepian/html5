@@ -2,8 +2,8 @@
 layout: demo-default
 title: HTML Default Styling
 header_title: HTML Default Styling
+wrap-section: yes
 ---
-<section>
 Within the areas of the page placed by the layout rules you will be inserting your content.
 The content will be either a visual spread like a logo or an advertisement, a textual spread
 such as a introduction, quote or blog post, or a form for registration, contact or basket checkout.
@@ -80,4 +80,3 @@ OS X
 * &lt;button&gt; height=18px
 * &lt;input radio&gt; height=13px width=12px
 * &lt;input checkbox&gt; height=12px width=12px
-</section>

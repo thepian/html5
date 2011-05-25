@@ -9,8 +9,9 @@ flawless: development
 	<div class="left-double sections normal-read">
 		<div class="restricted-width four-columns">
 		
-
+{% if page.wrap-section %}<section>{% endif %}
 {{ content }}
+{% if page.wrap-section %}</section>{% endif %}
 
 {% include article-nav.html %}
 	</div></div> <!-- right-third and restricted-width -->

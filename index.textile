@@ -1,0 +1,28 @@
+---
+layout: frontpage
+rooturi: http://essentialjs.com
+---
+
+h2. Page Layouts
+
+- "Two Thirds":/demo/twothirds/ := Appropriate for Articles,Blogs,News. Divides the page into thirds. 
+	Main content is place in the left two thirds with sidebars in the right third.
+	Content can also be divided in three equal columns.
+	<a href="/demo/twothirds/themes/">Themes</a>
+- "Fifty Fifty":/demo/fiftyfifty/ := 	Appropriate for Visual Spreads. Divides the page into two halves.
+		Either or both sides can be used for the main content.
+
+
+h2. Why HTML5
+
+JavaScript must be turned on in IE.
+	
+While I understand this decision, I also think it’s a mistake. Three core technologies make the Web work: HTML, CSS and JavaScript. All desktop browsers support them (to some degree), so if any one of them off is disabled the user will have to expect a degraded experience. JavaScript is now fundamental to the user experience and while we should support users who turn off JavaScript, or have it turned off for them and have no chance to turn it on again as they don’t have the right to do so, I question just how far we should support them.
+
+Why Using JavaScript Makes Sense
+
+Yahoo gives compelling evidence that less than 1.5% of its users turn off JavaScript. My own research into this, ably assisted by Greig Daines at eConversions, puts the figure below 0.5% (based on millions of visitors to a UK retail website).
+
+Whilst it’s true that JavaScript should be separated from a site’s content, design and structure the reality is no longer black and white. I strongly believe that the benefits and opportunities HTML5 brings, together with related technologies such as CSS3 and media queries (both of which sometimes rely on JavaScript for cross-browser compatibility), is more than enough reason to use JavaScript to ‘force’ new elements to work in Internet Explorer. I am a passionate advocate for standards-based design that doesn’t rely on JavaScript; HTML5 is the one structural exception.
+	
+http://www.smashingmagazine.com/2011/02/22/using-html5-to-transform-wordpress-twentyten-theme/
