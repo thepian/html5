@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://github.com/tobi/liquid/wiki/liquid-for-designers -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script async="" src="./Liquid for Designers - GitHub_files/rum.js"></script><script>var NREUMQ=[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script>
+        <title>Liquid for Designers - GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+
+    <link href="./Liquid for Designers - GitHub_files/bundle_github.css" media="screen" rel="stylesheet" type="text/css">
+    
+
+    <script type="text/javascript">
+      if (typeof console == "undefined" || typeof console.log == "undefined")
+        console = { log: function() {} }
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      var GitHub = {
+        assetHost: 'https://d3nwyuy0nl342s.cloudfront.net'
+      }
+      var github_user = 'freshtranslation'
+      
+    </script>
+    <script src="./Liquid for Designers - GitHub_files/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="./Liquid for Designers - GitHub_files/bundle_github.js" type="text/javascript"></script>
+
+
+    
+    <script type="text/javascript" charset="utf-8">
+      GitHub.spy({
+        repo: "tobi/liquid"
+      })
+    </script>
+
+    
+  <link href="https://github.com/tobi/liquid/commits/master.atom" rel="alternate" title="Recent Commits to liquid:master" type="application/atom+xml">
+  <script src="./Liquid for Designers - GitHub_files/bundle_wiki.js" type="text/javascript"></script>
+
+  <script src="./Liquid for Designers - GitHub_files/MathJax.js" type="text/javascript">
+    if (window.location.protocol == "https:") {
+      MathJax.OutputJax.fontDir = "https://" + document.location.host + "/assets/MathJax/fonts"
+    } else {
+      MathJax.OutputJax.fontDir = "http://" + document.location.host + "/assets/MathJax/fonts"
+    }
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"]
+    })
+  </script><style type="text/css">#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+</style>
+
+        <meta name="description" content="liquid - Liquid markup language. Safe, customer facing template language for flexible web apps. 
+">
+    <script type="text/javascript">
+      GitHub.nameWithOwner = GitHub.nameWithOwner || "tobi/liquid";
+      GitHub.currentRef = 'master';
+      GitHub.commitSHA = "bc55c4d3482b577accb42939d4b6d178ad061f76";
+      GitHub.currentPath = '';
+      GitHub.masterBranch = "master";
+
+      
+    </script>
+  
+
+        <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3769691-2']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.setAttribute('async', 'true');
+        document.documentElement.firstChild.appendChild(ga);
+      })();
+    </script><script src="./Liquid for Designers - GitHub_files/ga.js" async="true"></script>
+
+    
+  </head>
+
+  
+
+  <body class="logged_in   env-production webkit osx usingMouse">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="subnavd" id="main">
+      <div id="header" class="true">
+        
+          <a class="logo boring" href="https://github.com/">
+            <img alt="github" class="default" src="./Liquid for Designers - GitHub_files/logov3.png">
+            <!--[if (gt IE 8)|!(IE)]><!-->
+            <img alt="github" class="hover" src="./Liquid for Designers - GitHub_files/logov3-hover.png">
+            <!--<![endif]-->
+          </a>
+        
+        
+          
+
+
+
+
+
+  
+    <div class="userbox">
+      <div class="avatarname">
+        <a href="https://github.com/freshtranslation"><img src="./Liquid for Designers - GitHub_files/d6fc25239ca2d8612b47077a4e4e2ce3" alt="" width="20" height="20"></a>
+        <a href="https://github.com/freshtranslation" class="name">freshtranslation</a>
+
+        
+        
+          <a href="https://github.com/inbox/notifications" class="unread_count notifications_count new tooltipped downwards js-notification-count" title="Unread Notifications">7</a>
+        
+      </div>
+      <ul class="usernav">
+        <li><a href="https://github.com/">Dashboard</a></li>
+        <li>
+          
+          <a href="https://github.com/inbox">Inbox</a>
+          <a href="https://github.com/inbox" class="unread_count ">0</a>
+        </li>
+        <li><a href="https://github.com/account">Account Settings</a></li>
+                <li><a href="https://github.com/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.userbox -->
+  
+
+
+        
+        <div class="topsearch">
+  
+    <form action="https://github.com/search" id="top_search_form" method="get">
+      <a href="https://github.com/search" class="advanced-search tooltipped downwards" title="Advanced Search">Advanced Search</a>
+      <input type="search" class="search my_repos_autocompleter placeholder ac_input" name="q" results="5" placeholder="Search…" autocomplete="off"> <input type="submit" value="Search" class="button">
+      <input type="hidden" name="type" value="Everything">
+      <input type="hidden" name="repo" value="">
+      <input type="hidden" name="langOverride" value="">
+      <input type="hidden" name="start_value" value="1">
+    </form>
+    <ul class="nav">
+      <li><a href="https://github.com/explore">Explore GitHub</a></li>
+      <li><a href="https://gist.github.com/">Gist</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="http://help.github.com/">Help</a></li>
+    </ul>
+  
+</div>
+
+      </div>
+
+      
+      
+        
+    <div class="site">
+      <div class="pagehead repohead vis-public   shortdetails instapaper_ignore readability-menu">
+
+      
+
+      <div class="title-actions-bar">
+        <h1>
+          <a href="https://github.com/tobi">tobi</a> / <strong><a href="https://github.com/tobi/liquid">liquid</a></strong>
+          
+          
+        </h1>
+
+        
+    <ul class="actions">
+      
+
+      
+        <li class="for-owner" style="display:none"><a href="https://github.com/tobi/liquid/admin" class="minibutton btn-admin "><span><span class="icon"></span>Admin</span></a></li>
+        <li>
+          <a href="https://github.com/tobi/liquid/toggle_watch" class="minibutton btn-watch " id="watch_button" onclick="var f = document.createElement(&#39;form&#39;); f.style.display = &#39;none&#39;; this.parentNode.appendChild(f); f.method = &#39;POST&#39;; f.action = this.href;var s = document.createElement(&#39;input&#39;); s.setAttribute(&#39;type&#39;, &#39;hidden&#39;); s.setAttribute(&#39;name&#39;, &#39;authenticity_token&#39;); s.setAttribute(&#39;value&#39;, &#39;490bc80811ea29d74af42d0bf2b0c49b194e7bc7&#39;); f.appendChild(s);f.submit();return false;" style=""><span><span class="icon"></span>Watch</span></a>
+          <a href="https://github.com/tobi/liquid/toggle_watch" class="minibutton btn-watch " id="unwatch_button" onclick="var f = document.createElement(&#39;form&#39;); f.style.display = &#39;none&#39;; this.parentNode.appendChild(f); f.method = &#39;POST&#39;; f.action = this.href;var s = document.createElement(&#39;input&#39;); s.setAttribute(&#39;type&#39;, &#39;hidden&#39;); s.setAttribute(&#39;name&#39;, &#39;authenticity_token&#39;); s.setAttribute(&#39;value&#39;, &#39;490bc80811ea29d74af42d0bf2b0c49b194e7bc7&#39;); f.appendChild(s);f.submit();return false;" style="display:none"><span><span class="icon"></span>Unwatch</span></a>
+        </li>
+        
+          
+            <li class="for-notforked" style=""><a href="https://github.com/tobi/liquid/fork" class="minibutton btn-fork " id="fork_button" onclick="var f = document.createElement(&#39;form&#39;); f.style.display = &#39;none&#39;; this.parentNode.appendChild(f); f.method = &#39;POST&#39;; f.action = this.href;var s = document.createElement(&#39;input&#39;); s.setAttribute(&#39;type&#39;, &#39;hidden&#39;); s.setAttribute(&#39;name&#39;, &#39;authenticity_token&#39;); s.setAttribute(&#39;value&#39;, &#39;490bc80811ea29d74af42d0bf2b0c49b194e7bc7&#39;); f.appendChild(s);f.submit();return false;"><span><span class="icon"></span>Fork</span></a></li>
+            <li class="for-hasfork" style="display:none"><a href="https://github.com/tobi/liquid/wiki/liquid-for-designers#" class="minibutton btn-fork " id="your_fork_button"><span><span class="icon"></span>Your Fork</span></a></li>
+          
+
+          <li id="pull_request_item" class="nspr" style="display:none"><a href="https://github.com/tobi/liquid/pull/new/master" class="minibutton btn-pull-request "><span><span class="icon"></span>Pull Request</span></a></li>
+        
+      
+      
+      <li class="repostats">
+        <ul class="repo-stats">
+          <li class="watchers"><a href="https://github.com/tobi/liquid/watchers" title="Watchers" class="tooltipped downwards">660</a></li>
+          <li class="forks"><a href="https://github.com/tobi/liquid/network" title="Forks" class="tooltipped downwards">77</a></li>
+        </ul>
+      </li>
+    </ul>
+
+      </div>
+
+        
+  <ul class="tabs">
+    <li><a href="https://github.com/tobi/liquid" highlight="repo_source">Source</a></li>
+    <li><a href="https://github.com/tobi/liquid/commits/master" highlight="repo_commits">Commits</a></li>
+    <li><a href="https://github.com/tobi/liquid/network" highlight="repo_network">Network</a></li>
+    <li><a href="https://github.com/tobi/liquid/pulls" highlight="repo_pulls">Pull Requests (11)</a></li>
+
+    
+
+    
+      
+      <li><a href="https://github.com/tobi/liquid/issues" highlight="issues">Issues (35)</a></li>
+    
+
+                <li><a href="https://github.com/tobi/liquid/wiki" class="selected" highlight="repo_wiki">Wiki (8)</a></li>
+        
+    <li><a href="https://github.com/tobi/liquid/graphs" highlight="repo_graphs">Graphs</a></li>
+
+    <li class="contextswitch nochoices">
+      <span class="toggle leftwards">
+        <em>Branch:</em>
+        <code>master</code>
+      </span>
+    </li>
+  </ul>
+
+  <div style="display:none" id="pl-description"><p><em class="placeholder">click here to add a description</em></p></div>
+  <div style="display:none" id="pl-homepage"><p><em class="placeholder">click here to add a homepage</em></p></div>
+
+  
+  
+  
+  
+  
+  
+  <div class="subnav-bar">
+  <ul>
+    <li><a href="https://github.com/tobi/liquid/wiki">Home</a></li>
+    <li><a href="https://github.com/tobi/liquid/wiki/_pages">Pages</a></li>
+    <li><a href="https://github.com/tobi/liquid/wiki/_history">Wiki History</a></li>
+    <li><a href="https://github.com/tobi/liquid/wiki/_access">Git Access</a></li>
+  </ul>
+</div>
+
+
+
+        
+
+        
+
+      </div><!-- /.pagehead -->
+
+      
+
+<div id="repos">
+    
+
+
+<script type="text/javascript">
+  GitHub.downloadRepo = '/tobi/liquid/archives/master'
+  GitHub.revType = "master"
+
+  GitHub.repoName = "liquid"
+  GitHub.controllerName = "wiki"
+  GitHub.actionName     = "show"
+  GitHub.currentAction  = "wiki#show"
+
+  
+    GitHub.loggedIn = true
+    GitHub.hasWriteAccess = false
+    GitHub.hasAdminAccess = false
+    GitHub.watchingRepo = false
+    GitHub.ignoredRepo = false
+    GitHub.hasForkOfRepo = ""
+    GitHub.hasForked = false
+  
+
+  
+</script>
+
+
+
+
+
+
+</div>
+<div class="flash-messages"></div>
+
+
+<div id="wiki-wrapper" class="page">
+<div id="head">
+  <h1 class="instapaper_title">Liquid for Designers</h1>
+  <ul class="actions readability-extra">
+        <li class="gollum-minibutton">
+      <a href="https://github.com/tobi/liquid/wiki/_new" id="minibutton-new-page">New Page</a>
+    </li>
+    <li class="gollum-minibutton"><a href="https://github.com/tobi/liquid/wiki/Liquid-for-Designers/_edit" class="action-edit-page">
+       Edit Page
+     </a></li>
+      <li class="gollum-minibutton"><a href="https://github.com/tobi/liquid/wiki/Liquid-for-Designers/_history" class="action-page-history">
+       Page History
+     </a></li>
+  </ul>
+</div>
+<div id="wiki-content">
+  <div class="wrap">
+  <div id="wiki-body" class="gollum-textile-content instapaper_body">
+    <div id="template">
+      <p>There are two types of markup in Liquid: Output and Tag.</p>
+<ul>
+<li>Output markup (which may resolve to text) is surrounded by</li>
+</ul><pre>{{ matched pairs of curly brackets (ie, braces) }}
+</pre>
+<ul>
+<li>Tag markup (which cannot resolve to text) is surrounded by</li>
+</ul><pre>{% matched pairs of curly brackets and percent signs %}
+</pre>
+<h1>Output</h1>
+<p>Here is a simple example of Output:</p>
+<pre>Hello {{name}}          
+Hello {{user.name}}
+Hello {{ 'tobi' }}
+</pre>
+<p><a name="filters"></a></p>
+<h2>Advanced output: Filters</h2>
+<p>Output markup takes filters.<br>
+Filters are simple methods.<br>
+The first parameter is always the output of the left side of the filter.<br>
+The return value of the filter will be the new left value when the next filter is run.<br>
+When there are no more filters, the template will receive the resulting string.</p>
+<pre>Hello {{ 'tobi' | upcase }}
+Hello tobi has {{ 'tobi' | size }} letters!
+Hello {{ '*tobi*' | textilize | upcase }}
+Hello {{ 'now' | date: "%Y %h" }}
+</pre>
+<h3>Standard Filters</h3>
+<ul>
+<li>
+<b>date</b> – reformat a date (<a href="http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012">syntax reference</a>)</li>
+	<li>
+<b>capitalize</b> – capitalize words in the input sentence</li>
+	<li>
+<b>downcase</b> – convert an input string to lowercase</li>
+	<li>
+<b>upcase</b> – convert an input string to uppercase</li>
+	<li>
+<b>first</b> – get the first element of the passed in array</li>
+	<li>
+<b>last</b> – get the last element of the passed in array</li>
+	<li>
+<b>join</b> – join elements of the array with certain character between them</li>
+	<li>
+<b>sort</b> – sort elements of the array</li>
+	<li>
+<b>map</b> – map/collect an array on a given property</li>
+	<li>
+<b>size</b> – return the size of an array or string</li>
+	<li>
+<b>escape</b> – escape a string</li>
+	<li>
+<b>escape_once</b> – returns an escaped version of html without affecting existing escaped entities</li>
+	<li>
+<b>strip_html</b> – strip html from string</li>
+	<li>
+<b>strip_newlines</b> – strip all newlines (\n) from string</li>
+	<li>
+<b>newline_to_br</b> – replace each newline (\n) with html break</li>
+	<li>
+<b>replace</b> – replace each occurrence <b>e.g.</b> {{ ‘foofoo’ | replace:‘foo’,‘bar’ }} #=&gt; ‘barbar’</li>
+	<li>
+<b>replace_first</b> – replace the first occurrence <b>e.g.</b> {{ ‘barbar’ | replace_first:‘bar’,‘foo’ }} #=&gt; ‘foobar’</li>
+	<li>
+<b>remove</b> – remove each occurrence <b>e.g.</b> {{ ‘foobarfoobar’ | remove:‘foo’ }} #=&gt; ‘barbar’</li>
+	<li>
+<b>remove_first</b> – remove the first occurrence <b>e.g.</b> {{ ‘barbar’ | remove_first:‘bar’ }} #=&gt; ‘bar’</li>
+	<li>
+<b>truncate</b> – truncate a string down to x characters</li>
+	<li>
+<b>truncatewords</b> – truncate a string down to x words</li>
+	<li>
+<b>prepend</b> – prepend a string <b>e.g.</b> {{ ‘bar’ | prepend:‘foo’ }} #=&gt; ‘foobar’</li>
+	<li>
+<b>append</b> – append a string <b>e.g.</b> {{ ‘foo’ | append:‘bar’ }} #=&gt; ‘foobar’</li>
+	<li>
+<b>minus</b> – subtraction <b>e.g</b>  {{ 4 | minus:2 }} #=&gt; 2</li>
+	<li>
+<b>plus</b> – addition <b>e.g</b>  {{ ‘1’ | plus:‘1’ }} #=&gt; ‘11’, {{ 1 | plus:1 }} #=&gt; 2</li>
+	<li>
+<b>times</b> – multiplication  <b>e.g</b>  {{ ‘foo’ | times:4 }} #=&gt; ‘foofoofoofoo’, {{ 5 | times:4 }} #=&gt; 20</li>
+	<li>
+<b>divided_by</b> – division <b>e.g</b> {{ 10 | divided_by:2 }} #=&gt; 5</li>
+</ul><h1>Tags</h1>
+<p>Tags are used for the logic in your template.<br>
+New tags are very easy to code, so I hope to get many contributions to the standard tag library after releasing this code.</p>
+<p>Here is a list of currently supported tags:</p>
+<ul>
+<li>
+<b>assign</b> – Assgins some value to a variable</li>
+	<li>
+<b>capture</b> – Block tag that captures text into a variable</li>
+	<li>
+<b>case</b> – Block tag, its the standard case…when block</li>
+	<li>
+<b>comment</b> – Block tag, comments out the text in the block</li>
+	<li>
+<b>cycle</b> – Cycle is usually used within a loop to alternate between values, like colors or <span class="caps">DOM</span> classes.</li>
+	<li>
+<b>for</b> – For loop</li>
+	<li>
+<b>if</b> – Standard if/else block</li>
+	<li>
+<b>include</b> – Includes another template, useful for partials</li>
+	<li>
+<b>unless</b> – Mirror of if statement</li>
+</ul><h2>Comments</h2>
+<p>Comment is the simplest tag.<br>
+It just swallows content.</p>
+<pre>We made 1 million dollars {% comment %} in losses {% endcomment %} this year
+</pre>
+<h2>If / Else</h2>
+<p><code>if / else</code> should be well known from any imaginable programming language.<br>
+Liquid allows you to write simple expressions in the <code>if</code> or <code>unless</code> (and optionally, <code>elsif</code> and <code>else</code>) clause:</p>
+<pre>{% if user %}
+  Hello {{ user.name }}
+{% endif %}
+
+{% if user.name == 'tobi' %}
+  Hello tobi
+{% elsif user.name == 'bob' %}
+  Hello bob
+{% endif %}
+
+{% if user.name == 'tobi' or user.name == 'bob' %}
+  Hello tobi or bob
+{% endif %}
+
+{% if user.name == 'bob' and user.age &gt; 45 %}
+  Hello old bob 
+{% endif %}
+
+{% if user.name != 'tobi' %} 
+  Hello non-tobi
+{% endif %}
+
+# Same as above
+{% unless user.name == 'tobi' %}
+  Hello non-tobi
+{% endunless %}
+
+# Check if the user has a credit card
+{% if user.creditcard != null %}
+   poor sob
+{% endif %}
+
+# Same as above 
+{% if user.creditcard %}
+   poor sob
+{% endif %}
+
+# Check for an empty array
+{% if user.payments == empty %}
+   you never paid ! 
+{% endif %}
+
+{% if user.age &gt; 18 %}
+   Login here
+{% else %}
+   Sorry, you are too young
+{% endif %}
+
+# array = 1,2,3
+{% if array contains 2 %} 
+   array includes 2
+{% endif %}
+
+# string = 'hello world' 
+{% if string contains 'hello' %} 
+   string includes 'hello'
+{% endif %}
+</pre>
+<h2>Case Statement</h2>
+<p>If you need more conditions, you can use the <code>case</code> statement:</p>
+<pre>{% case condition %} 
+{% when 1 %} 
+hit 1 
+{% when 2 or 3 %} 
+hit 2 or 3
+{% else %} 
+... else ... 
+{% endcase %} 
+</pre>
+<p><strong>Example:</strong></p>
+<pre>{% case template %}
+
+{% when 'label' %}
+     // {{ label.title }}
+{% when 'product' %}
+     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+{% else %}
+     // {{page_title}}
+{% endcase %}
+</pre>
+<h2>Cycle</h2>
+<p>Often you have to alternate between different colors or similar tasks.<br>
+Liquid has built-in support for such operations, using the <code>cycle</code> tag.</p>
+<pre>{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+{% cycle 'one', 'two', 'three' %} 
+
+will result in 
+
+one
+two
+three
+one
+</pre>
+<p>If no name is supplied for the cycle group,<br>
+then it’s assumed that multiple calls with the same parameters are one group.</p>
+<p>If you want to have total control over cycle groups, you can optionally specify the name of the group.<br>
+This can even be a variable.</p>
+
+<pre>{% cycle 'group 1': 'one', 'two', 'three' %} 
+{% cycle 'group 1': 'one', 'two', 'three' %} 
+{% cycle 'group 2': 'one', 'two', 'three' %} 
+{% cycle 'group 2': 'one', 'two', 'three' %} 
+
+will result in 
+
+one
+two 
+one
+two
+</pre>
+<h2>For loops</h2>
+<p>Liquid allows <code>for</code> loops over collections:</p>
+<pre>{% for item in array %} 
+  {{ item }}
+{% endfor %} 
+</pre>
+<p>During every <code>for</code> loop, the following helper variables are available for extra styling needs:</p>
+<pre>forloop.length      # =&gt; length of the entire for loop
+forloop.index       # =&gt; index of the current iteration 
+forloop.index0      # =&gt; index of the current iteration (zero based) 
+forloop.rindex      # =&gt; how many items are still left?
+forloop.rindex0     # =&gt; how many items are still left? (zero based)
+forloop.first       # =&gt; is this the first iteration?
+forloop.last        # =&gt; is this the last iternation? 
+</pre>
+<p>There are several attributes you can use to influence which items you receive in your loop</p>
+<p><strong>limit:int</strong> lets you restrict how many items you get.<br><strong>offset:int</strong> lets you start the collection with the nth item.</p>
+<pre># array = [1,2,3,4,5,6]
+{% for item in array limit:2 offset:2 %} 
+  {{ item }}
+{% endfor %} 
+# results in 3,4 
+</pre>
+<p>Reversing the loop</p>
+<pre>{% for item in collection reversed %} {{item}} {% endfor %}
+</pre>
+<p>Instead of looping over an existing collection, you can define a range of numbers to loop through.<br>
+The range can be defined by both literal and variable numbers:</p>
+<pre># if item.quantity is 4...
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+# results in 1,2,3,4
+</pre>
+<h2>Variable Assignment</h2>
+<p>You can store data in your own variables, to be used in output or other tags as desired.<br>
+The simplest way to create a variable is with the <code>assign</code> tag, which has a pretty straightforward syntax:</p>
+<pre>{% assign name = 'freestyle' %}
+
+{% for t in collections.tags %}{% if t == name %}
+  &lt;p&gt;Freestyle!&lt;/p&gt;
+{% endif %}{% endfor %}
+</pre>
+<p>Another way of doing this would be to assign <code>true / false</code> values to the variable:</p>
+<pre>{% assign freestyle = false %}
+
+{% for t in collections.tags %}{% if t == 'freestyle' %}
+  {% assign freestyle = true %}
+{% endif %}{% endfor %}
+
+{% if freestyle %}
+  &lt;p&gt;Freestyle!&lt;/p&gt;
+{% endif %}
+</pre>
+<p>If you want to combine a number of strings into a single string and save it to a variable, you can do that with the <code>capture</code> tag. This tag is a block which “captures” whatever is rendered inside it, then assigns the captured value to the given variable instead of rendering it to the screen.</p>
+<pre>  {% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
+
+  &lt;label for="{{ attribute_name }}"&gt;Color:&lt;/label&gt;
+  &lt;select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}"&gt;
+    &lt;option value="red"&gt;Red&lt;/option&gt;
+    &lt;option value="green"&gt;Green&lt;/option&gt;
+    &lt;option value="blue"&gt;Blue&lt;/option&gt;
+  &lt;/select&gt;
+</pre>
+    </div>
+  </div>
+  
+  
+  </div>
+
+</div>
+<div id="gollum-footer">
+  <p id="last-edit">
+        Last edited by jamesfoster, <abbr class="relatize relatized" title="2011-01-24 05:22:02">January 24, 2011</abbr>
+      </p>
+  <p id="delete-link">
+    <a href="https://github.com/tobi/liquid/wiki/Liquid-for-Designers" onclick="if (confirm(&#39;Are you sure you want to delete this page?&#39;)) { var f = document.createElement(&#39;form&#39;); f.style.display = &#39;none&#39;; this.parentNode.appendChild(f); f.method = &#39;POST&#39;; f.action = this.href;var m = document.createElement(&#39;input&#39;); m.setAttribute(&#39;type&#39;, &#39;hidden&#39;); m.setAttribute(&#39;name&#39;, &#39;_method&#39;); m.setAttribute(&#39;value&#39;, &#39;delete&#39;); f.appendChild(m);var s = document.createElement(&#39;input&#39;); s.setAttribute(&#39;type&#39;, &#39;hidden&#39;); s.setAttribute(&#39;name&#39;, &#39;authenticity_token&#39;); s.setAttribute(&#39;value&#39;, &#39;490bc80811ea29d74af42d0bf2b0c49b194e7bc7&#39;); f.appendChild(s);f.submit(); };return false;"><span>Delete this Page</span></a>
+  </p>
+</div>
+</div>
+
+
+    </div>
+  
+      
+    </div>
+
+    <div id="footer" class="clearfix">
+      <div class="site">
+        <div class="sponsor">
+          <a href="http://www.rackspace.com/" class="logo">
+            <img alt="Dedicated Server" height="36" src="./Liquid for Designers - GitHub_files/rackspace_logo.png" width="38">
+          </a>
+          Powered by the <a href="http://www.rackspace.com/">Dedicated
+          Servers</a> and<br> <a href="http://www.rackspacecloud.com/">Cloud
+          Computing</a> of Rackspace Hosting<span>®</span>
+        </div>
+
+        <ul class="links">
+          <li class="blog"><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://github.com/contact">Support</a></li>
+          <li><a href="https://github.com/training">Training</a></li>
+          <li><a href="http://jobs.github.com/">Job Board</a></li>
+          <li><a href="http://shop.github.com/">Shop</a></li>
+          <li><a href="https://github.com/contact">Contact</a></li>
+          <li><a href="http://developer.github.com/">API</a></li>
+          <li><a href="http://status.github.com/">Status</a></li>
+        </ul>
+        <ul class="sosueme">
+          <li class="main">© 2011 <span id="_rrt" title="0.08664s from fe4.rs.github.com">GitHub</span> Inc. All rights reserved.</li>
+          <li><a href="https://github.com/site/terms">Terms of Service</a></li>
+          <li><a href="https://github.com/site/privacy">Privacy</a></li>
+          <li><a href="https://github.com/security">Security</a></li>
+        </ul>
+      </div>
+    </div><!-- /#footer -->
+
+    <script>window._auth_token = "490bc80811ea29d74af42d0bf2b0c49b194e7bc7"</script>
+    
+
+<div id="keyboard_shortcuts_pane" class="instapaper_ignore readability-extra" style="display:none">
+  <h2>Keyboard Shortcuts <small><a href="https://github.com/tobi/liquid/wiki/liquid-for-designers#" class="js-see-all-keyboard-shortcuts">(see all)</a></small></h2>
+
+  <div class="columns threecols">
+    <div class="column first">
+      <h3>Site wide shortcuts</h3>
+      <dl class="keyboard-mappings">
+        <dt>s</dt>
+        <dd>Focus site search</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>?</dt>
+        <dd>Bring up this help dialog</dd>
+      </dl>
+    </div><!-- /.column.first -->
+
+    <div class="column middle" style="display:none">
+      <h3>Commit list</h3>
+      <dl class="keyboard-mappings">
+        <dt>j</dt>
+        <dd>Move selected down</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>k</dt>
+        <dd>Move selected up</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>t</dt>
+        <dd>Open tree</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>p</dt>
+        <dd>Open parent</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>c <em>or</em> o <em>or</em> enter</dt>
+        <dd>Open commit</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>y</dt>
+        <dd>Expand URL to its canonical form</dd>
+      </dl>
+    </div><!-- /.column.first -->
+
+    <div class="column last" style="display:none">
+      <h3>Pull request list</h3>
+      <dl class="keyboard-mappings">
+        <dt>j</dt>
+        <dd>Move selected down</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>k</dt>
+        <dd>Move selected up</dd>
+      </dl>
+      <dl class="keyboard-mappings">
+        <dt>o <em>or</em> enter</dt>
+        <dd>Open issue</dd>
+      </dl>
+    </div><!-- /.columns.last -->
+
+  </div><!-- /.columns.equacols -->
+
+  <div style="display:none">
+    <div class="rule"></div>
+
+    <h3>Issues</h3>
+
+    <div class="columns threecols">
+      <div class="column first">
+        <dl class="keyboard-mappings">
+          <dt>j</dt>
+          <dd>Move selected down</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>k</dt>
+          <dd>Move selected up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>x</dt>
+          <dd>Toggle select target</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>o <em>or</em> enter</dt>
+          <dd>Open issue</dd>
+        </dl>
+      </div><!-- /.column.first -->
+      <div class="column middle">
+        <dl class="keyboard-mappings">
+          <dt>I</dt>
+          <dd>Mark selected as read</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>U</dt>
+          <dd>Mark selected as unread</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>e</dt>
+          <dd>Close selected</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>y</dt>
+          <dd>Remove selected from view</dd>
+        </dl>
+      </div><!-- /.column.middle -->
+      <div class="column last">
+        <dl class="keyboard-mappings">
+          <dt>c</dt>
+          <dd>Create issue</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>l</dt>
+          <dd>Create label</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>i</dt>
+          <dd>Back to inbox</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>u</dt>
+          <dd>Back to issues</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>/</dt>
+          <dd>Focus issues search</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:none">
+    <div class="rule"></div>
+
+    <h3>Network Graph</h3>
+    <div class="columns equacols">
+      <div class="column first">
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">←</span> <em>or</em> h</dt>
+          <dd>Scroll left</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">→</span> <em>or</em> l</dt>
+          <dd>Scroll right</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">↑</span> <em>or</em> k</dt>
+          <dd>Scroll up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt><span class="badmono">↓</span> <em>or</em> j</dt>
+          <dd>Scroll down</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>t</dt>
+          <dd>Toggle visibility of head labels</dd>
+        </dl>
+      </div><!-- /.column.first -->
+      <div class="column last">
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">←</span> <em>or</em> shift h</dt>
+          <dd>Scroll all the way left</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">→</span> <em>or</em> shift l</dt>
+          <dd>Scroll all the way right</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">↑</span> <em>or</em> shift k</dt>
+          <dd>Scroll all the way up</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>shift <span class="badmono">↓</span> <em>or</em> shift j</dt>
+          <dd>Scroll all the way down</dd>
+        </dl>
+      </div><!-- /.column.last -->
+    </div>
+  </div>
+
+  <div style="display:none">
+    <div class="rule"></div>
+    <div class="columns threecols">
+      <div class="column first" style="display:none">
+        <h3>Source Code Browsing</h3>
+        <dl class="keyboard-mappings">
+          <dt>t</dt>
+          <dd>Activates the file finder</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>l</dt>
+          <dd>Jump to line</dd>
+        </dl>
+        <dl class="keyboard-mappings">
+          <dt>y</dt>
+          <dd>Expand URL to its canonical form</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="markdown-help" class="instapaper_ignore readability-extra">
+  <h2>Markdown Cheat Sheet</h2>
+
+  <div class="cheatsheet-content">
+
+  <div class="mod">
+    <div class="col">
+      <h3>Format Text</h3>
+      <p>Headers</p>
+      <pre># This is an &lt;h1&gt; tag
+## This is an &lt;h2&gt; tag
+###### This is an &lt;h6&gt; tag</pre>
+     <p>Text styles</p>
+     <pre>*This text will be italic*
+_This will also be italic_
+**This text will be bold**
+__This will also be bold__
+
+*You **can** combine them*
+</pre>
+    </div>
+    <div class="col">
+      <h3>Lists</h3>
+      <p>Unordered</p>
+      <pre>* Item 1
+* Item 2
+  * Item 2a
+  * Item 2b</pre>
+     <p>Ordered</p>
+     <pre>1. Item 1
+2. Item 2
+3. Item 3
+   * Item 3a
+   * Item 3b</pre>
+    </div>
+    <div class="col">
+      <h3>Miscellaneous</h3>
+      <p>Images</p>
+      <pre>![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+</pre>
+     <p>Links</p>
+     <pre>http://github.com - automatic!
+[GitHub](http://github.com)</pre>
+<p>Blockquotes</p>
+     <pre>As Kanye West said:
+&gt; We're living the future so
+&gt; the present is our past.
+</pre>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <h3>Code Examples in Markdown</h3>
+  <div class="col">
+      <p>Syntax highlighting with <a href="http://github.github.com/github-flavored-markdown/" title="GitHub Flavored Markdown">GFM</a></p>
+      <pre>```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```</pre>
+    </div>
+    <div class="col">
+      <p>Or, indent your code 4 spaces</p>
+      <pre>Here is a Python code example
+without syntax highlighting:
+
+    def foo:
+      if not bar:
+        return true</pre>
+    </div>
+    <div class="col">
+      <p>Inline code for comments</p>
+      <pre>I think you should use an
+`&lt;addr&gt;` element here instead.</pre>
+    </div>
+  </div>
+
+  </div>
+
+    
+
+    <!--[if IE 8]>
+    <script type="text/javascript" charset="utf-8">
+      $(document.body).addClass("ie8")
+    </script>
+    <![endif]-->
+
+    <!--[if IE 7]>
+    <script type="text/javascript" charset="utf-8">
+      $(document.body).addClass("ie7")
+    </script>
+    <![endif]-->
+
+    
+    <script type="text/javascript"></script>
+    
+    <script>(function(){var d=document;var e=d.createElement("script");e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/9/eum/rum.js	";var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(e,s);})();NREUMQ.push(["nrf2","beacon-3.newrelic.com","2f94e4d8c2",64799,"dw1bEBZcX1RWRho0B1cJGiMNR3tNUQ4PNANEDWUBFl5aS0BdWggV",0,145,new Date().getTime()])</script>
+  
+
+
+</body></html>
