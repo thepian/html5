@@ -1,0 +1,53 @@
+---
+layout: post
+title: Where to Focus My Business
+---
+
+h2. The Past Three Years
+
+In the past three years different countries fared quite differently according to the 
+latest OECD figures.
+ 
+Growth GDP - now and then (higher is better)
+* Portugal was 4% now 1%
+* United States was 3.6% now 1.7%
+* United Kingdom was 3% now 2%
+* Denmark was 3% now 1%
+* OECD overall was 3% now 2%
+* Luxembourg was 3% now 4%
+* Brazil was 3% now 5%
+
+Growth in exports '98 - '08 compared to OECD overall (higher is better)
+* United Kingdom 49% 
+* United States 65%
+* Portugal 94% 
+* Denmark 101%
+* Brazil 206%
+
+Exports of goods minus import of goods
+* United States -867 billion $
+* United Kingdom -170 billion $
+* Portugal -28 billion $
+* Denmark 5 billion $
+* Brazil 37 billion $
+
+Export of services minus import of services
+* Brazil -13 billion $
+* Portugal 8 billion $
+* Denmark 8 billion $
+* United Kingdom 84 billion $
+* United States 120 billion $
+
+Current account balance of payments (percent of GDP)
+* Portugal was -6% now -10%
+* United States was -2% now -5%
+* United Kingdom was -1% now -2.5%
+* Brazil was was -2% now 0%
+* Denmark was 1% now 2%
+
+Unemployment '97 vs '08
+* Denmark was 6% now 4%
+* United States was 5% now 5%
+* United Kingdom was 8% now 5%
+* Portugal was 7% now 8%
+* Brazil 8%
