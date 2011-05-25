@@ -5,6 +5,8 @@ header_title: A CSS Framework
 location: New York
 author: Mike Stenhouse
 authorurl: /Mike+Stenhouse
+summary: |
+  In my <a href="/Articles/12/modular-css/">Modular CSS</a> article I documented the possibility of breaking down stylesheets into components that could be reused across projects. All well and good. The next logical step is to extend this to become a CSS framework, allowing rapid development of sites with pre-written and tested components. All that's really required to produce this is a set of naming conventions and a flexible base template...
 ---
 In my <a href="/Articles/12/modular-css/">Modular CSS</a> article I documented the possibility of breaking down stylesheets into components that could be reused across projects. All well and good. The next logical step is to extend this to become a CSS framework, allowing rapid development of sites with pre-written and tested components. All that's really required to produce this is a set of naming conventions and a flexible base template...
 

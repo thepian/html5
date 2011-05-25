@@ -4,6 +4,11 @@ title: Essential JavaScript Coming Soon
 author: Henrik Vendelbo
 category:
   - news
+summary: |
+  Later in the year I will add a great little library for making great web applications.
+  It is based on ideas gathered during more than 5 years full time WebApp development.
+  Stay tuned
+
 ---
 Later in the year I will add a great little library for making great web applications.
 
