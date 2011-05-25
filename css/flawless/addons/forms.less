@@ -1,0 +1,27 @@
+
+.forms_dl_level(@left-width) {
+    dl {
+        position: relative;
+        margin-top: 0;
+    }
+    dl dt {
+        position: absolute;
+        width: @left-width;
+    }
+    dl dd {
+        position: relative;
+        margin-left: 0;
+        padding-left: @left-width;
+    }
+
+    .buttons-left {
+        padding-top: 5px;
+        padding-left: 0;
+        text-align: left;
+    }
+    .buttons-right {
+        padding-top: 5px;
+        padding-left: 0;
+        text-align: right;
+    }
+}
