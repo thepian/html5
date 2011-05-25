@@ -22,6 +22,7 @@ body .normal-read abbr,body .normal-read code,body .normal-read kbd,body .normal
 body .normal-read form,body .normal-read legend,body .normal-read label{font-size:13px;}
 body .normal-read legend{position:relative;top:5px;}
 body .normal-read hr{position:relative;height:2px;margin:19.5px 0 16.25px 0;}
+body .normal-read blockquote{margin-top:9.75px;margin-bottom:14.625px;}
 body .normal-read table{font-size:13px;margin-top:19.5px;}body .normal-read table th,body .normal-read table td{line-height:19.5px;padding:9.75px 19.5px 9.75px 0;}
 body .normal-read caption{font-size:13px;position:relative;top:5px;margin-bottom:19.5px;}
 body .normal-read table{border-collapse:collapse;position:relative;margin-top:18px;}
@@ -44,7 +45,7 @@ body .comments-list .odd .normal-read form,body .comments-list .even .normal-rea
 body .comments-list .odd .normal-read legend,body .comments-list .even .normal-read legend,body .asides .normal-read legend,body .etc .normal-read legend,body .secondary-read .normal-read legend,body .comments-list .odd.normal-read legend,body .comments-list .even.normal-read legend,body .asides.normal-read legend,body .etc.normal-read legend,body .secondary-read.normal-read legend{position:relative;top:5px;}
 body .comments-list .odd .normal-read table,body .comments-list .even .normal-read table,body .asides .normal-read table,body .etc .normal-read table,body .secondary-read .normal-read table,body .comments-list .odd.normal-read table,body .comments-list .even.normal-read table,body .asides.normal-read table,body .etc.normal-read table,body .secondary-read.normal-read table{font-size:13px;}
 body .comments-list .odd .normal-read caption,body .comments-list .even .normal-read caption,body .asides .normal-read caption,body .etc .normal-read caption,body .secondary-read .normal-read caption,body .comments-list .odd.normal-read caption,body .comments-list .even.normal-read caption,body .asides.normal-read caption,body .etc.normal-read caption,body .secondary-read.normal-read caption{font-size:13px;position:relative;}
-body h1,body h2,body h3,body h4,body h5,body h6,body .breadcrumb{font-family:CaviarDreamsRegular,Helvetica,Arial,sans-serif;}
+body h1,body h2,body h3,body h4,body h5,body .breadcrumb{font-family:CaviarDreamsRegular,Helvetica,Arial,sans-serif;}
 body h1,body .breadcrumb{color:#003366;}
 body h2{color:#0f3357;}
 body h3{color:#000000;}
@@ -76,6 +77,7 @@ body .theme_external_link_hack{cue:none; } a[href^="http://www.localhost"], a[hr
 body .no-ext{background-image:none !important;padding:0px;}
 body a[href^="mailto:"]{background:url(/images/external-http.png) no-repeat right -32;padding-right:14px;margin-right:2px;padding-bottom:0px;}body a[href^="mailto:"] .no-external-icon,body a[href^="mailto:"].no-external-icon{background-image:none;padding-right:0;}
 body a[href^="mailto:"] .no-external-icon a[href^='mailto:']{background-image:none;padding-right:0;}
+body h1,body h2{text-shadow:0 1px 1px #999999;}
 body>header{padding-top:20px;height:80px;background-color:white;}
 nav.top-overhang{}nav.top-overhang li a:link,nav.top-overhang li a:visited{background:#e3e3e3;}
 nav.top-overhang li a:hover{background:transparent;}
@@ -83,7 +85,20 @@ nav.top-overhang li a.active,nav.top-overhang li .active a{background:transparen
 nav.top-overhang li a:link,nav.top-overhang li a:visited{color:black;}
 nav.top-overhang li a:hover{color:black;}
 nav.top-overhang li a.active,nav.top-overhang li .active a{color:black;}
-article.main{min-height:500px;color:#333333;background-color:#e8e8e8;}article.main .sections header,article.main .sections footer,article.main .sections section{}article.main .sections header ul,article.main .sections footer ul,article.main .sections section ul,article.main .sections header ol,article.main .sections footer ol,article.main .sections section ol,article.main .sections header dl,article.main .sections footer dl,article.main .sections section dl,article.main .sections header dialog,article.main .sections footer dialog,article.main .sections section dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+section,aside{}section ul,aside ul,section ol,aside ol,section dl,aside dl,section dialog,aside dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+section li ul,aside li ul,section li ol,aside li ol,section ul ul,aside ul ul,section ol ol,aside ol ol{top:0;margin-top:0;margin-bottom:0;}
+section li h1,aside li h1,section li h2,aside li h2,section li h3,aside li h3,section li h4,aside li h4,section li h5,aside li h5,section li h6,aside li h6,section li p,aside li p{top:0;}
+section dd,aside dd{margin-bottom:1em;}
+section ul.breadcrumb,aside ul.breadcrumb{display:inline;list-style:none;margin:0;}section ul.breadcrumb li,aside ul.breadcrumb li{display:inline-block;}section ul.breadcrumb li a,aside ul.breadcrumb li a{text-decoration:none;font-weight:bold;color:white;}
+section ul.breadcrumb li :after,aside ul.breadcrumb li :after{content:" > ";}
+section dt,aside dt{font-weight:bold;}
+section dd,aside dd{margin-left:2em;}
+section ul,aside ul,section ol,aside ol{margin-left:2em;}
+section ul ul,aside ul ul,section ol ol,aside ol ol{margin-left:1.5em;}
+section ul,aside ul,section ul li,aside ul li{list-style:disc outside;}
+section ol,aside ol,section ol li,aside ol li{list-style:decimal outside;}
+article.main{min-height:500px;color:#333333;background-color:#e8e8e8;}article.main blockquote{display:block;position:relative;zoom:1;padding-top:10px;padding-bottom:10px;padding-left:40px;border-left:5px solid #e0e0e0;text-shadow:0 1px 1px #999999;}article.main blockquote:before{position:absolute;top:-15px;left:10px;height:0;content:"\201f";font-size:50px;font-family:"Times New Roman",Times,serif;color:white;}
+article.main .sections header,article.main .sections footer,article.main .sections section{}article.main .sections header ul,article.main .sections footer ul,article.main .sections section ul,article.main .sections header ol,article.main .sections footer ol,article.main .sections section ol,article.main .sections header dl,article.main .sections footer dl,article.main .sections section dl,article.main .sections header dialog,article.main .sections footer dialog,article.main .sections section dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
 article.main .sections header li ul,article.main .sections footer li ul,article.main .sections section li ul,article.main .sections header li ol,article.main .sections footer li ol,article.main .sections section li ol,article.main .sections header ul ul,article.main .sections footer ul ul,article.main .sections section ul ul,article.main .sections header ol ol,article.main .sections footer ol ol,article.main .sections section ol ol{top:0;margin-top:0;margin-bottom:0;}
 article.main .sections header li h1,article.main .sections footer li h1,article.main .sections section li h1,article.main .sections header li h2,article.main .sections footer li h2,article.main .sections section li h2,article.main .sections header li h3,article.main .sections footer li h3,article.main .sections section li h3,article.main .sections header li h4,article.main .sections footer li h4,article.main .sections section li h4,article.main .sections header li h5,article.main .sections footer li h5,article.main .sections section li h5,article.main .sections header li h6,article.main .sections footer li h6,article.main .sections section li h6,article.main .sections header li p,article.main .sections footer li p,article.main .sections section li p{top:0;}
 article.main .sections header dd,article.main .sections footer dd,article.main .sections section dd{margin-bottom:1em;}
@@ -167,7 +182,7 @@ article.main .asides .restricted-width tbody tr:nth-child(odd) th,article.main .
 article.main .asides aside.sidebar-1{background-color:#dddddd;}
 article.main .asides aside.sidebar-2{background-color:#dddddd;}
 article.main .asides-background{position:absolute;background-color:#dddddd;height:100%;background-image:url("/images/sitting-pencil-2.png");background-position:bottom right;background-repeat:no-repeat;}
-body>footer{padding-bottom:20px;}body>footer ul,body>footer ol,body>footer dl,body>footer dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
+body>footer{padding-bottom:20px;background:url("/images/footer.png") no-repeat scroll 50% 0% transparent;}body>footer ul,body>footer ol,body>footer dl,body>footer dialog{font-size:13px;position:relative;margin-top:1.5em;margin-bottom:1.5em;}
 body>footer li ul,body>footer li ol,body>footer ul ul,body>footer ol ol{top:0;margin-top:0;margin-bottom:0;}
 body>footer li h1,body>footer li h2,body>footer li h3,body>footer li h4,body>footer li h5,body>footer li h6,body>footer li p{top:0;}
 body>footer dd{margin-bottom:1em;}
@@ -202,7 +217,9 @@ body>footer tbody th,body>footer tbody td,body>footer tfoot th,body>footer tfoot
 body>footer th:first-child,body>footer td:first-child{padding-left:0;}
 body>footer th:last-child,body>footer td:last-child{padding-right:0;}
 body>footer tbody tr:nth-child(odd) th,body>footer tbody tr:nth-child(odd) td{background:rgba(0, 0, 0, 0.035);}
-footer .etc{color:#4d4d4d;}footer .etc a{color:#4d4d4d;}
+footer .etc{min-height:275px;color:#4d4d4d;}footer .etc section{padding-top:10px;}
+footer .etc a{color:#4d4d4d;}
+footer .etc .posts h6 a{text-transform:uppercase;letter-spacing:1px;text-decoration:none;color:white;}
 footer .copyright{font-size:10px;color:#666666;}footer .copyright a{color:#ffbadd;}
 blockquote{font-family:Helvetica,Arial,sans-serif;}
 .debug-only{display:none;}

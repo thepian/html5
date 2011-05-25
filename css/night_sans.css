@@ -22,6 +22,7 @@ body .normal-read abbr,body .normal-read code,body .normal-read kbd,body .normal
 body .normal-read form,body .normal-read legend,body .normal-read label{font-size:13px;}
 body .normal-read legend{position:relative;top:5px;}
 body .normal-read hr{position:relative;height:2px;margin:19.5px 0 16.25px 0;}
+body .normal-read blockquote{margin-top:9.75px;margin-bottom:14.625px;}
 body .normal-read table{font-size:13px;margin-top:19.5px;}body .normal-read table th,body .normal-read table td{line-height:19.5px;padding:9.75px 19.5px 9.75px 0;}
 body .normal-read caption{font-size:13px;position:relative;top:5px;margin-bottom:19.5px;}
 body .normal-read table{border-collapse:collapse;position:relative;margin-top:18px;}
@@ -44,7 +45,7 @@ body .comments-list .odd .normal-read form,body .comments-list .even .normal-rea
 body .comments-list .odd .normal-read legend,body .comments-list .even .normal-read legend,body .asides .normal-read legend,body .etc .normal-read legend,body .secondary-read .normal-read legend,body .comments-list .odd.normal-read legend,body .comments-list .even.normal-read legend,body .asides.normal-read legend,body .etc.normal-read legend,body .secondary-read.normal-read legend{position:relative;top:5px;}
 body .comments-list .odd .normal-read table,body .comments-list .even .normal-read table,body .asides .normal-read table,body .etc .normal-read table,body .secondary-read .normal-read table,body .comments-list .odd.normal-read table,body .comments-list .even.normal-read table,body .asides.normal-read table,body .etc.normal-read table,body .secondary-read.normal-read table{font-size:13px;}
 body .comments-list .odd .normal-read caption,body .comments-list .even .normal-read caption,body .asides .normal-read caption,body .etc .normal-read caption,body .secondary-read .normal-read caption,body .comments-list .odd.normal-read caption,body .comments-list .even.normal-read caption,body .asides.normal-read caption,body .etc.normal-read caption,body .secondary-read.normal-read caption{font-size:13px;position:relative;}
-body h1,body h2,body h3,body h4,body h5,body h6,body .breadcrumb{font-family:Georgia,"Times New Roman",Times,serif;}
+body h1,body h2,body h3,body h4,body h5,body .breadcrumb{font-family:Georgia,"Times New Roman",Times,serif;}
 body h1,body .breadcrumb{color:#003366;}
 body h2{color:#0f3357;}
 body h3{color:#666666;}
