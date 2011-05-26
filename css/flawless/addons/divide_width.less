@@ -1,6 +1,95 @@
 @horz_side_gap: 14px; /* Gap from content to the middle divider */
 @horz_edge_gap: 28px; /* Gap from content to edge of window */
 
+.divide_width_fourths(@max_width,@min_width ) { /*,@left_overhang: 64px*/
+
+    @min_content_width: @min_width - @horz_edge_gap - @horz_edge_gap;
+    @max_content_width: @max_width - @horz_edge_gap - @horz_edge_gap;
+    
+    @base_quad_width: @min_content_width/3;
+    @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
+    @dynamic_percentage: 100% * ((@min_content_width - @base_quad_width) / @min_width);
+    @dynamic_padding: (100% - @dynamic_percentage)/2;
+    @min_dynamic_width: @min_content_width - @base_quad_width;
+    @max_dynamic_width: @max_content_width - @base_quad_width;
+
+    position: relative;
+    zoom: 1;
+    margin: 0 auto;
+    
+    /* Padding to make background styling work */
+    padding-left: @dynamic_padding + 0.1%; 
+    padding-right: @dynamic_padding + 0.1%; 
+
+    width: @dynamic_percentage;
+    min-width: @min_dynamic_width;
+    max-width: @max_dynamic_width;
+
+    .fourths {
+        .content {
+            position: relative;
+            .util_clearfix();
+            overflow: visible;
+        
+            margin-left: @neg_half_base_quad_width;
+            margin-right: @neg_half_base_quad_width;
+    /*        background: #eee;*/
+        }
+
+        .left-half-background {
+            position:absolute;
+            top:0;
+            right:50%;
+            width:50% + @dynamic_padding;
+            margin-left: @neg_half_base_quad_width;
+            height:100%;
+            z-index: -10;
+        }
+        .right-half-background {
+            position:absolute;
+            top:0;
+            left:50%;
+            width:50% + @dynamic_padding;
+            margin-right: @neg_half_base_quad_width;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-fourth-and-gutter-background {
+            
+        }
+        .right-fourth-and-gutter-background {
+            
+        }
+    }
+
+    @fourth_gap: 100% * @horz_side_gap * 2 / @min_content_width;
+    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+    
+    .fourth {
+        position: relative;
+        float:left;
+        width: @fourth_width;
+    }
+    .fourth + .fourth {
+        margin-left: @fourth_gap;
+    }
+    
+    .three-fourths {
+        position: relative;
+        float:left;
+        width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+    }
+    
+    .fourth + .three-fourths {
+        margin-left: @fourth_gap;
+    }
+    .three-fourths + .fourth {
+        margin-left: @fourth_gap;
+    }
+
+}
+
 /**
  * Split layout into a left two thirds and right third.
  * - Use within the article.split-thirds rule.
@@ -44,7 +133,7 @@
     .tripple-third {
         position: relative;
         margin-left: @dynamic_third_left_offset;
-        margin-right: @dynamic_tripple_right_offset;
+        margin-right: -50% + @dynamic_tripple_right_offset;
 
         .restricted-width {
             position: relative;

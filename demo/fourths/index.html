@@ -1,0 +1,77 @@
+---
+layout: master
+fourths: development
+flawless: development
+
+title: Fourths Layout
+header_title: Fourths Layout
+author: Henrik Vendelbo
+date: 2010-01-01
+category:
+ - sizes
+---
+<header class="constrained" style="background: transparent;">
+	<div class="fourths">
+		<div class="content">
+	<h1>
+	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	</h1>
+	<section>
+		<h2>- sub title</h2>
+	</section>
+		</div>
+		<div class="left-half-background" style="background: url(/images/green-blur.jpg) no-repeat white;"></div>
+		<div class="right-half-background" style="background: white;"></div>
+	</div>
+</header>
+
+<article class="intro constrained">
+	<div class="fourths" data-custom-backgrounds="left-half:intro-background; right-half:intro-other intro-second">
+		<div class="content">
+			<div class="three-fourths">
+				<section>
+				{{ site.lorem-ipsum | textilize }}
+				{{ site.ut-wisi-enim | textilize }}
+				</section>
+				<section>
+					<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics">
+					</a>
+				</section>
+			</div>
+			<div class="fourth">
+				<section>
+				{{ site.lorem-ipsum | textilize }}
+				</section>
+				
+			</div>
+		</div>
+		<div class="left-half-background"></div>
+		<div class="right-half-background"></div>
+	</div>
+</article>
+
+<article class="main constrained">
+	<div class="fourths">
+		<div class="content">
+		
+			<div class="fourth">
+				{{ site.lorem-ipsum | textilize }}
+			</div>
+			<div class="three-fourths">
+				{{ site.lorem-ipsum | textilize }}
+				{{ site.ut-wisi-enim | textilize }}
+			</div>
+		</div>
+		<div class="left-half-background"></div>
+		<div class="right-half-background"></div>
+	</div>
+</article>
+
+<footer class="constrained">
+	{% include fourths-footer-etc.html %}
+	{% if show_offset_info %}
+	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
+	{% endif %}
+	{% include fourths-footer-copyright.html %}
+</footer>

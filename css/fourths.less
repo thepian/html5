@@ -1,0 +1,80 @@
+@import "flawless/loader.less";
+
+@setup_resources_path: "css";
+
+/**
+ * Default constants used in the Two Thirds fundamental as well as the themes.
+ */
+ 
+/* The vertical rhythm is used to give your webpages a consistent
+ * look. The whole grid system relies on this value to calculate
+ * gaps, spans and so on. Basically this defines the row-height of
+ * the grid in pixels and aligns all elements in the flow of the grid. 
+ */
+ @normal_read_vertical_rhythm: 1.5;
+ @light_read_vertical_rythm: 2;
+ @dense_read_vertical_rythm: 1.2;
+
+/* Here you can control the overall font size. Not that this value 
+ * strongly correlates with the vertical rhythm. If you make these
+ * two values too different your text flow will look ugly
+ */
+@theme_font_size: 13;
+
+/* Here we define the standard styles that are applied all screens  */
+@left_overhang: 80px;
+
+.reset_html5doctor();
+
+
+body {
+    position: relative; // Otherwise bottom-edge doesn't work
+    overflow-x: hidden; // for rounding errors of percentages
+    
+    > header {
+        margin: 0;
+        padding-top: .3em;
+        text-align:left;
+        overflow: hidden;
+    }
+
+    > footer .copyright {
+        position:relative;
+        text-align: center;
+        overflow: hidden;
+
+        .centered_block(1024px,@left_overhang);
+        margin-top: 20px;
+        margin-bottom:.5em;
+
+        img {
+            margin-top: 10px;
+            vertical-align: -4px;
+            padding-right: 5px;
+        }
+    }
+}
+
+
+
+/* Base layout SuperVGA and up */
+.constrained {
+    
+    .divide_width_fourths(1600px,1024px, @left_overhang);
+    
+    .right-fourth {
+        position:absolute;
+        top:0;
+        height:100%;
+        
+        .restricted-width {
+            position:absolute;
+            top:0;
+        }
+    }
+}
+
+.four-columns {
+    .divide_four_columns(1600px,1024px);
+}
+
