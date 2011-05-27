@@ -1,0 +1,44 @@
+/* INSTALL ADDONS
+ * Here you can add imports to install addons that
+ * reside in subfolders of the addons folder. This
+ * enables everyone to write addons to the framework
+ * and easy installation for the end user.
+ */
+
+.opacity(@fraction) {
+     -moz-opacity: @fraction; 
+     filter: e(%("alpha(opacity=%s)",100 * @fraction)); 
+     opacity: @fraction;
+}
+
+@import "flawless/addons/debug.less";
+@import "flawless/addons/nav/install.less";
+@import "flawless/addons/orientation.less";
+@import "flawless/addons/divide_width.less";
+@import "flawless/addons/posts.less"; /* TODO make macro */
+@import "flawless/addons/forms.less";
+
+@import "flawless/addons/type/fonts.less";
+
+/**
+ * Text syntax highlights and general formatting
+ */
+@import "flawless/addons/type/typography.less";
+/*@import "flawless/addons/text/syntax.less";
+@import "flawless/addons/text/pygments.less";
+*/
+ 
+/**
+ * jQuery plugin styling support
+ */
+@import "flawless/addons/jQuery/jScrollPane.less";
+@import "flawless/addons/jQuery/jquery.fancybox.less";
+@import "flawless/addons/jQuery/jquery.tweet.less";
+
+/**
+ * Theming
+ */
+@import "flawless/addons/theme/install.less";
+/*
+*/
+
