@@ -62,6 +62,16 @@
             
         }
     }
+    
+    // simplified content with no separate background elements.
+    .fourths-content {
+        position: relative;
+        .util_clearfix();
+        overflow: visible;
+    
+        margin-left: @neg_half_base_quad_width;
+        margin-right: @neg_half_base_quad_width;
+    }
 
     @fourth_gap: 100% * @horz_side_gap * 2 / @min_content_width;
     @fourth_width: (100% - 3 * @fourth_gap) / 4;
