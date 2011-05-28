@@ -76,12 +76,15 @@ body {
 
 
 
-/* Base layout SuperVGA and up */
+/* 
+ * Base layout for SuperVGA sizes, default for older browser
+ */
 
 .constrained {
     
-    .divide_width_fourths(1600px,1024px);
+    .divide_width_fourths(1200px,800px);
     
+    /*
     .right-fourth {
         position:absolute;
         top:0;
@@ -92,9 +95,34 @@ body {
             top:0;
         }
     }
+    */
 }
 
 .four-columns {
-    .divide_four_columns(1600px,1024px);
+    .divide_four_columns(1200px,800px);
 }
 
+/* Modern browser in a large window */
+@media only screen and (max-width: 1800px) and (min-width: 1200px) {
+    .constrained {
+        .divide_width_fourths(1800px,1200px);
+    }
+    .four-columns {
+        .divide_four_columns(1800px,1200px);
+    }
+}
+
+/* Modern browser on a iPad any orientation */
+@media only screen and (device-width: 768px) {
+    html body {
+        background-color: #c00;
+    }
+
+    .constrained {
+        background-color: black;
+        .divide_width_fourths(1024px,768px);
+    }
+    .four-columns {
+        .divide_four_columns(1024px,768px);
+    }
+}
