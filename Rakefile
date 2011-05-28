@@ -6,10 +6,10 @@ task :default => :server
 desc 'Build site with Jekyll'
 task :build do
   jekyll
-  lessc 'css/twothirds'
-  lessc 'css/fourths'
-  lessc 'css/pale_serif'
-  lessc 'css/night_sans'
+  lessc 'twothirds'
+  lessc 'fourths'
+  lessc 'pale_serif'
+  lessc 'night_sans'
 end
  
 desc 'Build and start server with --auto'
@@ -27,7 +27,7 @@ def jekyll(opts = '')
   sh 'jekyll ' + opts
 end
 
-def lessc(base)
-  sh 'rm -f ' + base + '.css'
-  sh '(cat ' + base +'.prefix; lessc -x '+ base + '.less)> ' + base + '.css'
+def lessc(outbase)
+  sh 'rm -f css/' + base + '.css'
+  sh '(cat less/' + base +'.prefix; lessc -x less/'+ base + '.less)> css/' + base + '.css'
 end
