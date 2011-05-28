@@ -7,9 +7,24 @@
 *  @website: essentialjs.com
 */
 
-@charset "utf-8";
+
 @import "../../dev-time/flawless/css/flawless/core/production/framework.less";
+
 @import "../addons.less";
+
+/* ================== SETUP THE FRAMEWORK  ==================
+ * Here you can see the basic three setup variables that most
+ * websites will need to set in order to use the framework.
+ *
+ * it is also important to set up those vars here so that all
+ * imported .less files you create build upon this foundation
+ */
+ 
+/* Tell the framework where it is relative to the html file  */
+@setup_framework_path: "dev-time/flawless/css/flawless/core/production";
+
+@setup_images_path: "images";
+@setup_resources_path: "css";
 
 @import "defaults.less";
 

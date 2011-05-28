@@ -3,8 +3,8 @@
  *  @website: essentialjs.com
  */
 
-@charset "utf-8";
 @import "../dev-time/flawless/css/flawless/core/production/framework.less";
+
 @import "addons.less";
 
 /* ================== SETUP THE FRAMEWORK  ==================
@@ -16,7 +16,11 @@
  */
  
 /* Tell the framework where it is relative to the html file  */
+@setup_framework_path: "dev-time/flawless/css/flawless/core/production";
+
+@setup_images_path: "images";
 @setup_resources_path: "css";
+
 
 @import "twothirds/defaults.less";
 
