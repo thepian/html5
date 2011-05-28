@@ -1,7 +1,7 @@
 @horz_side_gap: 14px; /* Gap from content to the middle divider */
 @horz_edge_gap: 28px; /* Gap from content to edge of window */
 
-.divide_width_fourths(@max_width,@min_width ) { /*,@left_overhang: 64px*/
+.divide_width_fourths(@max_width,@min_width ) { 
 
     @min_content_width: @min_width - @horz_edge_gap - @horz_edge_gap;
     @max_content_width: @max_width - @horz_edge_gap - @horz_edge_gap;
@@ -17,7 +17,7 @@
     zoom: 1;
     margin: 0 auto;
     
-    /* Padding to make background styling work */
+    // Padding to make background styling work 
     padding-left: @dynamic_padding + 0.1%; 
     padding-right: @dynamic_padding + 0.1%; 
 
@@ -33,7 +33,6 @@
         
             margin-left: @neg_half_base_quad_width;
             margin-right: @neg_half_base_quad_width;
-    /*        background: #eee;*/
         }
 
         .left-half-background {
@@ -97,7 +96,6 @@
     .three-fourths + .fourth {
         margin-left: @fourth_gap;
     }
-
 }
 
 /**
