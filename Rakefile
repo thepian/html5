@@ -27,7 +27,7 @@ def jekyll(opts = '')
   sh 'jekyll ' + opts
 end
 
-def lessc(outbase)
+def lessc(base)
   sh 'rm -f css/' + base + '.css'
   sh '(cat less/' + base +'.prefix; lessc -x less/'+ base + '.less)> css/' + base + '.css'
 end
