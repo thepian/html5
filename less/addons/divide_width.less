@@ -163,6 +163,9 @@
     padding-right:33.3 + 0.2%; // greater than 100% to make up for round down
     .util_clearfix();
     
+    .show-minmax-overall-width:after {
+        content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
+    }
     .show-min-section-width:after {
         content: %("min. %spx gap %spx",(@min_content_width - @horz_side_gap - @horz_side_gap)/3, @gap);
     }
