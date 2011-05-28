@@ -7,7 +7,6 @@
 *  @website: essentialjs.com
 */
 
-
 @import "../dev-time/flawless/css/flawless/core/production/framework.less";
 @import "../dev-time/css3-mixins/main.less";
 @import "addons.less";
@@ -34,9 +33,12 @@
 @bottom-edge-height: 20px;
 @page-menu-button-width: 32px;
 @page-menu-button-height: 32px;
+@sidebar-button-width: 64px;
+@sidebar-button-height: 64px;
 
 @article_aside1_height: 250px;
 @article_aside2_height: 250px;
+@etc_height: 275px;
 
 /**
  * Typefaces
@@ -55,6 +57,7 @@
 @regular_anchor_hover_color: #036;
 @figure-background-color: #1c2200;
 @figure-border: 1px solid #444;
+@shadow-color: #999;
 
 /**
  * Specific parameters
@@ -158,6 +161,12 @@ nav.top-overhang {
 	.nav-text-color(black, black, black);
 }
 
+section, aside {
+    
+    .normal_list_rhythm();
+    .regular_list_theme();
+}
+
 article.main {
 
     min-height:@article_aside1_height + @article_aside2_height;
@@ -166,14 +175,19 @@ article.main {
     color: @article_color;
     background-color: @article_background_color;
     
+    //.regular_blob_theme(#333, #F4F4F4, #DEDEDE); 
+    .regular_quotes_theme(#e0e0e0,@shadow-color,40px);
+    
     .sections {
 
         header, footer, section {
-            .normal_list_rhythm();
-            .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);        
             .regular_table_theme(@table-border-color,@table-odd-background);            
+
+            .postbadge {
+                .post_badge();
+            }
         }
         
         header {
@@ -192,8 +206,6 @@ article.main {
         background-color: @asides_background_color;
         
         .restricted-width {
-            .normal_list_rhythm();
-            .regular_list_theme();
             .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
             .regular_figure_theme(@article_figure_background_color,@article_figure_border);
             .regular_table_theme(@table-border-color,@table-odd-background);            
@@ -209,6 +221,15 @@ article.main {
         aside.sidebar-2 {
         	background-color: @aside2_background_color; /* add background color */
         }
+
+        .asides-background {
+            position:absolute;
+            background-color: @asides_background_color;
+            height:100%;
+            background-image: url("/images/sitting-pencil-2.png");
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
     }
 }
 
@@ -216,19 +237,31 @@ body > footer {
     
     padding-bottom: @bottom-edge-height;
     
-    .normal_list_rhythm();
-    .regular_list_theme();
     .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
     .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-    .regular_table_theme(@table-border-color,@table-odd-background);            
+    .regular_table_theme(@table-border-color,@table-odd-background);   
+             
+    background: url("/images/footer.png") no-repeat scroll 50% 0% transparent;  
 } 
 
 footer .etc {
+    min-height: @etc_height;
     
     color: @etc_color;
 
+    section {
+        padding-top: 10px;
+    }
+    
     a {
         color: @etc_color;
+    }
+    
+    .posts h6 a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: white;
     }
 }
 
@@ -252,3 +285,15 @@ nav.page-menu {
     
     .regular_page_menu(@page-menu-button-width, @page-menu-button-height, url('/images/buttons/top-edge.png'));
 }
+
+
+/* Sidebar Site buttons */
+body article .asides fieldset {
+    
+    .sidebar_buttons(@sidebar-button-width, @sidebar-button-height, url('/images/buttons/site.png'))
+}
+
+body article .asides fieldset.search {
+    .sidebar_search_fieldset(@page-menu-button-width, @page-menu-button-height, url('/images/buttons/top-edge.png'));
+}
+
