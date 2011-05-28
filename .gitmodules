@@ -1,6 +1,6 @@
-[submodule "dev-time/flawless"]
-	path = dev-time/flawless
-	url = git@github.com:thepian/flawless.css.git
 [submodule "dev-time/css3-mixins"]
 	path = dev-time/css3-mixins
 	url = git@github.com:thepian/less.js-css3-mixins.git
+[submodule "dev-time/flawless"]
+	path = dev-time/flawless
+	url = git@github.com:thepian/flawless.css.git
