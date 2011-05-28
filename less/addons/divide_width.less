@@ -1,18 +1,25 @@
 @horz_side_gap: 14px; /* Gap from content to the middle divider */
 @horz_edge_gap: 28px; /* Gap from content to edge of window */
 
-.divide_width_fourths(@max_width,@min_width ) { 
+.divide_width_fourths(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
-    @min_content_width: @min_width - @horz_edge_gap - @horz_edge_gap;
-    @max_content_width: @max_width - @horz_edge_gap - @horz_edge_gap;
+    @min_content_width: @min_width - @gap - @gap;
+    @max_content_width: @max_width - @gap - @gap;
     
-    @base_quad_width: @min_content_width/3;
+    @base_quad_width: @min_content_width/4;
     @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
     @dynamic_percentage: 100% * ((@min_content_width - @base_quad_width) / @min_width);
     @dynamic_padding: (100% - @dynamic_percentage)/2;
     @min_dynamic_width: @min_content_width - @base_quad_width;
     @max_dynamic_width: @max_content_width - @base_quad_width;
 
+    @max_quad_width: @max_content_width/4;
+
+    @fourth_gap: 100% * @gap / @min_content_width;
+    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+    
+    @max-gap: @gap / @min_content_width * @max_content_width;
+    
     position: relative;
     zoom: 1;
     margin: 0 auto;
@@ -24,6 +31,16 @@
     width: @dynamic_percentage;
     min-width: @min_dynamic_width;
     max-width: @max_dynamic_width;
+
+    .show-minmax-overall-width:after {
+        content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
+    }
+    .show-min-section-width:after {
+        content: %("min. %spx gap %spx",@base_quad_width - @gap,@gap);
+    }
+    .show-max-section-width:after {
+        content: %("max. %spx gap %spx",@max_quad_width - @gap,@max-gap);
+    }
 
     .fourths {
         .content {
@@ -60,6 +77,16 @@
         .right-fourth-and-gutter-background {
             
         }
+        
+        .right-three-background {
+            position:absolute;
+            top:0;
+            left:@fourth_width;
+            width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
     }
     
     // simplified content with no separate background elements.
@@ -72,9 +99,6 @@
         margin-right: @neg_half_base_quad_width;
     }
 
-    @fourth_gap: 100% * @horz_side_gap * 2 / @min_content_width;
-    @fourth_width: (100% - 3 * @fourth_gap) / 4;
-    
     .fourth {
         position: relative;
         float:left;
@@ -102,10 +126,10 @@
  * Split layout into a left two thirds and right third.
  * - Use within the article.split-thirds rule.
  */
-.divide_width_twothirds(@max_width,@min_width, @left_overhang: 64px) {
-    @min_content_width: @min_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
+.divide_width_twothirds(@max_width,@min_width, @left_overhang: 64px,@gap:@horz_edge_gap) {
+    @min_content_width: @min_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap;
 
-    @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap - @left_overhang;
+    @max_content_width: @max_width - @horz_side_gap - @horz_side_gap - @horz_edge_gap - @horz_edge_gap;
 
     /**
      * Generic thirds take up a third of min width minus edge gap growing at 2/3 speed
@@ -131,12 +155,20 @@
     @base_tripple_width: @base_double_width + @base_third_width;
     @max_tripple_width: @max_width - 3 * @horz_edge_gap - @base_double_width - @base_third_width;
     @dynamic_tripple_width: 100% * ((@min_width * .666 - @horz_edge_gap) / (@min_width * .666) / 1.5 + (@min_width * .333 - @horz_edge_gap) / (@min_width * .333) / 1.5);
-    
+
+    @max-gap: @gap / @min_content_width * @max_content_width;
 
     position:relative;
     width:66.6% + 0.1%;
     padding-right:33.3 + 0.2%; // greater than 100% to make up for round down
     .util_clearfix();
+    
+    .show-min-section-width:after {
+        content: %("min. %spx gap %spx",(@min_content_width - @horz_side_gap - @horz_side_gap)/3, @gap);
+    }
+    .show-max-section-width:after {
+        content: %("max. %spx gap %spx",(@max_content_width - @horz_side_gap - @horz_side_gap)/3, @max-gap);
+    }
 
     .tripple-third {
         position: relative;
