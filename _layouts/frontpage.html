@@ -19,33 +19,38 @@ guesswho: itsme
   <section>		
 	{{ content }}
   </section>
-  <section>
-  <ul class="posts">
-    {% for post in site.posts limit: 1 %}
-    <li>
-		<figure class="postdate">
-			<!-- 
-			<span class="postweekday">{{ post.date | date: "%w" }}</span>
-			-->
-			<span class="postmonth">{{ post.date | date: "%b" }}</span>
-			<span class="postday">{{ post.date | date: "%d" }}</span>
-		</figure>
-		<h4><a href="{{ post.url }}">{{ post.title }}</a>
-			<br><small style="color:#888;">by {{ post.author }}</small>
-			</h4>
 
-		{{ post.content }}
-	</li>
-    {% endfor %}
+  <section class="posts">
+    <details>
+		<summary>
+			<div class="overhang-base">
+				<div class="left-overhang postbadge">
+					<time class="postdate">
+						<span class="postday">{{ site.posts.first.date | date: "%d" }}</span>
+						<span class="postmonth">{{ site.posts.first.date | date: "%b" }}</span>
+						<span class="postweekday">{{ site.posts.first.date | date: "%A" }}</span>
+					</time>
+					<address rel="location">{{ site.posts.first.location }}</address>
+
+				</div>
+			</div>
+
+		<h4><a href="{{ post.url }}">{{ site.posts.first.title }}</a>
+			<br><small style="color:#888;">by {{ site.posts.first.author }}</small>
+			</h4>
+		</summary>
+		{{ site.posts.first.content }}
+	</details>
 
 	<li><h2>More...</h2></li>
 	
     {% for post in site.posts limit: 15 %}
-    <li>
+    <details>
+		<summary>
 		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-	</li>
+		</summary>
+	</details>
     {% endfor %}
-  </ul>
 </section>
 
 </div>
