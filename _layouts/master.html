@@ -105,5 +105,11 @@
 {% if page.dev_time_markup %}
 {% include dev_time_markup.html %}
 {% endif %}
+{% if page.hide_address_bar_markup %}
+<script type="application/javascript">
+jQuery.ready(function(){
+	setTimeout(function() { window.scrollTo(0, 1) }, 100);
+});
+</script>{% endif %}
 </body>
 </html>
