@@ -44,34 +44,13 @@
 @left_overhang: 80px;
 
 .reset_html5doctor();
+/* TODO remove 100% font size ? */
 
 
 body {
     position: relative; // Otherwise bottom-edge doesn't work
     overflow-x: hidden; // for rounding errors of percentages
     
-    > header {
-        margin: 0;
-        padding-top: .3em;
-        text-align:left;
-        overflow: hidden;
-    }
-
-    > footer .copyright {
-        position:relative;
-        text-align: center;
-        overflow: hidden;
-
-        .centered_block(1024px,@left_overhang);
-        margin-top: 20px;
-        margin-bottom:.5em;
-
-        img {
-            margin-top: 10px;
-            vertical-align: -4px;
-            padding-right: 5px;
-        }
-    }
 }
 
 
@@ -83,6 +62,15 @@ body {
 .constrained {
     
     .divide_width_fourths(1200px,800px);
+
+    /* used for copyright in footer */
+    .centered-content {
+        position:relative;
+        text-align: center;
+        overflow: hidden;
+
+        margin: 0 auto;
+    }
     
     /*
     .right-fourth {
@@ -102,27 +90,44 @@ body {
     .divide_four_columns(1200px,800px);
 }
 
+article.main {
+    overflow:visible; /* allow top-overhang navigation to be visible */
+}
+
+.top-edge {
+    position:absolute;
+    top:0; left:0; width:100%;
+    overflow: visible;
+    
+    .normal_list_rhythm();
+}
+
+.bottom-edge {
+    // relies on body position relative
+    position:absolute;
+    bottom:0; left:0; width:100%;
+}
+
 /* Modern browser in a large window */
 @media only screen and (max-width: 1800px) and (min-width: 1200px) {
     .constrained {
-        .divide_width_fourths(1800px,1200px);
+        .divide_width_fourths_mobile(1800px,1200px);
     }
     .four-columns {
         .divide_four_columns(1800px,1200px);
     }
 }
 
-/* Modern browser on a iPad any orientation */
+/* Modern browser on a iPad any orientation (defaults to 980px width)*/
 @media only screen and (device-width: 768px) {
-    html body {
-        background-color: #c00;
-    }
-
     .constrained {
-        background-color: black;
-        .divide_width_fourths(1024px,768px);
+        .divide_width_fourths_mobile(1200px,980px);
     }
     .four-columns {
-        .divide_four_columns(1024px,768px);
+        .divide_four_columns(1024px,980px);
+    }
+    
+    .top-edge, .bottom-edge {
+        max-width: 980px;
     }
 }

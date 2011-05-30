@@ -22,7 +22,6 @@
     
     position: relative;
     zoom: 1;
-    margin: 0 auto;
     
     // Padding to make background styling work 
     padding-left: @dynamic_padding + 0.1%; 
@@ -97,6 +96,115 @@
     
         margin-left: @neg_half_base_quad_width;
         margin-right: @neg_half_base_quad_width;
+    }
+
+    .fourth {
+        position: relative;
+        float:left;
+        width: @fourth_width;
+    }
+    .fourth + .fourth {
+        margin-left: @fourth_gap;
+    }
+    
+    .three-fourths {
+        position: relative;
+        float:left;
+        width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+    }
+    
+    .fourth + .three-fourths {
+        margin-left: @fourth_gap;
+    }
+    .three-fourths + .fourth {
+        margin-left: @fourth_gap;
+    }
+}
+
+.divide_width_fourths_mobile(@max_width,@min_width,@gap:@horz_edge_gap) { 
+
+    @min_content_width: @min_width - @gap - @gap;
+    @max_content_width: @max_width - @gap - @gap;
+    @max-gap: @gap;
+
+    @fourth_gap: 100% * @gap / @min_content_width;
+    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+
+    @base_quad_width: @min_content_width/4;
+    @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
+    @max_quad_width: @max_content_width/4;
+
+    position: relative;
+    zoom: 1;
+    
+    // Padding to make background styling work 
+    padding-left: @gap; 
+    padding-right: @gap;
+    width: initial;
+    max-width: initial; 
+    
+    .show-minmax-overall-width:after {
+        content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
+    }
+    .show-min-section-width:after {
+        content: %("min. %spx gap %spx",@base_quad_width - @gap,@gap);
+    }
+    .show-max-section-width:after {
+        content: %("max. %spx gap %spx",@max_quad_width - @gap,@max-gap);
+    }
+    
+    .fourths {
+        .content {
+            position: relative;
+            .util_clearfix();
+            overflow: visible;
+            margin: 0;
+        }
+
+        .left-half-background {
+            position:absolute;
+            top:0;
+            right:50%;
+/*            width:50% + @dynamic_padding;*/
+            margin-left: 0;
+            height:100%;
+            z-index: -10;
+        }
+        .right-half-background {
+            position:absolute;
+            top:0;
+            left:50%;
+/*            width:50% + @dynamic_padding;*/
+            margin-right: 0;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-fourth-and-gutter-background {
+            
+        }
+        .right-fourth-and-gutter-background {
+            
+        }
+        
+        .right-three-background {
+            position:absolute;
+            top:0;
+            left:@fourth_width;
+            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+    }
+    
+    // simplified content with no separate background elements.
+    .fourths-content {
+        position: relative;
+        .util_clearfix();
+        overflow: visible;
+    
+        margin: 0;
     }
 
     .fourth {

@@ -57,7 +57,7 @@
 @regular_anchor_hover_color: #036;
 @figure-background-color: #1c2200;
 @figure-border: 1px solid #444;
-@shadow-color: #999;
+@shadow-color: #444;
 
 /**
  * Specific parameters
@@ -147,6 +147,27 @@ body {
 
     .theme_external_link(2px, "/images/external-http.png", 12px, 0px, right);
     .theme_external_email(2px, "/images/external-http.png", 12px, 0px, right);
+
+    h1,h2 {
+        text-shadow: 0 1px 1px @shadow-color;
+    }
+    
+    > header {
+        padding-top: .3em;
+        text-align:left;
+        overflow: hidden;
+    }
+
+    > footer .copyright {
+        margin-top: 20px;
+        margin-bottom:.5em;
+
+        img {
+            margin-top: 10px;
+            vertical-align: -4px;
+            padding-right: 5px;
+        }
+    }
 }
 
 body > header {
