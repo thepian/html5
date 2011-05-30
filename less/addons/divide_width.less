@@ -1,6 +1,86 @@
 @horz_side_gap: 14px; /* Gap from content to the middle divider */
 @horz_edge_gap: 28px; /* Gap from content to edge of window */
 
+.divide_width_fourths_commons() {
+    
+    position: relative;
+    zoom: 1;
+    margin:0 auto;
+    
+    .fourths {
+        .content {
+            position: relative;
+            .util_clearfix();
+            overflow: visible;
+        }
+
+        .left-half-background {
+            position:absolute;
+            top:0;
+            right:50%;
+            width:50%;
+            margin-left: 0;
+            height:100%;
+            z-index: -10;
+        }
+        .right-half-background {
+            position:absolute;
+            top:0;
+            left:50%;
+            width:50%;
+            margin-right: 0;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-fourth-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+        }
+        .right-fourth-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-three-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+        
+        .right-three-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+    }
+    
+    // simplified content with no separate background elements.
+    .fourths-content {
+        position: relative;
+        .util_clearfix();
+        overflow: visible;
+    }
+
+    .fourth {
+        position: relative;
+        float:left;
+    }
+    
+    .three-fourths {
+        position: relative;
+        float:left;
+    }
+}
+
 .divide_width_fourths(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
     @min_content_width: @min_width - @gap - @gap;
@@ -20,10 +100,6 @@
     
     @max-gap: @gap / @min_content_width * @max_content_width;
     
-    position: relative;
-    zoom: 1;
-    
-    // Padding to make background styling work 
     padding-left: @dynamic_padding + 0.1%; 
     padding-right: @dynamic_padding + 0.1%; 
 
@@ -43,64 +119,43 @@
 
     .fourths {
         .content {
-            position: relative;
-            .util_clearfix();
-            overflow: visible;
-        
             margin-left: @neg_half_base_quad_width;
             margin-right: @neg_half_base_quad_width;
         }
 
-        .left-half-background {
-            position:absolute;
-            top:0;
-            right:50%;
-            width:50% + @dynamic_padding;
-            margin-left: @neg_half_base_quad_width;
-            height:100%;
-            z-index: -10;
-        }
-        .right-half-background {
-            position:absolute;
-            top:0;
-            left:50%;
-            width:50% + @dynamic_padding;
-            margin-right: @neg_half_base_quad_width;
-            height:100%;
-            z-index: -10;
-        }
-        
         .left-fourth-and-gutter-background {
-            
+            left: 0;
+            padding-right: @base_quad_width / 2;
+            width: @fourth_width;
         }
         .right-fourth-and-gutter-background {
-            
+            right: 0;
+            padding-right: @gap;
+            width: @fourth_width;
         }
         
-        .right-three-background {
-            position:absolute;
-            top:0;
-            left:@fourth_width;
-            width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
-            height:100%;
-            z-index: -10;
-            overflow: hidden;
+        .left-three-and-gutter-background {
+            left:0;
+            padding-right: @base_quad_width * .75;
+
+            width: @dynamic_percentage * .75;
+            min-width: @min_dynamic_width * .75;
+            max-width: @max_dynamic_width * .75;
+        }
+        
+        .right-three-and-gutter-background {
+            right:0;
+            width: @fourth_width * 3 + @fourth_gap * 3;
         }
     }
     
     // simplified content with no separate background elements.
     .fourths-content {
-        position: relative;
-        .util_clearfix();
-        overflow: visible;
-    
         margin-left: @neg_half_base_quad_width;
         margin-right: @neg_half_base_quad_width;
     }
 
     .fourth {
-        position: relative;
-        float:left;
         width: @fourth_width;
     }
     .fourth + .fourth {
@@ -108,8 +163,6 @@
     }
     
     .three-fourths {
-        position: relative;
-        float:left;
         width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
     }
     
@@ -135,8 +188,6 @@
     @max_quad_width: @max_content_width/4;
 
     @dynamic_padding: 0%;
-    position: relative;
-    zoom: 1;
     
     // Padding to make background styling work 
     padding-left: @gap; 
@@ -156,61 +207,37 @@
     
     .fourths {
         .content {
-            position: relative;
-            .util_clearfix();
-            overflow: visible;
             margin: 0;
         }
 
-        .left-half-background {
-            position:absolute;
-            top:0;
-            right:50%;
-            width:50% + @dynamic_padding;
-            margin-left: 0;
-            height:100%;
-            z-index: -10;
-        }
-        .right-half-background {
-            position:absolute;
-            top:0;
-            left:50%;
-            width:50% + @dynamic_padding;
-            margin-right: 0;
-            height:100%;
-            z-index: -10;
-        }
-        
         .left-fourth-and-gutter-background {
-            
+            left: 0;
+            padding-left: @gap;
+            width: @fourth_width;
         }
         .right-fourth-and-gutter-background {
-            
+            right: 0;
+            padding-right: @gap;
+            width: @fourth_width;
         }
         
-        .right-three-background {
-            position:absolute;
-            top:0;
-            left:@fourth_width;
+        .left-three-and-gutter-background {
+            left:0;
             width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
-            height:100%;
-            z-index: -10;
-            overflow: hidden;
+        }
+        
+        .right-three-and-gutter-background {
+            right:0;
+            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
         }
     }
     
     // simplified content with no separate background elements.
     .fourths-content {
-        position: relative;
-        .util_clearfix();
-        overflow: visible;
-    
         margin: 0;
     }
 
     .fourth {
-        position: relative;
-        float:left;
         width: @fourth_width;
     }
     .fourth + .fourth {
@@ -218,8 +245,6 @@
     }
     
     .three-fourths {
-        position: relative;
-        float:left;
         width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
     }
     
