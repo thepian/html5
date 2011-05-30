@@ -67,3 +67,8 @@ Yahoo gives compelling evidence that less than 1.5% of its users turn off JavaSc
 Whilst it’s true that JavaScript should be separated from a site’s content, design and structure the reality is no longer black and white. I strongly believe that the benefits and opportunities HTML5 brings, together with related technologies such as CSS3 and media queries (both of which sometimes rely on JavaScript for cross-browser compatibility), is more than enough reason to use JavaScript to ‘force’ new elements to work in Internet Explorer. I am a passionate advocate for standards-based design that doesn’t rely on JavaScript; HTML5 is the one structural exception.
 	
 http://www.smashingmagazine.com/2011/02/22/using-html5-to-transform-wordpress-twentyten-theme/
+
+articles and sections
+
+http://html5doctor.com/the-article-element/
+
