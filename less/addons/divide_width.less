@@ -134,6 +134,7 @@
     @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
     @max_quad_width: @max_content_width/4;
 
+    @dynamic_padding: 0%;
     position: relative;
     zoom: 1;
     
@@ -165,7 +166,7 @@
             position:absolute;
             top:0;
             right:50%;
-/*            width:50% + @dynamic_padding;*/
+            width:50% + @dynamic_padding;
             margin-left: 0;
             height:100%;
             z-index: -10;
@@ -174,7 +175,7 @@
             position:absolute;
             top:0;
             left:50%;
-/*            width:50% + @dynamic_padding;*/
+            width:50% + @dynamic_padding;
             margin-right: 0;
             height:100%;
             z-index: -10;
