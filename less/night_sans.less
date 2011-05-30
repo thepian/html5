@@ -156,24 +156,58 @@ body {
         padding-top: .3em;
         text-align:left;
         overflow: hidden;
+        padding-top: @top-edge-height;
+        height: @header_height;
+        background-color: @page_header_background_color;
     }
 
-    > footer .copyright {
-        margin-top: 20px;
-        margin-bottom:.5em;
+    > footer {
+        padding-bottom: @bottom-edge-height;
 
-        img {
-            margin-top: 10px;
-            vertical-align: -4px;
-            padding-right: 5px;
+        .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
+        .regular_figure_theme(@article_figure_background_color,@article_figure_border);
+        .regular_table_theme(@table-border-color,@table-odd-background);   
+
+        background: url("/images/footer.png") no-repeat scroll 50% 0% transparent;  
+
+        .copyright {
+            margin-top: 20px;
+            margin-bottom:.5em;
+            font-size: 10px;
+            color: @copyright_color;
+
+            a {
+                color: @copyright_anchor_color;
+            }
+
+            img {
+                margin-top: 10px;
+                vertical-align: -4px;
+                padding-right: 5px;
+            }
         }
     }
 }
 
-body > header {
-    padding-top: @top-edge-height;
-    height: @header_height;
-    background-color: @page_header_background_color;
+footer .etc {
+    min-height: @etc_height;
+    
+    color: @etc_color;
+
+    section {
+        padding-top: 10px;
+    }
+    
+    a {
+        color: @etc_color;
+    }
+    
+    .posts h6 a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: white;
+    }
 }
 
 nav.top-overhang {
@@ -251,47 +285,6 @@ article.main {
             background-position: bottom right;
             background-repeat: no-repeat;
         }
-    }
-}
-
-body > footer {
-    
-    padding-bottom: @bottom-edge-height;
-    
-    .regular_inline_flow(@page_footer_mark_background, @code-family, @page_footer_title_underline_color); 
-    .regular_figure_theme(@article_figure_background_color,@article_figure_border);
-    .regular_table_theme(@table-border-color,@table-odd-background);   
-             
-    background: url("/images/footer.png") no-repeat scroll 50% 0% transparent;  
-} 
-
-footer .etc {
-    min-height: @etc_height;
-    
-    color: @etc_color;
-
-    section {
-        padding-top: 10px;
-    }
-    
-    a {
-        color: @etc_color;
-    }
-    
-    .posts h6 a {
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-decoration: none;
-        color: white;
-    }
-}
-
-footer .copyright {
-    font-size: 10px;
-    color: @copyright_color;
-
-    a {
-        color: @copyright_anchor_color;
     }
 }
 
