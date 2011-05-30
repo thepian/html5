@@ -1,0 +1,317 @@
+  .hide {
+    display: none;
+  }
+  #ann-outer-wraper {
+    position: absolute;
+    overflow:hidden;
+    margin-top: -486px !important;
+    margin-left: -16px !important;
+  }
+  #ann-outer-wraper {
+    width: 1120px;
+    height: 600px;
+    margin:0 auto;
+  }
+  #ann-wrapper div {
+    position: absolute;
+    display:none;
+    top: 0;
+    /*padding:20px;*/
+  }
+  #ann-wrapper div p.header {
+    font-size:24px;
+  }
+  #ann-wrapper div p.content {
+  }
+  #ann-wrapper> div {
+    -webkit-perspective: 2000;
+  }
+  #ann-wrapper div#page-3, #ann-wrapper div#page-1, #ann-wrapper div#page-2, #ann-wrapper div#page-4 {
+    -webkit-transform-style:preserve-3d;
+  }
+  #ann-wrapper {
+    top: 0px;
+    left: 20px;
+    width: 100px;
+    height: 460px;
+    position: relative;
+    padding:70px 0;
+  }
+  #ann-wrapper #page-1 {
+    background: url('../images/sb_announce/grapgic.png') no-repeat scroll top left;
+    width: 260px;
+    height: 360px;
+    left: 0px;
+    top:120px;
+    z-index:90;
+    display:block;
+  }
+  #ann-wrapper #page-2 {
+    width: 270px;
+    height: 360px;
+    left: 0px;
+    top:120px;
+    z-index:80;
+    -webkit-transform: translate3d(260px, 0px, 0px);
+    -webkit-animation-name: AN-ani-0;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: paused;
+  }
+  #ann-wrapper #page-2.restart {
+    -webkit-animation-name: AN-ani-5;
+  -webkit-animation-duration: 1s;
+  } 
+  #page-3 {
+    
+    width: 270px;
+    height: 360px;
+    -webkit-transform-origin: 0% 100%;
+    z-index:90;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    -webkit-animation-timing-function: ease;
+    -webkit-transform-origin-x: 100%;
+    -webkit-transform-origin-y: 0%;
+    -webkit-animation-name: AN-ani-1;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: paused;
+  }
+  #page-2 .page-content{
+    background: url('../images/sb_announce/page2-bg.jpg') no-repeat scroll top left;
+  }
+  #page-3 .back{
+    background: url('../images/sb_announce/page4-bg.jpg') no-repeat scroll top left;
+  }
+  #page-4 .back{
+    background: url('../images/sb_announce/page3-bg.jpg') no-repeat scroll top left;
+	width:233px;
+  } 
+  #page-3.restart {
+    -webkit-animation-name: AN-ani-4;
+   -webkit-animation-duration: 1s;
+  }
+  #page-4 {
+    background: url('../images/sb_announce/page4-bg.png') no-repeat scroll top left;
+    width: 273px;
+    height: 360px;
+    -webkit-transform-origin: 100% 0;
+    z-index:100;
+    left: 0px;
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    -webkit-animation-timing-function: ease;
+    -webkit-transform-origin-x: 0%;
+    -webkit-transform-origin-y: 100%;
+    -webkit-animation-name: AN-ani-2;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-play-state: paused;
+  }
+  #page-4.restart{
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -webkit-animation-name: AN-ani-3;
+    -webkit-animation-duration: 1s;
+  }
+  #page-3 > .back{
+    -webkit-transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+  }
+  page-4 >.back{
+    -webkit-transform: rotateY(0deg);
+    -webkit-backface-visibility: hidden;
+  }
+  #page-3,  #page-2  {
+    -webkit-backface-visibility: hidden;
+  }
+  #page-2, #page-3, #page-4 {
+    background: url('../images/sb_announce/page-bg.jpg') repeat-x scroll top left;
+    /*    -moz-box-shadow: inset rgba(0, 0, 0, 0.5) 0 3px 6px;
+     -webkit-box-shadow: inset rgba(0, 0, 0, 0.8) 6px 0px 26px;
+     box-shadow:  inset rgba(0, 0, 0, 0.8) 6px 0px 16px;*/
+  }
+  .front {
+    background-color:cccccc;
+    background: url('../images/sb_announce/page-bg.jpg') repeat-x scroll top left;
+    width:270px;
+    height:360px;
+  }
+  .back {
+    background-color:cccccc;
+    background: url('../images/sb_announce/page-bg.jpg') repeat-x scroll top left;
+    width:270px;
+    height:360px;
+  }
+  .restart * {
+   -webkit-animation-name: none !important;
+   }  
+
+
+        @-webkit-keyframes AN-ani-0 {
+        0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+
+        opacity:0;
+        }
+        20% {
+        opacity:1;
+        }
+        100% {
+        -webkit-transform: translate3d(260px, 0px, 0px);
+
+        opacity: 1;
+        }
+        }
+        @-webkit-keyframes AN-ani-1 {
+        0% {
+        -webkit-transform: scale3d(1, 1, 1) skew(0deg, 0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease;
+        -webkit-transform-origin: 100% 0%;
+        opacity:0;
+        }
+        70.0% {
+        -webkit-transform: scale3d(1, 1, 1) skew(0deg, 0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease-out;
+        -webkit-transform-origin: 100% 0%;
+        opacity: 0;
+        }
+        100% {
+        -webkit-transform: scale3d(1, 1, 1) skew(0deg, 0deg) rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease;
+        -webkit-transform-origin: 100% 0%;
+        opacity: 1;
+        }
+        }
+  
+        @-webkit-keyframes AN-ani-2 {
+        0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease;
+        -webkit-transform-origin: 0% 100%;
+        opacity:0;
+        }
+   
+        70% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease;
+        -webkit-transform-origin: 0% 100%;
+        opacity: 0;
+        }
+        100% {
+        -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+
+        -webkit-animation-timing-function: ease-out;
+        ;
+        -webkit-transform-origin: 0% 100%;
+        opacity: 1;
+        }
+        }
+       
+      @-webkit-keyframes AN-ani-3 {
+        0% {
+          -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+          opacity: 1;
+        } 
+        100% {
+          -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+          opacity: 0;
+        }
+      }
+
+    @-webkit-keyframes AN-ani-4 {
+        0% {
+          -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale3d(1, 1, 1) skew(0deg, 0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+          opacity: 0;
+        }
+      }
+
+    @-webkit-keyframes AN-ani-5 {
+        0% {
+      opacity: 1;
+        }
+        100% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+        }
+        }
+    .learnmore {
+      background: url('../images/sb_announce/learn-more.png') no-repeat scroll top left;
+      width: 102px;
+      height: 32px;
+      position: absolute;
+      bottom:130px;
+      left:150px;
+      text-indent:-9999px;
+      z-index:3000;
+    }
+    .learnmore:active{
+      background-position: 0 -32px;
+    }
+    .fold {
+      background: url('../images/sb_announce/fold.png') no-repeat scroll top left;
+      width: 102px;
+      height: 32px;
+      position: absolute;
+      bottom:130px;
+      left:185px;
+      text-indent:-9999px;
+      z-index:3000;
+    }
+    .fold:active{
+      background-position: 0 -32px;
+    }       
+  .page-content{  
+    width: 230px;
+    height: 185px;
+    padding: 155px 20px 20px;
+    font-size: 12px;
+  }
+  #ann-wrapper #page-content{
+  /*  display:none;*/
+  }
+  
+.restart .contact-us, .restart .contactus {
+  display: none;
+}
+.contact-us {
+  	background: url('../images/sb_announce/contact-us.png') no-repeat scroll top left;
+  	width: 100px;
+  	height: 30px;
+  	display: block;
+  	z-index: 999;
+	position:absolute;
+	bottom:10px;
+	right:10px;
+  }
+.contact-us:active{
+	background-position: 0 -30px;
+}
+.contactus{
+	background: url('../images/sb_announce/contact-us.png') no-repeat scroll top left;
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	bottom: 130px;
+	right: -963px;
+	z-index: 1000;
+	display:none;
+}
+.contactus:active{
+	background-position: 0 -30px;
+}
+.invisible-fold {
+    background: transparent;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    top: 119px;
+    right: -974px;
+}
