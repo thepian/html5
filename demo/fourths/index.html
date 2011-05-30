@@ -2,7 +2,8 @@
 layout: master
 fourths: development
 flawless: development
-
+dev_time_markup: yes
+# no_themes: yes
 title: Fourths Layout
 header_title: Fourths Layout
 author: Henrik Vendelbo
@@ -14,8 +15,9 @@ category:
 	<div class="fourths">
 		<div class="content">
 	<h1>
-	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
+	{{ page.header_title }} 
 	</h1>
+	(<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
 	<section>
 		<h2>- sub title</h2>
 	</section>
@@ -74,6 +76,8 @@ category:
 		<div class="right-half-background"></div>
 	</div>
 </article>
+
+<code class="info-x">(<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 
 <footer class="constrained">
 	{% include fourths-footer-etc.html %}

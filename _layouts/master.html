@@ -102,5 +102,8 @@
 		$('.masonry100').masonry({ columnWidth: 100 });
 	});
 </script>
+{% if page.dev_time_markup %}
+{% include dev_time_markup.html %}
+{% endif %}
 </body>
 </html>
