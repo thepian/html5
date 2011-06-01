@@ -236,7 +236,7 @@ h2. White space
 <footer>
 	{% include page-footer-etc.html %}
 	
-	{% if show_offset_info %}
+	{% if page.show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 	{% endif %}
 	
