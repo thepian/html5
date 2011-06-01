@@ -105,9 +105,10 @@
 
   <script type="text/javascript" src="/js/jQuery/jquery.masonry.min.js"></script>
 <script> 
-	$(function(){
+	(function($){
 		$('.masonry100').masonry({ columnWidth: 100 });
-	});
+		$('.masonry1').masonry({ });
+	})(jQuery);
 </script>
 {% if page.dev_time_markup %}
 {% include dev_time_markup.html %}
