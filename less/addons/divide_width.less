@@ -70,12 +70,7 @@
         overflow: visible;
     }
 
-    .fourth {
-        position: relative;
-        float:left;
-    }
-    
-    .three-fourths {
+    .fourth, .three-fourths, .four-fourths {
         position: relative;
         float:left;
     }
@@ -83,10 +78,10 @@
 
 .divide_width_fourths(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
-    @min_content_width: @min_width - @gap - @gap;
-    @max_content_width: @max_width - @gap - @gap;
+    @min_content_width: @min_width - @gap; // half gap each side
+    @max_content_width: @max_width - @gap; // halp gap each side
     
-    @base_quad_width: @min_content_width/4;
+    @base_quad_width: @min_content_width/3; // third is fixed
     @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
     @dynamic_percentage: 100% * ((@min_content_width - @base_quad_width) / @min_width);
     @dynamic_padding: (100% - @dynamic_percentage)/2;
@@ -96,7 +91,7 @@
     @max_quad_width: @max_content_width/4;
 
     @fourth_gap: 100% * @gap / @min_content_width;
-    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+    @fourth_width: 25% - @fourth_gap;
     
     @max-gap: @gap / @min_content_width * @max_content_width;
     
@@ -157,33 +152,33 @@
 
     .fourth {
         width: @fourth_width;
-    }
-    .fourth + .fourth {
-        margin-left: @fourth_gap;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
     
     .three-fourths {
         width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
     
-    .fourth + .three-fourths {
-        margin-left: @fourth_gap;
-    }
-    .three-fourths + .fourth {
-        margin-left: @fourth_gap;
+    .four-fourths {
+        width: @fourth_width * 4 + @fourth_gap * 3;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
 }
 
 .divide_width_fourths_mobile(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
-    @min_content_width: @min_width - @gap - @gap;
-    @max_content_width: @max_width - @gap - @gap;
+    @min_content_width: @min_width - @gap; // half gap each side
+    @max_content_width: @max_width - @gap; // halp gap each side
     @max-gap: @gap;
 
     @fourth_gap: 100% * @gap / @min_content_width;
-    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+    @fourth_width: 25% - @fourth_gap;
 
-    @base_quad_width: @min_content_width/4;
+    @base_quad_width: @min_content_width/3; // third is fixed
     @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
     @max_quad_width: @max_content_width/4;
 
@@ -239,20 +234,20 @@
 
     .fourth {
         width: @fourth_width;
-    }
-    .fourth + .fourth {
-        margin-left: @fourth_gap;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
     
     .three-fourths {
         width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
     
-    .fourth + .three-fourths {
-        margin-left: @fourth_gap;
-    }
-    .three-fourths + .fourth {
-        margin-left: @fourth_gap;
+    .four-fourths {
+        width: @fourth_width * 4 + @fourth_gap * 3;
+        margin-left: @fourth_gap / 2;
+        margin-right: @fourth_gap / 2;
     }
 }
 
@@ -329,7 +324,7 @@
         overflow: visible;
     }
 
-    .third, .wide-third, .min-third, .two-thirds {
+    .third, .wide-third, .min-third, .two-thirds, .three-thirds {
         position: relative;
         float:left;
     }
@@ -337,10 +332,10 @@
 
 .divide_width_thirds(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
-    @min_content_width: @min_width - @gap - @gap;
-    @max_content_width: @max_width - @gap - @gap;
+    @min_content_width: @min_width - @gap; // half gap each side
+    @max_content_width: @max_width - @gap; // halp gap each side
     
-    @base_three_width: @min_content_width/3;
+    @base_three_width: @min_content_width/3; // third is fixed
     @neg_half_base_three_width: e(%("-%spx",@base_three_width / 2));
     @dynamic_percentage: 100% * ((@min_content_width - @base_three_width) / @min_width);
     @dynamic_padding: (100% - @dynamic_percentage)/2;
@@ -350,7 +345,7 @@
     @max_third_width: @max_content_width/3;
 
     @third_gap: 100% * @gap / @min_content_width;
-    @third_width: (100% - 3 * @third_gap) / 3;
+    @third_width: 33.333% - @third_gap;
     @wide_third_width: 33.333%;
     
     @max-gap: @gap / @min_content_width * @max_content_width;
@@ -420,34 +415,34 @@
     
     .third {
         width: @third_width;
-    }
-    .third + .third {
-        margin-left: @third_gap;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
     
     .two-thirds {
         width: @third_width * 2 + @third_gap;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
     
-    .third + .two-thirds {
-        margin-left: @third_gap;
-    }
-    .two-thirds + .third {
-        margin-left: @third_gap;
+    .three-thirds {
+        width: @third_width * 3 + @third_gap * 2;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
 }
 
 .divide_width_thirds_mobile(@max_width,@min_width,@gap:@horz_edge_gap) { 
 
-    @min_content_width: @min_width - @gap - @gap;
-    @max_content_width: @max_width - @gap - @gap;
+    @min_content_width: @min_width - @gap; // half gap each side
+    @max_content_width: @max_width - @gap; // halp gap each side
     @max-gap: @gap;
 
     @third_gap: 100% * @gap / @min_content_width;
-    @third_width: (100% - 2 * @third_gap) / 3;
+    @third_width: 33.333% - @third_gap;
     @wide_third_width: 33.333%;
 
-    @base_three_width: @min_content_width/3;
+    @base_three_width: @min_content_width/3; // third is fixed
     @neg_half_base_three_width: e(%("-%spx",@base_three_width / 2));
     @max_three_width: @max_content_width/3;
 
@@ -511,20 +506,20 @@
     
     .third {
         width: @third_width;
-    }
-    .third + .third {
-        margin-left: @third_gap;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
     
     .two-thirds {
         width: @third_width * 2 + @third_gap;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
-    
-    .third + .two-thirds {
-        margin-left: @third_gap;
-    }
-    .two-thirds + .third {
-        margin-left: @third_gap;
+
+    .three-thirds {
+        width: @third_width * 3 + @third_gap * 2;
+        margin-left: @third_gap / 2;
+        margin-right: @third_gap / 2;
     }
 }
 
