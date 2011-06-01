@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Where to Focus My Business
+summary: In the past three years different countries fared quite differently according to the 
+latest OECD figures.
 ---
 
 h2. The Past Three Years
@@ -51,3 +53,6 @@ Unemployment '97 vs '08
 * United Kingdom was 8% now 5%
 * Portugal was 7% now 8%
 * Brazil 8%
+
+#author: Henrik Vendelbo
+#authorurl: /Henrik+Vendelbo
