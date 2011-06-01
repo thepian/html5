@@ -3,7 +3,6 @@ layout: master
 thirds: development
 flawless: development
 dev_time_markup: yes
-# no_themes: yes
 title: Thirds Layout
 header_title: Thirds Layout
 author: Henrik Vendelbo
@@ -53,6 +52,25 @@ category:
 		</div>
 		<div class="left-two-and-gutter-background"></div>
 		<div class="right-third-and-gutter-background"></div>
+	</div>
+</div>
+
+<div class="allposts constrained">
+	<div class="thirds">
+		<div class="content tri-posts">
+			{% for post in site.posts %}
+			<article class="third">
+				<details>
+				<summary>
+					<h2>{{ post.title }}</h2>
+					{% if post.image %}<img src="{{ post.image }}">{% endif %}
+					{% if post.summary %}{{ post.summary | truncatewords:50 }}{% endif %}
+					<a>More ...</a>
+				</summary>
+				</details>
+			</article>
+			{% endfor %}
+		</div>
 	</div>
 </div>
 
