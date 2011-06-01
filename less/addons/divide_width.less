@@ -329,7 +329,7 @@
         overflow: visible;
     }
 
-    .third, .wide-third, .two-thirds {
+    .third, .wide-third, .min-third, .two-thirds {
         position: relative;
         float:left;
     }
@@ -412,6 +412,10 @@
 
     .wide-third {
         width: @wide_third_width;
+    }
+    
+    .min-third {
+        width: @base_three_width;
     }
     
     .third {
@@ -499,6 +503,10 @@
 
     .wide-third {
         width: @wide_third_width;
+    }
+    
+    .min-third {
+        width: @base_three_width;
     }
     
     .third {
