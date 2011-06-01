@@ -1,5 +1,5 @@
 ---
-layout: frontpage
+layout: default
 title: HTML5 Stuff
 header_title: HTML5 Stuff
 rooturi: http://essentialjs.com

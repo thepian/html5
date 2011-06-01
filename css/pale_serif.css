@@ -197,3 +197,4 @@ body article .asides fieldset.search:after{clear:both;}
 body article .asides fieldset.search input{display:block;float:left;font-size:13px;margin-top:4px;padding:2px 3px 2px 3px;}
 body article .asides fieldset.search button{display:block;float:left;border:0;width:32px;height:32px;background:url('/images/buttons/top-edge.png') no-repeat -132px 0;}
 body article .asides fieldset.search button:hover{width:32px;height:32px;background:url('/images/buttons/top-edge.png') no-repeat -165px 0;}
+.tri-posts details{padding:15px 25px 25px 25px;}
