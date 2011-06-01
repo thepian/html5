@@ -35,8 +35,8 @@
 @bottom-edge-height: 20px;
 @page-menu-button-width: 32px;
 @page-menu-button-height: 32px;
-@sidebar-button-width: 57px;
-@sidebar-button-height: 57px;
+@sidebar-button-width: 48px;
+@sidebar-button-height: 48px;
 
 @article_aside1_height: 250px;
 @article_aside2_height: 250px;
@@ -152,9 +152,6 @@ body {
     .regular_anchor_theme(@regular_anchor_color, @regular_anchor_hover_color);
 	.regular_inline_flow(@mark_background, @code-family, @title_underline_color);
 	
-    .theme_external_link(2px, "/images/external-http.png", 12px, 0px, right);
-    .theme_external_email(2px, "/images/external-http.png", 12px, 0px, right);
-    
     h1,h2 {
         text-shadow: 0 1px 1px @shadow-color;
     }
@@ -202,6 +199,12 @@ body {
             }
         }
     } 
+}
+
+section,
+.with-link-hints {
+    .theme_external_link(2px, "/images/external-http.png", 12px, 0px, right);
+    .theme_external_email(2px, "/images/external-http.png", 12px, 0px, right);
 }
 
 .main {
@@ -317,12 +320,12 @@ nav.page-menu {
 
 
 /* Sidebar Site buttons */
-body article .asides fieldset {
+aside fieldset {
     
-    .sidebar_buttons(@sidebar-button-width, @sidebar-button-height, url('/images/buttons/site-57.png'))
+    .sidebar_buttons(@sidebar-button-width, @sidebar-button-height, url('/images/buttons/site-48.png'))
 }
 
-body article .asides fieldset.search {
+body aside fieldset.search {
     .sidebar_search_fieldset(@page-menu-button-width, @page-menu-button-height, url('/images/buttons/top-edge.png'));
 }
 

@@ -7,31 +7,31 @@ guesswho: itsme
 		
 <article class="two-thirds four-columns normal-read">
 				
-			<header id="articletop" class="with-overhang">
-				<div class="overhang-base">
-					<div class="left-overhang postbadge">
-						<time class="postdate">
-							<span class="postday">{{ page.date | date: "%d" }}</span>
-							<span class="postmonth">{{ page.date | date: "%b" }}</span>
-							<span class="postweekday">{{ page.date | date: "%A" }}</span>
-						</time>
-						<address rel="location">{{ page.location }}</address>
+	<header id="articletop" class="with-overhang">
+		<div class="overhang-base">
+			<div class="left-overhang postbadge">
+				<time class="postdate">
+					<span class="postday">{{ page.date | date: "%d" }}</span>
+					<span class="postmonth">{{ page.date | date: "%b" }}</span>
+					<span class="postweekday">{{ page.date | date: "%A" }}</span>
+				</time>
+				<address rel="location">{{ page.location }}</address>
 
-					</div>
-				</div>
-
-			<h1>{{ page.title }}</h1>
-
-			<div class="postinfo">
-			    <span class="credit">by <a href="{{ page.authorurl }}">{{ page.author }}</a> on <time>{{ page.date }}</time></span>
-			    <span class="links"><a href="#comments" class="comments-link">135 Comments</a></span>    
 			</div>
-			</header>
+		</div>
 
-			<section class="with-overhang">
+	<h1>{{ page.title }}</h1>
+
+	<div class="postinfo">
+	    <span class="credit">by <a href="{{ page.authorurl }}">{{ page.author }}</a> on <time>{{ page.date }}</time></span>
+	    <span class="links"><a href="#comments" class="comments-link">135 Comments</a></span>    
+	</div>
+	</header>
+
+	<section class="with-overhang">
 {{ content }}
-        	</section>
-			<section>
+    </section>
+<section>
 {% if site.disqus_account %}
         <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{{ disqus_account }}/embed.js"></script><noscript><a href="http://{{ disqus_account }}.disqus.com/?url=ref">View comments.</a></noscript>
     </div>
@@ -69,8 +69,7 @@ guesswho: itsme
 </article>
 
 <aside class="third four-columns normal-read">
-	<section>{% include blog-sidebar.textile %}
-	</section>
+	{% include blog-sidebar.textile %}
 
 	<!-- Aside level navigation -->
 	<nav class="top-overhang">
