@@ -329,12 +329,7 @@
         overflow: visible;
     }
 
-    .third {
-        position: relative;
-        float:left;
-    }
-
-    .two-thirds {
+    .third, .wide-third, .two-thirds {
         position: relative;
         float:left;
     }
@@ -356,6 +351,7 @@
 
     @third_gap: 100% * @gap / @min_content_width;
     @third_width: (100% - 3 * @third_gap) / 3;
+    @wide_third_width: 33.333%;
     
     @max-gap: @gap / @min_content_width * @max_content_width;
     
@@ -414,6 +410,10 @@
         margin-right: @neg_half_base_three_width;
     }
 
+    .wide-third {
+        width: @wide_third_width;
+    }
+    
     .third {
         width: @third_width;
     }
@@ -439,12 +439,13 @@
     @max_content_width: @max_width - @gap - @gap;
     @max-gap: @gap;
 
-    @fourth_gap: 100% * @gap / @min_content_width;
-    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+    @third_gap: 100% * @gap / @min_content_width;
+    @third_width: (100% - 2 * @third_gap) / 3;
+    @wide_third_width: 33.333%;
 
-    @base_quad_width: @min_content_width/4;
-    @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
-    @max_quad_width: @max_content_width/4;
+    @base_three_width: @min_content_width/3;
+    @neg_half_base_three_width: e(%("-%spx",@base_three_width / 2));
+    @max_three_width: @max_content_width/3;
 
     @dynamic_padding: 0%;
     
@@ -458,13 +459,13 @@
         content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
     }
     .show-min-section-width:after {
-        content: %("min. %spx gap %spx",@base_quad_width - @gap,@gap);
+        content: %("min. %spx gap %spx",@base_three_width - @gap,@gap);
     }
     .show-max-section-width:after {
-        content: %("max. %spx gap %spx",@max_quad_width - @gap,@max-gap);
+        content: %("max. %spx gap %spx",@max_three_width - @gap,@max-gap);
     }
     
-    .fourths {
+    .thirds {
         .content {
             margin: 0;
         }
@@ -472,46 +473,50 @@
         .left-fourth-and-gutter-background {
             left: 0;
             padding-left: @gap;
-            width: @fourth_width;
+            width: @third_width;
         }
         .right-fourth-and-gutter-background {
             right: 0;
             padding-right: @gap;
-            width: @fourth_width;
+            width: @third_width;
         }
         
         .left-three-and-gutter-background {
             left:0;
-            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
+            width: @third_width * 3; /*+ @fourth_gap + @fourth_gap;*/
         }
         
         .right-three-and-gutter-background {
             right:0;
-            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
+            width: @third_width * 3; /*+ @fourth_gap + @fourth_gap;*/
         }
     }
     
     // simplified content with no separate background elements.
-    .fourths-content {
+    .thirds-content {
         margin: 0;
     }
 
-    .fourth {
-        width: @fourth_width;
-    }
-    .fourth + .fourth {
-        margin-left: @fourth_gap;
+    .wide-third {
+        width: @wide_third_width;
     }
     
-    .three-fourths {
-        width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+    .third {
+        width: @third_width;
+    }
+    .third + .third {
+        margin-left: @third_gap;
     }
     
-    .fourth + .three-fourths {
-        margin-left: @fourth_gap;
+    .two-thirds {
+        width: @third_width * 2 + @third_gap;
     }
-    .three-fourths + .fourth {
-        margin-left: @fourth_gap;
+    
+    .third + .two-thirds {
+        margin-left: @third_gap;
+    }
+    .two-thirds + .third {
+        margin-left: @third_gap;
     }
 }
 

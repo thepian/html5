@@ -6,6 +6,19 @@ wrap-section: yes
 ---
 h2. Page Layouts
 
+- "Thirds":/demo/thirds/ := Appropriate for Articles,Blogs,News. Divides the page into thirds. 
+	You can put in combinations of third columns and two-third columns.
+	Content can also be divided in three equal columns.
+	* <a href="/demo/thirds/forms/">Forms</a>
+	* <a href="/demo/thirds/post1/">Post 1</a>
+	* <a href="/demo/thirds/alice/">Alice</a>
+	
+- "Fourths":/demo/fourths/ := Appropriate for wide Articles, Blogs, News, where the sidebar can be narrow.
+    Divides the page into fourths.
+    Main content is placed in the left three fourths with sidebars to the rightmost fourth.
+    Background elements can be added to span multiple fourths.
+	There is also an alternate page with "Alice in Wonderland":/demo/fourths/alice/
+	
 - "Two Thirds":/demo/twothirds/ := Appropriate for Articles,Blogs,News. Divides the page into thirds. 
 	Main content is placed in the left two thirds with sidebars in the right third.
 	Content can also be divided in three equal columns.
@@ -13,12 +26,7 @@ h2. Page Layouts
 	* <a href="/demo/twothirds/forms/">Forms</a>
 	* <a href="/demo/twothirds/post1/">Post 1</a>
 	* <a href="/demo/twothirds/production/">Production</a>
-	
-- "Fourths":/demo/fourths/ := Appropriate for wide Articles, Blogs, News, where the sidebar can be narrow.
-    Divides the page into fourths.
-    Main content is placed in the left three fourths with sidebars to the rightmost fourth.
-    Background elements can be added to span multiple fourths.
-	
+
 - "Fifty Fifty":/demo/fiftyfifty/ := 	Appropriate for Visual Spreads. Divides the page into two halves.
 		Either or both sides can be used for the main content.
 
