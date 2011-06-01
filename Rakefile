@@ -7,6 +7,7 @@ desc 'Build site with Jekyll'
 task :build do
   jekyll
   lessc 'twothirds'
+  lessc 'thirds'
   lessc 'fourths'
   lessc 'pale_serif'
   lessc 'night_sans'

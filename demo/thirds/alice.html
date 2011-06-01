@@ -1,6 +1,6 @@
 ---
 layout: master
-twothirds: development
+thirds: development
 flawless: development
 dev_time_markup: yes
 bottom_swap_link: !str <a href="index-production">Development Version [swap]</a>
@@ -13,8 +13,8 @@ category:
 ---
 
 
-<header class="split-thirds">
-	<div class="left-double"><div class="restricted-width">
+<header class="constrained">
+	<div class="thirds-content">
 		
 	<h1>
 	{{ page.header_title }} (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)
@@ -23,15 +23,16 @@ category:
 		<h2>- sub title</h2>
 	</section>
 	
-	</div></div>
+	</div>
 </header>
 
-<article class="intro split-thirds">
-	<div class="tripple-third">
-		<div class="restricted-width">
+<div class="intro constrained">
+	<div class="thirds">
+		<div class="content masonry100">
 			
-			<section class="masonry100">
+			<article class="third">
 				<summary style="display:block; float:left; width:200px; border:1px solid black; ">{{ site.lorem-ipsum | truncatewords:20 }}</summary>
+			</article>
 				<summary style="display:block; float:left; width:200px; border:1px solid black; ">{{ site.lorem-ipsum | truncatewords:20 }}</summary>
 				<summary style="display:block; float:left; width:200px; border:1px solid black; ">{{ site.lorem-ipsum | truncatewords:20 }}</summary>
 				<summary style="display:block; float:left; width:200px; border:1px solid black; ">{{ site.lorem-ipsum | truncatewords:20 }}</summary>
@@ -50,7 +51,7 @@ category:
 			</section>
 		</div>
 	</div>
-</article>
+</div>
 
 <article class="main split-thirds">
 	<div class="left-double sections">
@@ -162,24 +163,18 @@ content with tables and figures styling.
 	</div>
 </article>
 
-<footer>
-	<nav class="etc split-thirds">
-		<div class="left-third">
-			<div class="restricted-width">
+<footer class="constrained">
+	<nav class="etc thirds-content">
+		<div class="third">
 				<section>{{ site.lorem-ipsum | textilize }}</section>
-			</div>
 		</div>
 
-		<div class="middle-third">
-			<div class="restricted-width">
+		<div class="third">
 				<section>{{ site.lorem-ipsum | textilize }}</section>
-			</div>
 		</div>
 
-		<div class="right-third">
-			<div class="restricted-width">
+		<div class="third">
 				<section>{{ site.lorem-ipsum | textilize }}</section>
-			</div>
 		</div>
 	</nav>
 	

@@ -256,6 +256,265 @@
     }
 }
 
+/**********
+ * THIRDS *
+ **********/
+
+.divide_width_thirds_commons() {
+    
+    position: relative;
+    zoom: 1;
+    margin:0 auto;
+    
+    .thirds {
+        .content {
+            position: relative;
+            .util_clearfix();
+            overflow: visible;
+        }
+
+        .left-half-background {
+            position:absolute;
+            top:0;
+            right:50%;
+            width:50%;
+            margin-left: 0;
+            height:100%;
+            z-index: -10;
+        }
+        .right-half-background {
+            position:absolute;
+            top:0;
+            left:50%;
+            width:50%;
+            margin-right: 0;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-third-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+        }
+        .right-third-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+        }
+        
+        .left-two-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+        
+        .right-two-and-gutter-background {
+            position:absolute;
+            top:0;
+            height:100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+    }
+    
+    // simplified content with no separate background elements.
+    .thirds-content {
+        position: relative;
+        .util_clearfix();
+        overflow: visible;
+    }
+
+    .third {
+        position: relative;
+        float:left;
+    }
+
+    .two-thirds {
+        position: relative;
+        float:left;
+    }
+}
+
+.divide_width_thirds(@max_width,@min_width,@gap:@horz_edge_gap) { 
+
+    @min_content_width: @min_width - @gap - @gap;
+    @max_content_width: @max_width - @gap - @gap;
+    
+    @base_three_width: @min_content_width/3;
+    @neg_half_base_three_width: e(%("-%spx",@base_three_width / 2));
+    @dynamic_percentage: 100% * ((@min_content_width - @base_three_width) / @min_width);
+    @dynamic_padding: (100% - @dynamic_percentage)/2;
+    @min_dynamic_width: @min_content_width - @base_three_width;
+    @max_dynamic_width: @max_content_width - @base_three_width;
+
+    @max_third_width: @max_content_width/3;
+
+    @third_gap: 100% * @gap / @min_content_width;
+    @third_width: (100% - 3 * @third_gap) / 3;
+    
+    @max-gap: @gap / @min_content_width * @max_content_width;
+    
+    padding-left: @dynamic_padding + 0.1%; 
+    padding-right: @dynamic_padding + 0.1%; 
+
+    width: @dynamic_percentage;
+    min-width: @min_dynamic_width;
+    max-width: @max_dynamic_width;
+
+    .show-minmax-overall-width:after {
+        content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
+    }
+    .show-min-section-width:after {
+        content: %("min. %spx gap %spx",@base_three_width - @gap,@gap);
+    }
+    .show-max-section-width:after {
+        content: %("max. %spx gap %spx",@max_third_width - @gap,@max-gap);
+    }
+
+    .thirds {
+        .content {
+            margin-left: @neg_half_base_three_width;
+            margin-right: @neg_half_base_three_width;
+        }
+
+        .left-fourth-and-gutter-background {
+            left: 0;
+            padding-right: @base_three_width / 2;
+            width: @third_width;
+        }
+        .right-fourth-and-gutter-background {
+            right: 0;
+            padding-right: @gap;
+            width: @third_width;
+        }
+        
+        .left-three-and-gutter-background {
+            left:0;
+            padding-right: @base_three_width * .75;
+
+            width: @dynamic_percentage * .75;
+            min-width: @min_dynamic_width * .75;
+            max-width: @max_dynamic_width * .75;
+        }
+        
+        .right-three-and-gutter-background {
+            right:0;
+            width: @third_width * 3 + @third_gap * 3;
+        }
+    }
+    
+    // simplified content with no separate background elements.
+    .thirds-content {
+        margin-left: @neg_half_base_three_width;
+        margin-right: @neg_half_base_three_width;
+    }
+
+    .third {
+        width: @third_width;
+    }
+    .third + .third {
+        margin-left: @third_gap;
+    }
+    
+    .two-thirds {
+        width: @third_width * 2 + @third_gap;
+    }
+    
+    .third + .two-thirds {
+        margin-left: @third_gap;
+    }
+    .two-thirds + .third {
+        margin-left: @third_gap;
+    }
+}
+
+.divide_width_thirds_mobile(@max_width,@min_width,@gap:@horz_edge_gap) { 
+
+    @min_content_width: @min_width - @gap - @gap;
+    @max_content_width: @max_width - @gap - @gap;
+    @max-gap: @gap;
+
+    @fourth_gap: 100% * @gap / @min_content_width;
+    @fourth_width: (100% - 3 * @fourth_gap) / 4;
+
+    @base_quad_width: @min_content_width/4;
+    @neg_half_base_quad_width: e(%("-%spx",@base_quad_width / 2));
+    @max_quad_width: @max_content_width/4;
+
+    @dynamic_padding: 0%;
+    
+    // Padding to make background styling work 
+    padding-left: @gap; 
+    padding-right: @gap;
+    width: initial;
+    max-width: initial; 
+    
+    .show-minmax-overall-width:after {
+        content: %("min. %spx max. %spx",@min_content_width,@max_content_width)
+    }
+    .show-min-section-width:after {
+        content: %("min. %spx gap %spx",@base_quad_width - @gap,@gap);
+    }
+    .show-max-section-width:after {
+        content: %("max. %spx gap %spx",@max_quad_width - @gap,@max-gap);
+    }
+    
+    .fourths {
+        .content {
+            margin: 0;
+        }
+
+        .left-fourth-and-gutter-background {
+            left: 0;
+            padding-left: @gap;
+            width: @fourth_width;
+        }
+        .right-fourth-and-gutter-background {
+            right: 0;
+            padding-right: @gap;
+            width: @fourth_width;
+        }
+        
+        .left-three-and-gutter-background {
+            left:0;
+            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
+        }
+        
+        .right-three-and-gutter-background {
+            right:0;
+            width: @fourth_width * 3; /*+ @fourth_gap + @fourth_gap;*/
+        }
+    }
+    
+    // simplified content with no separate background elements.
+    .fourths-content {
+        margin: 0;
+    }
+
+    .fourth {
+        width: @fourth_width;
+    }
+    .fourth + .fourth {
+        margin-left: @fourth_gap;
+    }
+    
+    .three-fourths {
+        width: @fourth_width * 3 + @fourth_gap + @fourth_gap;
+    }
+    
+    .fourth + .three-fourths {
+        margin-left: @fourth_gap;
+    }
+    .three-fourths + .fourth {
+        margin-left: @fourth_gap;
+    }
+}
+
 /**
  * Split layout into a left two thirds and right third.
  * - Use within the article.split-thirds rule.

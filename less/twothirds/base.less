@@ -96,30 +96,9 @@ body {
     }
 }
 
-nav.top-overhang {
-	/* compose a horizontal navigation */
-	.nav-horizontal();
-	
-	/* like css rounded corners: top-left, top-right, bottom-right, bottom-left */
-	.nav-rounded(0px 5px 0px 0px);
-	/* padding around the text */
-	.nav-padding(0.5em 1em);
-	/* define gaps left, right of each nav item */
-	.nav-gap(0, 0.3em);
 
-    position: absolute;
-    top: -2.5em;
-    /*  remove the explicit width to make the navigation right aligned */
-    text-align:left;
-}
-article > nav.top-overhang {
-    left: 0px;
-}
-article .sections nav.top-overhang {
-    right: 0px;
-}
-article .asides nav.top-overhang {
-    left: 0px;
+nav.top-overhang {
+    .nav_top_overhang();
 }
 
 article.main {

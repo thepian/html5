@@ -1,17 +1,18 @@
 ---
 layout: master
-twothirds: development
+thirds: development
 flawless: development
 folder: Demos
 folderurl: /demo
 ---
-{% include page_header.html %}
+{% include page-header.html %}
 
-<article class="main split-thirds">
-	<div class="left-double sections normal-read">
-		<div class="restricted-width four-columns">
+<div class="main constrained">
+	<div class="thirds-content">
 		
-<header id="articletop">
+<article class="two-thirds four-columns normal-read">
+	
+<header id="articletop" class="with-overhang">
 	<div class="overhang-base">
 		<div class="left-overhang postbadge">
 			<time class="postdate">
@@ -32,7 +33,7 @@ folderurl: /demo
 </div>
 </header>
 
-<section>
+<section class="with-overhang">
 {{ content }}
 </section>
 
@@ -46,15 +47,13 @@ folderurl: /demo
             <li><a href="#">Article 5</a></li>
         </ul>
 	</nav>
-	</div></div> <!-- right-third and restricted-width -->
-	
-	<div class="right-third asides normal-read">
-		<div class="restricted-width">
-			
-		<aside>{% include blog-sidebar.textile %}</aside>
-		<aside>{% include demo-sidebar.html %}</aside>
-	</div>
+</article>
 
+<aside class="third four-columns normal-read">
+	<section>{% include blog-sidebar.textile %}
+	</section>
+	<section>{% include demo-sidebar.html %}
+	</section>
 	<!-- Aside level navigation -->
 	<nav class="top-overhang">
     	<ul>
@@ -63,10 +62,12 @@ folderurl: /demo
             <li><a href="#">Sidebar 3</a></li>
         </ul>
 	</nav>
-	</div>
-</article>
+</aside>
+	
+	
+</div></div>
 
-<footer>
+<footer class="constrained">
 	{% include page-footer-etc.html %}
 	{% if show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>

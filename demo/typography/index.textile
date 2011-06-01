@@ -1,18 +1,16 @@
 ---
 layout: master
-twothirds: development
+thirds: development
 flawless: development
 title: Baseline - Typography
 header_title: Baseline - Typography
 ---
-{% include page_header.html %}
-<article class="main split-thirds">
-	<div class="left-double sections normal-read">
-		<div class="restricted-width four-columns">
-			<header>
-				<h1>Typography</h1>
-				<hr>
-			</header>
+{% include page-header.html %}
+<div class="main constrained"><div class="thirds-content"><article class="two-thirds normal-read four-columns">
+<header>
+	<h1>Typography</h1>
+	<hr>
+</header>
 
 <section>
 
@@ -102,11 +100,12 @@ h2. Tables
 </table>
 </section>
 
-</div></div> <!-- double-third and restricted-width -->
 
-<div class="right-third asides normal-read">
-	<div class="restricted-width two-columns">
-	<aside>
+
+{% include article-nav.html %}
+</article>
+		
+<aside class="third normal-read two-columns"><section>
 h2. List Types
 
 h3. Ordered list
@@ -154,8 +153,7 @@ h3. Dialog
 </dialog>
 
 <hr>
-</aside>
-<aside>
+</section><section>
 h2. Blockquote
 
 <blockquote cite="http://www.projeturbain.com">
@@ -207,7 +205,7 @@ h2. Tables
 			<sup>superscript</sup> <sub>subscript</sub><br>
 			<var>variable or placeholder text</var><br>
 			<q>Short Quotation</q></p>
-			
+
 address. contact information, for the person, you are talking about.
 		<pre>preformatted text</pre>
 soft hyphen : <code>&shy; or &#173;</code>
@@ -225,25 +223,17 @@ h2. White space
 			<li><q>&thinsp;</q><span class=" description">thin space : <code>&#8201;</code></span></li>
 			<li><q>&#8202;</q><span class=" description">hair space : <code>&#8202;</code></span> </li>
 		</ul>
-	</aside>
-</div>
-<nav class="top-overhang">
-	<ul>
-    	<li><a class="active" href="#">Sidebar 1</a></li>
-        <li><a href="#">Sidebar 2</a></li>
-        <li><a href="#">Sidebar 3</a></li>
-    </ul>
-</nav>
 
-</div>
-</article>
+			{% include sidebar-nav.html %}
+</section></aside>
+</div></div> 
 
-<footer>
+<footer class="constrained">
 	{% include demo-footer-etc.html %}
-	
 	{% if show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 	{% endif %}
-
 	{% include demo-footer-copyright.html %}
 </footer>
+
+

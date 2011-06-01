@@ -1,18 +1,18 @@
 ---
 layout: master
-fourths: development
+thirds: development
 flawless: development
 dev_time_markup: yes
 # no_themes: yes
-title: Fourths Layout
-header_title: Fourths Layout
+title: Thirds Layout
+header_title: Thirds Layout
 author: Henrik Vendelbo
 date: 2010-01-01
 category:
  - sizes
 ---
 <header class="constrained" style="background: transparent;">
-	<div class="fourths">
+	<div class="thirds">
 		<div class="content">
 	<h1>
 	{{ page.header_title }} 
@@ -28,9 +28,9 @@ category:
 </header>
 
 <div class="intro constrained">
-	<div class="fourths" data-custom-backgrounds="left-half:intro-background; right-half:intro-other intro-second">
+	<div class="thirds" data-custom-backgrounds="left-half:intro-background; right-half:intro-other intro-second">
 		<div class="content">
-			<div class="three-fourths">
+			<div class="two-thirds">
 				<section>
 				{{ site.lorem-ipsum | textilize }}
 				{{ site.ut-wisi-enim | textilize }}
@@ -44,30 +44,30 @@ category:
 					</a>
 				</section>
 			</div>
-			<div class="fourth">
+			<div class="third">
 				<section>
 				{{ site.lorem-ipsum | textilize }}
 				</section>
 				
 			</div>
 		</div>
-		<div class="left-three-and-gutter-background"></div>
-		<div class="right-fourth-and-gutter-background"></div>
+		<div class="left-two-and-gutter-background"></div>
+		<div class="right-third-and-gutter-background"></div>
 	</div>
 </div>
 
 <div class="main constrained">
-	<div class="fourths">
+	<div class="thirds">
 		<div class="content">
 		
-			<aside class="fourth">
+			<aside class="third">
 				<div class="show-minmax-overall-width">Size of article </div>
 				<div class="show-min-section-width">Size of sidebar </div>
 				<div class="show-max-section-width">Size of sidebar </div>
 				<br>
 				{{ site.lorem-ipsum | textilize }}
 			</aside>
-			<article class="three-fourths">
+			<article class="two-thirds">
 				{{ site.lorem-ipsum | textilize }}
 				{{ site.ut-wisi-enim | textilize }}
 			</article>
@@ -80,7 +80,7 @@ category:
 <code class="info-x">(<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 
 <footer class="constrained">
-	{% include fourths-footer-etc.html %}
+	{% include thirds-footer-etc.html %}
 	{% if show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 	{% endif %}

@@ -56,8 +56,8 @@ body {
  * Base layout for SuperVGA sizes, default for older browser
  */
 .constrained {
-    .divide_width_fourths_commons();
-    .divide_width_fourths(1200px,800px);
+    .divide_width_thirds_commons();
+    .divide_width_thirds(1200px,800px);
     overflow:visible; /* allow top-overhang navigation to be visible */
 
     /* used for copyright in footer */
@@ -98,7 +98,7 @@ aside nav.top-overhang {
 /* Modern browser in a large window */
 @media only screen and (min-width: 1200px) {
     .constrained {
-        .divide_width_fourths(1800px,1200px);
+        .divide_width_thirds(1800px,1200px);
     }
     .four-columns {
         .divide_four_columns(1800px,1200px);
@@ -108,7 +108,7 @@ aside nav.top-overhang {
 /* Modern browser on a iPad any orientation (defaults to 980px width)*/
 @media only screen and (device-width: 768px) {
     .constrained {
-        .divide_width_fourths_mobile(1024px,980px);
+        .divide_width_thirds_mobile(1024px,980px);
     }
     .four-columns {
         .divide_four_columns(1024px,980px);

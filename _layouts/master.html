@@ -11,14 +11,21 @@
 {% when 'production' %}
   <link rel="stylesheet" type="text/css" href="/css/twothirds.css" media="screen">
 {% when 'development' %}
-  <link rel="stylesheet/less" type="text/css" href="/less/twothirds.less" media="screen" title="flawless_css"/>
+  <link rel="stylesheet/less" type="text/css" href="/less/twothirds.less" media="screen" title="twothirds_css"/>
+{% endcase %}
+
+{% case page.thirds  %}
+{% when 'production' %}
+  <link rel="stylesheet" type="text/css" href="/css/thirds.css" media="screen">
+{% when 'development' %}
+  <link rel="stylesheet/less" type="text/css" href="/less/thirds.less" media="screen" title="thirds_css"/>
 {% endcase %}
 
 {% case page.fourths  %}
 {% when 'production' %}
   <link rel="stylesheet" type="text/css" href="/css/fourths.css" media="screen">
 {% when 'development' %}
-  <link rel="stylesheet/less" type="text/css" href="/less/fourths.less" media="screen" title="flawless_css"/>
+  <link rel="stylesheet/less" type="text/css" href="/less/fourths.less" media="screen" title="fourths_css"/>
 {% endcase %}
 
 	<link rel="stylesheet" type="text/css" href="/css/jScrollPane.css">
@@ -68,7 +75,7 @@
 </ul>
 {% endif %}
 
-{% include page_menu.html %}
+{% include page-menu.html %}
 </div>
 {% endunless %}
 	

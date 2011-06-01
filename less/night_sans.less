@@ -39,6 +39,7 @@
 @article_aside1_height: 250px;
 @article_aside2_height: 250px;
 @etc_height: 275px;
+@left_overhang: 80px; 
 
 /**
  * Typefaces
@@ -67,6 +68,7 @@
 @nav_background_color: transparent;
 @overhang_background_color: @nav_background_color;
 @article_background_color: #080808;
+@main_background: #070707;
 
 @code_background_color: #666;
 @code_color: #aaa;
@@ -189,6 +191,10 @@ body {
     }
 }
 
+.main {
+    background: @main_background;
+}
+
 footer .etc {
     min-height: @etc_height;
     
@@ -222,10 +228,7 @@ section, aside {
     .regular_list_theme();
 }
 
-article.main {
-
-    min-height:@article_aside1_height + @article_aside2_height;
-
+article {    
     /* themed */
     color: @article_color;
     background-color: @article_background_color;
@@ -233,6 +236,38 @@ article.main {
     //.regular_blob_theme(#333, #F4F4F4, #DEDEDE); 
     .regular_quotes_theme(#e0e0e0,@shadow-color,40px);
     
+    .overhang-base {
+        .overhang_base();
+    }
+    .left-overhang {
+        .left_overhang();
+    }
+}
+
+article header, article footer, section, aside {
+    .regular_inline_flow(@article_mark_background, @code-family, @article_title_underline_color); 
+    .regular_figure_theme(@article_figure_background_color,@article_figure_border);
+    .regular_table_theme(@table-border-color,@table-odd-background);   
+
+    .postbadge {
+        .post_badge();
+    }
+}
+
+article header {
+    .postinfo {
+        .posts_info();
+    }
+}    
+
+section.comments {
+    .comments_gradient_background_theme(@article_background_color,1px solid #bbb)
+}
+
+article.main {
+
+    min-height:@article_aside1_height + @article_aside2_height;
+
     .sections {
 
         header, footer, section {

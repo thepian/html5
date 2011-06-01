@@ -1,17 +1,17 @@
 ---
 layout: master
-twothirds: production
+thirds: development # production
 flawless: development
 theme: blog
 ---
-{% include page_header.html %}
+{% unless page.no_header %}{% include page-header.html %}{% endunless %}
 
 {{ content }}
 
-<footer>
+<footer class="constrained">
 	{% include page-footer-etc.html %}
-	{% if show_offset_info %}
+	{% if page.show_offset_info %}
 	<code class="info">Etc (<var data-parent-prop="offsetWidth"></var> x <var data-parent-prop="offsetHeight"></var>)</code>
 	{% endif %}
-	{% include blog-footer-copyright.textile %}
+	{% include blog-footer-copyright.html %}
 </footer>
