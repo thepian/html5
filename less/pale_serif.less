@@ -43,6 +43,7 @@
 @etc_height: 275px;
 @left_overhang: 80px; 
 
+/* TODO page header overlap with article in next part */
 
 /**
  * Typefaces
@@ -71,6 +72,7 @@
 @nav_background_color: transparent;
 @overhang_background_color: @nav_background_color;
 @article_background_color: #e8e8e8;
+@effective_article_background_color: @article_background_color; /* If transparent replace with page background */
 @main_background: #f0f0f0;
 
 @code_background_color: #666;
@@ -280,7 +282,7 @@ article header {
 }    
 
 section.comments {
-    .comments_gradient_background_theme(@article_background_color,1px solid #bbb)
+    .comments_gradient_background_theme(@effective_article_background_color,1px solid #bbb)
 }
 
 .thirds-content > aside,
