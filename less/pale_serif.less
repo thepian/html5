@@ -239,7 +239,7 @@ nav.top-overhang {
 	.nav-text-color(black, black, black);
 }
 
-section, article aside {
+section, article aside, .links-bar {
     
     .normal_list_rhythm();
     .regular_list_theme();
@@ -320,6 +320,19 @@ nav.page-menu {
     .regular_page_menu(@page-menu-button-width, @page-menu-button-height, url('/images/buttons/top-edge.png'));
 }
 
+.links-bar {
+    background: @main_background;
+    ul.breadcrumb a {
+        color: darken(@main_background,20%);
+    }
+}
+.links-bar:hover {
+    background: black;
+    ul.breadcrumb a {
+        color: white;
+    }
+    .opacity(.5);
+}
 
 /* Sidebar Site buttons */
 aside fieldset {

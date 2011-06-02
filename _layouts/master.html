@@ -44,7 +44,6 @@
 	{% unless page.no_themes %}
 	  <link rel="stylesheet/less" type="text/css" href="/less/pale_serif.less" media="screen" title="pale_serif_css" preferred="Pale Serif">
 	  <link rel="stylesheet/less" type="text/css" href="/less/night_sans.less" media="screen" title="night_sans_css" alternate="Night Sans">
-	  <link rel="stylesheet/less" type="text/css" href="/less/twothirds/demo_theme.less" media="screen" title="demo_css" alternate="Demo Theme">
 	{% endunless %}
   {% include flawless_development.html %}
 {% endcase %}
@@ -67,7 +66,7 @@
 
 {% unless page.no_top_edge %}
 <div class="top-edge">
-{% if top_edge_breadcrumb %}
+{% if page.top_edge_breadcrumb %}
 <ul class="breadcrumb">
 	<li class="home"><a href="/">HTML 5 Playground</a></li>
 	{% if page.folder %}<li class="folder"><a href="{{ page.folderurl }}">{{ page.folder }}</a></li>{% endif %}
