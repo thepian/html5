@@ -1,6 +1,7 @@
 ---
 layout: blog
-guesswho: itsme
+folder: On A Quest
+folderurl: /onaquest/
 ---
 <div class="main constrained">
 	<div class="thirds-content">
@@ -37,22 +38,6 @@ guesswho: itsme
     </div>
 {% endif %}
 
-    <h3>
-        Other Posts</h3>
-    <ul>
-        {% for post in site.related_posts limit:10 %}
-        <li>
-			<time class="postdate">
-				<!-- 
-				<span class="postweekday">{{ page.date | date: "%w" }}</span>
-				-->
-				<span class="postmonth">{{ post.date | date: "%b" }}</span>
-				<span class="postday">{{ post.date | date: "%d" }}</span>
-			</time>
-			<a href='{{ post.url }}'>{{ post.title }}</a>
-	</li>
-        {% endfor %}
-    </ul>
 
 </section>
 
