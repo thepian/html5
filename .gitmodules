@@ -4,3 +4,6 @@
 [submodule "dev-time/flawless"]
 	path = dev-time/flawless
 	url = git@github.com:thepian/flawless.css.git
+[submodule "/Sites/html5/dev-time/less-addons"]
+	path = /Sites/html5/dev-time/less-addons
+	url = git@github.com:thepian/less-addons.git
