@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.mikebowyer.co.uk/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" class="js"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Mike Bowyer</title>
+
+<link rel="stylesheet" href="./Mike Bowyer_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Mike Bowyer RSS Feed" href="http://www.mikebowyer.co.uk/feed/">
+<link rel="alternate" type="application/atom+xml" title="Mike Bowyer Atom Feed" href="http://www.mikebowyer.co.uk/feed/atom/">
+<link rel="pingback" href="http://www.mikebowyer.co.uk/xmlrpc.php">
+
+<!--[if lt IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.mikebowyer.co.uk/wp-content/themes/OnTheGo/ie6style.css" />
+	<script type="text/javascript" src="http://www.mikebowyer.co.uk/wp-content/themes/OnTheGo/js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript">DD_belatedPNG.fix('ul#top-menu li ul, ul#top-menu li ul li.dropdown-bottom, img#logo, div#manlayer, ul.control li.recent a, div.entries h3 span, .widget_entries h3, #buildings');</script>
+<![endif]-->
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://www.mikebowyer.co.uk/wp-content/themes/OnTheGo/ie7style.css" />
+<![endif]-->
+
+<script type="text/javascript" async="" src="./Mike Bowyer_files/ga.js"></script><script type="text/javascript">
+	document.documentElement.className = 'js';
+</script>
+
+<meta content="OnTheGo v.1.9" name="generator"><link media="screen" type="text/css" href="./Mike Bowyer_files/jquery.fancybox-1.2.6.css" rel="stylesheet">
+<link media="screen" type="text/css" href="./Mike Bowyer_files/page_templates.css" rel="stylesheet"><link rel="stylesheet" id="contact-form-7-css" href="./Mike Bowyer_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="shortcodesStyleSheets-css" href="./Mike Bowyer_files/shortcodes.css" type="text/css" media="all">
+<script type="text/javascript" src="./Mike Bowyer_files/l10n.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/jquery.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/swfobject.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/audio-player-noswfobject.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.mikebowyer.co.uk/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.mikebowyer.co.uk/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Mike Bowyer" href="./Mike Bowyer_files/Mike Bowyer.html">
+<meta name="generator" content="WordPress 3.1.3">
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[303,392] -->
+<link rel="canonical" href="./Mike Bowyer_files/Mike Bowyer.html">
+<!-- /all in one seo pack -->
+<meta property="og:site_name" content="Mike Bowyer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mike Bowyer"><meta property="og:url" content="http://www.mikebowyer.co.uk"><meta property="og:description" content="Online Business Consultancy....Optimum performance for your business">		<!-- Podcasting 2.3.11: http://podcastingplugin.com/ -->
+		<script type="text/javascript">
+			AudioPlayer.setup("http://www.mikebowyer.co.uk/wp-content/plugins/podcasting/player/player.swf", {  
+				width: 290			});
+		</script>
+			<script type="text/javascript">
+	// <![CDATA[
+	
+		<!---- et_switcher plugin v2 ---->
+		(function($)
+		{
+			$.fn.et_shortcodes_switcher = function(options)
+			{
+				var defaults =
+				{
+				   slides: '>div',
+				   activeClass: 'active',
+				   linksNav: '',
+				   findParent: true, //use parent elements to define active states
+				   lengthElement: 'li', //parent element, used only if findParent is set to true
+				   useArrows: false,
+				   arrowLeft: 'a#prev-arrow',
+				   arrowRight: 'a#next-arrow',
+				   auto: false,
+				   autoSpeed: 5000,
+				   slidePadding: '',
+				   pauseOnHover: true,
+				   fx: 'fade',
+				   sliderType: ''
+				};
+
+				var options = $.extend(defaults, options);
+
+				return this.each(function()
+				{
+									
+					var slidesContainer = jQuery(this).parent().css('position','relative'),
+						$slides = jQuery(this).css({'overflow':'hidden','position':'relative'}),
+						$slide = $slides.find(options.slides).css({'opacity':'1','position':'absolute','top':'0px','left':'0px','display':'none'}),
+						slidesNum = $slide.length,
+						zIndex = slidesNum,
+						currentPosition = 1,
+						slideHeight = 0,
+						$activeSlide,
+						$nextSlide;
+					
+					if (options.fx === 'slide') {
+						$slide.css({'opacity':'0','position':'absolute','top':'0px','left':'0px','display':'block'});
+					} else {
+						$slide.filter(':first').css({'display':'block'});
+					}
+					
+					if (options.slidePadding != '') $slide.css('padding',options.slidePadding);
+					
+					$slide.each(function(){
+						jQuery(this).css('z-index',zIndex).addClass('clearfix');
+						if (options.fx === 'slide') zIndex--;
+						
+						slideH = jQuery(this).innerHeight();
+						if (slideH > slideHeight) slideHeight = slideH;
+					});
+					$slides.css('height', slideHeight);
+					$slides.css('width', $slides.width());
+									
+					var slideWidth = $slide.width(),
+						slideOuterWidth = $slide.outerWidth();
+					
+					$slide.css('width',slideWidth);
+					
+					$slide.filter(':first').css('opacity','1');
+					
+					if (options.sliderType != '') {
+						if (options.sliderType === 'images') {
+							controllersHtml = '<div class="controllers-wrapper"><div class="controllers"><a href="#" class="left-arrow">Previous</a>';
+							for ($i=1; $i<=slidesNum; $i++) {
+								controllersHtml += '<a class="switch" href="#">'+$i+'</a>';
+							}
+							controllersHtml += '<a href="#" class="right-arrow">Next</a></div><div class="controllers-right"></div></div>';		
+							$controllersWrap = jQuery(controllersHtml).prependTo($slides.parent());
+							jQuery('.controllers-wrapper .controllers').css('width', 65 + 18*slidesNum);
+						}
+						
+						var etimage_width = $slide.width();
+			
+						slidesContainer.css({'width':etimage_width});
+						$slides.css({'width':etimage_width});
+						
+						if (options.sliderType === 'images') {
+							slidesContainer.css({'height':$slide.height()});
+							$slides.css({'height':$slide.height()});
+							
+							var controllers_width = $controllersWrap.width(),
+							leftPosition = Math.round((etimage_width - controllers_width) / 2);
+						
+							$controllersWrap.css({left: leftPosition});
+						}	
+					}
+					
+					
+					if (options.linksNav != '') {
+						var linkSwitcher = jQuery(options.linksNav);
+						
+						var linkSwitcherTab = '';
+						if (options.findParent) linkSwitcherTab = linkSwitcher.parent();
+						else linkSwitcherTab = linkSwitcher;
+						
+						if (!linkSwitcherTab.filter('.active').length) linkSwitcherTab.filter(':first').addClass('active');
+										
+						linkSwitcher.click(function(){
+							
+							var targetElement;
+
+							if (options.findParent) targetElement = jQuery(this).parent();
+							else targetElement = jQuery(this);
+							
+							var orderNum = targetElement.prevAll(options.lengthElement).length+1;
+							
+							if (orderNum > currentPosition) gotoSlide(orderNum, 1);
+							else gotoSlide(orderNum, -1); 
+							
+							return false;
+						});
+					}
+					
+					
+					if (options.useArrows) {
+						var $right_arrow = jQuery(options.arrowRight),
+							$left_arrow = jQuery(options.arrowLeft);
+											
+						$right_arrow.click(function(){				
+							if (currentPosition === slidesNum) 
+								gotoSlide(1,1);
+							else 
+								gotoSlide(currentPosition+1),1;
+							
+							if (options.linksNav != '') changeTab();
+													
+							return false;
+						});
+						
+						$left_arrow.click(function(){
+							if (currentPosition === 1)
+								gotoSlide(slidesNum,-1);
+							else 
+								gotoSlide(currentPosition-1,-1);
+							
+							if (options.linksNav != '') changeTab();
+							
+							return false;
+						});
+						
+					}
+					
+									
+					function changeTab(){
+						if (linkSwitcherTab != '') { 
+							linkSwitcherTab.siblings().removeClass('active');
+							linkSwitcherTab.filter(':eq('+(currentPosition-1)+')').addClass('active');
+						}
+					}
+					
+					function gotoSlide(slideNumber,dir){
+						if ($slide.filter(':animated').length) return;
+					
+						$slide.css('opacity','0');
+																			
+						$activeSlide = $slide.filter(':eq('+(currentPosition-1)+')').css('opacity','1');
+										
+						if (currentPosition === slideNumber) return;
+										
+						$nextSlide = $slide.filter(':eq('+(slideNumber-1)+')').css('opacity','1');
+										
+						if ((currentPosition > slideNumber || currentPosition === 1) && (dir === -1)) {
+							if (options.fx === 'slide') slideBack(500);
+							if (options.fx === 'fade') slideFade(500);
+						} else {
+							if (options.fx === 'slide') slideForward(500);
+							if (options.fx === 'fade') slideFade(500);
+						}
+						
+						currentPosition = $nextSlide.prevAll().length + 1;
+						
+						if (options.linksNav != '') changeTab();
+						
+						if (typeof interval != 'undefined' && options.auto) {
+							clearInterval(interval);
+							auto_rotate();
+						}
+											
+						return false;
+					}
+					
+					
+					if (options.auto) {
+						auto_rotate();
+						var pauseSlider = false;
+					}
+					
+					if (options.pauseOnHover) { 				
+						slidesContainer.hover(function(){
+							pauseSlider = true;
+						},function(){
+							pauseSlider = false;
+						});
+					}
+					
+					function auto_rotate(){
+						
+						interval = setInterval(function(){
+							if (!pauseSlider) { 
+								if (currentPosition === slidesNum) 
+									gotoSlide(1,1);
+								else 
+									gotoSlide(currentPosition+1),1;
+								
+								if (options.linksNav != '') changeTab();
+							}
+						},options.autoSpeed);
+						
+					}
+					
+					function slideForward(speed){
+						$nextSlide.css('left',slideOuterWidth+'px');
+						$activeSlide.animate({left: '-'+slideOuterWidth},speed);
+						$nextSlide.animate({left: 0},speed);
+					}
+					
+					function slideBack(speed){
+						$nextSlide.css('left','-'+slideOuterWidth+'px');
+						$activeSlide.animate({left: slideOuterWidth},speed);
+						$nextSlide.animate({left: 0},speed);
+					}
+					
+					function slideFade(speed){					
+						$activeSlide.css({zIndex: slidesNum}).fadeOut(700);
+						$nextSlide.css({zIndex: (slidesNum+1)}).fadeIn(700);
+					}
+					
+				});
+			} 
+		})(jQuery);
+		<!---- end et_switcher plugin v2 ---->
+		
+		/////// Shortcodes Javascript ///////
+		
+		/// tooltip ///
+		
+		$et_tooltip = jQuery('.et-tooltip');
+		
+		$et_tooltip.live('mouseover mouseout', function(event){
+			if (event.type == 'mouseover') {
+				jQuery(this).find('.et-tooltip-box').animate({ opacity: 'show', bottom: '25px' }, 300);
+			} else {
+				jQuery(this).find('.et-tooltip-box').animate({ opacity: 'hide', bottom: '35px' }, 300);
+			}
+		});
+		
+		/// learn more ///
+		
+		$et_learn_more = jQuery('.et-learn-more .heading-more');
+		
+		$et_learn_more.live('click', function() {
+			if ( jQuery(this).hasClass('open') ) 
+				jQuery(this).removeClass('open');
+			else 
+				jQuery(this).addClass('open');
+				
+			jQuery(this).parent('.et-learn-more').find('.learn-more-content').animate({ opacity: 'toggle', height: 'toggle' }, 300);
+		});
+	
+	// ]]>
+	</script>
+	<link rel="alternate" type="application/rss+xml" title="Podcast: Business Consultancy" href="http://www.mikebowyer.co.uk/feed/podcast/">
+
+<script async="" type="text/javascript" src="./Mike Bowyer_files/count.js"></script></head>
+<body class="home blog chrome">
+
+	<div class="container">
+		<div id="header">
+							<ul id="top-menu" class="superfish nav sf-js-enabled">
+											<li class="current_page_item"><a href="./Mike Bowyer_files/Mike Bowyer.html">Home</a></li>
+					
+						<li class="cat-item cat-item-3"><a href="http://www.mikebowyer.co.uk/category/blog/" title="View all posts filed under Blog">Blog</a>
+</li>
+					
+					<li class="page_item page-item-18"><a href="http://www.mikebowyer.co.uk/about-us/" title="About Us">About Us</a></li>
+<li class="page_item page-item-25"><a href="http://www.mikebowyer.co.uk/thank-you-you-are-awesome/" title="Thank You!">Thank You!</a></li>
+<li class="page_item page-item-40"><a href="http://www.mikebowyer.co.uk/services/" title="Services">Services</a></li>
+<li class="page_item page-item-42"><a href="http://www.mikebowyer.co.uk/rates/" title="Rates">Rates</a></li>
+				</ul> <!-- end ul.nav -->
+					</div> <!-- end header -->
+
+		<div id="contentwrap">
+			<div id="content">
+
+
+				<div id="manlayer"></div>
+
+				<!-- LOGO -->
+				<div id="logowrap">
+					<a href="./Mike Bowyer_files/Mike Bowyer.html">						<img src="./Mike Bowyer_files/Logo-header.png" alt="Logo" id="logo"></a>
+				</div>
+				<!-- end LOGO -->
+				<div id="main-area" class="clearfix">    <script type="text/javascript">
+    // <![CDATA[
+        var disqus_shortname = 'mikebowyer1';
+        var disqus_domain = 'disqus.com';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_domain + '/forums/' + disqus_shortname + '/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+	
+<!-- Featured Slider -->
+<div id="featured-slider">
+	<div id="buildings"></div>
+	<ul id="slider-control">
+					<li class="active"><a href="http://www.mikebowyer.co.uk/#"><span>Tab custom field</span></a></li>
+					<li><a href="http://www.mikebowyer.co.uk/#"><span>Tab custom field</span></a></li>
+					<li><a href="http://www.mikebowyer.co.uk/#"><span></span></a></li>
+			</ul> <!-- #slider-control -->
+	<div id="featured-area">
+
+		<div id="feat-content" style="display: block; position: relative; width: 769px; height: 267px; ">
+							<div class="featitem clearfix" style="position: absolute; top: 0px; left: 0px; opacity: 1; display: block; z-index: 4; ">
+
+					<div class="featured-image">
+						<a href="http://www.mikebowyer.co.uk/2011/06/the-va-passport/" title="Permanent Link to The VA Passport!">
+							<img src="./Mike Bowyer_files/timthumb.php" alt="The VA Passport!" width="307" height="195">						</a>
+					</div> <!-- .featured-image -->
+
+					<div class="description">
+						<h2><a href="http://www.mikebowyer.co.uk/2011/06/the-va-passport/" title="Permanent Link to The VA Passport!"><span>The VA Passport!</span></a></h2>
+						<p>
+Tweet
+
+If you’re a virtual assistant, online service provider or trying to  make a living online, you’ll appreciate this wealth of information and  resources available to you. “The VA Passport” isn’t just another info  product, forum or resource – this is something different.
+The VA Passport is a growing network specifically...</p>
+					</div> <!-- .description -->
+
+					<a href="http://www.mikebowyer.co.uk/2011/06/the-va-passport/" title="Permanent Link to The VA Passport!" class="readmore"><span>Read More</span></a>
+
+				</div> <!-- .featitem -->
+							<div class="featitem clearfix" style="z-index: 2; opacity: 0; position: absolute; top: 0px; left: 0px; display: none; ">
+
+					<div class="featured-image">
+						<a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome">
+							<img src="./Mike Bowyer_files/timthumb.php" alt="Welcome" width="307" height="195">						</a>
+					</div> <!-- .featured-image -->
+
+					<div class="description">
+						<h2><a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome"><span>Welcome</span></a></h2>
+						<p>
+Tweet
+
+</p>
+					</div> <!-- .description -->
+
+					<a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome" class="readmore"><span>Read More</span></a>
+
+				</div> <!-- .featitem -->
+							<div class="featitem clearfix" style="z-index: 1; opacity: 0; position: absolute; top: 0px; left: 0px; display: none; ">
+
+					<div class="featured-image">
+						<a href="" title="Permanent Link to ">
+							<img src="./Mike Bowyer_files/timthumb.php" alt="" width="307" height="195">						</a>
+					</div> <!-- .featured-image -->
+
+					<div class="description">
+						<h2><a href="" title="Permanent Link to "><span></span></a></h2>
+						<p></p>
+					</div> <!-- .description -->
+
+					<a href="" title="Permanent Link to " class="readmore"><span>Read More</span></a>
+
+				</div> <!-- .featitem -->
+						
+		</div> <!-- #feat-content -->
+
+		<a href="http://www.mikebowyer.co.uk/#" id="prevlink">Previous</a>
+		<a href="http://www.mikebowyer.co.uk/#" id="nextlink">Next</a>
+
+	</div> <!-- #featured area -->
+
+</div> <!-- #featured slider -->
+<div id="main-content">
+	<div class="entry clearfix">
+	
+														<h2 class="title page"><span>About Us</span></h2>
+<p>Mike is an experienced entrepreneur, business development and services manager, as well as a virtual assistant team leader.&nbsp; Over the years, he has helped many small and medium sized businesses to not only achieve their objectives, goals and aspirations, but in many cases to exceed them.</p>
+<p>Mike started his early career in the banking and finance industry, moving into more technical and business development roles as his career progressed. Studies were an important part of his early career, where he gained a BEC National Diploma and Masters in Business Administration.</p>
+<p>This background of experience and academic qualifications, enabled Mike to move into senior positions with Major Blue Chip organisations in the IT industry, including Microsoft Corp, where he held Channel Management roles in the Business Solutions Unit branded Microsoft Dynamics.</p>
+<p>Having worked alongside business owners and directors for many years now, he understands what’s required to manage a business within tight deadlines and increasing workloads, and knows how to find the right skills at the appropriate time, to fulfil project requirements and milestones effectively.</p>
+<p>Mike and his team specialise in a wide range of online business services, including&nbsp;,&nbsp;technical website and&nbsp;software development, consulting and general business administration solutions. These services and activities are offered with complete confidence to all clients, and prospective clients, who have aspirations to optimise the performance of their business and enterprise.</p>
+<p>We are here to help you “Optimise Your Business Performance.”</p>
+<p><strong>CONTACT Mike NOW!</strong></p>
+<p>&nbsp;</p>
+<a class="readmore" href="http://www.mikebowyer.co.uk/about-us/"><span>Read More</span></a>											
+	</div> <!-- .entry -->
+</div> <!-- #main-content -->
+
+<div id="sidebar">
+	<div id="from-blog" class="clearfix ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul class="control ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+			<li class="recent ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="http://www.mikebowyer.co.uk/#recent-tabbed">Recent</a></li>
+			<li class="popular ui-state-default ui-corner-top"><a href="http://www.mikebowyer.co.uk/#popular-tabbed">Popular</a></li>
+			<li class="random last ui-state-default ui-corner-top"><a href="http://www.mikebowyer.co.uk/#random-tabbed">Random</a></li>
+		</ul>
+		
+		<div class="entries" style="display: block; ">
+			<h3><span>From the Blog</span></h3>
+			
+			<div id="recent-tabbed" class="tabcontent ui-tabs-panel ui-widget-content ui-corner-bottom">
+									
+<div class="post clearfix">
+				
+	<div class="description">
+		<h4><a href="http://www.mikebowyer.co.uk/2011/06/the-va-passport/" title="Permanent Link to The VA Passport!">The VA Passport!</a></h4>
+		
+					<p class="meta">
+				Posted 				 by <a href="http://www.mikebowyer.co.uk/author/admin/" title="Posts by admin">admin</a> on Jun 7, 2011			</p>
+			
+		
+	</div>
+</div> <!-- end post -->									
+<div class="post clearfix">
+				
+	<div class="description">
+		<h4><a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome">Welcome</a></h4>
+		
+					<p class="meta">
+				Posted 				 by <a href="http://www.mikebowyer.co.uk/author/admin/" title="Posts by admin">admin</a> on Apr 29, 2011			</p>
+			
+		
+	</div>
+</div> <!-- end post -->							</div> <!-- end recent-tabbed -->
+			
+			<div id="popular-tabbed" class="tabcontent ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+																							
+<div class="post clearfix">
+				
+	<div class="description">
+		<h4><a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome">Welcome</a></h4>
+		
+					<p class="meta">
+				Posted 				 by <a href="http://www.mikebowyer.co.uk/author/admin/" title="Posts by admin">admin</a> on Apr 29, 2011			</p>
+			
+		
+	</div>
+</div> <!-- end post -->														</div> <!-- end popular-tabbed -->
+			
+			<div id="random-tabbed" class="tabcontent ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+									
+<div class="post clearfix">
+				
+	<div class="description">
+		<h4><a href="http://www.mikebowyer.co.uk/2011/04/hello-world/" title="Permanent Link to Welcome">Welcome</a></h4>
+		
+					<p class="meta">
+				Posted 				 by <a href="http://www.mikebowyer.co.uk/author/admin/" title="Posts by admin">admin</a> on Apr 29, 2011			</p>
+			
+		
+	</div>
+</div> <!-- end post -->									
+<div class="post clearfix">
+				
+	<div class="description">
+		<h4><a href="http://www.mikebowyer.co.uk/2011/06/the-va-passport/" title="Permanent Link to The VA Passport!">The VA Passport!</a></h4>
+		
+					<p class="meta">
+				Posted 				 by <a href="http://www.mikebowyer.co.uk/author/admin/" title="Posts by admin">admin</a> on Jun 7, 2011			</p>
+			
+		
+	</div>
+</div> <!-- end post -->							</div> <!-- end recent-tabbed -->
+			
+			<div class="entries-bottom"></div>
+		</div> <!-- end entries -->
+	</div> <!-- end from-blog -->
+</div> <!-- end #sidebar -->	
+</div> <!-- end #main-area -->
+				
+			</div> <!-- end #content -->
+		</div> <!-- end #contentwrap -->
+		
+		<div id="footer-widgets-wrap">
+			<div id="footer-widgets" class="clearfix">
+			
+				 
+								
+			</div> <!-- end #footer-widgets -->
+		</div> <!-- end #footer-widgets-wrap -->
+		
+		<div id="footer">
+			<p id="copyright">Copyright © Mike Bowyer All Rights Reserved | <a href="http://www.virtualassistant-live.com/" title="VA-Live">VA-Live</a>
+</p>
+		</div> <!-- end #footer -->
+		
+	</div> <!-- end container -->
+				
+	<script type="text/javascript" src="./Mike Bowyer_files/jquery-ui.min.js"></script> 		<script type="text/javascript">jQuery("div#from-blog").tabs({ fx: { opacity: "toggle" } });</script>	<script type="text/javascript" src="./Mike Bowyer_files/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="./Mike Bowyer_files/jquery.easing.1.3.js"></script>
+
+<script type="text/javascript" src="./Mike Bowyer_files/superfish.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/init.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+	jQuery(".js #feat-content, .js div#from-blog div.entries").show(); //prevents a flash of unstyled content
+	
+			jQuery('#feat-content').cycle({
+			timeout: 0,
+			speed: 300,
+			cleartypeNoBg: true,
+			fx: 'fade'
+		});
+
+		var $featured_area = jQuery('#featured-slider');
+		var $featured_item = jQuery('#featured-area div.featitem');
+		var $slider_control = jQuery('ul#slider-control'); //tabs
+		var $slider_control_tab = jQuery('ul#slider-control li');
+
+		var ordernum;
+		var pause_scroll = false;
+
+		
+		function gonext(this_element){
+			$slider_control.children("li.active").removeClass('active');
+			this_element.addClass('active');
+			ordernum = this_element.prevAll().length+1;
+			jQuery('#feat-content').cycle(ordernum - 1);
+		}
+
+		$slider_control_tab.click(function() {
+			clearInterval(interval);
+			gonext(jQuery(this));
+			return false;
+		});
+
+		jQuery('#featured-area a#prevlink, #featured-area a#nextlink').click(function() {
+			clearInterval(interval);
+
+			if (jQuery(this).attr("id") === 'nextlink') {
+				auto_number = $slider_control.children("li.active").prevAll().length+1;
+				if (auto_number === $slider_control_tab.length) auto_number = 0;
+			} else {
+				auto_number = $slider_control.children("li.active").prevAll().length-1;
+				if (auto_number === -1) auto_number = $slider_control_tab.length-1;
+			};
+
+			gonext($slider_control_tab.eq(auto_number));
+			return false;
+		});
+
+		var auto_number;
+		var interval;
+
+		$slider_control_tab.bind('autonext', function autonext(){
+			if (!(pause_scroll)) gonext(jQuery(this));
+			return false;
+		});
+
+
+		
+	
+	
+
+//]]>
+</script>
+<script type="text/javascript" src="./Mike Bowyer_files/jquery.form.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/scripts.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/jquery.fancybox-1.2.6.pack.js"></script>
+<script type="text/javascript" src="./Mike Bowyer_files/et-ptemplates-frontend.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23409357-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	
+
+<div id="fancy_overlay"></div><div id="fancy_loading"><div></div></div><div id="fancy_outer"><div id="fancy_inner"><div id="fancy_close"></div><div id="fancy_bg"><div class="fancy_bg" id="fancy_bg_n"></div><div class="fancy_bg" id="fancy_bg_ne"></div><div class="fancy_bg" id="fancy_bg_e"></div><div class="fancy_bg" id="fancy_bg_se"></div><div class="fancy_bg" id="fancy_bg_s"></div><div class="fancy_bg" id="fancy_bg_sw"></div><div class="fancy_bg" id="fancy_bg_w"></div><div class="fancy_bg" id="fancy_bg_nw"></div></div><a href="javascript:;" id="fancy_left"><span class="fancy_ico" id="fancy_left_ico"></span></a><a href="javascript:;" id="fancy_right"><span class="fancy_ico" id="fancy_right_ico"></span></a><div id="fancy_content"></div></div></div><div id="fancy_title"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="fancy_title" id="fancy_title_left"></td><td class="fancy_title" id="fancy_title_main"><div></div></td><td class="fancy_title" id="fancy_title_right"></td></tr></tbody></table></div></body></html>
