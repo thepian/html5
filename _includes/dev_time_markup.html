@@ -4,8 +4,8 @@
 		var vars = document.body.getElementsByTagName("var");
 		for(var i=0,v; v=vars[i]; ++i) {
 			var elemProp = v.getAttribute("data-parent-prop");
-			var p = v.offsetParent;
-			if (elemProp && p) {
+			if (elemProp) {
+				var p = v.offsetParent;
 				if (p.tagName == "CODE") p = p.parentNode;
 				v.innerHTML = p[elemProp];
 			}

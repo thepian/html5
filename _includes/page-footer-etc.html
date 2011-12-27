@@ -26,16 +26,10 @@
 
 	<div class="third">
 			<section>
-				<h2>Subscribe to our mailing list</h2>
-				<form>
-					<fieldset>
-					<dl>	
-					<dt><label>Name</label></dt><dd><input name="name" type="text" size="15"></dd>
-					<dt><label>E-Mail</label></dt><dd><input name="email" type="email" size="15"></dd>
-					<dd class="buttons-left"><button type="submit" class="big">Join List</button></dd>
-					</dl>
-					</fieldset>
-				</form>
+				<h2>Stay Informed</h2>
+				<p>Let's send you a summary of our services.
+				We'll occasionally email you when we have more things to offer.</p>
+				{% include mailchimp-stay-informed.html %}
 			</section>
 	</div>
 </nav>

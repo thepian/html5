@@ -1,5 +1,7 @@
 ---
 layout: blog
+thirds: production
+flawless: production
 folder: On A Quest
 folderurl: /onaquest/
 ---
@@ -24,8 +26,13 @@ folderurl: /onaquest/
 	<h1>{{ page.title }}</h1>
 
 	<div class="postinfo">
+
+	    <span class="credit">by <a href="{{ page.authorurl }}">{{ page.author }}</a></span>
+	    <span class="links"></span>    
+	<!--
 	    <span class="credit">by <a href="{{ page.authorurl }}">{{ page.author }}</a> on <time>{{ page.date }}</time></span>
 	    <span class="links"><a href="#comments" class="comments-link">135 Comments</a></span>    
+	  -->
 	</div>
 	</header>
 
@@ -52,6 +59,7 @@ folderurl: /onaquest/
         </ul>
 	</nav>
 </article>
+<div class="right-third asides-background"></div>
 
 <aside class="third four-columns normal-read">
 	{% include blog-sidebar.textile %}
@@ -73,7 +81,7 @@ folderurl: /onaquest/
 	<div class="thirds-content">
 		<nav class="three-thirds">
 			<ul class="breadcrumb">
-			    <li class="home"><a href="/">HTML 5 Playground</a></li>
+			    <li class="home"><a href="/">{{ site.title }}</a></li>
 				{% if page.folder %}
 			    <li class="folder"><a href="{{ page.folderurl }}">{{ page.folder }}</a></li>
 				{% endif %}

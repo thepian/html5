@@ -1,4 +1,20 @@
 <header class="constrained"><div class="thirds-content">
+	{% if page.blog-link %}
+	<div class="two-thirds">
+	{% else %}
+	<div class="three-thirds">
+	{% endif %}
 		{% if page.header_title %}<h1>{{ page.header_title }}</h1>{% endif %}
 		{% unless page.header_title %}<h1>{{ site.title }}</h1>{% endunless %}
+	</div>	
+		{% if page.blog-link %}
+		<div class="third">
+			<fieldset style="height: 100px;float:right;margin-top:20px;margin-bottom:30px;" class="with-sidebar-buttons">
+			<form method="GET" action="/onaquest" style="display: inline;">
+				<button class="big" style="display: block; margin: 9px 0 10px 85px;">Read On-A-Quest</button>
+			</form>
+			<a href="http://uk.linkedin.com/in/apruzzese" class="linked-in" title="Fresh Translation on LinkedIn"></a><a href="http://www.facebook.com/pages/Fresh-Translation-Right-Here-Inc/224427857583632" class="facebook-logo" title="Fresh Translation on Facebook"></a><a href="http://twitter.com/#!/freshtranslatio" class="twitter-bird" title="@freshtranslation"></a><a href="http://feedburner.com/freshtranslation/onaquest/" class="rss-clear" title="Subscribe to Blog"></a><a href="mailto:katty@freshtranslation.com" title="Email Fresh Translation" class="email-clear"></a>
+			</fieldset>
+		</div>
+		{% endif%}
 </div></header>
