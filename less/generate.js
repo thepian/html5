@@ -7,8 +7,9 @@ paths.push(path.join(__dirname,"..","dev-time"));
 
 function generateCss(from_dir,to_dir,filename) {
 	
-	var basic_less = fs.readFileSync(path.join(from_dir,filename),"utf8");
-	var basic_out = path.join(to_dir,filename);
+	var prefix = fs.readFileSync(path.join(from_dir,filename+".prefix"),"utf8");
+	var basic_less = fs.readFileSync(path.join(from_dir,filename+".less"),"utf8");
+	var basic_out = path.join(to_dir,filename+".css");
 
 	var parser = new less.Parser({
 	    paths: paths, // Specify search paths for @import directives
@@ -17,11 +18,11 @@ function generateCss(from_dir,to_dir,filename) {
 
 	parser.parse(basic_less, function (e, tree) {
 	    var css = tree.toCSS({ compress: true }); // Minify CSS output
-		fs.writeFile(basic_out , css, function(err){
+		fs.writeFile(basic_out , prefix+css, function(err){
 		});
 	});
 }
 
-generateCss(__dirname, path.join(__dirname,"..","css"), "thirds.less");
-generateCss(__dirname, path.join(__dirname,"..","css"), "fourths.less");
-generateCss(__dirname, path.join(__dirname,"..","css"), "twothirds.less");
+generateCss(__dirname, path.join(__dirname,"..","css"), "thirds");
+generateCss(__dirname, path.join(__dirname,"..","css"), "fourths");
+generateCss(__dirname, path.join(__dirname,"..","css"), "twothirds");
